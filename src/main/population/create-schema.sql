@@ -62,6 +62,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `investor_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `name` varchar(255),
+        `sector` varchar(255),
+        `stars` integer not null,
+        `statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `munoz_bulletin` (
        `id` integer not null,
         `version` integer not null,

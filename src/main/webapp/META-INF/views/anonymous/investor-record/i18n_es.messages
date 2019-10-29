@@ -1,0 +1,9 @@
+#Form
+anonymous.investorRecord.form.label.name = Nombre
+anonymous.investorRecord.form.label.sector = Sector
+anonymous.investorRecord.form.label.statement = Declaración de inversión
+anonymous.investorRecord.form.label.stars = Estrellas
+anonymous.investorRecord.form.button.return = Volver
+#List
+anonymous.investorRecord.list.label.sector = Sector
+anonymous.investorRecord.list.label.name = Nombre
