@@ -1,0 +1,15 @@
+anonymous.coboBulletin.list.label.creationDate = Creation Date
+anonymous.coboBulletin.list.label.author = Author
+anonymous.coboBulletin.list.label.salary = Salary
+anonymous.coboBulletin.list.label.location = Location
+anonymous.coboBulletin.list.label.description = Description
+
+anonymous.coboBulletin.list.button.create = Create
+
+anonymous.coboBulletin.form.label.author = Author
+anonymous.coboBulletin.form.label.salary = Salary
+anonymous.coboBulletin.form.label.location = Location
+anonymous.coboBulletin.form.label.description = Description
+
+anonymous.coboBulletin.form.button.submit = Create
+anonymous.coboBulletin.form.button.return = Return

@@ -1,16 +1,8 @@
 # i18n_en.messages
-#
-# Copyright (c) 2019 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
 
 # master.banner.welcome #######################################################
 
-master.banner.background = #FFE97F 
+master.banner.background = #404040
 
 # master.welcome ##############################################################
 
@@ -29,7 +21,22 @@ master.menu.sign-out = Sign out
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.anonymous.favourite-link = Favourite link
+
+master.menu.anonymous.favourite-link-alvaro = Aguilar's link
+master.menu.anonymous.favourite-link-jose = Cobo's link
+master.menu.anonymous.favourite-link-Carlos = Doblado' link
+master.menu.anonymous.favourite-link-enrique = Reina's link
+master.menu.anonymous.favourite-link-Fran = Quintela's link
+master.menu.anonymous.favourite-link-victor = Muñoz's link
+
+# Bulletins
+
+master.menu.anonymous.bulletin-alvaro = Aguilar's Bulletin
+master.menu.anonymous.bulletin.reinaBulletin = Reina's Bulletin
+master.menu.anonymous.bulletin.CoboBulletin = Cobo's Bulletin
+master.menu.anonymous.munoz-bulletin = Muñoz's Bulletin
+master.menu.anonymous.doblado-bulletin = Doblado's Bulletin
+master.menu.anonymous.quintela-bulletin = Quintela's Bulletin
 
 # master.menu.administrator ###################################################
 
@@ -70,13 +77,13 @@ master.footer.label.spanish = Spanish
 
 # master.company ##############################################################
 
-master.company.title = La compañía
+master.company.title = The company #Esto lo cambie de La compañía, no se si pasará algo
 master.company.text = \
-	Acme Jobs, Inc. is a fictitious fictitious company that provides a \
-	starter project for the students of the Design and Testing subject of the \
-	Software Engineering Curriculum of the University of Sevilla.
+	Acme Jobs, Inc. is a company that provides a platform \
+    to put employers and workers in contact, and facilitate \
+    the process of searching jobs and employees.
 master.company.name = Acme Jobs, Inc.
-master.company.address = Number Street, City, State, Country
+master.company.address = Av. Reina Mercedes, ETSII, Seville, Andalusia, Spain
 master.company.phone = +000 123 456
 master.company.email = contact@acme.com
 
@@ -90,4 +97,16 @@ master.license.text = \
 	"JSESSIONID" to identify your work session, "remember" to let you authenticate \
 	automatically for a maximum of 31 days, and "language" to store your language \
 	preferences. Additionally, we store an item called "returnStack" in your browser's \
-	local storage to keep track of the document to which some buttons must return.
+	local storage to keep track of the document to which some buttons must return. \
+	Use of this software is at your own risk.
+	
+	
+
+
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.	

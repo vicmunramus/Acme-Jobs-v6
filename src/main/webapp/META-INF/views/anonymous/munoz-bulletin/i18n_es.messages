@@ -1,0 +1,13 @@
+anonymous.munoz-bulletin.list.label.moment = Momento de inscripción:
+anonymous.munoz-bulletin.list.label.groupName = Nombre del grupo:
+anonymous.munoz-bulletin.list.label.managerName = Manager:
+anonymous.munoz-bulletin.list.label.size = Número de miembros:
+
+anonymous.munoz-bulletin.list.button.create = Crear un grupo
+
+anonymous.munoz-bulletin.label.groupName = Nombre del grupo:
+anonymous.munoz-bulletin.label.managerName = Manager:
+anonymous.munoz-bulletin.label.size = Número de miembros:
+	
+anonymous.munoz-bulletin.button.create = Registrarse
+anonymous.munoz-bulletin.button.return = Volver

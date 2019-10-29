@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+	<definition name="anonymous/aguilar-bulletin/form" extends="master">
+		<put-attribute name="body" type="template" value="../anonymous/aguilar-bulletin/form.jsp" />
+	</definition>
+	
+	<definition name="anonymous/aguilar-bulletin/list" extends="master">
+		<put-attribute name="body" type="template" value="../anonymous/aguilar-bulletin/list.jsp" />
+	</definition>
+</tiles-definitions>

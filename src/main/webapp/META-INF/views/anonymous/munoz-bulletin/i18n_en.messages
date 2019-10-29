@@ -1,0 +1,13 @@
+anonymous.munoz-bulletin.list.label.moment = Time of registration:
+anonymous.munoz-bulletin.list.label.groupName = Group Name:
+anonymous.munoz-bulletin.list.label.managerName = Manager:
+anonymous.munoz-bulletin.list.label.size = Number of members:
+
+anonymous.munoz-bulletin.list.button.create = Create a group
+
+anonymous.munoz-bulletin.label.groupName = Group Name:
+anonymous.munoz-bulletin.label.managerName = Manager:
+anonymous.munoz-bulletin.label.size = Number of members:
+	
+anonymous.munoz-bulletin.button.create = Register
+anonymous.munoz-bulletin.button.return = Return

@@ -18,8 +18,25 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+
+	    <acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+	    
+		  <acme:menu-suboption code="master.menu.anonymous.favourite-link-alvaro" action="http://www.youtube.com/user/CubyPuzzles"/>
+		  <acme:menu-suboption code="master.menu.anonymous.favourite-link-jose" action="http://www.reddit.com/"/>
+	      <acme:menu-suboption code="master.menu.anonymous.favourite-link-Carlos" action="http://www.github.com/"/>
+		  <acme:menu-suboption code="master.menu.anonymous.favourite-link-enrique" action="https://9gag.com/"/>
+		  <acme:menu-suboption code="master.menu.anonymous.favourite-link-Fran" action="http://www.twitch.com/"/>
+		  <acme:menu-suboption code="master.menu.anonymous.favourite-link-victor" action="https://theemptypage.wordpress.com/2013/05/20/critical-perspectives-on-waluigi/"/>
+        
+          <acme:menu-separator/>
+        
+          <acme:menu-suboption code="master.menu.anonymous.bulletin-alvaro" action="/anonymous/aguilar-bulletin/list"/>
+          <acme:menu-suboption code="master.menu.anonymous.bulletin.CoboBulletin" action="/anonymous/cobo-bulletin/list"/>
+          <acme:menu-suboption code="master.menu.anonymous.doblado-bulletin" action="/anonymous/doblado-bulletin/list"/>
+          <acme:menu-suboption code="master.menu.anonymous.bulletin.reinaBulletin" action="/anonymous/reina-bulletin/list"/>
+          <acme:menu-suboption code="master.menu.anonymous.quintela-bulletin" action="/anonymous/quintela-bulletin/list"/> 
+          <acme:menu-suboption code="master.menu.anonymous.munoz-bulletin" action="/anonymous/munoz-bulletin/list"/>
+        	
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -52,4 +69,3 @@
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
 	</acme:menu-right>
 </acme:menu-bar>
-

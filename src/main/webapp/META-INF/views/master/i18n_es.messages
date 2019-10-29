@@ -1,16 +1,8 @@
 # i18n_es.messages
-#
-# Copyright (c) 2019 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
 
 # master.banner.welcome #######################################################
 
-master.banner.background = #FFE97F 
+master.banner.background = #404040 
 
 ﻿# master.welcome ##############################################################
 
@@ -29,7 +21,22 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
+
+master.menu.anonymous.favourite-link-alvaro = Enlace de Aguilar
+master.menu.anonymous.favourite-link-jose = Enlace de Cobo
+master.menu.anonymous.favourite-link-Carlos = Enlace de Doblado
+master.menu.anonymous.favourite-link-enrique = Enlace de Reina
+master.menu.anonymous.favourite-link-Fran = Enlace de Quintela
+master.menu.anonymous.favourite-link-victor = Enlace de Muñoz
+
+#Boletín
+
+master.menu.anonymous.bulletin-alvaro = Boletín de Aguilar
+master.menu.anonymous.bulletin.reinaBulletin = Boletín de Reina
+master.menu.anonymous.bulletin.CoboBulletin = Boletín de Cobo
+master.menu.anonymous.munoz-bulletin = Boletín de Muñoz
+master.menu.anonymous.doblado-bulletin = Boletín de Doblado
+master.menu.anonymous.quintela-bulletin = Boletín de Quintela
 
 # master.menu.administrator ###################################################
 
@@ -72,11 +79,11 @@ master.footer.label.spanish = Español
 
 master.company.title = La compañía
 master.company.text = \
-	Acme Jobs, Inc. es una compañía fictícia que proporciona un proyecto \
-	plantilla para los estudiantes de la asignatura Diseño y Pruebas, en el Grado \
-	en Ingeniería del Software de la Universidad de Sevilla.
+	Acme Jobs, Inc. es una compañía que proporciona una plataforma \
+	para poner en contacto a empleadores y trabajadores, y facilitar \
+	el proceso de buscar trabajo y empleados.
 master.company.name = Acme Jobs, Inc.
-master.company.address = Calle, número, Ciudad, Estado, País
+master.company.address = Av. Reina Mercedes, ETSII, Sevilla, Andalucia, España
 master.company.phone = +000 123 456
 master.company.email = contact@acme.com
 
@@ -90,5 +97,15 @@ master.license.text = \
 	su sesión de trabajo, "remember" para mantener su información de autentificación \
 	durante un máximo de 31 días y "language" para almacenar sus preferencias de \
 	lenguage.  Además, almacenamos un ítem llamado "returnStack" en el almacenamiento \
-	local de su navegador para saber dónde tienen que ir algunos botones.
+	local de su navegador para saber dónde tienen que ir algunos botones. \
+	El uso de este software corre bajo su propio riesgo.
 	
+
+
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.	

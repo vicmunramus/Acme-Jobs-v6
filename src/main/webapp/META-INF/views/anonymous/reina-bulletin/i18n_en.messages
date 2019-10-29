@@ -1,0 +1,15 @@
+anonymous.reinaBulletin.list.label.createDate = Creation Date
+anonymous.reinaBulletin.list.label.author = Author
+anonymous.reinaBulletin.list.label.age = Age
+anonymous.reinaBulletin.list.label.title = Title
+anonymous.reinaBulletin.list.label.text = Text
+
+anonymous.reinaBulletin.list.button.create = Create
+
+anonymous.reinaBulletin.form.label.author = Author
+anonymous.reinaBulletin.form.label.age = Age
+anonymous.reinaBulletin.form.label.title = Title
+anonymous.reinaBulletin.form.label.text = Text
+
+anonymous.reinaBulletin.form.button.submit = Create
+anonymous.reinaBulletin.form.button.return = Return
