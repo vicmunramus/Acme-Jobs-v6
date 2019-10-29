@@ -1,0 +1,13 @@
+authenticated.offer.list.label.title = Title
+authenticated.offer.list.label.salaryRange = Salary
+authenticated.offer.list.label.deadline = Deadline
+
+
+authenticated.offer.form.label.title = Title
+authenticated.offer.form.label.description = Description
+authenticated.offer.form.label.creationMoment = Creation Date
+authenticated.offer.form.label.deadline = Deadline
+authenticated.offer.form.label.salaryRange = Salary
+authenticated.offer.form.label.ticker = Ticker
+
+authenticated.offer.form.button.return = Return

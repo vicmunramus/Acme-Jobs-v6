@@ -38,6 +38,11 @@ master.menu.anonymous.munoz-bulletin = Boletín de Muñoz
 master.menu.anonymous.doblado-bulletin = Boletín de Doblado
 master.menu.anonymous.quintela-bulletin = Boletín de Quintela
 
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.offer.list = Ofertas
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
