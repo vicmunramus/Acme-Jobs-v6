@@ -125,6 +125,7 @@
 		<property name="name" value="Alejandro Álcantara Laguna"/>
 		<property name="sector" value="Technology sector"/>
 		<property name="statement" value="I only have one goal, to earn one million euros before withdrawing money"/>
+		<property name="stars" value=""/>
 	</bean>
 	<bean id="investorRecord02" class="acme.entities.investorRecords.InvestorRecord">
 		<property name="name" value="Jonny Fernández Gómez"/>
