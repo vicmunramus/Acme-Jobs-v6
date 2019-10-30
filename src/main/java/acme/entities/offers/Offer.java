@@ -10,7 +10,9 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,9 +42,13 @@ public class Offer extends DomainEntity {
 	private String				description;
 
 	@NotNull
-	private Integer				salaryRange; // Hay que cambiarlo
+	private Money				salaryBottom;
+
+	@NotNull
+	private Money				salaryTop;// Hay que cambiarlo
 
 	@NotBlank
-	private String				ticker;		// Hay que cambiarlo
+	@Pattern(regexp = "O\\w\\w\\w\\w-\\d\\d\\d\\d\\d")
+	private String				ticker;
 
 }

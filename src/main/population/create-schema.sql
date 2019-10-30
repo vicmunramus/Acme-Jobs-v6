@@ -78,7 +78,10 @@
         `creation_moment` datetime(6),
         `deadline` datetime(6),
         `description` varchar(255),
-        `salary_range` integer,
+        `salary_bottom_amount` double precision,
+        `salary_bottom_currency` varchar(255),
+        `salary_top_amount` double precision,
+        `salary_top_currency` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)

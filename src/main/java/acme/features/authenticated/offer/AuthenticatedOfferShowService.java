@@ -35,7 +35,7 @@ public class AuthenticatedOfferShowService implements AbstractShowService<Authen
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "description", "creationMoment", "deadline", "salaryRange", "ticker");
+		request.unbind(entity, model, "title", "description", "creationMoment", "deadline", "salaryBottom", "salaryTop", "ticker");
 	}
 
 	@Override

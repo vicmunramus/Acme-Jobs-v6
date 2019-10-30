@@ -1,5 +1,6 @@
 authenticated.offer.list.label.title = Título
-authenticated.offer.list.label.salaryRange = Sueldo
+authenticated.offer.list.label.salaryBottom = Sueldo Mínimo
+authenticated.offer.list.label.salaryTop = Sueldo Máximo
 authenticated.offer.list.label.deadline = Fecha límite
 
 
@@ -7,7 +8,8 @@ authenticated.offer.form.label.title = Título
 authenticated.offer.form.label.description = Descripción
 authenticated.offer.form.label.creationMoment = Fecha de creación
 authenticated.offer.form.label.deadline = Fecha límite
-authenticated.offer.form.label.salaryRange = Sueldo
+authenticated.offer.form.label.salaryBottom = Sueldo Mínimo
+authenticated.offer.form.label.salaryTop = Sueldo Máximo
 authenticated.offer.form.label.ticker = Identificador
 
 authenticated.offer.form.button.return = Volver
