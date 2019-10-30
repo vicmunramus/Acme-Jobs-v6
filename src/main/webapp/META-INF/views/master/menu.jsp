@@ -36,6 +36,10 @@
           <acme:menu-suboption code="master.menu.anonymous.bulletin.reinaBulletin" action="/anonymous/reina-bulletin/list"/>
           <acme:menu-suboption code="master.menu.anonymous.quintela-bulletin" action="/anonymous/quintela-bulletin/list"/> 
           <acme:menu-suboption code="master.menu.anonymous.munoz-bulletin" action="/anonymous/munoz-bulletin/list"/>
+          
+          <acme:menu-separator/>
+          
+          <acme:menu-suboption code="master.menu.anonymous.investor-record" action="/anonymous/investor-record/list"/>
         	
 		</acme:menu-option>
 
