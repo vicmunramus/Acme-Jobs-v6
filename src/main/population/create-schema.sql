@@ -67,7 +67,7 @@
         `version` integer not null,
         `name` varchar(255),
         `sector` varchar(255),
-        `stars` integer not null,
+        `stars` integer,
         `statement` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
