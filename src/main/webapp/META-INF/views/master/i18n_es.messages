@@ -38,6 +38,10 @@ master.menu.anonymous.munoz-bulletin = Boletín de Muñoz
 master.menu.anonymous.doblado-bulletin = Boletín de Doblado
 master.menu.anonymous.quintela-bulletin = Boletín de Quintela
 
+#Historial de Compañias
+
+master.menu.anonymous.company-records = Historial de Compañias
+
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Autentificado

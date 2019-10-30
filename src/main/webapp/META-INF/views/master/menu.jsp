@@ -37,6 +37,10 @@
           <acme:menu-suboption code="master.menu.anonymous.quintela-bulletin" action="/anonymous/quintela-bulletin/list"/> 
           <acme:menu-suboption code="master.menu.anonymous.munoz-bulletin" action="/anonymous/munoz-bulletin/list"/>
         	
+		   <acme:menu-separator/>
+		   
+		   <acme:menu-suboption code="master.menu.anonymous.company-records" action="/anonymous/company-records/list"/>
+        	
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
