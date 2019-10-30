@@ -404,4 +404,23 @@ AguilarBulletin
 +salary: int (Positive, NotNull)</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1060</x>
+      <y>570</y>
+      <w>300</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Request
+--
++ title: String(NotBlank)
++ createdAt: Date(Temporal(TIMESTAMP),Past)
++ deadline: Date(Temporal(TIMESTAMP),Future)
++ description: String(NotBlank)
++ reward: String(NotBlank)
++ ticket: String(Pattern(“RXXXX-99999”))</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
