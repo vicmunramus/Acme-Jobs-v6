@@ -22,6 +22,7 @@ master.menu.sign-out = Sign out
 
 master.menu.anonymous = Anonymous
 
+master.menu.anonymous.favourite-links = Favourite Links
 master.menu.anonymous.favourite-link-alvaro = Aguilar's link
 master.menu.anonymous.favourite-link-jose = Cobo's link
 master.menu.anonymous.favourite-link-Carlos = Doblado' link
@@ -38,10 +39,12 @@ master.menu.anonymous.munoz-bulletin = Muñoz's Bulletin
 master.menu.anonymous.doblado-bulletin = Doblado's Bulletin
 master.menu.anonymous.quintela-bulletin = Quintela's Bulletin
 
+master.menu.anonymous.announcement = Announcement
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.announcement = Announcement
 master.menu.administrator.shutdown = Shut down
 
 # master.menu.provider ########################################################
