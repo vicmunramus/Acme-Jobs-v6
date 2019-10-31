@@ -78,6 +78,7 @@
         `creation_moment` datetime(6),
         `deadline` datetime(6),
         `description` varchar(255),
+        `enabled` bit not null,
         `salary_bottom_amount` double precision,
         `salary_bottom_currency` varchar(255),
         `salary_top_amount` double precision,

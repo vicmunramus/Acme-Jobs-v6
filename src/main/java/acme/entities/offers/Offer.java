@@ -53,4 +53,6 @@ public class Offer extends DomainEntity {
 	@Pattern(regexp = "^O[A-Z]{4}-\\d{5}$")
 	private String				ticker;
 
+	private boolean				enabled;
+
 }
