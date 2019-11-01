@@ -147,6 +147,5 @@
 		<property name="moreInfo" value= "http://www.9gag.com"/>
 		<property name="text" value= "Very recent announcement"/>
 		</bean>
- 
- 
+ 		
 </beans>

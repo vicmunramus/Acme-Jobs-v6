@@ -1,9 +1,5 @@
 
-package acme.features.anonymous.announcement;
-
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
+package acme.features.authenticated.announcement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,20 +7,19 @@ import org.springframework.stereotype.Service;
 import acme.entities.announcements.Announcement;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
-import acme.framework.services.AbstractListService;
+import acme.framework.entities.Authenticated;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnonymousAnnouncementListService implements AbstractListService<Anonymous, Announcement> {
+public class AuthenticatedAnnouncementShowService implements AbstractShowService<Authenticated, Announcement> {
 
 	@Autowired
-	AnonymousAnnouncementRepository repository;
+	private AuthenticatedAnnouncementRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Announcement> request) {
 		// TODO Auto-generated method stub
-
 		assert request != null;
 		return true;
 	}
@@ -36,20 +31,19 @@ public class AnonymousAnnouncementListService implements AbstractListService<Ano
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "moment", "title");
+		request.unbind(entity, model, "title", "moment", "moreInfo", "text");
+
 	}
 
 	@Override
-	public Collection<Announcement> findMany(final Request<Announcement> request) {
+	public Announcement findOne(final Request<Announcement> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
+		Announcement result;
+		int id;
 
-		Collection<Announcement> result;
-
-		Calendar c = Calendar.getInstance();
-		c.add(Calendar.MONTH, -1);
-		Date monthAgo = c.getTime();
-		result = this.repository.findManyAll(monthAgo);
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
 	}
