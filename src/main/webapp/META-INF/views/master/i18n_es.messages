@@ -40,12 +40,13 @@ master.menu.anonymous.quintela-bulletin = Boletín de Quintela
 
 #Historial de Compañias
 
-master.menu.anonymous.company-records = Historial de Compañias
+master.menu.anonymous.company-records.list = Historial de Compañias
 
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.request.list = Peticiones
+master.menu.authenticated.company-records.list = Historial de Compañias
 
 # master.menu.administrator ###################################################
 

@@ -2,11 +2,13 @@
 package acme.entities.companyRecords;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Pattern.Flag;
 
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -32,15 +34,15 @@ public class CompanyRecords extends DomainEntity {
 	private String				activityDesc;
 
 	@NotBlank
-	@Pattern(regexp = "[w]{3}[.][a-zA-Z0-9-_.]{1,100}[.][a-z]{2,}$", flags = Flag.UNICODE_CASE)
+	@URL
 	private String				webSite;
 
 	@NotBlank
-	@Pattern(regexp = "[+]+[1-9]{1,3}+[ (]+[0-9]{1,4}+[) ]+[0-9]{6,10}$", flags = Flag.UNICODE_CASE)
+	@Pattern(regexp = "^([+]+[1-9]{1,3}+\\s)?+([(]+[0-9]{1,4}+[)]+\\s)?+([0-9]{6,10})$", flags = Flag.UNICODE_CASE)
 	private String				contactPhone;
 
 	@NotBlank
-	@Pattern(regexp = "[a-zA-Z0-9._-]{1,120}+@[a-zA-Z0-9]{1,50}+[.]+[a-zA-Z]{2,}$", flags = Flag.UNICODE_CASE)
+	@Email
 	private String				contactEmail;
 
 	private Boolean				incorporated;

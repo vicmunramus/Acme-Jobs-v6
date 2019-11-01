@@ -9,7 +9,7 @@
 	<definition name="anonymous/company-records/list" extends="master">
 		<put-attribute name="body" type="template" value="../anonymous/company-records/list.jsp" />
 	</definition>
-	
+		
 	<definition name="anonymous/company-records/form" extends="master">
 		<put-attribute name="body" type="template" value="../anonymous/company-records/form.jsp" />
 	</definition>

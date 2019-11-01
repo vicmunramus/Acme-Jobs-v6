@@ -153,8 +153,8 @@
 		<property name="workSector" value="Software Development"/>
 		<property name="ceoName" value="Enrique Reina"/>
 		<property name="activityDesc" value="This is a description"/>
-		<property name="webSite" value="www.acmeJobs.com"/>
-		<property name="contactPhone" value="+25 (399) 1234568"/>
+		<property name="webSite" value="http://www.acmeJobs.com"/>
+		<property name="contactPhone" value="1234568"/>
 		<property name="contactEmail" value="test@mail.com"/>
 		<property name="incorporated" value="true"/>
 		<property name="rating" value="5"/>
@@ -165,8 +165,8 @@
 		<property name="workSector" value="Memes Development"/>
 		<property name="ceoName" value="Xusko Milos"/>
 		<property name="activityDesc" value="This is a description"/>
-		<property name="webSite" value="www.acmeJobs2.com"/>
-		<property name="contactPhone" value="+1 (0) 123456"/>
+		<property name="webSite" value="http://www.acmeJobs2.com"/>
+		<property name="contactPhone" value="(0) 123456"/>
 		<property name="contactEmail" value="milosxusko@mail.com"/>
 		<property name="incorporated" value="false"/>
 		<property name="rating" value="2"/>
@@ -177,11 +177,23 @@
 		<property name="workSector" value="Project Development"/>
 		<property name="ceoName" value="Joysuru Pardo"/>
 		<property name="activityDesc" value="This is a description"/>
-		<property name="webSite" value="www.aiss-vec.com"/>
-		<property name="contactPhone" value="+999 (9999) 1234567890"/>
+		<property name="webSite" value="http://www.aiss-vec.com"/>
+		<property name="contactPhone" value="+999 1234567890"/>
 		<property name="contactEmail" value="joyuru@mail.com"/>
 		<property name="incorporated" value="true"/>
 		<property name="rating" value=""/>
+	</bean>
+	
+	<bean id="companyRecord04" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Test04"/>
+		<property name="workSector" value="Desing and Testing"/>
+		<property name="ceoName" value="Profesor"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.dp.com"/>
+		<property name="contactPhone" value="+25 (399) 1234568"/>
+		<property name="contactEmail" value="dp@mail.com"/>
+		<property name="incorporated" value="false"/>
+		<property name="rating" value="5"/>
 	</bean>
 
 </beans>
