@@ -404,4 +404,103 @@ AguilarBulletin
 +salary: int (Positive, NotNull)</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>880</y>
+      <w>400</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Challenge
+--
++ title: String {NotBlank}
++ deadline: Date {Temporal(TIMESTAMP), Future, NotNull}
++ description: String {NotBlank}
++ goldGoal: String {NotBlank}
++ goldReward: String {NotBlank}
++ / goldPair: String {Transient}
++ silverGoal: String {NotBlank}
++ silverReward: String {NotBlank}
++ / silverPair: String {Transient}+ goldGoal: String {NotBlank}
++ bronzeGoal: String {NotBlank}
++ bronzeReward: String {NotBlank}
++ / bronzePair: String {Transient}
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>450</x>
+      <y>890</y>
+      <w>320</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>goldPair = goldGoal + ": " + goldReward
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>450</x>
+      <y>950</y>
+      <w>320</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>silverPair = silverGoal + ": " + silverReward
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>450</x>
+      <y>1010</y>
+      <w>320</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>bronzePair = bronzeGoal + ": " + bronzeReward
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>900</y>
+      <w>70</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;100.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>950</y>
+      <w>70</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;110.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>1010</y>
+      <w>70</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;100.0;50.0;10.0</additional_attributes>
+  </element>
 </diagram>
