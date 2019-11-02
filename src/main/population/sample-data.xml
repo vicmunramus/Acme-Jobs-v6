@@ -138,6 +138,7 @@
 		<property name="size" value="5"/>
 	</bean>
   
+
  	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
 			<property name="name" value="Carlos Doblado"/>
 			<property name="location" value="Sevilla"/>
@@ -145,6 +146,29 @@
 			<property name="text" value="Necesitamos mejores ordenadores"/>
 			<property name="moment" value="2019/10/20 10:46"/>
 	</bean>
+	<bean id="challenge01" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Vuelta al mundo"/>
+		<property name="deadline" value="2019/12/31 00:00"/>
+		<property name="description" value="Viaja para conseguir increíbles regalos"/>
+		<property name="goldGoal" value="Viaja a otro continente"/>
+		<property name="goldReward" value="Cuadro de viaje alrededor del mundo"/>
+		<property name="silverGoal" value="Viaja fuera de tu país"/>
+		<property name="silverReward" value="Póster de aeropuerto"/>
+		<property name="bronzeGoal" value="Viaja fuera de tu ciudad"/>
+		<property name="bronzeReward" value="Coche de juguete"/>
+	</bean>
+	<bean id="challenge02" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Maestro de la cocina"/>
+		<property name="deadline" value="2019/11/02 11:50"/>
+		<property name="description" value="Elabora platos y consigue suculentos regalos"/>
+		<property name="goldGoal" value="Cocina Ratatouille"/>
+		<property name="goldReward" value="Película Ratatouille y peluche de su protagonista"/>
+		<property name="silverGoal" value="Cocina tiramisú"/>
+		<property name="silverReward" value="Delantal decorado con ilustraciones de pasteles"/>
+		<property name="bronzeGoal" value="Fríe un huevo"/>
+		<property name="bronzeReward" value="Póster de cocinero italiano"/>
+	</bean>
+	
 
 	<bean id="announcement01" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Sample announcement 01"/>

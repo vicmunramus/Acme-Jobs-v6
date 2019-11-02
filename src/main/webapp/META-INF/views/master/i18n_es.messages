@@ -18,6 +18,12 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autentificado
+
+master.menu.authenticated.challenge.list = Desafíos
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
