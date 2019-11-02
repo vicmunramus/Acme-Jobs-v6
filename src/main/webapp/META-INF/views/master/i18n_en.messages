@@ -40,6 +40,12 @@ master.menu.anonymous.doblado-bulletin = Doblado's Bulletin
 master.menu.anonymous.quintela-bulletin = Quintela's Bulletin
 
 master.menu.anonymous.announcement = Announcement
+
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.request.list = Requests
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

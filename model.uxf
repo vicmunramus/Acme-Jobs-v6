@@ -407,17 +407,7 @@ AguilarBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>404</y>
-      <w>40</w>
-      <h>12</h>
-    </coordinates>
-    <panel_attributes>Announcement
---
-+ title: String {NotBlank}
-+ moment: Date {Temporal(TIMESTAMP),Past}
-+ moreInfo: String{URL}
-+ text: String{NotBlank}</panel_attributes>
+
     <additional_attributes/>
   </element>
 </diagram>

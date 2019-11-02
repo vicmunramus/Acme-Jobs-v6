@@ -37,9 +37,13 @@ master.menu.anonymous.bulletin.CoboBulletin = Boletín de Cobo
 master.menu.anonymous.munoz-bulletin = Boletín de Muñoz
 master.menu.anonymous.doblado-bulletin = Boletín de Doblado
 master.menu.anonymous.quintela-bulletin = Boletín de Quintela
-
-
 master.menu.anonymous.announcement = Anuncio
+
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.request.list = Peticiones
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
