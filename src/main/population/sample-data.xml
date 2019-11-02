@@ -16,7 +16,33 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
-	
+
+<bean class="acme.entities.requests.Request" id="request00">
+	<property value="Sample request" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="Example description" name="description"/>
+	<property value="Example reward" name="reward"/>
+	<property value="RExmp-00000" name="ticket"/>
+</bean>
+
+<bean class="acme.entities.requests.Request" id="request01">
+	<property value="C deliverable" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="We need to do the c deliverable" name="description"/>
+	<property value="A 5 on dp" name="reward"/>
+	<property value="RDlvC-00001" name="ticket"/>
+</bean>
+
+<bean class="acme.entities.requests.Request" id="request02">
+	<property value="B deliverable" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="We need to do the B deliverable" name="description"/>
+	<property value="A 7 on dp" name="reward"/>
+	<property value="RDlvC-00002" name="ticket"/>
+</bean>
   <bean id="quintelaBulletin00" class="acme.entities.quintelaBulletin.QuintelaBulletin">
     <property name="title" value="Tarea0"/>
     <property name="text" value="Esta es una tarea de prueba"/>
@@ -112,12 +138,13 @@
 		<property name="size" value="5"/>
 	</bean>
   
-  	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
-		<property name="name" value="Carlos Doblado"/>
-		<property name="location" value="Sevilla"/>
-		<property name="degree" value="Ingenieria Informática de Software"/>
-		<property name="text" value="Necesitamos mejores ordenadores"/>
-		<property name="moment" value="2019/10/20 10:46"/>
+
+ 	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
+			<property name="name" value="Carlos Doblado"/>
+			<property name="location" value="Sevilla"/>
+			<property name="degree" value="Ingenieria Informática de Software"/>
+			<property name="text" value="Necesitamos mejores ordenadores"/>
+			<property name="moment" value="2019/10/20 10:46"/>
 	</bean>
 	<bean id="challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Vuelta al mundo"/>
@@ -143,4 +170,32 @@
 	</bean>
 	
 
+	<bean id="announcement01" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 01"/>
+		<property name="moment" value= "2019/06/10 10:35"/>
+		<property name="moreInfo"><null/></property>
+		<property name="text" value= "This is the description of a sample announcement"/>
+		</bean>
+		
+		<bean id="announcement02" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 02"/>
+		<property name="moment" value= "2019/06/10 00:00"/>
+		<property name="moreInfo" value= "http://www.twitch.tv/lvpes"/>
+		<property name="text" value= "This is the description of another announcement"/>
+		</bean>
+		
+		<bean id="announcement03" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample very old ld announcement 03"/>
+		<property name="moment" value= "1900/10/10 00:00"/>
+		<property name="moreInfo" value= "http://www.9gag.com"/>
+		<property name="text" value= "This is a very old announcement"/>
+		</bean>
+		
+		<bean id="announcement04" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Recent announcement"/>
+		<property name="moment" value= "2019/10/28 00:00"/>
+		<property name="moreInfo" value= "http://www.9gag.com"/>
+		<property name="text" value= "Very recent announcement"/>
+		</bean>
+ 		
 </beans>

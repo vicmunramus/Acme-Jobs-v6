@@ -17,6 +17,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `announcement` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `more_info` varchar(255),
+        `text` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `anonymous` (
        `id` integer not null,
         `version` integer not null,
@@ -115,6 +125,18 @@
         `author` varchar(255),
         `create_date` datetime(6),
         `text` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `request` (
+       `id` integer not null,
+        `version` integer not null,
+        `created_at` datetime(6),
+        `deadline` datetime(6),
+        `description` varchar(255),
+        `reward` varchar(255),
+        `ticket` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
