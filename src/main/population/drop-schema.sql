@@ -33,6 +33,8 @@
 
     drop table if exists `cobo_bulletin`;
 
+    drop table if exists `company_records`;
+
     drop table if exists `consumer`;
 
     drop table if exists `doblado_bulletin`;

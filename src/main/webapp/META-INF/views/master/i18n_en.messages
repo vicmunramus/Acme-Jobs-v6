@@ -45,12 +45,17 @@ master.menu.anonymous.munoz-bulletin = Muñoz's Bulletin
 master.menu.anonymous.doblado-bulletin = Doblado's Bulletin
 master.menu.anonymous.quintela-bulletin = Quintela's Bulletin
 
+#Company Records
+
+master.menu.anonymous.company-records.list = Company's Records
+
 master.menu.anonymous.announcement = Announcement
 
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.request.list = Requests
+master.menu.authenticated.company-records.list = Company's Records
 
 # master.menu.administrator ###################################################
 

@@ -138,15 +138,66 @@
 		<property name="size" value="5"/>
 	</bean>
   
-
  	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
+
 			<property name="name" value="Carlos Doblado"/>
 			<property name="location" value="Sevilla"/>
 			<property name="degree" value="Ingenieria Informática de Software"/>
 			<property name="text" value="Necesitamos mejores ordenadores"/>
 			<property name="moment" value="2019/10/20 10:46"/>
 	</bean>
-	<bean id="challenge01" class="acme.entities.challenges.Challenge">
+	
+	<!-- Company Record -->
+	
+	<bean id="companyRecord01" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Kike"/>
+		<property name="workSector" value="Software Development"/>
+		<property name="ceoName" value="Enrique Reina"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.acmeJobs.com"/>
+		<property name="contactPhone" value="1234568"/>
+		<property name="contactEmail" value="test@mail.com"/>
+		<property name="incorporated" value="true"/>
+		<property name="rating" value="5"/>
+	</bean>
+	
+	<bean id="companyRecord02" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Xusko"/>
+		<property name="workSector" value="Memes Development"/>
+		<property name="ceoName" value="Xusko Milos"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.acmeJobs2.com"/>
+		<property name="contactPhone" value="(0) 123456"/>
+		<property name="contactEmail" value="milosxusko@mail.com"/>
+		<property name="incorporated" value="false"/>
+		<property name="rating" value="2"/>
+	</bean>
+	
+	<bean id="companyRecord03" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Cave"/>
+		<property name="workSector" value="Project Development"/>
+		<property name="ceoName" value="Joysuru Pardo"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.aiss-vec.com"/>
+		<property name="contactPhone" value="+999 1234567890"/>
+		<property name="contactEmail" value="joyuru@mail.com"/>
+		<property name="incorporated" value="true"/>
+		<property name="rating" value=""/>
+	</bean>
+	
+	<bean id="companyRecord04" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Test04"/>
+		<property name="workSector" value="Desing and Testing"/>
+		<property name="ceoName" value="Profesor"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.dp.com"/>
+		<property name="contactPhone" value="+25 (399) 1234568"/>
+		<property name="contactEmail" value="dp@mail.com"/>
+		<property name="incorporated" value="false"/>
+		<property name="rating" value="5"/>
+	</bean>
+
+  <bean id="challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Vuelta al mundo"/>
 		<property name="deadline" value="2019/12/31 00:00"/>
 		<property name="description" value="Viaja para conseguir increíbles regalos"/>
