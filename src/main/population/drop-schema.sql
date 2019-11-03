@@ -23,9 +23,13 @@
 
     drop table if exists `aguilar_bulletin`;
 
+    drop table if exists `announcement`;
+
     drop table if exists `anonymous`;
 
     drop table if exists `authenticated`;
+
+    drop table if exists `challenge`;
 
     drop table if exists `cobo_bulletin`;
 

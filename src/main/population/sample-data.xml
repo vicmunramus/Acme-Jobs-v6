@@ -138,7 +138,8 @@
 		<property name="size" value="5"/>
 	</bean>
   
-  	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
+ 	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
+
 			<property name="name" value="Carlos Doblado"/>
 			<property name="location" value="Sevilla"/>
 			<property name="degree" value="Ingenieria Informática de Software"/>
@@ -196,4 +197,56 @@
 		<property name="rating" value="5"/>
 	</bean>
 
+  <bean id="challenge01" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Vuelta al mundo"/>
+		<property name="deadline" value="2019/12/31 00:00"/>
+		<property name="description" value="Viaja para conseguir increíbles regalos"/>
+		<property name="goldGoal" value="Viaja a otro continente"/>
+		<property name="goldReward" value="Cuadro de viaje alrededor del mundo"/>
+		<property name="silverGoal" value="Viaja fuera de tu país"/>
+		<property name="silverReward" value="Póster de aeropuerto"/>
+		<property name="bronzeGoal" value="Viaja fuera de tu ciudad"/>
+		<property name="bronzeReward" value="Coche de juguete"/>
+	</bean>
+	<bean id="challenge02" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Maestro de la cocina"/>
+		<property name="deadline" value="2019/11/02 11:50"/>
+		<property name="description" value="Elabora platos y consigue suculentos regalos"/>
+		<property name="goldGoal" value="Cocina Ratatouille"/>
+		<property name="goldReward" value="Película Ratatouille y peluche de su protagonista"/>
+		<property name="silverGoal" value="Cocina tiramisú"/>
+		<property name="silverReward" value="Delantal decorado con ilustraciones de pasteles"/>
+		<property name="bronzeGoal" value="Fríe un huevo"/>
+		<property name="bronzeReward" value="Póster de cocinero italiano"/>
+	</bean>
+	
+
+	<bean id="announcement01" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 01"/>
+		<property name="moment" value= "2019/06/10 10:35"/>
+		<property name="moreInfo"><null/></property>
+		<property name="text" value= "This is the description of a sample announcement"/>
+		</bean>
+		
+		<bean id="announcement02" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 02"/>
+		<property name="moment" value= "2019/06/10 00:00"/>
+		<property name="moreInfo" value= "http://www.twitch.tv/lvpes"/>
+		<property name="text" value= "This is the description of another announcement"/>
+		</bean>
+		
+		<bean id="announcement03" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample very old ld announcement 03"/>
+		<property name="moment" value= "1900/10/10 00:00"/>
+		<property name="moreInfo" value= "http://www.9gag.com"/>
+		<property name="text" value= "This is a very old announcement"/>
+		</bean>
+		
+		<bean id="announcement04" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Recent announcement"/>
+		<property name="moment" value= "2019/10/28 00:00"/>
+		<property name="moreInfo" value= "http://www.9gag.com"/>
+		<property name="text" value= "Very recent announcement"/>
+		</bean>
+ 		
 </beans>
