@@ -174,7 +174,8 @@
 			<property name="salaryBottom" value="35000 €"/>
 			<property name="salaryTop" value="45000 €"/>
 			<property name="ticker" value="OAAAC-00003"/>
-	
+	</bean>
+		
 	<bean id="investorRecord01" class="acme.entities.investorRecords.InvestorRecord">
 		<property name="name" value="Alejandro Álcantara Laguna"/>
 		<property name="sector" value="Technology sector"/>

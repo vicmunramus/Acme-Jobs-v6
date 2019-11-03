@@ -53,6 +53,8 @@
       	
 		<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
+		<acme:menu-suboption code="master.menu.authenticated.offer.list" action="/authenticated/offer/list"/>
+		
 		
 		<acme:menu-separator/>
 		 
@@ -74,9 +76,6 @@
         
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
-			<acme:menu-suboption code="master.menu.authenticated.offer.list" action="/authenticated/offer/list"/>
-		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
