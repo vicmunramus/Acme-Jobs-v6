@@ -57,6 +57,11 @@ master.menu.authenticated.company-records.list = Historial de Compañias
 
 master.menu.anonymous.investor-record = Registro de Inversores
 
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.offer.list = Ofertas
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

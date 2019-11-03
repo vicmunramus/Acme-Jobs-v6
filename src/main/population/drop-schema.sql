@@ -43,6 +43,8 @@
 
     drop table if exists `munoz_bulletin`;
 
+    drop table if exists `offer`;
+
     drop table if exists `provider`;
 
     drop table if exists `quintela_bulletin`;
