@@ -23,7 +23,7 @@
 	  
 	  	<acme:menu-suboption code="master.menu.anonymous.announcement" action="/anonymous/announcement/list"/>
 	    <acme:menu-suboption code="master.menu.anonymous.company-records.list" action="/anonymous/company-records/list"/>
-      <acme:menu-suboption code="master.menu.anonymous.investor-record" action="/anonymous/investor-record/list"/>
+      	<acme:menu-suboption code="master.menu.anonymous.investor-record" action="/anonymous/investor-record/list"/>
 	    
 	    <acme:menu-separator/>
 	  
@@ -47,9 +47,11 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 		
-		<acme:menu-suboption code="master.menu.anonymous.announcement" action="/anonymous/announcement/list"/>
-		<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list"/>
+		<acme:menu-suboption code="master.menu.anonymous.announcement" action="/authenticated/announcement/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.company-records.list" action="/authenticated/company-records/list"/>
+      	<acme:menu-suboption code="master.menu.anonymous.investor-record" action="/anonymous/investor-record/list"/>
+      	
+		<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
 		
 		<acme:menu-separator/>
@@ -63,6 +65,13 @@
       
         <acme:menu-separator/>
        
+        <acme:menu-suboption code="master.menu.anonymous.bulletin-alvaro" action="/anonymous/aguilar-bulletin/list"/>
+        <acme:menu-suboption code="master.menu.anonymous.bulletin.CoboBulletin" action="/anonymous/cobo-bulletin/list"/>
+        <acme:menu-suboption code="master.menu.anonymous.doblado-bulletin" action="/anonymous/doblado-bulletin/list"/>
+        <acme:menu-suboption code="master.menu.anonymous.bulletin.reinaBulletin" action="/anonymous/reina-bulletin/list"/>
+        <acme:menu-suboption code="master.menu.anonymous.quintela-bulletin" action="/anonymous/quintela-bulletin/list"/> 
+        <acme:menu-suboption code="master.menu.anonymous.munoz-bulletin" action="/anonymous/munoz-bulletin/list"/>
+        
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
