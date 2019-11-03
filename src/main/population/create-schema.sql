@@ -17,6 +17,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `announcement` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `more_info` varchar(255),
+        `text` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `anonymous` (
        `id` integer not null,
         `version` integer not null,
@@ -31,6 +41,21 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `challenge` (
+       `id` integer not null,
+        `version` integer not null,
+        `bronze_goal` varchar(255),
+        `bronze_reward` varchar(255),
+        `deadline` datetime(6),
+        `description` varchar(255),
+        `gold_goal` varchar(255),
+        `gold_reward` varchar(255),
+        `silver_goal` varchar(255),
+        `silver_reward` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `cobo_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -39,6 +64,21 @@
         `description` varchar(255),
         `location` varchar(255),
         `salary` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `company_records` (
+       `id` integer not null,
+        `version` integer not null,
+        `activity_desc` varchar(255),
+        `ceo_name` varchar(255),
+        `company_name` varchar(255),
+        `contact_email` varchar(255),
+        `contact_phone` varchar(255),
+        `incorporated` bit,
+        `rating` integer,
+        `web_site` varchar(255),
+        `work_sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -110,6 +150,18 @@
         `author` varchar(255),
         `create_date` datetime(6),
         `text` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `request` (
+       `id` integer not null,
+        `version` integer not null,
+        `created_at` datetime(6),
+        `deadline` datetime(6),
+        `description` varchar(255),
+        `reward` varchar(255),
+        `ticket` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;

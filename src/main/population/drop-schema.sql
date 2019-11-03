@@ -23,11 +23,17 @@
 
     drop table if exists `aguilar_bulletin`;
 
+    drop table if exists `announcement`;
+
     drop table if exists `anonymous`;
 
     drop table if exists `authenticated`;
 
+    drop table if exists `challenge`;
+
     drop table if exists `cobo_bulletin`;
+
+    drop table if exists `company_records`;
 
     drop table if exists `consumer`;
 
@@ -42,6 +48,8 @@
     drop table if exists `quintela_bulletin`;
 
     drop table if exists `reina_bulletin`;
+
+    drop table if exists `request`;
 
     drop table if exists `user_account`;
 

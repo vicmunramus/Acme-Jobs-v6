@@ -16,7 +16,33 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
-	
+
+<bean class="acme.entities.requests.Request" id="request00">
+	<property value="Sample request" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="Example description" name="description"/>
+	<property value="Example reward" name="reward"/>
+	<property value="RExmp-00000" name="ticket"/>
+</bean>
+
+<bean class="acme.entities.requests.Request" id="request01">
+	<property value="C deliverable" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="We need to do the c deliverable" name="description"/>
+	<property value="A 5 on dp" name="reward"/>
+	<property value="RDlvC-00001" name="ticket"/>
+</bean>
+
+<bean class="acme.entities.requests.Request" id="request02">
+	<property value="B deliverable" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="We need to do the B deliverable" name="description"/>
+	<property value="A 7 on dp" name="reward"/>
+	<property value="RDlvC-00002" name="ticket"/>
+</bean>
   <bean id="quintelaBulletin00" class="acme.entities.quintelaBulletin.QuintelaBulletin">
     <property name="title" value="Tarea0"/>
     <property name="text" value="Esta es una tarea de prueba"/>
@@ -112,7 +138,8 @@
 		<property name="size" value="5"/>
 	</bean>
   
-  <bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
+ 	<bean id = "dobladoBulletin01" class = "acme.entities.dobladoBulletin.DobladoBulletin">
+
 			<property name="name" value="Carlos Doblado"/>
 			<property name="location" value="Sevilla"/>
 			<property name="degree" value="Ingenieria Informática de Software"/>
@@ -140,4 +167,105 @@
 		<property name="stars" value="0"/>
 	</bean>
 
+	<!-- Company Record -->
+	
+	<bean id="companyRecord01" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Kike"/>
+		<property name="workSector" value="Software Development"/>
+		<property name="ceoName" value="Enrique Reina"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.acmeJobs.com"/>
+		<property name="contactPhone" value="1234568"/>
+		<property name="contactEmail" value="test@mail.com"/>
+		<property name="incorporated" value="true"/>
+		<property name="rating" value="5"/>
+	</bean>
+	
+	<bean id="companyRecord02" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Xusko"/>
+		<property name="workSector" value="Memes Development"/>
+		<property name="ceoName" value="Xusko Milos"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.acmeJobs2.com"/>
+		<property name="contactPhone" value="(0) 123456"/>
+		<property name="contactEmail" value="milosxusko@mail.com"/>
+		<property name="incorporated" value="false"/>
+		<property name="rating" value="2"/>
+	</bean>
+	
+	<bean id="companyRecord03" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Cave"/>
+		<property name="workSector" value="Project Development"/>
+		<property name="ceoName" value="Joysuru Pardo"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.aiss-vec.com"/>
+		<property name="contactPhone" value="+999 1234567890"/>
+		<property name="contactEmail" value="joyuru@mail.com"/>
+		<property name="incorporated" value="true"/>
+		<property name="rating" value=""/>
+	</bean>
+	
+	<bean id="companyRecord04" class="acme.entities.companyRecords.CompanyRecords">
+		<property name="companyName" value="Test04"/>
+		<property name="workSector" value="Desing and Testing"/>
+		<property name="ceoName" value="Profesor"/>
+		<property name="activityDesc" value="This is a description"/>
+		<property name="webSite" value="http://www.dp.com"/>
+		<property name="contactPhone" value="+25 (399) 1234568"/>
+		<property name="contactEmail" value="dp@mail.com"/>
+		<property name="incorporated" value="false"/>
+		<property name="rating" value="5"/>
+	</bean>
+
+  <bean id="challenge01" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Vuelta al mundo"/>
+		<property name="deadline" value="2019/12/31 00:00"/>
+		<property name="description" value="Viaja para conseguir increíbles regalos"/>
+		<property name="goldGoal" value="Viaja a otro continente"/>
+		<property name="goldReward" value="Cuadro de viaje alrededor del mundo"/>
+		<property name="silverGoal" value="Viaja fuera de tu país"/>
+		<property name="silverReward" value="Póster de aeropuerto"/>
+		<property name="bronzeGoal" value="Viaja fuera de tu ciudad"/>
+		<property name="bronzeReward" value="Coche de juguete"/>
+	</bean>
+	<bean id="challenge02" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Maestro de la cocina"/>
+		<property name="deadline" value="2020/11/02 11:50"/>
+		<property name="description" value="Elabora platos y consigue suculentos regalos"/>
+		<property name="goldGoal" value="Cocina Ratatouille"/>
+		<property name="goldReward" value="Película Ratatouille y peluche de su protagonista"/>
+		<property name="silverGoal" value="Cocina tiramisú"/>
+		<property name="silverReward" value="Delantal decorado con ilustraciones de pasteles"/>
+		<property name="bronzeGoal" value="Fríe un huevo"/>
+		<property name="bronzeReward" value="Póster de cocinero italiano"/>
+	</bean>
+	
+	<bean id="announcement01" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 01"/>
+		<property name="moment" value= "2019/06/10 10:35"/>
+		<property name="moreInfo"><null/></property>
+		<property name="text" value= "This is the description of a sample announcement"/>
+		</bean>
+		
+		<bean id="announcement02" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 02"/>
+		<property name="moment" value= "2019/06/10 00:00"/>
+		<property name="moreInfo" value= "http://www.twitch.tv/lvpes"/>
+		<property name="text" value= "This is the description of another announcement"/>
+		</bean>
+		
+		<bean id="announcement03" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample very old ld announcement 03"/>
+		<property name="moment" value= "1900/10/10 00:00"/>
+		<property name="moreInfo" value= "http://www.9gag.com"/>
+		<property name="text" value= "This is a very old announcement"/>
+		</bean>
+		
+		<bean id="announcement04" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Recent announcement"/>
+		<property name="moment" value= "2019/10/28 00:00"/>
+		<property name="moreInfo" value= "http://www.9gag.com"/>
+		<property name="text" value= "Very recent announcement"/>
+		</bean>
+ 		
 </beans>

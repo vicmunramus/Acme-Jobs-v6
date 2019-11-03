@@ -18,10 +18,16 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autentificado
+
+master.menu.authenticated.challenge.list = Desafíos
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-
+master.menu.anonymous.favourite-links = Links Favoritos
 master.menu.anonymous.favourite-link-alvaro = Enlace de Aguilar
 master.menu.anonymous.favourite-link-jose = Enlace de Cobo
 master.menu.anonymous.favourite-link-Carlos = Enlace de Doblado
@@ -37,6 +43,17 @@ master.menu.anonymous.bulletin.CoboBulletin = Boletín de Cobo
 master.menu.anonymous.munoz-bulletin = Boletín de Muñoz
 master.menu.anonymous.doblado-bulletin = Boletín de Doblado
 master.menu.anonymous.quintela-bulletin = Boletín de Quintela
+master.menu.anonymous.announcement = Anuncio
+
+#Historial de Compañias
+
+master.menu.anonymous.company-records.list = Historial de Compañias
+
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.request.list = Peticiones
+master.menu.authenticated.company-records.list = Historial de Compañias
 
 master.menu.anonymous.investor-record = Registro de Inversores
 
@@ -44,6 +61,7 @@ master.menu.anonymous.investor-record = Registro de Inversores
 
 master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.announcement = Anuncio
 master.menu.administrator.shutdown = Parar el sistema
 
 # master.menu.provider ########################################################
@@ -64,6 +82,7 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.announcement = Anuncio
 
 ﻿# master.footer ###############################################################
 
