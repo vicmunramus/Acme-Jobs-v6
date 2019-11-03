@@ -129,7 +129,6 @@
 			<property name="salaryBottom" value="25000 €"/>
 			<property name="salaryTop" value="30000 €"/>
 			<property name="ticker" value="OAAAA-00000"/>
-			<property name="enabled" value="true"/>
 	</bean>
 	<bean id = "offer02" class = "acme.entities.offers.Offer">
 			<property name="title" value="PHP Senior Developer"/>
@@ -139,17 +138,15 @@
 			<property name="salaryBottom" value="30000 €"/>
 			<property name="salaryTop" value="40000 €"/>
 			<property name="ticker" value="OAAAB-00001"/>
-			<property name="enabled" value="true"/>
 	</bean>
 	<bean id = "offer03" class = "acme.entities.offers.Offer">
 			<property name="title" value="C++ Programmer"/>
 			<property name="creationMoment" value="2019/07/15 19:00"/>
-			<property name="deadline" value="2020/07/10 09:00"/>
+			<property name="deadline" value="2020/11/03 11:25"/>
 			<property name="description" value="We are looking for an experienced developer who wants to change the industry"/>
 			<property name="salaryBottom" value="35000 €"/>
 			<property name="salaryTop" value="45000 €"/>
 			<property name="ticker" value="OAAAC-00003"/>
-			<property name="enabled" value="false"/>
 	</bean>
 
 </beans>
