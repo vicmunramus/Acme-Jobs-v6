@@ -39,6 +39,8 @@
 
     drop table if exists `doblado_bulletin`;
 
+    drop table if exists `investor_record`;
+
     drop table if exists `munoz_bulletin`;
 
     drop table if exists `provider`;
