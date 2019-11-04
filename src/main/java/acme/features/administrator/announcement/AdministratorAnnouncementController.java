@@ -1,5 +1,5 @@
 
-package acme.features.administrator.userAccount.announcement;
+package acme.features.administrator.announcement;
 
 import javax.annotation.PostConstruct;
 
