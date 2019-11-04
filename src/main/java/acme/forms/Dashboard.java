@@ -13,8 +13,8 @@ public class Dashboard implements Serializable {
 	private static final long	serialVersionUID	= 1L;
 
 	//Attributes
-	Integer						numberInvestorRecordFirstSector;
-	Integer						numberInvestorRecordSecondSector;
-	Integer						numberInvestorRecordThirdSector;
+	Integer						numberInvestorRecordPrimarySector;
+	Integer						numberInvestorRecordSecondarySector;
+	Integer						numberInvestorRecordServiceSector;
 
 }

@@ -11,14 +11,14 @@
 	$(document).ready(function(){
 		var data = {
 				labels : [
-					"FIRST", "SECOND", "THIRD"
+					"PRIMARY", "SECONDARY", "SERVICE"
 				],
 				datasets : [
 					{
 						data : [
-							<jstl:out value="${numberInvestorRecordFirstSector}"/>
-							<jstl:out value="${numberInvestorRecordSecondSector}"/>
-							<jstl:out value="${numberInvestorRecordThirdSector}"/>
+							<jstl:out value="${numberInvestorRecordPrimarySector}"/>,
+							<jstl:out value="${numberInvestorRecordSecondarySector}"/>,
+							<jstl:out value="${numberInvestorRecordServiceSector}"/>
 						]
 					}
 				]
