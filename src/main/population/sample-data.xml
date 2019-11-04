@@ -23,7 +23,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="Example description" name="description"/>
 	<property value="Example reward" name="reward"/>
-	<property value="RExmp-00000" name="ticket"/>
+	<property value="REXMP-00000" name="ticket"/>
 </bean>
 
 <bean class="acme.entities.requests.Request" id="request01">
@@ -32,7 +32,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="We need to do the c deliverable" name="description"/>
 	<property value="A 5 on dp" name="reward"/>
-	<property value="RDlvC-00001" name="ticket"/>
+	<property value="RDLVC-00001" name="ticket"/>
 </bean>
 
 <bean class="acme.entities.requests.Request" id="request02">
@@ -41,7 +41,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="We need to do the B deliverable" name="description"/>
 	<property value="A 7 on dp" name="reward"/>
-	<property value="RDlvC-00002" name="ticket"/>
+	<property value="RDLVC-00002" name="ticket"/>
 </bean>
   <bean id="quintelaBulletin00" class="acme.entities.quintelaBulletin.QuintelaBulletin">
     <property name="title" value="Tarea0"/>

@@ -35,7 +35,7 @@ public class Request extends DomainEntity {
 	@NotBlank
 	private String				reward;
 	@NotBlank
-	@Pattern(regexp = "R\\w\\w\\w\\w-\\d\\d\\d\\d\\d")
+	@Pattern(regexp = "^R[A-Z]{4}-\\d{5}$")
 	private String				ticket;
 
 }
