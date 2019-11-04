@@ -54,6 +54,7 @@ master.menu.anonymous.company-records.list = Historial de Compañias
 master.menu.authenticated = Autentificado
 master.menu.authenticated.request.list = Peticiones
 master.menu.authenticated.company-records.list = Historial de Compañias
+master.menu.authenticated.announcement = Anuncio
 
 master.menu.anonymous.investor-record = Registro de Inversores
 
