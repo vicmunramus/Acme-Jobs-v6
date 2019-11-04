@@ -296,4 +296,113 @@ m2=*
 has v</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>720</y>
+      <w>310</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+DobladoBulletin
+--
++ moment : Date {Temporal(TIMESTAMP),Past}
++ name: String {NotBlank}
++ location : String {NotBlank}
++ degree : String {NotBlank}
++ text : String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>580</y>
+      <w>320</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+ReinaBulletin
+--
++ createDate: Date(Temporal(TIMESTAMP),Past)
++ author: String (NotBlank)
++ age: Integer (Positive, NotNull)
++ title: String (NotBlank)
++ text: String (NotBlank)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>580</y>
+      <w>330</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+CoboBulletin
+--
++ creationDate: Date(Temporal(TIMESTAMP),Past)
++ author: String (NotBlank)
++ salary: Integer (Positive, NotNull)
++ location: String (NotBlank)
++ description: String (NotBlank)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>720</y>
+      <w>350</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+QuintelaBulletin
+--
++ title: String (NotBlank)
++ text: String (NotBlank)
++ author: String (NotBlank)
++ priority: String (NotNull)
++ createdAt: Date (Temporal(TIMESTAMP),Past)
++ deadlineDate: Date (Temporal(TIMESTAMP),Future)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>580</y>
+      <w>310</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MunozBulletin
+--
++ moment: Date {Temporal(TIMESTAMP), Past}
++ groupName: String {NotBlank}
++ managerName: String {NotBlank}
++ size: int {NotNull, Range(min=1)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>720</y>
+      <w>300</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+AguilarBulletin
+--
++moment: Date {Temporal(TIMESTAMP),Past}
++company: String {NotBlank}
++vacancy: int {Not Null, Range(min=1)}
++requirement: String {Not Blank}
++salary: int (Positive, NotNull)</panel_attributes>
+    <additional_attributes/>
+  </element>
+
 </diagram>
