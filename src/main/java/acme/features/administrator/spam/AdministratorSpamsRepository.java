@@ -1,12 +1,12 @@
 
-package acme.features.administrator.spams;
+package acme.features.administrator.spam;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.spams.Spam;
+import acme.entities.spam.Spam;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
