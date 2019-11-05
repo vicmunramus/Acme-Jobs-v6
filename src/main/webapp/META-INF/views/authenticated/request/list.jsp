@@ -4,5 +4,5 @@
 
 <acme:list>
 	<acme:list-column code="authenticated.request.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="authenticated.request.list.label.title" path="author" width="40%"/>	
+	<acme:list-column code="authenticated.request.list.label.description" path="description" width="40%"/>	
 </acme:list>
