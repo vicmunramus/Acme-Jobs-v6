@@ -7,10 +7,11 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +27,6 @@ public class Challenge extends DomainEntity {
 	private String				title;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future
 	@NotNull
 	private Date				deadline;
 
@@ -36,20 +36,23 @@ public class Challenge extends DomainEntity {
 	@NotBlank
 	private String				goldGoal;
 
-	@NotBlank
-	private String				goldReward;
+	@Valid
+	@NotNull
+	private Money				goldReward;
 
 	@NotBlank
 	private String				silverGoal;
 
-	@NotBlank
-	private String				silverReward;
+	@Valid
+	@NotNull
+	private Money				silverReward;
 
 	@NotBlank
 	private String				bronzeGoal;
 
-	@NotBlank
-	private String				bronzeReward;
+	@Valid
+	@NotNull
+	private Money				bronzeReward;
 
 
 	@Transient
@@ -59,7 +62,8 @@ public class Challenge extends DomainEntity {
 		result = new StringBuilder();
 		result.append(this.goldGoal);
 		result.append(" \u2192 ");
-		result.append(this.goldReward);
+		result.append(this.goldReward.getAmount());
+		result.append(" €");
 
 		return result.toString();
 	}
@@ -71,7 +75,8 @@ public class Challenge extends DomainEntity {
 		result = new StringBuilder();
 		result.append(this.silverGoal);
 		result.append(" \u2192 ");
-		result.append(this.silverReward);
+		result.append(this.silverReward.getAmount());
+		result.append(" €");
 
 		return result.toString();
 	}
@@ -83,7 +88,8 @@ public class Challenge extends DomainEntity {
 		result = new StringBuilder();
 		result.append(this.bronzeGoal);
 		result.append(" \u2192 ");
-		result.append(this.bronzeReward);
+		result.append(this.bronzeReward.getAmount());
+		result.append(" €");
 
 		return result.toString();
 	}
