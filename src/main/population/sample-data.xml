@@ -17,32 +17,8 @@
 
 	<import resource="conversion-service.xml" />
 
-<bean class="acme.entities.requests.Request" id="request00">
-	<property value="Sample request" name="title"/>
-	<property value="2019/10/29 17:10" name="createdAt"/>
-	<property value="2020/10/29 17:10" name="deadline"/>
-	<property value="Example description" name="description"/>
-	<property value="Example reward" name="reward"/>
-	<property value="REXMP-00000" name="ticket"/>
-</bean>
+<!-- BULLETINS -->
 
-<bean class="acme.entities.requests.Request" id="request01">
-	<property value="C deliverable" name="title"/>
-	<property value="2019/10/29 17:10" name="createdAt"/>
-	<property value="2020/10/29 17:10" name="deadline"/>
-	<property value="We need to do the c deliverable" name="description"/>
-	<property value="A 5 on dp" name="reward"/>
-	<property value="RDLVC-00001" name="ticket"/>
-</bean>
-
-<bean class="acme.entities.requests.Request" id="request02">
-	<property value="B deliverable" name="title"/>
-	<property value="2019/10/29 17:10" name="createdAt"/>
-	<property value="2020/10/29 17:10" name="deadline"/>
-	<property value="We need to do the B deliverable" name="description"/>
-	<property value="A 7 on dp" name="reward"/>
-	<property value="RDLVC-00002" name="ticket"/>
-</bean>
   <bean id="quintelaBulletin00" class="acme.entities.quintelaBulletin.QuintelaBulletin">
     <property name="title" value="Tarea0"/>
     <property name="text" value="Esta es una tarea de prueba"/>
@@ -176,6 +152,8 @@
 			<property name="ticker" value="OAAAC-00003"/>
 	</bean>
 		
+	<!-- INVESTOR RECORDS -->	
+		
 	<bean id="investorRecord01" class="acme.entities.investorRecords.InvestorRecord">
 		<property name="name" value="Alejandro Álcantara Laguna"/>
 		<property name="sector" value="Primary Sector"/>
@@ -245,6 +223,8 @@
 		<property name="rating" value="5"/>
 	</bean>
 
+<!-- CHALLENGE -->
+
   <bean id="challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Vuelta al mundo"/>
 		<property name="deadline" value="2019/12/31 00:00"/>
@@ -267,6 +247,8 @@
 		<property name="bronzeGoal" value="Fríe un huevo"/>
 		<property name="bronzeReward" value="Póster de cocinero italiano"/>
 	</bean>
+	
+	<!-- ANNOUNCEMENT -->
 	
 	<bean id="announcement01" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Sample announcement 01"/>
@@ -295,6 +277,36 @@
 		<property name="moreInfo" value= "http://www.9gag.com"/>
 		<property name="text" value= "Very recent announcement"/>
 		</bean>
+		
+		<!-- REQUEST -->
+		
+<bean class="acme.entities.requests.Request" id="request00">
+	<property value="Sample request" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="Example description" name="description"/>
+	<property value="1 €" name="reward"/>
+	<property value="REXMP-00000" name="ticket"/>
+</bean>
+
+<bean class="acme.entities.requests.Request" id="request01">
+	<property value="C deliverable" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="We need to do the c deliverable" name="description"/>
+	<property value="100 €" name="reward"/>
+	<property value="RDLVC-00001" name="ticket"/>
+</bean>
+
+<bean class="acme.entities.requests.Request" id="request02">
+	<property value="B deliverable" name="title"/>
+	<property value="2019/10/29 17:10" name="createdAt"/>
+	<property value="2020/10/29 17:10" name="deadline"/>
+	<property value="We need to do the B deliverable" name="description"/>
+	<property value="700 €" name="reward"/>
+	<property value="RDLVC-00002" name="ticket"/>
+</bean>
+		
 		
 		<!--  SPAM LIST -->
  		
