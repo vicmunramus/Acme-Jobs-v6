@@ -423,7 +423,8 @@ CompanyRecords
 + contactPhone: String {NotBlank, Pattern(regexp = "^([+]+[1-9]{1,3}+\\s)?+([(]+[0-9]{1,4}+[)]+\\s)?+([0-9]{6,10})$")}
 + contactEmail: String {NotBlank, Email")}
 + incorporated: Boolean
-+ rating: Integer {Range(min=0,max=5)}</panel_attributes>
++ rating: Integer {Range(min=0,max=5)}
++/fullName:String {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -504,6 +505,22 @@ Offer
 + salaryBottom: Money {NotNull}
 + salaryTop: Money {NotNull}
 + ticker: String {Unique, NotBlank, Pattern(regexp = "^O[A-Z]{4}-\\d{5}$")}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>84</y>
+      <w>168</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Spam
+--
++ wordEn: String {NotBlank}
++ WordEs: String {NotBlank}
++ threshold: Float</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
