@@ -54,6 +54,7 @@ master.menu.anonymous.company-records.list = Historial de Compañias
 master.menu.authenticated = Autentificado
 master.menu.authenticated.request.list = Peticiones
 master.menu.authenticated.company-records.list = Historial de Compañias
+master.menu.authenticated.announcement = Anuncio
 
 master.menu.anonymous.investor-record = Registro de Inversores
 
@@ -69,6 +70,7 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.announcement = Anuncio
 master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.dashboard = Tablero de control
+master.menu.administrator.spam = Spam
 
 # master.menu.provider ########################################################
 
