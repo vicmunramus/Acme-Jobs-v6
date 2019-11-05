@@ -47,32 +47,13 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 		
-		<acme:menu-suboption code="master.menu.anonymous.announcement" action="/authenticated/announcement/list"/>
+		<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.company-records.list" action="/authenticated/company-records/list"/>
-      	<acme:menu-suboption code="master.menu.anonymous.investor-record" action="/anonymous/investor-record/list"/>
+      	<acme:menu-suboption code="master.menu.authenticated.investor-record" action="/authenticated/investor-record/list"/>
       	
 		<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.offer.list" action="/authenticated/offer/list"/>
-		
-		
-		<acme:menu-separator/>
-		 
-		<acme:menu-suboption code="master.menu.anonymous.favourite-link-alvaro" action="http://www.youtube.com/user/CubyPuzzles"/>
-		<acme:menu-suboption code="master.menu.anonymous.favourite-link-jose" action="http://www.reddit.com/"/>
-	    <acme:menu-suboption code="master.menu.anonymous.favourite-link-Carlos" action="http://www.github.com/"/>
-		<acme:menu-suboption code="master.menu.anonymous.favourite-link-enrique" action="https://9gag.com/"/>
-		<acme:menu-suboption code="master.menu.anonymous.favourite-link-Fran" action="http://www.twitch.com/"/>
-		<acme:menu-suboption code="master.menu.anonymous.favourite-link-victor" action="https://theemptypage.wordpress.com/2013/05/20/critical-perspectives-on-waluigi/"/>
-      
-        <acme:menu-separator/>
-       
-        <acme:menu-suboption code="master.menu.anonymous.bulletin-alvaro" action="/anonymous/aguilar-bulletin/list"/>
-        <acme:menu-suboption code="master.menu.anonymous.bulletin.CoboBulletin" action="/anonymous/cobo-bulletin/list"/>
-        <acme:menu-suboption code="master.menu.anonymous.doblado-bulletin" action="/anonymous/doblado-bulletin/list"/>
-        <acme:menu-suboption code="master.menu.anonymous.bulletin.reinaBulletin" action="/anonymous/reina-bulletin/list"/>
-        <acme:menu-suboption code="master.menu.anonymous.quintela-bulletin" action="/anonymous/quintela-bulletin/list"/> 
-        <acme:menu-suboption code="master.menu.anonymous.munoz-bulletin" action="/anonymous/munoz-bulletin/list"/>
         
 		</acme:menu-option>
 		
@@ -83,6 +64,8 @@
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.announcement" action="/administrator/announcement/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/list"/>			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
