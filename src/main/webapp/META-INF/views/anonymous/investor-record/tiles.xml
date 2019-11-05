@@ -13,7 +13,4 @@
 		<put-attribute name="body" type="template" value="../anonymous/investor-record/list.jsp" />
 	</definition>
 	
-	<definition name="anonymous/investor-record/list-fivestars" extends="master">
-		<put-attribute name="body" type="template" value="../anonymous/investor-record/listFiveStars.jsp" />
-	</definition>
 </tiles-definitions>

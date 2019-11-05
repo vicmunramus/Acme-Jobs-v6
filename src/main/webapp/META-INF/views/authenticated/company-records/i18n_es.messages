@@ -1,4 +1,6 @@
-authenticated.company-records.list.label.companyName = Compañia
+authenticated.company-records.list.label.companyName = Compañía
+authenticated.company-records.button.redirect= Top Compañías
+
 authenticated.company-records.list.label.workSector = Sector de Trabajo
 authenticated.company-records.list.label.activityDesc = Actividad
 authenticated.company-records.list.label.webSite = Sitio Web

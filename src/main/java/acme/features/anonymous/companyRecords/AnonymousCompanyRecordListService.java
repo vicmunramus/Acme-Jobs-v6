@@ -34,7 +34,7 @@ public class AnonymousCompanyRecordListService implements AbstractListService<An
 		assert model != null;
 
 		//request.unbind(entity, model, "companyName", "workSector", "ceoName", "activityDesc", "webSite", "contactPhone", "contactEmail", "incorporated");
-		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating");
+		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating", "fullName");
 	}
 
 	@Override
@@ -44,11 +44,6 @@ public class AnonymousCompanyRecordListService implements AbstractListService<An
 		Collection<CompanyRecords> result;
 
 		result = this.repository.findMany();
-
-		for (CompanyRecords c : result) {
-
-			c.setCompanyName(c.getFullName());
-		}
 
 		return result;
 	}

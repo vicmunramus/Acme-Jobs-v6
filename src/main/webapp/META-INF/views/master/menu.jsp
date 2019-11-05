@@ -23,7 +23,9 @@
 	  
 	  	<acme:menu-suboption code="master.menu.anonymous.announcement" action="/anonymous/announcement/list"/>
 	    <acme:menu-suboption code="master.menu.anonymous.company-records.list" action="/anonymous/company-records/list"/>
+	    <acme:menu-suboption code="master.menu.anonymous.company-records.list.top" action="/anonymous/company-records/list-fivestars"/>
       	<acme:menu-suboption code="master.menu.anonymous.investor-record" action="/anonymous/investor-record/list"/>
+      	<acme:menu-suboption code="master.menu.anonymous.investor-record.top" action="/anonymous/investor-record/list-fivestars"/>
 	    
 	    <acme:menu-separator/>
 	  
@@ -49,8 +51,8 @@
 		
 		<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.company-records.list" action="/authenticated/company-records/list"/>
-      	<acme:menu-suboption code="master.menu.authenticated.investor-record" action="/authenticated/investor-record/list"/>
-      	
+	   	<acme:menu-suboption code="master.menu.authenticated.investor-record" action="/authenticated/investor-record/list"/>
+          	
 		<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
 		<acme:menu-suboption code="master.menu.authenticated.offer.list" action="/authenticated/offer/list"/>

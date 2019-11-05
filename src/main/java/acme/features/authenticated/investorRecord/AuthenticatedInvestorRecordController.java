@@ -21,9 +21,9 @@ public class AuthenticatedInvestorRecordController extends AbstractController<Au
 	private AuthenticatedInvestorRecordListService	listService;
 	@Autowired
 	private AuthenticatedInvestorRecordShowService	showService;
-
-
 	//Constructor
+
+
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);

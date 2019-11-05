@@ -14,8 +14,4 @@
 		<put-attribute name="body" type="template" value="../anonymous/company-records/form.jsp" />
 	</definition>
 	
-	<definition name="anonymous/company-records/list-fivestars" extends="master">
-		<put-attribute name="body" type="template" value="../anonymous/company-records/list.jsp" />
-	</definition>
-
 </tiles-definitions>

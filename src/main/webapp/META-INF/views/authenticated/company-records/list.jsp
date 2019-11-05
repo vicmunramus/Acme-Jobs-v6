@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="authenticated.company-records.list.label.companyName" path="companyName"/>
+	<acme:list-column code="authenticated.company-records.list.label.companyName" path="fullName"/>
 	
 	<acme:list-column code="authenticated.company-records.list.label.workSector" path="workSector"/>
 	

@@ -7,3 +7,5 @@ authenticated.investorRecord.form.button.return = Return
 #List
 authenticated.investorRecord.list.label.sector = Sector
 authenticated.investorRecord.list.label.name = Name
+
+authenticated.investorRecord.button.redirect = Top Investors
