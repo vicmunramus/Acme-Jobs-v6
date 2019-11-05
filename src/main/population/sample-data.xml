@@ -129,8 +129,8 @@
 			<property name="creationMoment" value="2019/10/20 10:45"/>
 			<property name="deadline" value="2021/10/20 23:59"/>
 			<property name="description" value="Great oportunity at SoftDev for juniors developers."/>
-			<property name="salaryBottom" value="25000 €"/>
-			<property name="salaryTop" value="30000 €"/>
+			<property name="minReward" value="25000 €"/>
+			<property name="maxReward" value="30000 €"/>
 			<property name="ticker" value="OAAAA-00000"/>
 	</bean>
 	<bean id = "offer02" class = "acme.entities.offers.Offer">
@@ -138,17 +138,17 @@
 			<property name="creationMoment" value="2019/09/12 15:06"/>
 			<property name="deadline" value="2020/10/10 23:59"/>
 			<property name="description" value="At least 5 years of experience. Great conditions and benefits at our company."/>
-			<property name="salaryBottom" value="30000 €"/>
-			<property name="salaryTop" value="40000 €"/>
+			<property name="minReward" value="30000 €"/>
+			<property name="maxReward" value="40000 €"/>
 			<property name="ticker" value="OAAAB-00001"/>
 	</bean>
 	<bean id = "offer03" class = "acme.entities.offers.Offer">
 			<property name="title" value="C++ Programmer"/>
 			<property name="creationMoment" value="2019/07/15 19:00"/>
-			<property name="deadline" value="2020/11/03 11:25"/>
+			<property name="deadline" value="2019/10/03 11:25"/>
 			<property name="description" value="We are looking for an experienced developer who wants to change the industry"/>
-			<property name="salaryBottom" value="35000 €"/>
-			<property name="salaryTop" value="45000 €"/>
+			<property name="minReward" value="35000 €"/>
+			<property name="maxReward" value="45000 €"/>
 			<property name="ticker" value="OAAAC-00003"/>
 	</bean>
 		

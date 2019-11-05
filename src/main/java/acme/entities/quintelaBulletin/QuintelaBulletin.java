@@ -6,7 +6,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -31,7 +30,6 @@ public class QuintelaBulletin extends DomainEntity {
 	@NotNull
 	private Integer				priority;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future
 	private Date				deadlineDate;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
