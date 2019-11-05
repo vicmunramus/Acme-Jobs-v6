@@ -295,5 +295,42 @@
 		<property name="moreInfo" value= "http://www.9gag.com"/>
 		<property name="text" value= "Very recent announcement"/>
 		</bean>
+		
+		<!--  SPAM LIST -->
+ 		
+ 	<bean id="spam01" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="sex"/>
+ 		<property name="wordEn" value="sexo"/>
+ 	</bean>
+ 		
+ 	<bean id="spam02" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="hard core"/>
+ 		<property name="wordEn" value="hard core"/>
+ 	</bean>
+ 		
+ 	<bean id="spam03" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="viagra"/>
+ 		<property name="wordEn" value="viagra"/>
+ 	</bean>
+ 		
+ 	<bean id="spam04" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="cialis"/>
+ 		<property name="wordEn" value="cialis"/>
+ 	</bean>
+ 		
+ 	<bean id="spam05" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="nigeria"/>
+ 		<property name="wordEn" value="nigeria"/>
+ 	</bean>
+ 		
+ 	<bean id="spam06" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="you've won"/>
+ 		<property name="wordEn" value="has ganado"/>
+ 	</bean>
+ 		
+ 	<bean id="spam07" class="acme.entities.spams.Spam">
+ 		<property name="wordEs" value="million dollar"/>
+ 		<property name="wordEn" value="millon de dólares"/>
+ 	</bean>
  		
 </beans>

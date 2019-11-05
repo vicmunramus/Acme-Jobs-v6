@@ -68,6 +68,7 @@ master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.announcement = Anuncio
 master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.spam = Spam
 
 # master.menu.provider ########################################################
 
