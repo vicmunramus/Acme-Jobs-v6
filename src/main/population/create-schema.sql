@@ -175,7 +175,8 @@
         `created_at` datetime(6),
         `deadline` datetime(6),
         `description` varchar(255),
-        `reward` varchar(255),
+        `reward_amount` double precision,
+        `reward_currency` varchar(255),
         `ticket` varchar(255),
         `title` varchar(255),
         primary key (`id`)
