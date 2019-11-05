@@ -484,7 +484,7 @@ Request
 + creationMoment: Date{Temporal(TIMESTAMP),Past}
 + deadline: Date{Temporal(TIMESTAMP),Future}
 + description: String {NotBlank}
-+ reward: Money {NotNull}
++ reward: Money {NotNull, Valid}
 + ticker: String {Unique, NotBlank, Pattern(regexp = "^R[A-Z]{4}-\\d{5}$")}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -521,7 +521,7 @@ Spam
 --
 + wordEn: String {NotBlank}
 + WordEs: String {NotBlank}
-+ threshold: Float</panel_attributes>
++ threshold: Float {Positive, DecimalMax(value="2")}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
