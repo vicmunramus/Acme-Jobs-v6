@@ -16,6 +16,8 @@
 				datasets : [
 					{
 						label : "Investor Records",
+						backgroundColor : "rgba(22, 38, 212, 0.3)",
+						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
 							<jstl:out value="${numberInvestorRecordPrimarySector}"/>,
 							<jstl:out value="${numberInvestorRecordSecondarySector}"/>,
@@ -23,6 +25,8 @@
 						]
 					},{
 						label : "Company Records",
+						backgroundColor : "rgba(19, 157, 16, 0.3)",
+						borderColor : "rgba(19, 157, 16, 1)",
 						data : [
 							<jstl:out value="${numberCompanyRecordPrimarySector}"/>,
 							<jstl:out value="${numberCompanyRecordSecondarySector}"/>,
