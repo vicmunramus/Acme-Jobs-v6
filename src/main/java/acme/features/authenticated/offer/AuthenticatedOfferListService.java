@@ -2,7 +2,6 @@
 package acme.features.authenticated.offer;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,9 +47,8 @@ public class AuthenticatedOfferListService implements AbstractListService<Authen
 		assert request != null;
 
 		Collection<Offer> result;
-		Date date = new Date(System.currentTimeMillis());
 
-		result = this.repository.findMany(date);
+		result = this.repository.findManyAll();
 
 		return result;
 	}
