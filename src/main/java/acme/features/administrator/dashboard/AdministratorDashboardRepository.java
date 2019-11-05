@@ -18,4 +18,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(r) from InvestorRecord r where r.sector = 'Service sector'")
 	Integer findServiceSectorInvestorRecord();
 
+	@Query("select count(r) from CompanyRecords r where r.workSector = 'Primary sector'")
+	Integer findPrimarySectorCompanyRecord();
+
+	@Query("select count(r) from CompanyRecords r where r.workSector = 'Secondary sector'")
+	Integer findSecondarySectorCompanyRecord();
+
+	@Query("select count(r) from CompanyRecords r where r.workSector = 'Service sector'")
+	Integer findServiceSectorCompanyRecord();
+
 }

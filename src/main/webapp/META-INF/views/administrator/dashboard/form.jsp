@@ -15,10 +15,18 @@
 				],
 				datasets : [
 					{
+						label : "Investor Records",
 						data : [
 							<jstl:out value="${numberInvestorRecordPrimarySector}"/>,
 							<jstl:out value="${numberInvestorRecordSecondarySector}"/>,
 							<jstl:out value="${numberInvestorRecordServiceSector}"/>
+						]
+					},{
+						label : "Company Records",
+						data : [
+							<jstl:out value="${numberCompanyRecordPrimarySector}"/>,
+							<jstl:out value="${numberCompanyRecordSecondarySector}"/>,
+							<jstl:out value="${numberCompanyRecordServiceSector}"/>
 						]
 					}
 				]
@@ -35,7 +43,7 @@
 				]
 			},
 			legend : {
-				display : false
+				display : true
 			}
 		};
 		

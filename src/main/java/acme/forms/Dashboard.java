@@ -16,5 +16,8 @@ public class Dashboard implements Serializable {
 	Integer						numberInvestorRecordPrimarySector;
 	Integer						numberInvestorRecordSecondarySector;
 	Integer						numberInvestorRecordServiceSector;
+	Integer						numberCompanyRecordPrimarySector;
+	Integer						numberCompanyRecordSecondarySector;
+	Integer						numberCompanyRecordServiceSector;
 
 }

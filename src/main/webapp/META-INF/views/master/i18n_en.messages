@@ -69,7 +69,7 @@ master.menu.administrator = Administrator
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.announcement = Announcement
 master.menu.administrator.shutdown = Shut down
-master.menu.administrator.dashboard = Number investor records by sectors
+master.menu.administrator.dashboard = Dashboard
 
 # master.menu.provider ########################################################
 

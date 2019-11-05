@@ -11,4 +11,4 @@
 	
 </acme:list>
 
-<acme:redirect-button code="anonymous.investorRecord.listFiveStars.button.redirect" action="/anonymous/investor-record/list_fivestars"/>
+<acme:redirect-button code="anonymous.investorRecord.listFiveStars.button.redirect" action="/anonymous/investor-record/list-fivestars"/>

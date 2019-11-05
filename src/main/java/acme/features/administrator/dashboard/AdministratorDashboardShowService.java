@@ -30,7 +30,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "numberInvestorRecordPrimarySector", "numberInvestorRecordSecondarySector", "numberInvestorRecordServiceSector");
+		request.unbind(entity, model, "numberInvestorRecordPrimarySector", "numberInvestorRecordSecondarySector", "numberInvestorRecordServiceSector", "numberCompanyRecordPrimarySector", "numberCompanyRecordSecondarySector",
+			"numberCompanyRecordServiceSector");
 	}
 
 	@Override
@@ -42,6 +43,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setNumberInvestorRecordPrimarySector(this.repository.findPrimarySectorInvestorRecord());
 		result.setNumberInvestorRecordSecondarySector(this.repository.findSecondarySectorInvestorRecord());
 		result.setNumberInvestorRecordServiceSector(this.repository.findServiceSectorInvestorRecord());
+		result.setNumberCompanyRecordPrimarySector(this.repository.findPrimarySectorCompanyRecord());
+		result.setNumberCompanyRecordSecondarySector(this.repository.findSecondarySectorCompanyRecord());
+		result.setNumberCompanyRecordServiceSector(this.repository.findServiceSectorCompanyRecord());
 		return result;
 	}
 
