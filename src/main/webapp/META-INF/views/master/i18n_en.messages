@@ -51,6 +51,8 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.offer.list = Offers
 =======
 master.menu.anonymous.investor-record = Investor Records
+master.menu.authenticated.investor-record = Investor Records
+
 #Company Records
 
 master.menu.anonymous.company-records.list = Company's Records
