@@ -4,6 +4,8 @@ anonymous.company-records.list.label.activityDesc = Actividad
 anonymous.company-records.list.label.webSite = Sitio Web
 anonymous.company-records.list.label.rating = Puntuación
 
+anonymous.company-records.button.redirect = Top de Compañías
+
 anonymous.company-records.form.label.companyName = Compañia
 anonymous.company-records.form.label.workSector = Sector de Trabajo
 anonymous.company-records.form.label.ceoName = Nombre del Ceo
