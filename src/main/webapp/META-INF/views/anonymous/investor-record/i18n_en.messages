@@ -7,3 +7,7 @@ anonymous.investorRecord.form.button.return = Return
 #List
 anonymous.investorRecord.list.label.sector = Sector
 anonymous.investorRecord.list.label.name = Name
+anonymous.investorRecord.listFiveStars.button.redirect = Five Stars
+#ListFiveStars
+anonymous.investorRecord.listFiveStars.label.name = Name
+anonymous.investorRecord.listFiveStars.label.sector = Sector

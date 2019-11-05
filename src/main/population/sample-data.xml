@@ -178,19 +178,19 @@
 		
 	<bean id="investorRecord01" class="acme.entities.investorRecords.InvestorRecord">
 		<property name="name" value="Alejandro Álcantara Laguna"/>
-		<property name="sector" value="Technology sector"/>
+		<property name="sector" value="Primary Sector"/>
 		<property name="statement" value="I only have one goal, to earn one million euros before withdrawing money"/>
 		<property name="stars" value=""/>
 	</bean>
 	<bean id="investorRecord02" class="acme.entities.investorRecords.InvestorRecord">
 		<property name="name" value="Jonny Fernández Gómez"/>
-		<property name="sector" value="Construction sector"/>
+		<property name="sector" value="Secondary Sector"/>
 		<property name="statement" value="I want to build the new shopping center in Seville."/>
 		<property name="stars" value="5"/>
 	</bean>
 	<bean id="investorRecord03" class="acme.entities.investorRecords.InvestorRecord">
 		<property name="name" value="Fail Account"/>
-		<property name="sector" value="Fail sector"/>
+		<property name="sector" value="Service Sector"/>
 		<property name="statement" value="I don't know"/>
 		<property name="stars" value="0"/>
 	</bean>
@@ -199,7 +199,7 @@
 	
 	<bean id="companyRecord01" class="acme.entities.companyRecords.CompanyRecords">
 		<property name="companyName" value="Kike"/>
-		<property name="workSector" value="Software Development"/>
+		<property name="workSector" value="Primary Sector"/>
 		<property name="ceoName" value="Enrique Reina"/>
 		<property name="activityDesc" value="This is a description"/>
 		<property name="webSite" value="http://www.acmeJobs.com"/>
@@ -211,7 +211,7 @@
 	
 	<bean id="companyRecord02" class="acme.entities.companyRecords.CompanyRecords">
 		<property name="companyName" value="Xusko"/>
-		<property name="workSector" value="Memes Development"/>
+		<property name="workSector" value="Primary Sector"/>
 		<property name="ceoName" value="Xusko Milos"/>
 		<property name="activityDesc" value="This is a description"/>
 		<property name="webSite" value="http://www.acmeJobs2.com"/>
@@ -223,7 +223,7 @@
 	
 	<bean id="companyRecord03" class="acme.entities.companyRecords.CompanyRecords">
 		<property name="companyName" value="Cave"/>
-		<property name="workSector" value="Project Development"/>
+		<property name="workSector" value="Secondary Sector"/>
 		<property name="ceoName" value="Joysuru Pardo"/>
 		<property name="activityDesc" value="This is a description"/>
 		<property name="webSite" value="http://www.aiss-vec.com"/>
@@ -235,7 +235,7 @@
 	
 	<bean id="companyRecord04" class="acme.entities.companyRecords.CompanyRecords">
 		<property name="companyName" value="Test04"/>
-		<property name="workSector" value="Desing and Testing"/>
+		<property name="workSector" value="Service Sector"/>
 		<property name="ceoName" value="Profesor"/>
 		<property name="activityDesc" value="This is a description"/>
 		<property name="webSite" value="http://www.dp.com"/>
