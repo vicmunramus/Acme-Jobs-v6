@@ -1,6 +1,8 @@
 
 package acme.entities.companyRecords;
 
+import java.beans.Transient;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -49,4 +51,21 @@ public class CompanyRecords extends DomainEntity {
 
 	@Range(min = 0, max = 5)
 	private Integer				rating;
+
+
+	@Transient
+	public String getFullName() {
+		StringBuilder result;
+
+		result = new StringBuilder();
+		result.append(this.getCompanyName());
+
+		if (this.getIncorporated()) {
+			result.append(", Inc.");
+		} else {
+			result.append(", LLC");
+		}
+
+		return result.toString();
+	}
 }

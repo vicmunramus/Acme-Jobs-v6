@@ -15,3 +15,5 @@
 	<acme:list-column code="anonymous.company-records.list.label.rating" path="rating"/>
 	
 </acme:list>
+
+<acme:redirect-button code="anonymous.company-records.button.redirect" action="/anonymous/company-records/list-fivestars"/>

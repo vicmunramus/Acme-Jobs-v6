@@ -13,7 +13,7 @@ import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousCompanyRecordListService implements AbstractListService<Anonymous, CompanyRecords> {
+public class AnonymousCompanyRecordListTopService implements AbstractListService<Anonymous, CompanyRecords> {
 
 	@Autowired
 	AnonymousCompanyRecordRepository repository;
@@ -33,7 +33,6 @@ public class AnonymousCompanyRecordListService implements AbstractListService<An
 		assert entity != null;
 		assert model != null;
 
-		//request.unbind(entity, model, "companyName", "workSector", "ceoName", "activityDesc", "webSite", "contactPhone", "contactEmail", "incorporated");
 		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating");
 	}
 
@@ -43,7 +42,7 @@ public class AnonymousCompanyRecordListService implements AbstractListService<An
 
 		Collection<CompanyRecords> result;
 
-		result = this.repository.findMany();
+		result = this.repository.findTopByRating();
 
 		for (CompanyRecords c : result) {
 
