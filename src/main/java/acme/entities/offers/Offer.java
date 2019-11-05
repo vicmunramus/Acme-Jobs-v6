@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -36,17 +36,18 @@ public class Offer extends DomainEntity {
 	private Date				creationMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future
 	private Date				deadline;
 
 	@NotBlank
 	private String				description;
 
 	@NotNull
-	private Money				salaryBottom;
+	@Valid
+	private Money				minReward;
 
 	@NotNull
-	private Money				salaryTop;// Hay que cambiarlo
+	@Valid
+	private Money				maxReward;
 
 	@Column(unique = true)
 	@NotBlank

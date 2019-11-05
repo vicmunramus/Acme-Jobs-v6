@@ -6,7 +6,7 @@
 
 <acme:list>
 	<acme:list-column code="authenticated.offer.list.label.title"	       path="title"         width="20%"/>
-	<acme:list-column code="authenticated.offer.list.label.salaryBottom"   path="salaryBottom"  width="10%"/>
-	<acme:list-column code="authenticated.offer.list.label.salaryTop"	   path="salaryTop"     width="10%"/>
+	<acme:list-column code="authenticated.offer.list.label.minReward"      path="minReward"     width="10%"/>
+	<acme:list-column code="authenticated.offer.list.label.maxReward"	   path="maxReward"     width="10%"/>
 	<acme:list-column code="authenticated.offer.list.label.deadline"	   path="deadline"      width="20%"/>
 </acme:list>
