@@ -62,6 +62,8 @@ master.menu.anonymous.announcement = Announcement
 master.menu.authenticated = Authenticated
 master.menu.authenticated.request.list = Requests
 master.menu.authenticated.company-records.list = Company's Records
+master.menu.authenticated.announcement = Announcement
+
 
 # master.menu.administrator ###################################################
 
