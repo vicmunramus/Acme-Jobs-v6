@@ -34,7 +34,7 @@ public class AuthenticatedCompanyRecordListService implements AbstractListServic
 		assert model != null;
 
 		//request.unbind(entity, model, "companyName", "workSector", "ceoName", "activityDesc", "webSite", "contactPhone", "contactEmail", "incorporated");
-		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating");
+		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating", "fullName");
 	}
 
 	@Override
@@ -44,14 +44,6 @@ public class AuthenticatedCompanyRecordListService implements AbstractListServic
 		Collection<CompanyRecords> result;
 
 		result = this.repository.findMany();
-
-		for (CompanyRecords c : result) {
-			if (c.getIncorporated()) {
-				c.setCompanyName(c.getCompanyName() + ", Inc.");
-			} else {
-				c.setCompanyName(c.getCompanyName() + ", LLC");
-			}
-		}
 
 		return result;
 	}

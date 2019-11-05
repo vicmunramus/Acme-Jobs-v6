@@ -36,7 +36,7 @@ master.menu.anonymous.favourite-link-enrique = Reina's link
 master.menu.anonymous.favourite-link-Fran = Quintela's link
 master.menu.anonymous.favourite-link-victor = Muñoz's link
 
-# Bulletins
+	# Bulletins
 
 master.menu.anonymous.bulletin-alvaro = Aguilar's Bulletin
 master.menu.anonymous.bulletin.reinaBulletin = Reina's Bulletin
@@ -45,26 +45,44 @@ master.menu.anonymous.munoz-bulletin = Muñoz's Bulletin
 master.menu.anonymous.doblado-bulletin = Doblado's Bulletin
 master.menu.anonymous.quintela-bulletin = Quintela's Bulletin
 
-# master.menu.authenticated ##########################################################
+	#Investor Record
 
-master.menu.authenticated = Authenticated
-master.menu.authenticated.offer.list = Offers
-=======
 master.menu.anonymous.investor-record = Investor Records
-master.menu.authenticated.investor-record = Investor Records
+master.menu.anonymous.investor-record.top = Top Investor Records
 
-#Company Records
+	#Company Records
 
 master.menu.anonymous.company-records.list = Company's Records
+master.menu.anonymous.company-records.list.top = Top Company's Records
+
+	#Annoucement
 
 master.menu.anonymous.announcement = Announcement
 
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Authenticated
+
+	#Offers
+	
+master.menu.authenticated.offer.list = Offers
+
+	#Request
+	
 master.menu.authenticated.request.list = Requests
-master.menu.authenticated.company-records.list = Company's Records
+
+	#Investor
+	
+master.menu.authenticated.investor-record = Investor Records
+
+
+	#Announcement
+
 master.menu.authenticated.announcement = Announcement
+
+	#Company Records
+
+master.menu.authenticated.company-records.list = Company's Records
 
 
 # master.menu.administrator ###################################################

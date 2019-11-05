@@ -7,3 +7,5 @@ authenticated.investorRecord.form.button.return = Volver
 #List
 authenticated.investorRecord.list.label.sector = Sector
 authenticated.investorRecord.list.label.name = Nombre
+
+authenticated.investorRecord.button.redirect = Top Inversores

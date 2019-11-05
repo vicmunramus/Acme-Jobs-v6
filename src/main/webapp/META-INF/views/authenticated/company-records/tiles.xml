@@ -10,6 +10,10 @@
 		<put-attribute name="body" type="template" value="../authenticated/company-records/list.jsp" />
 	</definition>
 	
+	<definition name="authenticated/company-records/list-fivestars" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/company-records/list.jsp" />
+	</definition>
+	
 	<definition name="authenticated/company-records/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/company-records/form.jsp" />
 	</definition>

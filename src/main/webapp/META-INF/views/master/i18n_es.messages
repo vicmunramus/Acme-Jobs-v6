@@ -45,25 +45,43 @@ master.menu.anonymous.doblado-bulletin = Boletín de Doblado
 master.menu.anonymous.quintela-bulletin = Boletín de Quintela
 master.menu.anonymous.announcement = Anuncio
 
+#Inversores
+
+master.menu.anonymous.investor-record = Historial de Inversores
+master.menu.anonymous.investor-record.top = Top Historial de Inversores
+
 #Historial de Compañias
 
 master.menu.anonymous.company-records.list = Historial de Compañias
+master.menu.anonymous.company-records.list.top = Top Historial de Compañias
+
+	#Annoucement
+
+master.menu.anonymous.announcement = Anuncios
 
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Autentificado
-master.menu.authenticated.request.list = Peticiones
-master.menu.authenticated.company-records.list = Historial de Compañias
-master.menu.authenticated.announcement = Anuncio
 
-master.menu.anonymous.investor-record = Registro de Inversores
-master.menu.authenticated.investor-record = Registro de Inversores
-
-
-# master.menu.authenticated ##########################################################
-
-master.menu.authenticated = Autentificado
+	#Ofertas
+	
 master.menu.authenticated.offer.list = Ofertas
+
+	#Peticiones
+	
+master.menu.authenticated.request.list = Peticiones
+
+	#Inversores
+	
+master.menu.authenticated.investor-record = Historial de Inversores
+
+	#Anuncios
+
+master.menu.authenticated.announcement = Anuncios
+
+	#Historial de Compañiias
+
+master.menu.authenticated.company-records.list = Historial de Compañías
 
 # master.menu.administrator ###################################################
 

@@ -18,4 +18,7 @@ public interface AuthenticatedInvestorRecordRepository extends AbstractRepositor
 	@Query("select r from InvestorRecord r")
 	Collection<InvestorRecord> findManyAll();
 
+	@Query("select r from InvestorRecord r where r.stars = 5")
+	Collection<InvestorRecord> findFiveStars();
+
 }
