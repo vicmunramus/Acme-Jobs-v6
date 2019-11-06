@@ -11,7 +11,9 @@
 	$(document).ready(function(){
 		var data = {
 				labels : [
-					"PRIMARY", "SECONDARY", "SERVICE"
+					<jstl:forEach var="item" items="${gridLabels}">
+						<jstl:out value="\"${item}\"" escapeXml="false"/>,
+					</jstl:forEach>
 				],
 				datasets : [
 					{
@@ -19,18 +21,18 @@
 						backgroundColor : "rgba(22, 38, 212, 0.3)",
 						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
-							<jstl:out value="${numberInvestorRecordPrimarySector}"/>,
-							<jstl:out value="${numberInvestorRecordSecondarySector}"/>,
-							<jstl:out value="${numberInvestorRecordServiceSector}"/>
+							<jstl:forEach var="item" items="${dataInvestor}">
+								<jstl:out value="\"${item}\"" escapeXml="false"/>,
+							</jstl:forEach>
 						]
 					},{
 						label : "Company Records",
 						backgroundColor : "rgba(19, 157, 16, 0.3)",
 						borderColor : "rgba(19, 157, 16, 1)",
 						data : [
-							<jstl:out value="${numberCompanyRecordPrimarySector}"/>,
-							<jstl:out value="${numberCompanyRecordSecondarySector}"/>,
-							<jstl:out value="${numberCompanyRecordServiceSector}"/>
+							<jstl:forEach var="item" items="${dataCompany}">
+								<jstl:out value="\"${item}\"" escapeXml="false"/>,
+							</jstl:forEach>
 						]
 					}
 				]

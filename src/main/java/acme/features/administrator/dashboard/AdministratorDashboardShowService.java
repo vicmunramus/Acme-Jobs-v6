@@ -1,6 +1,7 @@
 
 package acme.features.administrator.dashboard;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +31,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "numberInvestorRecordPrimarySector", "numberInvestorRecordSecondarySector", "numberInvestorRecordServiceSector", "numberCompanyRecordPrimarySector", "numberCompanyRecordSecondarySector",
-			"numberCompanyRecordServiceSector");
+		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany");
 	}
 
 	@Override
@@ -40,12 +40,59 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		Dashboard result;
 		result = new Dashboard();
-		result.setNumberInvestorRecordPrimarySector(this.repository.findPrimarySectorInvestorRecord());
-		result.setNumberInvestorRecordSecondarySector(this.repository.findSecondarySectorInvestorRecord());
-		result.setNumberInvestorRecordServiceSector(this.repository.findServiceSectorInvestorRecord());
-		result.setNumberCompanyRecordPrimarySector(this.repository.findPrimarySectorCompanyRecord());
-		result.setNumberCompanyRecordSecondarySector(this.repository.findSecondarySectorCompanyRecord());
-		result.setNumberCompanyRecordServiceSector(this.repository.findServiceSectorCompanyRecord());
+
+		String[] iSector = this.repository.investorSector();
+		String[] cSector = this.repository.companySector();
+		String[] labels = ArrayUtils.addAll(iSector);
+
+		for (String element : cSector) {
+			if (!ArrayUtils.contains(labels, element)) {
+				labels = ArrayUtils.add(labels, element);
+			}
+		}
+
+		String[] tempDataCompany = this.repository.dataCompany();
+		String[] dataCompany = new String[labels.length];
+
+		for (String element : tempDataCompany) {
+			String[] s = element.split(",");
+
+			for (int i = 0; i < labels.length; i++) {
+				if (labels[i].matches(s[0])) {
+					dataCompany[i] = s[1];
+				}
+			}
+		}
+
+		String[] tempInvestorCompany = this.repository.dataInvestor();
+		String[] dataInvestor = new String[labels.length];
+
+		for (String element : tempInvestorCompany) {
+			String[] s = element.split(",");
+
+			for (int i = 0; i < labels.length; i++) {
+				if (labels[i].matches(s[0])) {
+					dataInvestor[i] = s[1];
+				}
+			}
+		}
+
+		result.setGridLabels(labels);
+
+		for (int i = 0; i < dataCompany.length; i++) {
+			if (dataCompany[i] == null) {
+				dataCompany[i] = "0";
+			}
+		}
+
+		result.setDataCompany(dataCompany);
+
+		for (int i = 0; i < dataInvestor.length; i++) {
+			if (dataInvestor[i] == null) {
+				dataInvestor[i] = "0";
+			}
+		}
+		result.setDataInvestor(dataInvestor);
 		return result;
 	}
 

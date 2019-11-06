@@ -9,22 +9,15 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
-	@Query("select count(r) from InvestorRecord r where r.sector = 'Primary sector'")
-	Integer findPrimarySectorInvestorRecord();
+	@Query("select r.sector from InvestorRecord r")
+	String[] investorSector();
 
-	@Query("select count(r) from InvestorRecord r where r.sector = 'Secondary sector'")
-	Integer findSecondarySectorInvestorRecord();
+	@Query("select sector,count(r) from InvestorRecord r group by r.sector")
+	String[] dataInvestor();
 
-	@Query("select count(r) from InvestorRecord r where r.sector = 'Service sector'")
-	Integer findServiceSectorInvestorRecord();
+	@Query("select c.workSector from CompanyRecords c")
+	String[] companySector();
 
-	@Query("select count(r) from CompanyRecords r where r.workSector = 'Primary sector'")
-	Integer findPrimarySectorCompanyRecord();
-
-	@Query("select count(r) from CompanyRecords r where r.workSector = 'Secondary sector'")
-	Integer findSecondarySectorCompanyRecord();
-
-	@Query("select count(r) from CompanyRecords r where r.workSector = 'Service sector'")
-	Integer findServiceSectorCompanyRecord();
-
+	@Query("select workSector,count(c) from CompanyRecords c group by c.workSector")
+	String[] dataCompany();
 }
