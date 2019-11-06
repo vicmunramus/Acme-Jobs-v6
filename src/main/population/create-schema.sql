@@ -70,6 +70,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `commercial` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `target` varchar(255),
+        `credit_card` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `company_records` (
        `id` integer not null,
         `version` integer not null,
@@ -122,6 +132,16 @@
         `manager_name` varchar(255),
         `moment` datetime(6),
         `size` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `non_commercial` (
+       `id` integer not null,
+        `version` integer not null,
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `target` varchar(255),
+        `jingle` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
