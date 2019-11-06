@@ -30,7 +30,7 @@ public class AnonymousCompanyRecordShowService implements AbstractShowService<An
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "companyName", "workSector", "ceoName", "activityDesc", "webSite", "contactPhone", "contactEmail", "incorporated", "rating");
+		request.unbind(entity, model, "companyName", "workSector", "ceoName", "activityDesc", "webSite", "contactPhone", "contactEmail", "incorporated", "rating", "fullName");
 
 	}
 

@@ -57,25 +57,34 @@ public class AdministratorListingShowService implements AbstractShowService<Admi
 
 		List<Double> std = this.repository.allRequests();
 		Double resRequest = 0.0;
-		for (int i = 0; i < std.size(); i++) {
-			Double aux = (std.get(i) - this.repository.getAvgRequest()) * (std.get(i) - this.repository.getAvgRequest());
-			resRequest += aux;
-		}
-		result.setStdRequest(Math.sqrt(resRequest / std.size()));
+		if (std.size() == 0 || std == null) {
+			result.setStdRequest(0.0);
+		} else {
+			for (int i = 0; i < std.size(); i++) {
 
+				Double aux = (std.get(i) - this.repository.getAvgRequest()) * (std.get(i) - this.repository.getAvgRequest());
+				resRequest += aux;
+
+			}
+			result.setStdRequest(Math.sqrt(resRequest / std.size()));
+		}
 		List<Double> max = this.repository.allMaxOffers();
 		List<Double> min = this.repository.allMinOffers();
 		List<Double> middle = new ArrayList<>();
-		for (int i = 0; i < max.size(); i++) {
-			Double aux = (max.get(i) + min.get(i)) / 2;
-			middle.add(aux);
+		if (max.size() == 0 || min.size() == 0 || max == null || min == null) {
+			result.setStdOffer(0.0);
+		} else {
+			for (int i = 0; i < max.size(); i++) {
+				Double aux = (max.get(i) + min.get(i)) / 2;
+				middle.add(aux);
+			}
+			Double resOffer = 0.0;
+			for (int i = 0; i < middle.size(); i++) {
+				Double aux = (middle.get(i) - avg) * (middle.get(i) - avg);
+				resOffer += aux;
+			}
+			result.setStdOffer(Math.sqrt(resOffer / middle.size()));
 		}
-		Double resOffer = 0.0;
-		for (int i = 0; i < middle.size(); i++) {
-			Double aux = (middle.get(i) - avg) * (middle.get(i) - avg);
-			resOffer += aux;
-		}
-		result.setStdOffer(Math.sqrt(resOffer / middle.size()));
 		return result;
 	}
 

@@ -7,5 +7,5 @@ administrator.listing.form.label.averageRewardOffer = Average Reward of the Acti
 administrator.listing.form.label.minimunRewardRequest = Minimun Reward of the Active Requests 
 administrator.listing.form.label.maximunRewardRequest = Maximun Reward of the Active Requests
 administrator.listing.form.label.averageRewardRequest = Average Reward of the Active Requests
-administrator.listing.form.label.stdRequest = Request's Standard Deviation 
-administrator.listing.form.label.stdOffer = Offer's Standard Deviation 
+administrator.listing.form.label.stdRequest = Standard Deviation of Requests
+administrator.listing.form.label.stdOffer = Standard Deviation of Offers 

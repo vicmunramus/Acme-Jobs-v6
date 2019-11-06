@@ -10,10 +10,11 @@
 	<acme:form-double code="administrator.listing.form.label.minimunRewardOffer" path="minimunRewardOffer"/>
 	<acme:form-double code="administrator.listing.form.label.maximunRewardOffer" path="maximunRewardOffer"/>
 	<acme:form-double code="administrator.listing.form.label.averageRewardOffer" path="averageRewardOffer"/>
+	<acme:form-double code="administrator.listing.form.label.stdOffer" path="stdOffer"/>
 	<acme:form-double code="administrator.listing.form.label.minimunRewardRequest" path="minimunRewardRequest"/>
 	<acme:form-double code="administrator.listing.form.label.maximunRewardRequest" path="maximunRewardRequest"/>
 	<acme:form-double code="administrator.listing.form.label.averageRewardRequest" path="averageRewardRequest"/>
 	<acme:form-double code="administrator.listing.form.label.stdRequest" path="stdRequest"/>
-	<acme:form-double code="administrator.listing.form.label.stdOffer" path="stdOffer"/>
+	
 
 </acme:form>

@@ -7,7 +7,7 @@ anonymous.investorRecord.form.button.return = Volver
 #List
 anonymous.investorRecord.list.label.sector = Sector
 anonymous.investorRecord.list.label.name = Nombre
-anonymous.investorRecord.listFiveStars.button.redirect = Cinco Estrellas
+anonymous.investorRecord.listFiveStars.button.redirect = Top Inversores
 #ListFiveStars
 anonymous.investorRecord.listFiveStars.label.name = Nombre
 anonymous.investorRecord.listFiveStars.label.sector = Sector

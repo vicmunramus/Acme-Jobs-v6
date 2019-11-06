@@ -33,7 +33,7 @@ public class AnonymousCompanyRecordListTopService implements AbstractListService
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating");
+		request.unbind(entity, model, "companyName", "workSector", "activityDesc", "webSite", "rating", "fullName");
 	}
 
 	@Override
@@ -43,11 +43,6 @@ public class AnonymousCompanyRecordListTopService implements AbstractListService
 		Collection<CompanyRecords> result;
 
 		result = this.repository.findTopByRating();
-
-		for (CompanyRecords c : result) {
-
-			c.setCompanyName(c.getFullName());
-		}
 
 		return result;
 	}
