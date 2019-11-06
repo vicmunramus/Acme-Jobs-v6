@@ -7,5 +7,5 @@ administrator.listing.form.label.averageRewardOffer = Recompensa Media de las Of
 administrator.listing.form.label.minimunRewardRequest = Recompensa Máxima de los Pedidos activos
 administrator.listing.form.label.maximunRewardRequest = Recompensa Mínima de los Pedidos activos 
 administrator.listing.form.label.averageRewardRequest = Recompensa Media de los Pedidos activos
-administrator.listing.form.label.stdRequest = Desviacion tipica de los Pedidos
-administrator.listing.form.label.stdOffer = Desviacion tipica de las Ofertas
+administrator.listing.form.label.stdRequest = Desviación típica de los Pedidos
+administrator.listing.form.label.stdOffer = Desviación típica de las Ofertas

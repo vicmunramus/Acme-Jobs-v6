@@ -6,7 +6,7 @@ authenticated.company-records.list.label.activityDesc = Actividad
 authenticated.company-records.list.label.webSite = Sitio Web
 authenticated.company-records.list.label.rating = Puntuación
 
-authenticated.company-records.form.label.companyName = Compañia
+authenticated.company-records.form.label.companyName = Compañía
 authenticated.company-records.form.label.workSector = Sector de Trabajo
 authenticated.company-records.form.label.ceoName = Nombre del Ceo
 authenticated.company-records.form.label.activityDesc = Actividad
