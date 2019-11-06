@@ -11,6 +11,7 @@
 
 authenticated.request.list.label.title = Título
 authenticated.request.list.label.description = Descripción
+authenticated.request.list.label.deadline = Fecha de vencimiento
 
 authenticated.request.form.label.title = Título
 authenticated.request.form.label.createdAt = Creado el
