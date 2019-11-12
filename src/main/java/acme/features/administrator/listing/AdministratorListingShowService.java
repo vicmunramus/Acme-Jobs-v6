@@ -7,11 +7,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.forms.Listing;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
-import acme.listing.Listing;
 
 @Service
 public class AdministratorListingShowService implements AbstractShowService<Administrator, Listing> {
