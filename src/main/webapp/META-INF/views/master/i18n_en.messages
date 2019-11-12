@@ -98,7 +98,9 @@ master.menu.administrator.spam = Spam
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
+master.menu.provider.request.list = Requests
+master.menu.provider.request.create = Create new request
+
 
 # master.menu.consumer ##########################################################
 
