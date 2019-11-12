@@ -1,21 +1,21 @@
 
-package acme.features.authenticated.request;
+package acme.features.provider.request;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Provider;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedRequestListService implements AbstractListService<Authenticated, acme.entities.requests.Request> {
+public class ProviderRequestListService implements AbstractListService<Provider, acme.entities.requests.Request> {
 
 	@Autowired
-	AuthenticatedRequestRepository repository;
+	ProviderRequestRepository repository;
 
 
 	@Override
