@@ -10,7 +10,6 @@ import acme.entities.announcements.Announcement;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
