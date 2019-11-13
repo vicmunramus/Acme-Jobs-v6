@@ -95,6 +95,7 @@ master.menu.administrator.listing.form = Listing
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.spam = Spam
 master.menu.administrator.investor-record = Investor Records
+master.menu.administrator.investor-record.create = Create Investor Record
 
 # master.menu.provider ########################################################
 
