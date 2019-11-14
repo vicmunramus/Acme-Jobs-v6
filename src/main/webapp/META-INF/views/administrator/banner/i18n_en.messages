@@ -1,0 +1,9 @@
+administrator.banner.list.label.picture = Picture
+administrator.banner.list.label.slogan = Slogan
+
+administrator.banner.form.label.picture = Picture
+administrator.banner.form.label.slogan = Slogan
+administrator.banner.form.label.target = Target
+administrator.banner.form.label.creditCard = Credit Card
+administrator.banner.form.label.jingle = Jingle
+administrator.banner.form.button.return = Return

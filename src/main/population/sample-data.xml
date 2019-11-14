@@ -355,7 +355,7 @@
  		<property name="picture" value="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png"/>
  		<property name="slogan" value="Work Together"/>
  		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
- 		<property name="jingle"><null/></property>
+ 		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  	</bean>
  		
 </beans>

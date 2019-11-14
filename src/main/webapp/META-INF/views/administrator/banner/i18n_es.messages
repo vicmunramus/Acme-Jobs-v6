@@ -1,0 +1,9 @@
+administrator.banner.list.label.picture = Imagen
+administrator.banner.list.label.slogan = Eslogan
+
+administrator.banner.form.label.picture = Imagen
+administrator.banner.form.label.slogan = Eslogan
+administrator.banner.form.label.target = Objetivo
+administrator.banner.form.label.creditCard = Tarjeta de crédito
+administrator.banner.form.label.jingle = Tema
+administrator.banner.form.button.return = Volver
