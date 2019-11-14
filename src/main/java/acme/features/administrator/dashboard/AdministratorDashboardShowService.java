@@ -43,7 +43,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		String[] iSector = this.repository.investorSector();
 		String[] cSector = this.repository.companySector();
-		String[] labels = ArrayUtils.addAll(iSector);
+		String[] labels = {};
+
+		for (String element : iSector) {
+			if (!ArrayUtils.contains(labels, element)) {
+				labels = ArrayUtils.add(labels, element);
+			}
+		}
 
 		for (String element : cSector) {
 			if (!ArrayUtils.contains(labels, element)) {

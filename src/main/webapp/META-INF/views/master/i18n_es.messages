@@ -93,6 +93,8 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.listing.form = Listado
 master.menu.administrator.dashboard = Tablero de control
 master.menu.administrator.spam = Spam
+master.menu.administrator.investor-record = Historial de Inversores
+master.menu.administrator.investor-record.create = Crear Historial de Inversiores
 
 master.menu.administrator.companyRecords = Historial de Compañias
 # master.menu.provider ########################################################
