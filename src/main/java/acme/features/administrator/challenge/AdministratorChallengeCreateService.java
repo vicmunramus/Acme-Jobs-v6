@@ -71,55 +71,29 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 		//REWARDS
 		if (!errors.hasErrors("bronzeReward")) {
 			String bronzeReward = request.getModel().getString("bronzeReward");
-			boolean euroBronze;
-			euroBronze = bronzeReward.contains("€") || bronzeReward.contains("EUR");
-			errors.state(request, euroBronze, "bronzeReward", "administrator.challenge.error.reward-must-be-in-euros");
-			errors.state(request, this.positiveAmount(bronzeReward), "bronzeReward", "administrator.challenge.error.reward-must-be-positive");
+			errors.state(request, this.inEuros(bronzeReward), "bronzeReward", "administrator.challenge.error.reward-must-be-in-euros");
 		}
 
 		if (!errors.hasErrors("silverReward")) {
 			String silverReward = request.getModel().getString("silverReward");
-			boolean euroSilver;
-			euroSilver = silverReward.contains("€") || silverReward.contains("EUR");
-			errors.state(request, euroSilver, "silverReward", "administrator.challenge.error.reward-must-be-in-euros");
-			errors.state(request, this.positiveAmount(silverReward), "silverReward", "administrator.challenge.error.reward-must-be-positive");
+			errors.state(request, this.inEuros(silverReward), "silverReward", "administrator.challenge.error.reward-must-be-in-euros");
 		}
 
 		if (!errors.hasErrors("goldReward")) {
 			String goldReward = request.getModel().getString("goldReward");
-			boolean euroGold;
-			euroGold = goldReward.contains("€") || goldReward.contains("EUR");
-			errors.state(request, euroGold, "goldReward", "administrator.challenge.error.reward-must-be-in-euros");
-			errors.state(request, this.positiveAmount(goldReward), "goldReward", "administrator.challenge.error.reward-must-be-positive");
+			errors.state(request, this.inEuros(goldReward), "goldReward", "administrator.challenge.error.reward-must-be-in-euros");
 		}
 	}
 
-	private boolean positiveAmount(final String reward) {
-		boolean positiveAmount;
-		String amount;
-		String currency;
+	private boolean inEuros(final String reward) {
 		String comma = ",";
 		String point = ".";
+		String currency;
 
 		currency = reward.chars().mapToObj(c -> (char) c).filter(x -> !Character.isDigit(x) && !x.equals(comma.charAt(0)) && !x.equals(point.charAt(0)))
-			.collect(Collector.of(StringBuilder::new, StringBuilder::append, StringBuilder::append, StringBuilder::toString));
+			.collect(Collector.of(StringBuilder::new, StringBuilder::append, StringBuilder::append, StringBuilder::toString)).trim();
 
-		if (Character.isDigit(reward.charAt(0))) {
-			amount = reward.substring(0, reward.indexOf(currency.charAt(0)));
-		} else {
-			amount = reward.substring(reward.indexOf(currency.charAt(currency.length() - 1)) + 1, reward.length());
-		}
-		if (amount.contains(",") || amount.contains(".")) {
-			if (amount.length() - amount.indexOf(",") <= 3 || amount.length() - amount.indexOf(".") > 3) {
-				positiveAmount = Double.parseDouble(amount.replace(".", "").replace(",", ".")) > 0.0;
-			} else {
-				positiveAmount = Double.parseDouble(amount.replace(",", "")) > 0.0;
-			}
-		} else {
-			positiveAmount = Double.parseDouble(amount) > 0.0;
-		}
-
-		return positiveAmount;
+		return currency.equals("€") || currency.equals("EUR");
 	}
 
 	@Override

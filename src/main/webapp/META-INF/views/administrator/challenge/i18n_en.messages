@@ -21,4 +21,3 @@ administrator.challenge.form.button.return = Return
 
 administrator.challenge.error.deadline-must-be-in-the-future = Deadline must be in the future
 administrator.challenge.error.reward-must-be-in-euros = Reward must be in euros
-administrator.challenge.error.reward-must-be-positive = Reward must be positive
