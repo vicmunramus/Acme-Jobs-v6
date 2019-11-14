@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.challenge;
+package acme.features.administrator.challenge;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 import acme.entities.challenges.Challenge;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedChallengeShowService implements AbstractShowService<Authenticated, Challenge> {
+public class AdministratorChallengeShowService implements AbstractShowService<Administrator, Challenge> {
 
 	@Autowired
-	AuthenticatedChallengeRepository repository;
+	AdministratorChallengeRepository repository;
 
 
 	@Override

@@ -88,6 +88,7 @@ master.menu.authenticated.company-records.list = Historial de Compañías
 master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.announcement = Anuncio
+master.menu.administrator.challenge = Desafíos
 master.menu.administrator.shutdown = Parar el sistema
 
 master.menu.administrator.listing.form = Listado
