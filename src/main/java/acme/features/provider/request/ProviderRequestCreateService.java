@@ -55,9 +55,10 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert errors != null;
 
 		Date currentTime = new Date(System.currentTimeMillis());
-		assert entity.getDeadline().after(currentTime) == true;
+		Boolean cond = entity.getDeadline().after(currentTime);
 
-		assert this.repository.findManyAll().stream().anyMatch(r -> r.getTicker().equals(entity.getTicker())) == false;
+		errors.state(request, cond, "deadline", "authenticated.provider.deadline.error");
+
 	}
 
 	@Override
