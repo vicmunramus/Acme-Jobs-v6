@@ -2,6 +2,7 @@
 package acme.features.administrator.challenge;
 
 import java.util.Date;
+import java.util.stream.Collector;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -100,11 +101,17 @@ public class AdministratorChallengeUpdateService implements AbstractUpdateServic
 	private boolean positiveAmount(final String reward) {
 		boolean positiveAmount;
 		String amount;
+		String currency;
+		String comma = ",";
+		String point = ".";
+
+		currency = reward.chars().mapToObj(c -> (char) c).filter(x -> !Character.isDigit(x) && !x.equals(comma.charAt(0)) && !x.equals(point.charAt(0)))
+			.collect(Collector.of(StringBuilder::new, StringBuilder::append, StringBuilder::append, StringBuilder::toString));
 
 		if (Character.isDigit(reward.charAt(0))) {
-			amount = reward.substring(0, reward.indexOf(" "));
+			amount = reward.substring(0, reward.indexOf(currency.charAt(0)));
 		} else {
-			amount = reward.substring(reward.indexOf(" ") + 1, reward.length());
+			amount = reward.substring(reward.indexOf(currency.charAt(currency.length() - 1)) + 1, reward.length());
 		}
 		if (amount.contains(",") || amount.contains(".")) {
 			if (amount.length() - amount.indexOf(",") <= 3 || amount.length() - amount.indexOf(".") > 3) {
