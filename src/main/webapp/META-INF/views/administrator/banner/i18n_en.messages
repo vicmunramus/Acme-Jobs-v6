@@ -6,4 +6,12 @@ administrator.banner.form.label.slogan = Slogan
 administrator.banner.form.label.target = Target
 administrator.banner.form.label.creditCard = Credit Card
 administrator.banner.form.label.jingle = Jingle
+
+administrator.banner.button.redirect.create.commercial = Create commercial banner
+administrator.banner.button.redirect.create.non-commercial = Create non commercial banner
+
+administrator.banner.form.button.create = Create
+administrator.banner.form.button.update = Update
+administrator.banner.form.button.delete = Delete
+
 administrator.banner.form.button.return = Return
