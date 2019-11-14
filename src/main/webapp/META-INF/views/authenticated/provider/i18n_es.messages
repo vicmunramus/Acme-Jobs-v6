@@ -17,3 +17,5 @@ authenticated.provider.form.label.sector = Sector:
 authenticated.provider.form.button.create = Registrar
 authenticated.provider.form.button.update = Actualizar
 authenticated.provider.form.button.return = Volver
+
+authenticated.provider.deadline.error = La fecha de vencimiento debe ser en el futuro
