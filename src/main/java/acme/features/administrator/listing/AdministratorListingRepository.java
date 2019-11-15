@@ -1,8 +1,6 @@
 
 package acme.features.administrator.listing;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +33,9 @@ public interface AdministratorListingRepository extends AbstractRepository {
 	@Query("select avg(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
 	Double getAvgRequest();
 
+	@Query("select stddev(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
+	Double getStdRequest();
+
 	//Querys no directas
 
 	@Query("select avg(r.maxReward.amount) from Offer r where r.deadline > utc_timestamp()")
@@ -43,18 +44,9 @@ public interface AdministratorListingRepository extends AbstractRepository {
 	@Query("select avg(r.minReward.amount) from Offer r where r.deadline > utc_timestamp()")
 	Double getMinAvgOffer();
 
-	@Query("select count(r) from Offer r where r.deadline > utc_timestamp()")
-	Double numberOffers();
+	@Query("select stddev(r.maxReward.amount) from Offer r where r.deadline > utc_timestamp()")
+	Double getStdMaxOffer();
 
-	@Query("select r.reward.amount from Request r where r.deadline > utc_timestamp()")
-	List<Double> allRequests();
-
-	@Query("select r.maxReward.amount from Offer r where r.deadline > utc_timestamp()")
-	List<Double> allMaxOffers();
-
-	@Query("select r.minReward.amount from Offer r where r.deadline > utc_timestamp()")
-	List<Double> allMinOffers();
-
-	@Query("select count(r) from Request r where r.deadline > utc_timestamp()")
-	Double numberRequest();
+	@Query("select stddev(r.minReward.amount) from Offer r where r.deadline > utc_timestamp()")
+	Double getStdMinOffer();
 }

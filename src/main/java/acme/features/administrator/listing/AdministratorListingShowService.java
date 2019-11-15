@@ -1,9 +1,6 @@
 
 package acme.features.administrator.listing;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,37 +51,9 @@ public class AdministratorListingShowService implements AbstractShowService<Admi
 		result.setMaximunRewardRequest(this.repository.getMaxRequest());
 		result.setMinimunRewardRequest(this.repository.getMinRequest());
 		result.setAverageRewardRequest(this.repository.getAvgRequest());
-
-		List<Double> std = this.repository.allRequests();
-		Double resRequest = 0.0;
-		if (std.size() == 0 || std == null) {
-			result.setStdRequest(0.0);
-		} else {
-			for (int i = 0; i < std.size(); i++) {
-
-				Double aux = (std.get(i) - this.repository.getAvgRequest()) * (std.get(i) - this.repository.getAvgRequest());
-				resRequest += aux;
-
-			}
-			result.setStdRequest(Math.sqrt(resRequest / std.size()));
-		}
-		List<Double> max = this.repository.allMaxOffers();
-		List<Double> min = this.repository.allMinOffers();
-		List<Double> middle = new ArrayList<>();
-		if (max.size() == 0 || min.size() == 0 || max == null || min == null) {
-			result.setStdOffer(0.0);
-		} else {
-			for (int i = 0; i < max.size(); i++) {
-				Double aux = (max.get(i) + min.get(i)) / 2;
-				middle.add(aux);
-			}
-			Double resOffer = 0.0;
-			for (int i = 0; i < middle.size(); i++) {
-				Double aux = (middle.get(i) - avg) * (middle.get(i) - avg);
-				resOffer += aux;
-			}
-			result.setStdOffer(Math.sqrt(resOffer / middle.size()));
-		}
+		result.setStdRequest(this.repository.getStdRequest());
+		Double stdOffer = (this.repository.getStdMaxOffer() + this.repository.getStdMinOffer()) / 2;
+		result.setStdOffer(stdOffer);
 		return result;
 	}
 
