@@ -92,7 +92,7 @@ master.menu.administrator.shutdown = Parar el sistema
 
 master.menu.administrator.listing.form = Listado
 master.menu.administrator.dashboard = Tablero de control
-master.menu.administrator.spam = Spam
+master.menu.administrator.customisationParameters.show = Parámetros de Configuración
 
 # master.menu.provider ########################################################
 

@@ -104,6 +104,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `customisation_parameters` (
+       `id` integer not null,
+        `version` integer not null,
+        `identifier` integer,
+        `spam_list_en` varchar(255),
+        `spam_list_es` varchar(255),
+        `spam_threshold` float,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `doblado_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -202,15 +212,6 @@
         `reward_currency` varchar(255),
         `ticket` varchar(255),
         `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `spam` (
-       `id` integer not null,
-        `version` integer not null,
-        `threshold` float,
-        `word_en` varchar(255),
-        `word_es` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 

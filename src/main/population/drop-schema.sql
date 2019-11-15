@@ -39,6 +39,8 @@
 
     drop table if exists `consumer`;
 
+    drop table if exists `customisation_parameters`;
+
     drop table if exists `doblado_bulletin`;
 
     drop table if exists `investor_record`;
@@ -56,8 +58,6 @@
     drop table if exists `reina_bulletin`;
 
     drop table if exists `request`;
-
-    drop table if exists `spam`;
 
     drop table if exists `user_account`;
 

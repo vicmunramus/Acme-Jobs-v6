@@ -69,7 +69,7 @@
 			<acme:menu-suboption code="master.menu.administrator.listing.form" action="/administrator/listing/show"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/list"/>			
+			<acme:menu-suboption code="master.menu.administrator.customisationParameters.show" action="/administrator/customisation-parameters/show"/>			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
