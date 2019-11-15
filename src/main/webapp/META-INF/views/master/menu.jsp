@@ -67,14 +67,18 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.announcement" action="/administrator/announcement/list"/>
 			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
+
+			<acme:menu-suboption code="master.menu.administrator.challenge" action="/administrator/challenge/list"/>
 			<acme:menu-suboption code="master.menu.administrator.listing.form" action="/administrator/listing/show"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/list"/>			
+			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/list"/>	
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.companyRecords" action="/administrator/company-records/list"/>			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
-			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.provider.request.create" action="/provider/request/create"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
