@@ -13,4 +13,7 @@
 		<put-attribute name="body" type="template" value="../authenticated/investor-record/list.jsp" />
 	</definition>
 	
+	<definition name="authenticated/investor-record/list-fivestars" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/investor-record/list.jsp" />
+	</definition>
 </tiles-definitions>

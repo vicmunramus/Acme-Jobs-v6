@@ -42,9 +42,8 @@
 				yAxes : [
 					{
 						ticks : {
-							min : 0,
-							stepSize : 1,
-							autoSkip : true
+							suggestedMin : 0,
+							suggestedMax : 5
 						}
 					}
 				]
