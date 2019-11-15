@@ -230,22 +230,22 @@
 		<property name="deadline" value="2019/12/31 00:00"/>
 		<property name="description" value="Viaja para conseguir increíbles regalos"/>
 		<property name="goldGoal" value="Viaja a otro continente"/>
-		<property name="goldReward" value="1000 €"/>
+		<property name="goldReward" value="1000 EUR"/>
 		<property name="silverGoal" value="Viaja fuera de tu país"/>
-		<property name="silverReward" value="500 €"/>
+		<property name="silverReward" value="500 EUR"/>
 		<property name="bronzeGoal" value="Viaja fuera de tu ciudad"/>
-		<property name="bronzeReward" value="100 €"/>
+		<property name="bronzeReward" value="100 EUR"/>
 	</bean>
 	<bean id="challenge02" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Maestro de la cocina"/>
 		<property name="deadline" value="2020/11/02 11:50"/>
 		<property name="description" value="Elabora platos y consigue suculentos regalos"/>
 		<property name="goldGoal" value="Cocina Ratatouille"/>
-		<property name="goldReward" value="1000 €"/>
+		<property name="goldReward" value="1000 EUR"/>
 		<property name="silverGoal" value="Cocina tiramisú"/>
-		<property name="silverReward" value="100 €"/>
+		<property name="silverReward" value="100 EUR"/>
 		<property name="bronzeGoal" value="Fríe un huevo"/>
-		<property name="bronzeReward" value="50 €"/>
+		<property name="bronzeReward" value="50 EUR"/>
 	</bean>
 	
 	<!-- ANNOUNCEMENT -->
