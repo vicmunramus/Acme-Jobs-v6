@@ -1,0 +1,26 @@
+consumer.offer.list.label.title = Título
+consumer.offer.list.label.minReward = Recompensa Mínima
+consumer.offer.list.label.maxReward = Recompensa Máxima
+consumer.offer.list.label.deadline = Fecha límite
+
+consumer.offer.list.button.create = Crear
+
+consumer.offer.form.label.title = Título
+consumer.offer.form.label.description = Descripción
+consumer.offer.form.label.creationMoment = Fecha de creación
+consumer.offer.form.label.deadline = Fecha límite
+consumer.offer.form.label.minReward = Recompensa Mínima
+consumer.offer.form.label.maxReward = Recompensa Máxima
+consumer.offer.form.label.ticker = Identificador
+consumer.offer.form.label.accept = Confirmar la creación
+
+consumer.offer.form.button.create = Crear
+consumer.offer.form.button.return = Volver
+
+consumer.offer.form.error.deadlineFuture = La fecha límite debe ser posterior a la fecha actual.
+consumer.offer.form.error.rangeReward = La recompensa máxima debe ser igual o superior a la mínima.
+consumer.offer.form.error.minEuros = La recompensa mínima debe estar en euros (€).
+consumer.offer.form.error.maxEuros = La recompensa máxima debe estar en euros (€).
+consumer.offer.form.error.uniqueTicker = Este identificador ya está en uso.
+consumer.offer.form.error.minPositive = La cantidad debe ser 0 o mayor.
+consumer.offer.form.error.maxPositive = La cantidad debe ser 0 o mayor.
