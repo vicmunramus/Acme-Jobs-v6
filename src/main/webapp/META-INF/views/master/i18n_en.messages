@@ -57,7 +57,7 @@ master.menu.anonymous.company-records.list.top = Top Company's Records
 
 	#Annoucement
 
-master.menu.anonymous.announcement = Announcement
+master.menu.anonymous.announcement = Announcements
 
 # master.menu.authenticated ##########################################################
 
@@ -78,7 +78,7 @@ master.menu.authenticated.investor-record = Investor Records
 
 	#Announcement
 
-master.menu.authenticated.announcement = Announcement
+master.menu.authenticated.announcement = Announcements
 
 	#Company Records
 
@@ -91,15 +91,19 @@ master.menu.administrator = Administrator
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.announcement = Announcement
 master.menu.administrator.challenge = Challenges
+
 master.menu.administrator.shutdown = Shut down
 master.menu.administrator.listing.form = Listing
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.spam = Spam
+master.menu.administrator.companyRecords = Companies Records
 
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
+master.menu.provider.request.list = Requests
+master.menu.provider.request.create = Create new request
+
 
 # master.menu.consumer ##########################################################
 
