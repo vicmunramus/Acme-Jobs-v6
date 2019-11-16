@@ -51,7 +51,7 @@ public class AdministratorCompanyRecordCreateService implements AbstractCreateSe
 		CompanyRecords result;
 
 		result = new CompanyRecords();
-
+		result.setIncorporated(false);
 		return result;
 	}
 
