@@ -210,7 +210,7 @@
         `description` varchar(255),
         `reward_amount` double precision,
         `reward_currency` varchar(255),
-        `ticket` varchar(255),
+        `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;

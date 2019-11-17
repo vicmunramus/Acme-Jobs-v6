@@ -230,22 +230,22 @@
 		<property name="deadline" value="2019/12/31 00:00"/>
 		<property name="description" value="Viaja para conseguir increíbles regalos"/>
 		<property name="goldGoal" value="Viaja a otro continente"/>
-		<property name="goldReward" value="1000 €"/>
+		<property name="goldReward" value="1000 EUR"/>
 		<property name="silverGoal" value="Viaja fuera de tu país"/>
-		<property name="silverReward" value="500 €"/>
+		<property name="silverReward" value="500 EUR"/>
 		<property name="bronzeGoal" value="Viaja fuera de tu ciudad"/>
-		<property name="bronzeReward" value="100 €"/>
+		<property name="bronzeReward" value="100 EUR"/>
 	</bean>
 	<bean id="challenge02" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Maestro de la cocina"/>
 		<property name="deadline" value="2020/11/02 11:50"/>
 		<property name="description" value="Elabora platos y consigue suculentos regalos"/>
 		<property name="goldGoal" value="Cocina Ratatouille"/>
-		<property name="goldReward" value="1000 €"/>
+		<property name="goldReward" value="1000 EUR"/>
 		<property name="silverGoal" value="Cocina tiramisú"/>
-		<property name="silverReward" value="100 €"/>
+		<property name="silverReward" value="100 EUR"/>
 		<property name="bronzeGoal" value="Fríe un huevo"/>
-		<property name="bronzeReward" value="50 €"/>
+		<property name="bronzeReward" value="50 EUR"/>
 	</bean>
 	
 	<!-- ANNOUNCEMENT -->
@@ -286,7 +286,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="Example description" name="description"/>
 	<property value="1 €" name="reward"/>
-	<property value="REXMP-00000" name="ticket"/>
+	<property value="REXMP-00000" name="ticker"/>
 </bean>
 
 <bean class="acme.entities.requests.Request" id="request01">
@@ -295,7 +295,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="We need to do the c deliverable" name="description"/>
 	<property value="100 €" name="reward"/>
-	<property value="RDLVC-00001" name="ticket"/>
+	<property value="RDLVC-00001" name="ticker"/>
 </bean>
 
 <bean class="acme.entities.requests.Request" id="request02">
@@ -304,7 +304,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="We need to do the B deliverable" name="description"/>
 	<property value="700 €" name="reward"/>
-	<property value="RDLVC-00002" name="ticket"/>
+	<property value="RDLVC-00002" name="ticker"/>
 </bean>
 		
 		
@@ -355,7 +355,7 @@
  		<property name="picture" value="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png"/>
  		<property name="slogan" value="Work Together"/>
  		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
- 		<property name="jingle"><null/></property>
+ 		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  	</bean>
  		
 </beans>

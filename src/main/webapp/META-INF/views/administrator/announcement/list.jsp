@@ -7,3 +7,8 @@
 	<acme:list-column code="administrator.announcement.list.label.moment" path="moment" width="20%"/>
 	<acme:list-column code="administrator.announcement.list.label.title" path="title" width="40%"/>
 </acme:list>
+
+	
+<acme:redirect-button
+		code="administrator.announcement.form.button.create"
+		action="/administrator/announcement/create"/>

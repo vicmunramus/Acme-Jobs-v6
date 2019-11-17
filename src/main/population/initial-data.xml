@@ -72,6 +72,34 @@
 	<bean name="administratorAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
+	
+	<!-- Provider -->
+	<bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="provider" />
+		<property name="password" value="provider" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Provider" />
+				<property name="surname" value="Acme.com" />
+				<property name="email" value="provider@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="providerProvider" />
+				<ref bean="providerAuthenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="providerProvider" class="acme.entities.roles.Provider">
+		<property name="userAccount" ref="providerUserAccount" />
+		<property name="company" value="Acme-Jobs" />
+		<property name="sector" value="education" />
+	</bean>
+	<bean name="providerAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="providerUserAccount" />
+	</bean>
 	<!-- BULLETINS -->
 
   <bean id="quintelaBulletin00" class="acme.entities.quintelaBulletin.QuintelaBulletin">
@@ -341,7 +369,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="Example description" name="description"/>
 	<property value="1 €" name="reward"/>
-	<property value="REXMP-00000" name="ticket"/>
+	<property value="REXMP-00000" name="ticker"/>
 </bean>
 
 <bean class="acme.entities.requests.Request" id="request01">
@@ -350,7 +378,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="We need to do the c deliverable" name="description"/>
 	<property value="100 €" name="reward"/>
-	<property value="RDLVC-00001" name="ticket"/>
+	<property value="RDLVC-00001" name="ticker"/>
 </bean>
 
 <bean class="acme.entities.requests.Request" id="request02">
@@ -359,7 +387,7 @@
 	<property value="2020/10/29 17:10" name="deadline"/>
 	<property value="We need to do the B deliverable" name="description"/>
 	<property value="700 €" name="reward"/>
-	<property value="RDLVC-00002" name="ticket"/>
+	<property value="RDLVC-00002" name="ticker"/>
 </bean>
 		
 		
@@ -383,6 +411,6 @@
  		<property name="picture" value="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png"/>
  		<property name="slogan" value="Work Together"/>
  		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
- 		<property name="jingle"><null/></property>
+ 		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  	</bean>	
 </beans>

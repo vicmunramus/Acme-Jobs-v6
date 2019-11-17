@@ -88,12 +88,15 @@ master.menu.authenticated.company-records.list = Historial de Compañías
 master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.announcement = Anuncio
-master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.challenge = Desafíos
 
+master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.banner = Cabecera
 master.menu.administrator.listing.form = Listado
 master.menu.administrator.dashboard = Tablero de control
 master.menu.administrator.customisationParameters.show = Parámetros de Configuración
 
+master.menu.administrator.companyRecords = Historial de Compañias
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

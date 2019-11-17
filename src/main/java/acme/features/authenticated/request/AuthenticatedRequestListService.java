@@ -35,7 +35,7 @@ public class AuthenticatedRequestListService implements AbstractListService<Auth
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "createdAt", "deadline", "description", "reward", "ticket");
+		request.unbind(entity, model, "title", "createdAt", "deadline", "description", "reward", "ticker");
 	}
 	@Override
 	public boolean authorise(final Request<acme.entities.requests.Request> request) {
