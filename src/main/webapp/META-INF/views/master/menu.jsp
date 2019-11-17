@@ -66,9 +66,14 @@
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.announcement" action="/administrator/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
+
+			<acme:menu-suboption code="master.menu.administrator.challenge" action="/administrator/challenge/list"/>
 			<acme:menu-suboption code="master.menu.administrator.listing.form" action="/administrator/listing/show"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.customisationParameters.show" action="/administrator/customisation-parameters/show"/>			
+
 			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/list"/>	
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.companyRecords" action="/administrator/company-records/list"/>			
