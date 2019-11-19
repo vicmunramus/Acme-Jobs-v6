@@ -76,7 +76,6 @@
 			<acme:menu-suboption code="master.menu.administrator.customisationParameters.show"
 				action="/administrator/customisation-parameters/show" />
 
-			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.companyRecords" action="/administrator/company-records/list" />
 			<acme:menu-suboption code="master.menu.administrator.investor-record" action="/administrator/investor-record/list" />

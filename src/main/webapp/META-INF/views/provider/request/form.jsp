@@ -12,7 +12,7 @@
 	<acme:form-textbox code="provider.request.form.label.reward" path="reward" placeholder="1.00 EUR"/>
 	<acme:form-textbox code="provider.request.form.label.ticker" path="ticker" placeholder="RAAAA-00000"/>
 	
-	<<jstl:if test="${command == 'create' }">
+	<jstl:if test="${command == 'create' }">
 		<acme:form-checkbox code="provider.request.form.label.accept" path="accept"/>
 	</jstl:if>
 	

@@ -25,7 +25,7 @@ provider.request.form.button.return = Volver
 provider.request.form.button.create = Crear
 provider.request.list.button.create = Crear
 
-provider.request.form.error.deadlineFuture = La fecha límite debe ser posterior a la fecha actual. 
-provider.request.form.error.uniqueTicker = Este identificador ya está en uso.
-provider.request.form.error.currencyReward = La cantidad debe ser 0 o mayor.
-provider.request.form.error.positiveReward = La recompensa debe estar en euros (€).
+provider.request.form.error.deadlineFuture = La fecha límite debe ser posterior a la fecha actual
+provider.request.form.error.uniqueTicker = Este identificador ya está en uso
+provider.request.form.error.positiveReward = La cantidad debe ser 0 o mayor
+provider.request.form.error.currencyReward = La recompensa debe estar en euros (€)

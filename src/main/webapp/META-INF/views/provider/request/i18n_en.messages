@@ -24,7 +24,7 @@ provider.request.form.button.return = Return
 provider.request.form.button.create = Create
 provider.request.list.button.create = Create
 
-provider.request.form.error.deadlineFuture = Deadline must be posterior to the current time. 
-provider.request.form.error.uniqueTicker = This ticker is already in use.
-provider.request.form.error.currencyReward = The amount must be 0 or greater.
-provider.request.form.error.positiveReward = Reward must be in euros (€)
+provider.request.form.error.deadlineFuture = Deadline must be posterior to the current time 
+provider.request.form.error.uniqueTicker = This ticker is already in use
+provider.request.form.error.positiveReward = The amount must be 0 or greater
+provider.request.form.error.currencyReward = Reward must be in euros (€)
