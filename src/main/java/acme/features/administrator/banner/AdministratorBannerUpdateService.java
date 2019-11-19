@@ -1,6 +1,11 @@
 
 package acme.features.administrator.banner;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +47,7 @@ public class AdministratorBannerUpdateService implements AbstractUpdateService<A
 		assert model != null;
 
 		if (entity instanceof Commercial) {
-			request.unbind(entity, model, "picture", "slogan", "target", "creditCard");
+			request.unbind(entity, model, "picture", "slogan", "target", "creditCardNumber", "cvv", "expirationDate");
 		} else {
 			request.unbind(entity, model, "picture", "slogan", "target", "jingle");
 		}
@@ -65,6 +70,23 @@ public class AdministratorBannerUpdateService implements AbstractUpdateService<A
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (entity instanceof Commercial) {
+			if (!errors.hasErrors("expirationDate")) {
+				String[] expirationDate = ((Commercial) entity).getExpirationDate().split("/");
+				String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR) / 100) + expirationDate[1];
+
+				boolean isAfter = true;
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+				try {
+					Date expDate = sdf.parse(year + "-" + expirationDate[0] + "-01 00:00:00.000");
+					isAfter = expDate.after(Calendar.getInstance().getTime());
+					errors.state(request, isAfter, "expirationDate", "administrator.banner.error.expiration-date-must-be-in-the-future");
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	@Override

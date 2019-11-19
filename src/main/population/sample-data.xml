@@ -349,7 +349,9 @@
  		<property name="picture" value="https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg"/>
  		<property name="slogan" value="Open Happiness"/>
  		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
- 		<property name="creditCard" value="4384743000534274"/>
+ 		<property name="creditCardNumber" value="4384743000534274"/>
+ 		<property name="cvv" value="325"/>
+ 		<property name="expirationDate" value="11/22"/>
  	</bean>
  	<bean id="banner02" class="acme.entities.banners.NonCommercial">
  		<property name="picture" value="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png"/>
