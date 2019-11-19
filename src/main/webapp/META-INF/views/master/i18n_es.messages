@@ -101,8 +101,8 @@ master.menu.administrator.investor-record = Historial de Inversores
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
-master.menu.consumer.offer.list = Ofertas
-master.menu.consumer.offer.create = Crear nueva Oferta
+master.menu.provider.request.list = Petición
+master.menu.provider.request.create = Crear nueva Petición
 
 # master.menu.consumer ##########################################################
 
