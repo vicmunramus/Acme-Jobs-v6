@@ -215,6 +215,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `spam` (
+       `id` integer not null,
+        `version` integer not null,
+        `threshold` float,
+        `word_en` varchar(255),
+        `word_es` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `user_account` (
        `id` integer not null,
         `version` integer not null,

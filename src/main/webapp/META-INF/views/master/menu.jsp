@@ -80,6 +80,7 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
+			<acme:menu-suboption code="master.menu.provider.request.list" action="/provider/request/list"/>
 			<acme:menu-suboption code="master.menu.provider.request.create" action="/provider/request/create"/>
 		</acme:menu-option>
 

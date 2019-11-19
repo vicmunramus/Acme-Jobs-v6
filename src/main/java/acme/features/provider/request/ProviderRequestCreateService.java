@@ -55,9 +55,30 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert errors != null;
 
 		Date currentTime = new Date(System.currentTimeMillis());
-		Boolean cond = entity.getDeadline().after(currentTime);
 
-		errors.state(request, cond, "deadline", "authenticated.provider.deadline.error");
+		boolean deadlineFuture, uniqueTicker, isAccepted, positive, currencyReward;
+
+		if (!errors.hasErrors("deadline")) {
+			deadlineFuture = entity.getDeadline().after(currentTime);
+			errors.state(request, deadlineFuture, "deadline", "provider.request.form.error.deadlineFuture");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+
+			uniqueTicker = this.repository.existTicker(entity.getTicker()) == 0;
+			errors.state(request, uniqueTicker, "ticker", "provider.request.form.error.uniqueTicker");
+		}
+		if (!errors.hasErrors("reward") && entity.getReward() != null && entity.getReward() != null) {
+
+			positive = entity.getReward().getAmount() >= 0;
+			errors.state(request, positive, "reward", "provider.request.form.error.positiveReward");
+
+			currencyReward = entity.getReward().getCurrency().equals("€") || entity.getReward().getCurrency().equals("EUR");
+			errors.state(request, currencyReward, "reward", "provider.request.form.error.currencyReward");
+		}
+
+		isAccepted = request.getModel().getBoolean("accept");
+		errors.state(request, isAccepted, "accept", "anonymous.user-account.error.must-accept");
 
 	}
 
