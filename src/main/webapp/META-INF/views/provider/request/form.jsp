@@ -6,7 +6,7 @@
 	<acme:form-textbox code="provider.request.form.label.title" path="title" />
 	<acme:form-textarea code="provider.request.form.label.description" path="description" />
 	<jstl:if test="${command != 'create'}">
-		<acme:form-moment   code="provider.request.form.label.creationMoment" path="creationMoment" readonly="true"/>
+		<acme:form-moment   code="provider.request.form.label.createdAt" path="createdAt" readonly="true"/>
 	</jstl:if>
 	<acme:form-moment code="provider.request.form.label.deadline" path="deadline" />
 	<acme:form-textbox code="provider.request.form.label.reward" path="reward" placeholder="1.00 EUR"/>
