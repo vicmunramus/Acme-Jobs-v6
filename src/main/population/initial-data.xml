@@ -132,5 +132,13 @@
 	<bean name="consumerAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="consumerUserAccount" />
 	</bean>
+<!-- Customisation Parameters ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡HAY QUE DEJARLO EN INITIAL DATA!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+	<bean class="acme.entities.customisationParameters.CustomisationParameters" id="customisationParameters">
+		<property name="spamListEn" value="sex; hard core; viagra; cialis; nigeria; you’ve won; million dollar"/>
+		<property name="spamListEs" value="sexo; hard core; viagra; cialis; nigeria; has ganado; millon de dolares"/>
+		<property name="spamThreshold" value="0.01"/>
+		<property name="identifier" value="1"/>
+	</bean>
 
 </beans>

@@ -96,7 +96,8 @@ master.menu.administrator.listing.form = Listado
 master.menu.administrator.dashboard = Tablero de control
 master.menu.administrator.customisationParameters.show = Parámetros de Configuración
 
-master.menu.administrator.companyRecords = Historial de Compañias
+master.menu.administrator.companyRecords = Historial de Compañías
+master.menu.administrator.investor-record = Historial de Inversores
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
