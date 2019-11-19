@@ -5,10 +5,10 @@ administrator.banner.form.label.picture = Imagen
 administrator.banner.form.label.slogan = Eslogan
 administrator.banner.form.label.target = Objetivo
 administrator.banner.form.label.creditCard = Tarjeta de crédito
-administrator.banner.form.label.jingle = Tema
+administrator.banner.form.label.jingle = Jingle
 
-administrator.banner.button.redirect.create.commercial = Crear cabecera comercial
-administrator.banner.button.redirect.create.non-commercial = Crear cabecera no comercial
+administrator.banner.button.redirect.create.commercial = Crear banner comercial
+administrator.banner.button.redirect.create.non-commercial = Crear banner no comercial
 
 administrator.banner.form.button.create = Crear
 administrator.banner.form.button.update = Actualizar

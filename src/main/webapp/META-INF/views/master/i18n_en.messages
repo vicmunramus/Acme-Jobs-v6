@@ -93,7 +93,7 @@ master.menu.administrator.announcement = Announcement
 master.menu.administrator.challenge = Challenges
 
 master.menu.administrator.shutdown = Shut down
-master.menu.administrator.banner = Banner
+master.menu.administrator.banner = Banners
 master.menu.administrator.listing.form = Listing
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.customisationParameters.show = Customisation Parameters
