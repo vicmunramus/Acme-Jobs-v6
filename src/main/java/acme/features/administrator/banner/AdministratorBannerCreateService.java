@@ -51,7 +51,7 @@ public class AdministratorBannerCreateService implements AbstractCreateService<A
 
 	@Override
 	public Banner instantiate(final Request<Banner> request) {
-		if (request.getServletRequest().getParameter("commercial").equals("y")) {
+		if (request.getServletRequest().getParameter("commercial") != null) {
 			return new Commercial();
 		} else {
 			return new NonCommercial();

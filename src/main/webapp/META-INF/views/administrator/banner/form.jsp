@@ -9,7 +9,7 @@
 	<acme:form-url code="administrator.banner.form.label.target" path="target"/>
 	
 	<jstl:choose>
-		<jstl:when test="${creditCard != null || param.commercial=='y'}">
+		<jstl:when test="${creditCard != null || param.commercial != null}">
 			<acme:form-textbox code="administrator.banner.form.label.creditCard" path="creditCard"/>
 		</jstl:when>
 		<jstl:otherwise>
@@ -23,12 +23,12 @@
 	<acme:form-submit test="${command == 'show'}" 
 		code="administrator.banner.form.button.delete" 
 		action="/administrator/banner/delete"/>
-	<acme:form-submit test="${command == 'create' && param.commercial=='y'}" 
+	<acme:form-submit test="${command == 'create' && param.commercial != null}" 
 		code="administrator.banner.form.button.create" 
-		action="/administrator/banner/create?commercial=y"/>
-	<acme:form-submit test="${command == 'create' && param.commercial=='n'}" 
+		action="/administrator/banner/create?commercial"/>
+	<acme:form-submit test="${command == 'create' && param.commercial == null}" 
 		code="administrator.banner.form.button.create" 
-		action="/administrator/banner/create?commercial=n"/>
+		action="/administrator/banner/create"/>
 	<acme:form-submit test="${command == 'update'}" 
 		code="administrator.banner.form.button.update" 
 		action="/administrator/banner/update"/>
