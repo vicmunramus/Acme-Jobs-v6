@@ -107,7 +107,7 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		}
 
 		isAccepted = request.getModel().getBoolean("accept");
-		errors.state(request, isAccepted, "accept", "anonymous.user-account.error.must-accept");
+		errors.state(request, isAccepted, "accept", "consumer.offer.form.error.confirmation");
 	}
 
 	@Override

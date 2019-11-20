@@ -43,7 +43,7 @@ public class AdministratorCustomisationParametersUpdateService implements Abstra
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "spamListEn", "spamListEs", "spamThreshold");
+		request.unbind(entity, model, "spamList", "spamThreshold");
 	}
 
 	@Override

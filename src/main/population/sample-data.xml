@@ -307,43 +307,7 @@
 	<property value="RDLVC-00002" name="ticker"/>
 </bean>
 		
-		
-		<!--  SPAM LIST -->
- 		
- 	<bean id="spam01" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="sex"/>
- 		<property name="wordEs" value="sexo"/>
- 	</bean>
- 		
- 	<bean id="spam02" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="hard core"/>
- 		<property name="wordEs" value="hard core"/>
- 	</bean>
- 		
- 	<bean id="spam03" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="viagra"/>
- 		<property name="wordEs" value="viagra"/>
- 	</bean>
- 		
- 	<bean id="spam04" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="cialis"/>
- 		<property name="wordEs" value="cialis"/>
- 	</bean>
- 		
- 	<bean id="spam05" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="nigeria"/>
- 		<property name="wordEs" value="nigeria"/>
- 	</bean>
- 		
- 	<bean id="spam06" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="you've won"/>
- 		<property name="wordEs" value="has ganado"/>
- 	</bean>
- 		
- 	<bean id="spam07" class="acme.entities.spam.Spam">
- 		<property name="wordEn" value="million dollar"/>
- 		<property name="wordEs" value="millon de dólares"/>
- 	</bean>
+
  	
  	<bean id="banner01" class="acme.entities.banners.Commercial">
  		<property name="picture" value="https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg"/>
