@@ -25,9 +25,16 @@
 	$(document).ready(function(){
 		var data = {
 				labels : [
-					<jstl:forEach var="item" items="${gridLabels}">
-						<jstl:out value="\"${item}\"" escapeXml="false"/>,
-					</jstl:forEach>
+					<jstl:choose>
+						<jstl:when test="${gridLabels} == null">
+							""
+						</jstl:when>
+						<jstl:otherwise>
+							<jstl:forEach var="item" items="${gridLabels}">
+								<jstl:out value="\"${item}\"" escapeXml="false"/>,
+							</jstl:forEach>						
+						</jstl:otherwise>
+					</jstl:choose>
 				],
 				datasets : [
 					{
@@ -35,18 +42,35 @@
 						backgroundColor : "rgba(22, 38, 212, 0.3)",
 						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
-							<jstl:forEach var="item" items="${dataInvestor}">
-								<jstl:out value="\"${item}\"" escapeXml="false"/>,
-							</jstl:forEach>
+							
+							<jstl:choose>
+								<jstl:when test="${dataInvestor} == null">
+									""
+								</jstl:when>
+								<jstl:otherwise>
+									<jstl:forEach var="item" items="${dataInvestor}">
+										<jstl:out value="\"${item}\"" escapeXml="false"/>,
+									</jstl:forEach>				
+								</jstl:otherwise>
+							</jstl:choose>							
+							
 						]
 					},{
 						label : "Company Records",
 						backgroundColor : "rgba(19, 157, 16, 0.3)",
 						borderColor : "rgba(19, 157, 16, 1)",
 						data : [
-							<jstl:forEach var="item" items="${dataCompany}">
-								<jstl:out value="\"${item}\"" escapeXml="false"/>,
-							</jstl:forEach>
+							
+								<jstl:choose>
+									<jstl:when test="${dataCompany} == null">
+										""
+									</jstl:when>
+									<jstl:otherwise>
+										<jstl:forEach var="item" items="${dataCompany}">
+											<jstl:out value="\"${item}\"" escapeXml="false"/>,
+										</jstl:forEach>				
+									</jstl:otherwise>
+								</jstl:choose>							
 						]
 					}
 				]

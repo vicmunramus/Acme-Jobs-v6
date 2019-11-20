@@ -18,5 +18,5 @@ authenticated.request.form.label.createdAt = Creado el
 authenticated.request.form.label.deadline = Fecha límite
 authenticated.request.form.label.description = Descripción
 authenticated.request.form.label.reward = Recompensa
-authenticated.request.form.label.ticket = Ticket
+authenticated.request.form.label.ticker = Ticker
 authenticated.request.form.button.return = Volver
