@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
+      <x>985</x>
       <y>120</y>
       <w>120</w>
       <h>30</h>
@@ -18,7 +18,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>745</x>
+      <x>1000</x>
       <y>145</y>
       <w>50</w>
       <h>55</h>
@@ -29,7 +29,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
+      <x>735</x>
       <y>70</y>
       <w>110</w>
       <h>60</h>
@@ -49,7 +49,7 @@ bg=orange
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>480</x>
+      <x>735</x>
       <y>25</y>
       <w>120</w>
       <h>30</h>
@@ -62,7 +62,7 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
+      <x>785</x>
       <y>50</y>
       <w>15</w>
       <h>30</h>
@@ -74,7 +74,7 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
+      <x>1035</x>
       <y>145</y>
       <w>50</w>
       <h>55</h>
@@ -85,7 +85,7 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>905</x>
+      <x>1160</x>
       <y>125</y>
       <w>50</w>
       <h>30</h>
@@ -100,7 +100,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>905</x>
+      <x>1160</x>
       <y>85</y>
       <w>50</w>
       <h>30</h>
@@ -115,7 +115,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>905</x>
+      <x>1160</x>
       <y>160</y>
       <w>50</w>
       <h>30</h>
@@ -130,7 +130,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>845</x>
+      <x>1100</x>
       <y>105</y>
       <w>70</w>
       <h>40</h>
@@ -141,7 +141,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>845</x>
+      <x>1100</x>
       <y>130</y>
       <w>70</w>
       <h>15</h>
@@ -152,7 +152,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>845</x>
+      <x>1100</x>
       <y>130</y>
       <w>70</w>
       <h>45</h>
@@ -163,7 +163,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
+      <x>735</x>
       <y>140</y>
       <w>110</w>
       <h>35</h>
@@ -179,7 +179,7 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>675</x>
+      <x>930</x>
       <y>190</y>
       <w>100</w>
       <h>45</h>
@@ -194,7 +194,7 @@ Provider
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
+      <x>1045</x>
       <y>190</y>
       <w>105</w>
       <h>45</h>
@@ -209,7 +209,7 @@ Consumer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>615</x>
       <y>70</y>
       <w>110</w>
       <h>40</h>
@@ -226,7 +226,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>615</x>
       <y>120</y>
       <w>110</w>
       <h>65</h>
@@ -246,7 +246,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>615</x>
       <y>195</y>
       <w>110</w>
       <h>45</h>
@@ -263,7 +263,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
+      <x>955</x>
       <y>0</y>
       <w>170</w>
       <h>65</h>
@@ -285,7 +285,7 @@ UserAccount
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>785</x>
+      <x>1040</x>
       <y>60</y>
       <w>35</w>
       <h>70</h>
@@ -299,7 +299,7 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
+      <x>875</x>
       <y>500</y>
       <w>220</w>
       <h>90</h>
@@ -317,7 +317,7 @@ DobladoBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>605</x>
+      <x>860</x>
       <y>400</y>
       <w>225</w>
       <h>90</h>
@@ -335,7 +335,7 @@ ReinaBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>365</x>
+      <x>620</x>
       <y>400</y>
       <w>235</w>
       <h>90</h>
@@ -353,7 +353,7 @@ CoboBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>365</x>
+      <x>620</x>
       <y>500</y>
       <w>250</w>
       <h>100</h>
@@ -372,7 +372,7 @@ QuintelaBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>835</x>
+      <x>1090</x>
       <y>400</y>
       <w>220</w>
       <h>85</h>
@@ -389,7 +389,7 @@ MunozBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>845</x>
+      <x>1100</x>
       <y>500</y>
       <w>210</w>
       <h>90</h>
@@ -407,7 +407,7 @@ AguilarBulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>365</x>
+      <x>620</x>
       <y>290</y>
       <w>360</w>
       <h>105</h>
@@ -430,7 +430,7 @@ CompanyRecords
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
+      <x>1265</x>
       <y>280</y>
       <w>200</w>
       <h>120</h>
@@ -455,7 +455,7 @@ Challenge
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1060</x>
+      <x>1315</x>
       <y>400</y>
       <w>130</w>
       <h>75</h>
@@ -472,7 +472,7 @@ InvestorRecord
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1000</x>
+      <x>1255</x>
       <y>190</y>
       <w>265</w>
       <h>85</h>
@@ -491,7 +491,7 @@ Request
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>735</x>
+      <x>990</x>
       <y>295</y>
       <w>265</w>
       <h>85</h>
@@ -511,7 +511,7 @@ Offer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1035</x>
+      <x>1290</x>
       <y>55</y>
       <w>120</w>
       <h>55</h>
@@ -527,7 +527,7 @@ Spam
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1065</x>
+      <x>1320</x>
       <y>500</y>
       <w>155</w>
       <h>65</h>
@@ -544,7 +544,7 @@ Announcement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>250</x>
+      <x>505</x>
       <y>190</y>
       <w>95</w>
       <h>55</h>
@@ -559,7 +559,7 @@ Announcement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
+      <x>375</x>
       <y>120</y>
       <w>120</w>
       <h>125</h>
@@ -582,7 +582,7 @@ Announcement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
+      <x>435</x>
       <y>65</y>
       <w>120</w>
       <h>30</h>
@@ -594,7 +594,7 @@ Serializable</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
+      <x>495</x>
       <y>90</y>
       <w>70</w>
       <h>110</h>
@@ -605,7 +605,7 @@ Serializable</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
+      <x>430</x>
       <y>90</y>
       <w>65</w>
       <h>40</h>
@@ -616,7 +616,7 @@ Serializable</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>185</x>
+      <x>440</x>
       <y>315</y>
       <w>110</w>
       <h>50</h>
@@ -633,16 +633,16 @@ Serializable</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>60</x>
       <y>395</y>
-      <w>255</w>
+      <w>450</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Commercial
 --
 + creditCardNumber: String {NotBlank,CreditCardNumber}
-+ cardHolder: String {NotBlank,Pattern(regexp = "^\w+\s{1}\w+(\s{1}\w+)*$")}
++ cardHolder: String {NotBlank,Pattern(regexp = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+)*$")}
 + cvv: String {NotBlank,Pattern(regexp = "^[0-9]{3}[0-9]?$")}
 + expirationDate: String {NotBlank,Pattern(regexp = "^((0[1-9]{1})|(1[0-2]{1}))\/[0-9]{1}[0-9]{1}$")}</panel_attributes>
     <additional_attributes/>
@@ -650,7 +650,7 @@ Commercial
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>265</x>
+      <x>520</x>
       <y>395</y>
       <w>75</w>
       <h>35</h>
@@ -664,7 +664,7 @@ NonCommercial
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>150</x>
+      <x>405</x>
       <y>360</y>
       <w>100</w>
       <h>45</h>
@@ -675,7 +675,7 @@ NonCommercial
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>235</x>
+      <x>490</x>
       <y>360</y>
       <w>75</w>
       <h>45</h>

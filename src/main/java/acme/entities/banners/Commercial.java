@@ -21,7 +21,7 @@ public class Commercial extends Banner {
 	@NotBlank
 	private String				creditCardNumber;
 
-	@Pattern(regexp = "^\\w+\\s{1}\\w+(\\s{1}\\w+)*$")
+	@Pattern(regexp = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+)*$")
 	@NotBlank
 	private String				cardHolder;
 
