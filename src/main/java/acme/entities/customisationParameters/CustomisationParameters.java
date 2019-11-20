@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
@@ -24,6 +25,7 @@ public class CustomisationParameters extends DomainEntity {
 
 	//Spam:
 
+	@NotBlank
 	private String				spamList;
 
 	@NotNull
