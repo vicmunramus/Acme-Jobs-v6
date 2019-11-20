@@ -10,9 +10,12 @@
 	
 	<jstl:choose>
 		<jstl:when test="${creditCardNumber != null || param.commercial != null}">
-			<acme:form-textbox code="administrator.banner.form.label.creditCardNumber" path="creditCardNumber"/>
-			<acme:form-textbox code="administrator.banner.form.label.cvv" path="cvv"/>
-			<acme:form-textbox placeholder="MM/YY" code="administrator.banner.form.label.expirationDate" path="expirationDate"/>
+			<acme:form-panel code="administrator.banner.form.label.creditCard">
+				<acme:form-textbox code="administrator.banner.form.label.creditCardNumber" path="creditCardNumber"/>
+				<acme:form-textbox code="administrator.banner.form.label.cardHolder" path="cardHolder"/>
+				<acme:form-textbox code="administrator.banner.form.label.cvv" path="cvv"/>
+				<acme:form-textbox placeholder="MM/YY" code="administrator.banner.form.label.expirationDate" path="expirationDate"/>
+			</acme:form-panel>
 		</jstl:when>
 		<jstl:otherwise>
 			<acme:form-url code="administrator.banner.form.label.jingle" path="jingle"/>

@@ -48,7 +48,7 @@ public class AdministratorBannerCreateService implements AbstractCreateService<A
 		assert model != null;
 
 		if (entity instanceof Commercial) {
-			request.unbind(entity, model, "picture", "slogan", "target", "creditCardNumber", "cvv", "expirationDate");
+			request.unbind(entity, model, "picture", "slogan", "target", "creditCardNumber", "cardHolder", "cvv", "expirationDate");
 		} else {
 			request.unbind(entity, model, "picture", "slogan", "target", "jingle");
 		}

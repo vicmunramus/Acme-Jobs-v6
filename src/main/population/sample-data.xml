@@ -350,6 +350,7 @@
  		<property name="slogan" value="Open Happiness"/>
  		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
  		<property name="creditCardNumber" value="4384743000534274"/>
+ 		<property name="cardHolder" value="Emilio Pascual Robledos"/>
  		<property name="cvv" value="325"/>
  		<property name="expirationDate" value="11/22"/>
  	</bean>

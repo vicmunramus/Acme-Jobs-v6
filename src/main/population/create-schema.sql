@@ -76,6 +76,7 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `target` varchar(255),
+        `card_holder` varchar(255),
         `credit_card_number` varchar(255),
         `cvv` varchar(255),
         `expiration_date` varchar(255),

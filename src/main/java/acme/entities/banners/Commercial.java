@@ -21,6 +21,10 @@ public class Commercial extends Banner {
 	@NotBlank
 	private String				creditCardNumber;
 
+	@Pattern(regexp = "^\\w+\\s{1}\\w+(\\s{1}\\w+)*$")
+	@NotBlank
+	private String				cardHolder;
+
 	@Pattern(regexp = "^[0-9]{3}[0-9]?$")
 	@NotBlank
 	private String				cvv;
