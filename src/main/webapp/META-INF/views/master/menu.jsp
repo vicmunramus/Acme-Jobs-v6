@@ -86,7 +86,9 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
-			<acme:menu-suboption code="master.menu.consumer.offer.list" action="/consumer/offer/list" />
+			<!--
+				<acme:menu-suboption code="master.menu.consumer.offer.list" action="/consumer/offer/list" /> 
+			-->
 			<acme:menu-suboption code="master.menu.consumer.offer.create" action="/consumer/offer/create" />
 		</acme:menu-option>
 
