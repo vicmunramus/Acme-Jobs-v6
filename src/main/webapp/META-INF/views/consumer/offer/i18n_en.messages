@@ -18,10 +18,11 @@ consumer.offer.form.label.accept = Confirm the creation
 consumer.offer.form.button.create = Create
 consumer.offer.form.button.return = Return
 
-consumer.offer.form.error.deadlineFuture = Deadline must be posterior to the current time.
-consumer.offer.form.error.rangeReward = Maximum Reward must be equal or superior to Minimum Reward.
+consumer.offer.form.error.deadlineFuture = Deadline must be posterior to the current time
+consumer.offer.form.error.rangeReward = Maximum Reward must be equal or superior to Minimum Reward
 consumer.offer.form.error.minEuros = Minimum Reward must be in euros (€)
 consumer.offer.form.error.maxEuros = Maximum Reward must be in euros (€)
-consumer.offer.form.error.uniqueTicker = This ticker is already in use.
-consumer.offer.form.error.minPositive = The amount must be 0 or greater.
-consumer.offer.form.error.maxPositive = The amount must be 0 or greater.
+consumer.offer.form.error.uniqueTicker = This ticker is already in use
+consumer.offer.form.error.minPositive = The amount must be 0 or greater
+consumer.offer.form.error.maxPositive = The amount must be 0 or greater
+consumer.offer.form.error.confirmation = You must confirm the creation

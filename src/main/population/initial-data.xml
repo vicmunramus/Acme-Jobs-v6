@@ -135,8 +135,7 @@
 <!-- Customisation Parameters ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡HAY QUE DEJARLO EN INITIAL DATA!!!!!!!!!!!!!!!!!!!!!!!!-->
 
 	<bean class="acme.entities.customisationParameters.CustomisationParameters" id="customisationParameters">
-		<property name="spamListEn" value="sex; hard core; viagra; cialis; nigeria; you’ve won; million dollar"/>
-		<property name="spamListEs" value="sexo; hard core; viagra; cialis; nigeria; has ganado; millon de dolares"/>
+		<property name="spamList" value="sex; sexo; hard core; viagra; cialis; nigeria; you’ve won; has ganado; million dollar; millon de dolares"/>
 		<property name="spamThreshold" value="0.01"/>
 		<property name="identifier" value="1"/>
 	</bean>

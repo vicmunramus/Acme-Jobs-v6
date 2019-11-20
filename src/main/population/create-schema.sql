@@ -108,8 +108,7 @@
        `id` integer not null,
         `version` integer not null,
         `identifier` integer,
-        `spam_list_en` varchar(255),
-        `spam_list_es` varchar(255),
+        `spam_list` varchar(255),
         `spam_threshold` float,
         primary key (`id`)
     ) engine=InnoDB;
@@ -212,15 +211,6 @@
         `reward_currency` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `spam` (
-       `id` integer not null,
-        `version` integer not null,
-        `threshold` float,
-        `word_en` varchar(255),
-        `word_es` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 

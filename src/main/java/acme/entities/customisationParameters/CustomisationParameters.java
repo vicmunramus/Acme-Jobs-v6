@@ -21,11 +21,9 @@ public class CustomisationParameters extends DomainEntity {
 	//Spam:
 
 	@NotBlank
-	private String				spamListEn;
+	private String				spamList;
 
-	@NotBlank
-	private String				spamListEs;
-
+	@NotNull
 	@Positive
 	@DecimalMax(value = "1")
 	private Float				spamThreshold;

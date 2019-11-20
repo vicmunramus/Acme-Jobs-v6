@@ -59,8 +59,6 @@
 
     drop table if exists `request`;
 
-    drop table if exists `spam`;
-
     drop table if exists `user_account`;
 
     drop table if exists `hibernate_sequence`;
