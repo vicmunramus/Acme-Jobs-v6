@@ -89,7 +89,7 @@ master.menu.authenticated.company-records.list = Company's Records
 
 master.menu.administrator = Administrator
 master.menu.administrator.user-accounts = User accounts
-master.menu.administrator.announcement = Announcement
+master.menu.administrator.announcement = Announcements
 master.menu.administrator.challenge = Challenges
 
 master.menu.administrator.shutdown = Shut down
@@ -124,7 +124,6 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
-master.menu.user-account.announcement = Announcement
 
 # master.footer ###############################################################
 
