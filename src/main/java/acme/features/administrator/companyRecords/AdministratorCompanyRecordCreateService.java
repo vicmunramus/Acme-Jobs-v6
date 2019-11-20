@@ -41,6 +41,8 @@ public class AdministratorCompanyRecordCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
+		entity.setIncorporated(false);
+
 		request.unbind(entity, model, "companyName", "workSector", "ceoName", "activityDesc", "webSite", "contactPhone", "contactEmail", "incorporated", "rating");
 
 	}
@@ -51,7 +53,7 @@ public class AdministratorCompanyRecordCreateService implements AbstractCreateSe
 		CompanyRecords result;
 
 		result = new CompanyRecords();
-		result.setIncorporated(false);
+
 		return result;
 	}
 

@@ -15,7 +15,7 @@
 	
 	<acme:form-url code="administrator.company-records.form.label.webSite" path="webSite"/>
 	
-	<acme:form-textbox code="administrator.company-records.form.label.contactPhone" path="contactPhone"/>
+	<acme:form-textbox code="administrator.company-records.form.label.contactPhone" path="contactPhone" placeholder="Eg.+111 (1111) 12345678"/>
 	
 	<acme:form-textbox code="administrator.company-records.form.label.contactEmail" path="contactEmail"/>
 	

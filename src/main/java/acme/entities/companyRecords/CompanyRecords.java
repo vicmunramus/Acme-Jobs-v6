@@ -40,7 +40,7 @@ public class CompanyRecords extends DomainEntity {
 	private String				webSite;
 
 	@NotBlank
-	@Pattern(regexp = "^([+]([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[0-9][0-9][1-9]|[1-9][0-9][1-9]|[0-9][1-9][0-9]|[0-9][1-9])\\s)?+([(]+[0-9]{1,4}+[)]+\\s)?+([0-9]{6,10})$", flags = Flag.UNICODE_CASE)
+	@Pattern(regexp = "^([+]([1-9][0-9]{1,2}|[0-9]{0,2}[1-9]|[0-9][1-9][0-9])\\s)?([(][0-9]{1,4}[)]\\s)?([0-9]{6,10})$", flags = Flag.UNICODE_CASE)
 	private String				contactPhone;
 
 	@NotBlank
