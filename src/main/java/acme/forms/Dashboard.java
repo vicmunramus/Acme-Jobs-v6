@@ -3,6 +3,7 @@ package acme.forms;
 
 import java.io.Serializable;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +17,16 @@ public class Dashboard implements Serializable {
 	String[]					gridLabels;
 	String[]					dataInvestor;
 	String[]					dataCompany;
+	Integer						numberAnnouncement;
+	Integer						numberCompanyRecords;
+	Integer						numberInvestorRecord;
+	Money						minimunRewardOffer;
+	Money						maximunRewardOffer;
+	Money						averageRewardOffer;
+	Money						minimunRewardRequest;
+	Money						maximunRewardRequest;
+	Money						averageRewardRequest;
+	Money						stdRequest;
+	Money						stdOffer;
 
 }
