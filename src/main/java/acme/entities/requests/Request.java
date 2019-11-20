@@ -29,6 +29,7 @@ public class Request extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				createdAt;
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				deadline;
 	@NotBlank
