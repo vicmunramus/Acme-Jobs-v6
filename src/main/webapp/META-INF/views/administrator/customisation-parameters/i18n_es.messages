@@ -1,5 +1,4 @@
-administrator.customisationParameters.form.label.spamListEn = Lista de Spam en Inglés
-administrator.customisationParameters.form.label.spamListEs = Lista de Spam en Español
+administrator.customisationParameters.form.label.spamList = Lista de Spam
 administrator.customisationParameters.form.label.spamThreshold = Límite de Spam
 
 administrator.customisationParameters.form.button.update = Actualizar

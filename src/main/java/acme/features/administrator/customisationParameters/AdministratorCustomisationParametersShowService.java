@@ -31,7 +31,7 @@ public class AdministratorCustomisationParametersShowService implements Abstract
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "spamListEn", "spamListEs", "spamThreshold");
+		request.unbind(entity, model, "spamList", "spamThreshold");
 	}
 
 	@Override
