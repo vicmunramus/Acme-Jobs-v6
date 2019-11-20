@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import acme.forms.Dashboard;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
@@ -31,7 +32,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany");
+		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "numberAnnouncement", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer", "averageRewardOffer", "minimunRewardRequest",
+			"maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer");
 	}
 
 	@Override
@@ -40,16 +42,51 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		Dashboard result;
 		result = new Dashboard();
+		Money maxOffer = new Money();
+		Money minOffer = new Money();
+		Money avgOffer = new Money();
+		Money stdOffer = new Money();
+		Money maxRequest = new Money();
+		Money minRequest = new Money();
+		Money avgRequest = new Money();
+		Money stdRequest = new Money();
+
+		//Listing
+		result.setNumberAnnouncement(this.repository.countAllAnnouncement());
+		result.setNumberCompanyRecords(this.repository.countAllCompanyRecord());
+		result.setNumberInvestorRecord(this.repository.countAllInvestorRecord());
+		maxOffer.setAmount(this.repository.getMaxOffer());
+		maxOffer.setCurrency("EUR");
+		result.setMaximunRewardOffer(maxOffer);
+		minOffer.setAmount(this.repository.getMinOffer());
+		minOffer.setCurrency("EUR");
+		result.setMinimunRewardOffer(minOffer);
+		Double avg = (this.repository.getMaxAvgOffer() + this.repository.getMinAvgOffer()) / 2;
+		avgOffer.setAmount(avg);
+		avgOffer.setCurrency("EUR");
+		result.setAverageRewardOffer(avgOffer);
+		maxRequest.setAmount(this.repository.getMaxRequest());
+		maxRequest.setCurrency("EUR");
+		result.setMaximunRewardRequest(maxRequest);
+		minRequest.setAmount(this.repository.getMinRequest());
+		minRequest.setCurrency("EUR");
+		result.setMinimunRewardRequest(minRequest);
+		avgRequest.setAmount(this.repository.getAvgRequest());
+		avgRequest.setCurrency("EUR");
+		result.setAverageRewardRequest(avgRequest);
+		stdRequest.setAmount(this.repository.getStdRequest());
+		stdRequest.setCurrency("EUR");
+		result.setStdRequest(stdRequest);
+		Double stdOff = (this.repository.getStdMaxOffer() + this.repository.getStdMinOffer()) / 2;
+		stdOffer.setAmount(stdOff);
+		stdOffer.setCurrency("EUR");
+		result.setStdOffer(stdOffer);
+
+		//Tablero
 
 		String[] iSector = this.repository.investorSector();
 		String[] cSector = this.repository.companySector();
-		String[] labels = {};
-
-		for (String element : iSector) {
-			if (!ArrayUtils.contains(labels, element)) {
-				labels = ArrayUtils.add(labels, element);
-			}
-		}
+		String[] labels = iSector;
 
 		for (String element : cSector) {
 			if (!ArrayUtils.contains(labels, element)) {
