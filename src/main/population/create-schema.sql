@@ -229,6 +229,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `worker` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `cualifications_record` varchar(255),
+        `skills_record` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -236,7 +245,11 @@
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
+create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
+create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
+create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
+create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
@@ -267,5 +280,10 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `worker` 
+       add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
