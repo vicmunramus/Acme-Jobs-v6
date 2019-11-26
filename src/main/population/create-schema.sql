@@ -34,6 +34,25 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `audit_records` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `creation_moment` datetime(6),
+        `status` integer,
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -124,6 +143,15 @@
         `moment` datetime(6),
         `name` varchar(255),
         `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `employer` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `company` varchar(255),
+        `sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -229,15 +257,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `worker` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `cualifications_record` varchar(255),
-        `skills_record` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -268,6 +287,11 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `auditor` 
+       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
@@ -278,14 +302,12 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `employer` 
+       add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
-
-    alter table `worker` 
-       add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-
