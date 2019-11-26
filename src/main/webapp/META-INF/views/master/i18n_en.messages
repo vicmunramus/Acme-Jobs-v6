@@ -115,6 +115,11 @@ master.menu.consumer = Consumer
 master.menu.consumer.offer.list = Offers
 master.menu.consumer.offer.create = Create new Offer
 
+# master.menu.employer ###########################################################
+
+master.menu.employer = Employer
+master.menu.employer.job.list = Job List
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

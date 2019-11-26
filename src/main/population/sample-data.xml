@@ -307,8 +307,9 @@
 	<property value="RDLVC-00002" name="ticker"/>
 </bean>
 		
+		<!-- BANNERS -->
+ 	
 
- 	<!-- Banners -->
  	<bean id="banner01" class="acme.entities.banners.Commercial">
  		<property name="picture" value="https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg"/>
  		<property name="slogan" value="Open Happiness"/>
@@ -324,6 +325,7 @@
  		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
  		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  	</bean>
+
  	
  	<!-- Employers -->
  	<bean name="employer1UserAccount" class="acme.framework.entities.UserAccount">
@@ -435,5 +437,54 @@
  	<bean name="auditor2Authenticated" class="acme.framework.entities.Authenticated">
  		<property name="userAccount" ref="auditor2UserAccount"/>
  	</bean>
+
+
+ 	
+ 		<!-- JOB -->
+ 		
+ 	<bean name = "job1" class = "acme.entities.jobs.Job">
+ 		<property name = "reference" value = "EMP1-JOB1"/>
+ 		<property name = "title" value = "Title 1"/>
+ 		<property name = "deadline" value = "2030/12/11 23:59"/>
+ 		<property name = "salary" value = "€ 15,000.98"/>
+ 		<property name = "description" value = "Lorem ipsum sit dolor amet"/>
+ 		<property name = "moreInfo" value = "http://www.example.com"/>
+ 		<property name = "finalMode" value = "true"/>
+ 		<property name = "employer" ref = "employer1Employer"/>
+ 	</bean>
+ 	
+ 	 	<bean name = "job2" class = "acme.entities.jobs.Job">
+ 		<property name = "reference" value = "EMP1-JOB2"/>
+ 		<property name = "title" value = "Title 2"/>
+ 		<property name = "deadline" value = "2030/12/11 23:59"/>
+ 		<property name = "salary" value = "$ 20,000.00"/>
+ 		<property name = "description" value = "Lorem ipsum sit dolor amet"/>
+ 		<property name = "moreInfo" value = "http://www.example.com"/>
+ 		<property name = "finalMode" value = "true"/>
+ 		<property name = "employer" ref = "employer2Employer"/>
+ 	</bean>
+ 	
+ 	<bean name = "job3" class = "acme.entities.jobs.Job">
+ 		<property name = "reference" value = "EMP1-JOB3"/>
+ 		<property name = "title" value = "Title 3"/>
+ 		<property name = "deadline" value = "2030/12/11 23:59"/>
+ 		<property name = "salary" value = "$ 24,000.00"/>
+ 		<property name = "description" value = "Lorem ipsum sit dolor amet"/>
+ 		<property name = "moreInfo" value = "http://www.example.com"/>
+ 		<property name = "finalMode" value = "true"/>
+ 		<property name = "employer" ref = "employer1Employer"/>
+ 	</bean>
+ 	
+ 	<bean name = "job4" class = "acme.entities.jobs.Job">
+ 		<property name = "reference" value = "EMP1-JOB4"/>
+ 		<property name = "title" value = "Title 4"/>
+ 		<property name = "deadline" value = "2030/12/11 23:59"/>
+ 		<property name = "salary" value = "$ 22,000.00"/>
+ 		<property name = "description" value = "Lorem ipsum sit dolor amet"/>
+ 		<property name = "moreInfo" value = "http://www.example.com"/>
+ 		<property name = "finalMode" value = "true"/>
+ 		<property name = "employer" ref = "employer2Employer"/>
+ 	</bean>
+
  		
 </beans>

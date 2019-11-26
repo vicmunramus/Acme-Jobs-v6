@@ -132,7 +132,64 @@
 	<bean name="consumerAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="consumerUserAccount" />
 	</bean>
-<!-- Customisation Parameters ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡HAY QUE DEJARLO EN INITIAL DATA!!!!!!!!!!!!!!!!!!!!!!!!-->
+	
+	<!-- Workers -->
+	<bean name="worker1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker1" />
+		<property name="password" value="worker1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker" />
+				<property name="surname" value="One" />
+				<property name="email" value="worker1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker1Worker" />
+				<ref bean="worker1Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="worker1Worker" class="acme.entities.roles.Worker">
+		<property name="cualificationsRecord" value="Software Engineering degree at University of Seville" />
+		<property name="skillsRecord" value="Java; PHP; C++; SQL" />
+		<property name="userAccount" ref="worker1UserAccount" />
+	</bean>
+	<bean name="worker1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker1UserAccount" />
+	</bean>
+	
+	<bean name="worker2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker2" />
+		<property name="password" value="worker2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker" />
+				<property name="surname" value="Two" />
+				<property name="email" value="worker2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker2Worker" />
+				<ref bean="worker2Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="worker2Worker" class="acme.entities.roles.Worker">
+		<property name="cualificationsRecord" value="Bachelor of Mathematic at UCLA; PHD in Computational Mathematics at UCLA" />
+		<property name="skillsRecord" value="C++; Matlab; advanced mathematics;" />
+		<property name="userAccount" ref="worker2UserAccount" />
+	</bean>
+	<bean name="worker2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker2UserAccount" />
+	</bean>
+	
+	
+	<!-- Customisation Parameters -->
 
 	<bean class="acme.entities.customisationParameters.CustomisationParameters" id="customisationParameters">
 		<property name="spamList" value="sex; sexo; hard core; viagra; cialis; nigeria; you’ve won; has ganado; million dollar; millon de dolares"/>
