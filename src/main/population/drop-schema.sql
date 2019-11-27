@@ -7,6 +7,14 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `audit_records` 
+       drop 
+       foreign key `FKl6b73crbwej8f95bvp1npqm8p`;
+
+    alter table `audit_records` 
+       drop 
+       foreign key `FK25q3rsnsluma5vbn99874y30o`;
+
     alter table `auditor` 
        drop 
        foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
@@ -23,9 +31,17 @@
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
 
+    alter table `job` 
+       drop 
+       foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    alter table `worker` 
+       drop 
+       foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
 
     drop table if exists `administrator`;
 
@@ -59,6 +75,8 @@
 
     drop table if exists `investor_record`;
 
+    drop table if exists `job`;
+
     drop table if exists `munoz_bulletin`;
 
     drop table if exists `non_commercial`;
@@ -75,5 +93,6 @@
 
     drop table if exists `user_account`;
 
-    drop table if exists `hibernate_sequence`;
+    drop table if exists `worker`;
 
+    drop table if exists `hibernate_sequence`;
