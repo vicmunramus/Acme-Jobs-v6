@@ -34,22 +34,17 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `audit_records` (
+    create table `application` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
-        `creation_moment` datetime(6),
+        `moment` datetime(6),
+        `qualifications` varchar(255),
+        `reference` varchar(255),
+        `skills` varchar(255),
+        `statement` varchar(255),
         `status` integer,
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `auditor` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `firm` varchar(255),
-        `responsibility_statement` varchar(255),
+        `job_id` integer not null,
+        `worker_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -165,6 +160,21 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `job` (
+       `id` integer not null,
+        `version` integer not null,
+        `deadline` datetime(6),
+        `description` varchar(255),
+        `final_mode` bit not null,
+        `more_info` varchar(255),
+        `reference` varchar(255),
+        `salary_amount` double precision,
+        `salary_currency` varchar(255),
+        `title` varchar(255),
+        `employer_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `munoz_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -257,16 +267,31 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `worker` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `cualifications_record` varchar(255),
+        `skills_record` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+
+    alter table `application` 
+       add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
 create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
+
+    alter table `job` 
+       add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 
@@ -287,10 +312,15 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `auditor` 
-       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
+    alter table `application` 
+       add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+    alter table `application` 
+       add constraint `FKmbjdoxi3o93agxosoate4sxbt` 
+       foreign key (`worker_id`) 
+       references `worker` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -307,7 +337,18 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `job` 
+       add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
+       foreign key (`employer_id`) 
+       references `employer` (`id`);
+
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `worker` 
+       add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
