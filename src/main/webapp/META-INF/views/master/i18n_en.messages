@@ -126,6 +126,12 @@ master.menu.employer.application.list = Application List
 master.menu.worker = Worker
 master.menu.worker.application.list = Applications
 
+# master.menu.auditor ############################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.auditRecords.list = My Job Auditories
+master.menu.auditor.auditRecords.listJobs = Jobs
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

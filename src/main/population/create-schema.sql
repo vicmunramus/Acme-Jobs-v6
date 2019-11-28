@@ -34,17 +34,24 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `application` (
+    create table `audit_records` (
        `id` integer not null,
         `version` integer not null,
-        `moment` datetime(6),
-        `qualifications` varchar(255),
-        `reference` varchar(255),
-        `skills` varchar(255),
-        `statement` varchar(255),
+        `body` varchar(255),
+        `creation_moment` datetime(6),
         `status` integer,
+        `title` varchar(255),
+        `auditor_id` integer not null,
         `job_id` integer not null,
-        `worker_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -282,9 +289,6 @@
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
-
-    alter table `application` 
-       add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
 create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
@@ -312,15 +316,20 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `application` 
-       add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
+    alter table `audit_records` 
+       add constraint `FKl6b73crbwej8f95bvp1npqm8p` 
+       foreign key (`auditor_id`) 
+       references `auditor` (`id`);
+
+    alter table `audit_records` 
+       add constraint `FK25q3rsnsluma5vbn99874y30o` 
        foreign key (`job_id`) 
        references `job` (`id`);
 
-    alter table `application` 
-       add constraint `FKmbjdoxi3o93agxosoate4sxbt` 
-       foreign key (`worker_id`) 
-       references `worker` (`id`);
+    alter table `auditor` 
+       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -351,4 +360,3 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
-
