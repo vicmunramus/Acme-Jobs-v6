@@ -9,6 +9,8 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
+	//Tablero Sector
+
 	@Query("select distinct r.sector from InvestorRecord r")
 	String[] investorSector();
 
@@ -20,6 +22,22 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select workSector,count(c) from CompanyRecords c group by c.workSector")
 	String[] dataCompany();
+
+	//Tablero Status
+
+	/*
+	 * @Query("select distinct j.status from Job j")
+	 * String[] jobStatus();
+	 * 
+	 * @Query("select status,count(j) from Job j group by j.status")
+	 * String[] dataJob();
+	 */
+
+	@Query("select distinct a.status from Application a")
+	String[] applicationStatus();
+
+	@Query("select status,count(a) from Application a group by a.status")
+	String[] dataApplication();
 
 	//Listing
 
