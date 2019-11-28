@@ -4,12 +4,15 @@
 
 
 <acme:form>
-	<acme:form-textbox code="employer.job.form.reference" path="job.reference"/>
-	<acme:form-textbox code="employer.job.form.title" path="job.title"/>
-	<acme:form-moment code="employer.job.form.deadline" path="job.deadline"/>
-	<acme:form-money code="employer.job.form.salary" path="job.salary"/>
-	<acme:form-url code="employer.job.form.moreInfo" path="job.moreInfo"/>
-	<acme:form-textarea code="employer.job.form.description" path="job.description"/>
-
-	<acme:form-return code="employer.job.form.return"/>	
+	<acme:form-textbox code="auditor.auditRecord.form.title" path="title"/>
+	<acme:form-textbox code="auditor.auditRecord.form.status" path="status"/>
+	<acme:form-moment code="auditor.auditRecord.form.creationMoment" path="creationMoment"/>
+	<acme:form-textbox code="auditor.auditRecord.form.status" path="body"/>
+		
+	<acme:form-return code="auditor.auditRecord.form.return"/>
+	
 </acme:form>
+
+
+
+

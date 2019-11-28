@@ -4,7 +4,6 @@
 
 
 <acme:list>
-	<acme:list-column code="auditor.request.list.label.status" path="job.reference"/>
-	<acme:list-column code="auditor.request.list.label.title" path="job.title"/>
-	<acme:list-column code="auditor.request.list.label.creationMoment" path="job.deadline"/>
+	<acme:list-column code="auditor.auditRecord.list.title" path="title"/>
+	<acme:list-column code="auditor.auditRecord.list.creationMoment" path="creationMoment"/>
 </acme:list>

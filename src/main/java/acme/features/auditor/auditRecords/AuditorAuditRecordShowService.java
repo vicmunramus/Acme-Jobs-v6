@@ -25,16 +25,16 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 
 		boolean result;
 
-		int auditRecordId;
-		AuditRecords auditRecord;
+		int auditId;
 		Auditor auditor;
+		AuditRecords auditRecord;
 		Principal principal;
 
-		auditRecordId = request.getModel().getInteger("id");
-		auditRecord = this.repository.findOne(auditRecordId);
-		auditor = auditRecord.getAuditor();
 		principal = request.getPrincipal();
-		result = auditRecord.getStatus() == Status.PUBLISHED || auditRecord.getStatus() != Status.PUBLISHED && auditor.getUserAccount().getId() == principal.getAccountId();
+		auditId = request.getModel().getInteger("id");
+		auditRecord = this.repository.findOne(auditId);
+		auditor = auditRecord.getAuditor();
+		result = auditRecord.getStatus() == Status.PUBLISHED || auditRecord.getStatus() == Status.DRAFT && auditor.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
@@ -45,19 +45,18 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "job", "job.reference", "job.title", "job.deadline", "job.salary", "job.moreInfo", "job.description");
+		request.unbind(entity, model, "title", "status", "creationMoment", "body");
 	}
 
 	@Override
 	public AuditRecords findOne(final Request<AuditRecords> request) {
 		assert request != null;
 
-		AuditRecords a;
-		int id;
+		AuditRecords result;
+		int auditId = request.getModel().getInteger("id");
+		result = this.repository.findOne(auditId);
 
-		id = request.getModel().getInteger("id");
-		a = this.repository.findOne(id);
-
-		return a;
+		return result;
 	}
+
 }

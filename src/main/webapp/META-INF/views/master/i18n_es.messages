@@ -113,12 +113,6 @@ master.menu.consumer.offer.create = Crear nueva Oferta
 
 master.menu.employer = Empleador
 master.menu.employer.job.list = Lista de trabajos
-master.menu.employer.application.list = Lista de solicitudes
-
-# master.menu.worker ###########################################################
-
-master.menu.worker = Trabajador
-master.menu.worker.application.list = Solicitudes
 
 # master.menu.auditor ############################################################
 
