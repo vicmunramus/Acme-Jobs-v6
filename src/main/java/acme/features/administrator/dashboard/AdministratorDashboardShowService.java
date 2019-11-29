@@ -32,8 +32,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "numberAnnouncement", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer", "averageRewardOffer", "minimunRewardRequest",
-			"maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer");
+		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusLabels", /* "dataJobs", */ "dataApplication", "numberAnnouncement", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer",
+			"averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer");
 	}
 
 	@Override
@@ -55,34 +55,34 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setNumberAnnouncement(this.repository.countAllAnnouncement());
 		result.setNumberCompanyRecords(this.repository.countAllCompanyRecord());
 		result.setNumberInvestorRecord(this.repository.countAllInvestorRecord());
-		maxOffer.setAmount((this.repository.getMaxOffer()!=null)?this.repository.getMaxOffer():0.0);
+		maxOffer.setAmount(this.repository.getMaxOffer() != null ? this.repository.getMaxOffer() : 0.0);
 		maxOffer.setCurrency("EUR");
 		result.setMaximunRewardOffer(maxOffer);
-		minOffer.setAmount((this.repository.getMinOffer()!=null)?this.repository.getMinOffer():0.0);
+		minOffer.setAmount(this.repository.getMinOffer() != null ? this.repository.getMinOffer() : 0.0);
 		minOffer.setCurrency("EUR");
 		result.setMinimunRewardOffer(minOffer);
-		Double avg = (((this.repository.getMaxAvgOffer()!=null)?this.repository.getMaxAvgOffer():0.0)+((this.repository.getMinAvgOffer()!=null)?this.repository.getMinAvgOffer():0.0))/ 2;
+		Double avg = ((this.repository.getMaxAvgOffer() != null ? this.repository.getMaxAvgOffer() : 0.0) + (this.repository.getMinAvgOffer() != null ? this.repository.getMinAvgOffer() : 0.0)) / 2;
 		avgOffer.setAmount(avg);
 		avgOffer.setCurrency("EUR");
 		result.setAverageRewardOffer(avgOffer);
-		maxRequest.setAmount((this.repository.getMaxRequest()!=null)?this.repository.getMaxRequest():0.0);
+		maxRequest.setAmount(this.repository.getMaxRequest() != null ? this.repository.getMaxRequest() : 0.0);
 		maxRequest.setCurrency("EUR");
 		result.setMaximunRewardRequest(maxRequest);
-		minRequest.setAmount((this.repository.getMinRequest()!=null)?this.repository.getMinRequest():0.0);
+		minRequest.setAmount(this.repository.getMinRequest() != null ? this.repository.getMinRequest() : 0.0);
 		minRequest.setCurrency("EUR");
 		result.setMinimunRewardRequest(minRequest);
-		avgRequest.setAmount((this.repository.getAvgRequest()!=null)?this.repository.getAvgRequest():0.0);
+		avgRequest.setAmount(this.repository.getAvgRequest() != null ? this.repository.getAvgRequest() : 0.0);
 		avgRequest.setCurrency("EUR");
 		result.setAverageRewardRequest(avgRequest);
-		stdRequest.setAmount((this.repository.getStdRequest()!=null)?this.repository.getStdRequest():0.0);
+		stdRequest.setAmount(this.repository.getStdRequest() != null ? this.repository.getStdRequest() : 0.0);
 		stdRequest.setCurrency("EUR");
 		result.setStdRequest(stdRequest);
-		Double stdOff = (((this.repository.getStdMaxOffer()!=null)?this.repository.getStdMaxOffer():0.0)+((this.repository.getStdMinOffer()!=null)?this.repository.getStdMinOffer():0.0))/ 2;
+		Double stdOff = ((this.repository.getStdMaxOffer() != null ? this.repository.getStdMaxOffer() : 0.0) + (this.repository.getStdMinOffer() != null ? this.repository.getStdMinOffer() : 0.0)) / 2;
 		stdOffer.setAmount(stdOff);
 		stdOffer.setCurrency("EUR");
 		result.setStdOffer(stdOffer);
 
-		//Tablero
+		//Tablero Sectores
 
 		String[] iSector = this.repository.investorSector();
 		String[] cSector = this.repository.companySector();
@@ -136,6 +136,68 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			}
 		}
 		result.setDataInvestor(dataInvestor);
+
+		//Tablero Status
+
+		//String[] jStatus = this.repository.jobStatus();
+		String[] aStatus = this.repository.applicationStatus();
+		//String[] labelsStatus = jStatus;
+		String[] labelsStatus = aStatus;
+
+		/*
+		 * for (String element : aStatus) {
+		 * if (!ArrayUtils.contains(labelsStatus, element)) {
+		 * labelsStatus = ArrayUtils.add(labelsStatus, element);
+		 * }
+		 * }
+		 */
+
+		String[] tempDataApplication = this.repository.dataApplication();
+		String[] dataApplication = new String[labelsStatus.length];
+
+		for (String element : tempDataApplication) {
+			String[] s = element.split(",");
+
+			for (int i = 0; i < labelsStatus.length; i++) {
+				if (labelsStatus[i].matches(s[0])) {
+					dataApplication[i] = s[1];
+				}
+			}
+		}
+
+		/*
+		 * String[] tempDataJob = this.repository.dataJob();
+		 * String[] dataJob = new String[labelsStatus.length];
+		 *
+		 * for (String element : tempDataJob) {
+		 * String[] s = element.split(",");
+		 *
+		 * for (int i = 0; i < labelsStatus.length; i++) {
+		 * if (labelsStatus[i].matches(s[0])) {
+		 * dataJob[i] = s[1];
+		 * }
+		 * }
+		 * }
+		 */
+
+		result.setStatusLabels(labelsStatus);
+
+		for (int i = 0; i < dataApplication.length; i++) {
+			if (dataApplication[i] == null) {
+				dataApplication[i] = "0";
+			}
+		}
+
+		result.setDataApplication(dataApplication);
+
+		/*
+		 * for (int i = 0; i < dataJob.length; i++) {
+		 * if (dataJob[i] == null) {
+		 * dataJob[i] = "0";
+		 * }
+		 * }
+		 * result.setDataJob(dataJob);
+		 */
 		return result;
 	}
 
