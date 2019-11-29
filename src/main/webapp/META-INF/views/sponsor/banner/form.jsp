@@ -9,12 +9,12 @@
 	<acme:form-url code="sponsor.banner.form.label.target" path="target"/>
 	
 	<jstl:choose>
-		<jstl:when test="${sponsor.creditCard != null}">
+		<jstl:when test="${creditCardNumber != null}">
 			<acme:form-panel code="sponsor.banner.form.label.creditCard">
-				<acme:form-textbox code="sponsor.banner.form.label.creditCardNumber" path="sponsor.creditCard.creditCardNumber"/>
-				<acme:form-textbox code="sponsor.banner.form.label.cardHolder" path="sponsor.creditCard.cardHolder"/>
-				<acme:form-textbox code="sponsor.banner.form.label.cvv" path="sponsor.creditCard.cvv"/>
-				<acme:form-textbox placeholder="MM/YY" code="sponsor.banner.form.label.expirationDate" path="sponsor.creditCard.expirationDate"/>
+				<acme:form-textbox code="sponsor.banner.form.label.creditCardNumber" path="creditCardNumber"/>
+				<acme:form-textbox code="sponsor.banner.form.label.cardHolder" path="cardHolder"/>
+				<acme:form-textbox code="sponsor.banner.form.label.cvv" path="cvv"/>
+				<acme:form-textbox placeholder="MM/YY" code="sponsor.banner.form.label.expirationDate" path="expirationDate"/>
 			</acme:form-panel>
 		</jstl:when>
 		<jstl:otherwise>

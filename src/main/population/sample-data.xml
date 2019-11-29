@@ -341,6 +341,7 @@
 		<property name="cardHolder" value="Emilio Pascual Robledos"/>
 		<property name="cvv" value="325"/>
 		<property name="expirationDate" value="11/22"/>
+		<property name="sponsor" ref="sponsor1Sponsor"/>
 	</bean>
 	
 	<!-- Sponsors -->
@@ -364,7 +365,6 @@
  	</bean>
  	<bean name="sponsor1Sponsor" class="acme.entities.roles.Sponsor">
  		<property name="organisationName" value="Sponsor 1 Organisation"/>
- 		<property name="creditCard" ref="creditCard1"/>
  		<property name="userAccount" ref="sponsor1UserAccount"/>
  	</bean>
  	<bean name="sponsor1Authenticated" class="acme.framework.entities.Authenticated">

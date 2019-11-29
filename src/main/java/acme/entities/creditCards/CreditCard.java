@@ -1,12 +1,17 @@
 
 package acme.entities.creditCards;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import acme.entities.roles.Sponsor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +23,7 @@ public class CreditCard extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
+	@Column(unique = true)
 	@CreditCardNumber
 	@NotBlank
 	private String				creditCardNumber;
@@ -33,5 +39,10 @@ public class CreditCard extends DomainEntity {
 	@Pattern(regexp = "^((0[1-9]{1})|(1[0-2]{1}))\\/[0-9]{1}[0-9]{1}$")
 	@NotBlank
 	private String				expirationDate;
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	private Sponsor				sponsor;
 
 }
