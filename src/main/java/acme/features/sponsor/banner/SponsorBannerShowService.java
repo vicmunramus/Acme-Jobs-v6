@@ -45,7 +45,7 @@ public class SponsorBannerShowService implements AbstractShowService<Sponsor, Ba
 		assert model != null;
 
 		if (entity instanceof Commercial) {
-			request.unbind(entity, model, "picture", "slogan", "target", "sponsor", "sponsor.creditCard", "sponsor.creditCard.creditCardNumber", "sponsor.creditCard.cardHolder", "sponsor.creditCard.cvv", "sponsor.creditCard.expirationDate");
+			request.unbind(entity, model, "picture", "slogan", "target", "creditCardNumber", "cardHolder", "cvv", "expirationDate");
 		} else {
 			request.unbind(entity, model, "picture", "slogan", "target", "jingle");
 		}
