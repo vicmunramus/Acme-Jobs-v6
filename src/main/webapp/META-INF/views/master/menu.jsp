@@ -103,6 +103,10 @@
 			<acme:menu-suboption code="master.menu.auditor.auditRecords.list" action="/auditor/audit-records/list-mine" />
 			<acme:menu-suboption code="master.menu.auditor.auditRecords.listJobs" action="/auditor/audit-records/list" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.banner.list" action="/sponsor/banner/list-mine" />
+		</acme:menu-option>
 
 	</acme:menu-left>
 

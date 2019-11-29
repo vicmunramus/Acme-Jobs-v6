@@ -1,0 +1,14 @@
+sponsor.banner.list.label.picture = Imagen
+sponsor.banner.list.label.slogan = Eslogan
+
+sponsor.banner.form.label.picture = Imagen
+sponsor.banner.form.label.slogan = Eslogan
+sponsor.banner.form.label.target = Objetivo
+sponsor.banner.form.label.creditCard = Tarjeta de crédito
+sponsor.banner.form.label.creditCardNumber = Número de la tarjeta
+sponsor.banner.form.label.cardHolder = Titular de la tarjeta
+sponsor.banner.form.label.cvv = CVV
+sponsor.banner.form.label.expirationDate = Fecha de caducidad
+sponsor.banner.form.label.jingle = Jingle
+
+sponsor.banner.form.button.return = Volver
