@@ -1,3 +1,9 @@
-auditor.request.list.label.title = Título del Trabajo
-auditor.request.list.label.status = Referencia del Trabao
-auditor.request.list.label.creationMoment = Cumplimiento del Trabajo
+auditor.auditRecord.list.title = Título
+auditor.auditRecord.list.creationMoment = Momento de Creación
+
+auditor.auditRecord.form.title = Título
+auditor.auditRecord.form.status = Estado
+auditor.auditRecord.form.creationMoment = Momento de Creación
+auditor.auditRecord.form.body = Cuerpo 
+
+auditor.auditRecord.form.return = Volver
