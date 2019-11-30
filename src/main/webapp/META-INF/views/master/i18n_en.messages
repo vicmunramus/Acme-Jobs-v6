@@ -122,6 +122,17 @@ master.menu.consumer.offer.create = Create new Offer
 master.menu.employer = Employer
 master.menu.employer.job.list = Job List
 
+# master.menu.auditor ############################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.auditRecords.list = My Job Auditories
+master.menu.auditor.auditRecords.listJobs = Jobs
+
+# master.menu.sponsor ###########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.banner.list = Banner List
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

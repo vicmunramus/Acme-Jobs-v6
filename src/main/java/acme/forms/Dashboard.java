@@ -13,10 +13,13 @@ public class Dashboard implements Serializable {
 
 	private static final long	serialVersionUID	= 1L;
 
-	//Attributes
+	// D02 Attributes:
 	String[]					gridLabels;
 	String[]					dataInvestor;
 	String[]					dataCompany;
+	String[]					statusLabels;
+	/* String[] dataJob; */
+	String[]					dataApplication;
 	Integer						numberAnnouncement;
 	Integer						numberCompanyRecords;
 	Integer						numberInvestorRecord;
@@ -28,5 +31,10 @@ public class Dashboard implements Serializable {
 	Money						averageRewardRequest;
 	Money						stdRequest;
 	Money						stdOffer;
+
+	// D04 Attributes:
+	Double						avgNumberJobsPerEmployer;
+	Double						avgNumberApplicationsPerEmployer;
+	Double						avgNumberApplicationsPerWorker;
 
 }

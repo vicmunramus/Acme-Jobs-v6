@@ -94,6 +94,15 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.auditRecords.list" action="/auditor/job/list-mine" />
+			<acme:menu-suboption code="master.menu.auditor.auditRecords.listJobs" action="/auditor/job/list" />
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.banner.list" action="/sponsor/banner/list-mine" />
+		</acme:menu-option>
 
 	</acme:menu-left>
 

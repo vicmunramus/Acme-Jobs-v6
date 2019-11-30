@@ -116,6 +116,17 @@ master.menu.consumer.offer.create = Crear nueva Oferta
 master.menu.employer = Empleador
 master.menu.employer.job.list = Lista de trabajos
 
+# master.menu.auditor ############################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.auditRecords.list = Mis Trabajos Auditados 
+master.menu.auditor.auditRecords.listJobs = Trabajos
+
+# master.menu.sponsor ###########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.banner.list = Lista de banners
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

@@ -1,0 +1,15 @@
+worker.application.list.label.reference = Reference
+worker.application.list.label.moment = Creation moment
+worker.application.list.label.status = Status
+
+worker.application.form.reference = Reference
+worker.application.form.moment = Creation Moment
+worker.application.form.status = Status
+worker.application.form.statement = Statement
+worker.application.form.skills = Skills
+worker.application.form.qualifications = Qualifications
+worker.application.form.job = Job
+worker.application.form.job.reference = Reference
+worker.application.form.job.title = Title
+
+worker.application.form.return = Return

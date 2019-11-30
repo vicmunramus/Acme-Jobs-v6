@@ -1,0 +1,14 @@
+sponsor.banner.list.label.picture = Picture
+sponsor.banner.list.label.slogan = Slogan
+
+sponsor.banner.form.label.picture = Picture
+sponsor.banner.form.label.slogan = Slogan
+sponsor.banner.form.label.target = Target
+sponsor.banner.form.label.creditCard = Credit card
+sponsor.banner.form.label.creditCardNumber = Card number
+sponsor.banner.form.label.cardHolder = Card holder
+sponsor.banner.form.label.cvv = CVV
+sponsor.banner.form.label.expirationDate = Expiration date
+sponsor.banner.form.label.jingle = Jingle
+
+sponsor.banner.form.button.return = Return

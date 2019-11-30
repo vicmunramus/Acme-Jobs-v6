@@ -8,4 +8,8 @@ administrator.dashboard.form.label.minimunRewardRequest = Minimun Reward of the 
 administrator.dashboard.form.label.maximunRewardRequest = Maximun Reward of the Active Requests
 administrator.dashboard.form.label.averageRewardRequest = Average Reward of the Active Requests
 administrator.dashboard.form.label.stdRequest = Standard Deviation of Requests
-administrator.dashboard.form.label.stdOffer = Standard Deviation of Offers 
+administrator.dashboard.form.label.stdOffer = Standard Deviation of Offers
+
+administrator.dashboard.form.label.avgNumberJobsPerEmployer = Average Number of Jobs per Employer
+administrator.dashboard.form.label.avgNumberApplicationsPerEmployer = Average Number of Applications per Employer
+administrator.dashboard.form.label.avgNumberApplicationsPerWorker = Average Number of Applications per Worker
