@@ -7,6 +7,7 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+
     alter table `application` 
        drop 
        foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
@@ -31,6 +32,18 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
+    alter table `consumer` 
+       drop 
+       foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FK57eqqlhihwvd53ykpmsiqlx2p`;
+
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
+
     alter table `commercial` 
        drop 
        foreign key FK_tk5yvuytfoa0dgtibahrxwwkd;
@@ -49,11 +62,18 @@
 
     alter table `job` 
        drop 
+       foreign key `FKfqwyynnbcsq0htxho3vchpd2u`;
+
+    alter table `job` 
+       drop 
+       foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
+
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
     alter table `non_commercial` 
        drop 
        foreign key FK_1px28k1t0j3coqn549p1ru8op;
+
 
     alter table `provider` 
        drop 
@@ -75,7 +95,9 @@
 
     drop table if exists `anonymous`;
 
+
     drop table if exists `application`;
+
 
     drop table if exists `audit_records`;
 
@@ -92,6 +114,17 @@
     drop table if exists `company_records`;
 
     drop table if exists `consumer`;
+
+
+    drop table if exists `customisation_parameters`;
+
+    drop table if exists `descriptor`;
+
+    drop table if exists `descriptor_duty`;
+
+    drop table if exists `doblado_bulletin`;
+
+    drop table if exists `duty`;
 
     drop table if exists `credit_card`;
 

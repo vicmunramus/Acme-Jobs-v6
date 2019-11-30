@@ -5,7 +5,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -24,6 +27,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "deadline")
+})
 public class Job extends DomainEntity {
 
 	/**
@@ -44,16 +50,14 @@ public class Job extends DomainEntity {
 	private Date				deadline;
 
 	@NotNull
+	private Status				status;
+
+	@NotNull
 	@Valid
 	private Money				salary;
 
-	@NotBlank
-	private String				description;
-
 	@URL
 	private String				moreInfo;
-
-	private boolean				finalMode;
 
 	// Relationships ===================================================================
 
@@ -61,4 +65,10 @@ public class Job extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Employer			employer;
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	private Descriptor			descriptor;
+
 }

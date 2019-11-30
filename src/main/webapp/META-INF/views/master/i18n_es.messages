@@ -83,6 +83,8 @@ master.menu.authenticated.announcement = Anuncios
 
 master.menu.authenticated.company-records.list = Historial de Compañías
 
+master.menu.authenticated.job.list = Lista de trabajos
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

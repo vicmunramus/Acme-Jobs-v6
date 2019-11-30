@@ -7,6 +7,6 @@ employer.job.form.deadline = Deadline
 employer.job.form.title = Title
 employer.job.form.salary = Salary
 employer.job.form.moreInfo = More Info
-employer.job.form.description = Description
+employer.job.form.status = Status
 
 employer.job.form.return = Return
