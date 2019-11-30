@@ -7,6 +7,14 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `application` 
+       drop 
+       foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKmbjdoxi3o93agxosoate4sxbt`;
+
     alter table `audit_records` 
        drop 
        foreign key `FKl6b73crbwej8f95bvp1npqm8p`;
@@ -23,9 +31,17 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
+    alter table `commercial` 
+       drop 
+       foreign key FK_tk5yvuytfoa0dgtibahrxwwkd;
+
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+
+    alter table `credit_card` 
+       drop 
+       foreign key `FK31l5hvh7p1nx1aw6v649gw3rc`;
 
     alter table `employer` 
        drop 
@@ -35,9 +51,17 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `non_commercial` 
+       drop 
+       foreign key FK_1px28k1t0j3coqn549p1ru8op;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    alter table `sponsor` 
+       drop 
+       foreign key FK_20xk0ev32hlg96kqynl6laie2;
 
     alter table `worker` 
        drop 
@@ -50,6 +74,8 @@
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
+
+    drop table if exists `application`;
 
     drop table if exists `audit_records`;
 
@@ -66,6 +92,8 @@
     drop table if exists `company_records`;
 
     drop table if exists `consumer`;
+
+    drop table if exists `credit_card`;
 
     drop table if exists `customisation_parameters`;
 
@@ -90,6 +118,8 @@
     drop table if exists `reina_bulletin`;
 
     drop table if exists `request`;
+
+    drop table if exists `sponsor`;
 
     drop table if exists `user_account`;
 

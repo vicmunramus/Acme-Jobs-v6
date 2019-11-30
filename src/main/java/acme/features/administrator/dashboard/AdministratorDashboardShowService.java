@@ -33,13 +33,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusLabels", /* "dataJobs", */ "dataApplication", "numberAnnouncement", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer",
-			"averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer");
+			"averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
 	}
 
 	@Override
 	public Dashboard findOne(final Request<Dashboard> request) {
 		assert request != null;
 
+		//DO2:
 		Dashboard result;
 		result = new Dashboard();
 		Money maxOffer = new Money();
@@ -50,8 +51,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Money minRequest = new Money();
 		Money avgRequest = new Money();
 		Money stdRequest = new Money();
+		//D04:
 
-		//Listing
+		//Listing D02:
 		result.setNumberAnnouncement(this.repository.countAllAnnouncement());
 		result.setNumberCompanyRecords(this.repository.countAllCompanyRecord());
 		result.setNumberInvestorRecord(this.repository.countAllInvestorRecord());
@@ -81,6 +83,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		stdOffer.setAmount(stdOff);
 		stdOffer.setCurrency("EUR");
 		result.setStdOffer(stdOffer);
+
+		//Listing D04:
+		result.setAvgNumberJobsPerEmployer(this.repository.avgNumberJobsPerEmployer() != null ? this.repository.avgNumberJobsPerEmployer() : 0.);
+		result.setAvgNumberApplicationsPerEmployer(this.repository.avgNumberApplicationsPerEmployer() != null ? this.repository.avgNumberApplicationsPerEmployer() : 0.);
+		result.setAvgNumberApplicationsPerWorker(this.repository.avgNumberApplicationsPerWorker() != null ? this.repository.avgNumberApplicationsPerWorker() : 0.);
 
 		//Tablero Sectores
 

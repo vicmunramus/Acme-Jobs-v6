@@ -4,6 +4,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
+
+	<!-- D02: -->
 	<acme:form-integer code="administrator.dashboard.form.label.numberAnnouncement" path="numberAnnouncement"/>
 	<acme:form-integer code="administrator.dashboard.form.label.numberCompanyRecords" path="numberCompanyRecords"/>
 	<acme:form-integer code="administrator.dashboard.form.label.numberInvestorRecords" path="numberInvestorRecord"/>
@@ -15,6 +17,12 @@
 	<acme:form-money code="administrator.dashboard.form.label.maximunRewardRequest" path="maximunRewardRequest"/>
 	<acme:form-money code="administrator.dashboard.form.label.averageRewardRequest" path="averageRewardRequest"/>
 	<acme:form-money code="administrator.dashboard.form.label.stdRequest" path="stdRequest"/>
+	
+	<!-- D04: -->
+	<acme:form-double code="administrator.dashboard.form.label.avgNumberJobsPerEmployer" path="avgNumberJobsPerEmployer"/>
+	<acme:form-double code="administrator.dashboard.form.label.avgNumberApplicationsPerEmployer" path="avgNumberApplicationsPerEmployer"/>
+	<acme:form-double code="administrator.dashboard.form.label.avgNumberApplicationsPerWorker" path="avgNumberApplicationsPerWorker"/>
+	
 </acme:form>
 
 <div>
