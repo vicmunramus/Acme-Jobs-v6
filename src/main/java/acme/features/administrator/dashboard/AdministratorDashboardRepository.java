@@ -28,7 +28,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	/*
 	 * @Query("select distinct j.status from Job j")
 	 * String[] jobStatus();
-	 * 
+	 *
 	 * @Query("select status,count(j) from Job j group by j.status")
 	 * String[] dataJob();
 	 */
@@ -39,7 +39,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select status,count(a) from Application a group by a.status")
 	String[] dataApplication();
 
-	//Listing
+	//Listing D02:
 
 	@Query("select count(r) from Announcement r")
 	Integer countAllAnnouncement();
@@ -68,7 +68,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select stddev(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
 	Double getStdRequest();
 
-	//Querys no directas
+	//Querys no directas D02:
 
 	@Query("select avg(r.maxReward.amount) from Offer r where r.deadline > utc_timestamp()")
 	Double getMaxAvgOffer();
@@ -81,4 +81,14 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select stddev(r.minReward.amount) from Offer r where r.deadline > utc_timestamp()")
 	Double getStdMinOffer();
+
+	//Listing D04:
+	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
+	Double avgNumberJobsPerEmployer();
+
+	@Query("select avg(select count(a) from Application a where exists(select j from Job j where j.employer.id = e.id and a.job.id = j.id)) from Employer e")
+	Double avgNumberApplicationsPerEmployer();
+
+	@Query("select avg(select count(a) from Application a where a.worker.id = w.id) from Worker w")
+	Double avgNumberApplicationsPerWorker();
 }
