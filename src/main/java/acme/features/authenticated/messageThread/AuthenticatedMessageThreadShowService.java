@@ -21,9 +21,15 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {
+		assert request != null;
 		boolean result;
 
-		return true;
+		int messageThreadId = request.getModel().getInteger("id");
+		int principalId = request.getPrincipal().getActiveRoleId();
+		int exists = this.repository.existsAuthenticatedIdByMessageThreads(principalId, messageThreadId);
+		//this.repository.findManyAuthenticatedByMessageThreads(messageThreadId).contains(principalId);
+		result = exists > 0;
+		return result;
 	}
 
 	@Override
