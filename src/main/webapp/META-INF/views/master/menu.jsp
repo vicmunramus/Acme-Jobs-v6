@@ -53,6 +53,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list" />
 			<acme:menu-suboption code="master.menu.authenticated.company-records.list" action="/authenticated/company-records/list" />
 			<acme:menu-suboption code="master.menu.authenticated.investor-record" action="/authenticated/investor-record/list" />
+			<acme:menu-suboption code="master.menu.authenticated.message-thread.list" action="/authenticated/message-thread/list-mine" />
 
 			<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list" />
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list" />

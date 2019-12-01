@@ -29,6 +29,10 @@
 
     alter table `authenticated` 
        drop 
+       foreign key `FK40xava9g49cdh6x14x0qn181h`;
+
+    alter table `authenticated` 
+       drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
     alter table `commercial` 
@@ -62,6 +66,10 @@
     alter table `job` 
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
+
+    alter table `message` 
+       drop 
+       foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
 
     alter table `non_commercial` 
        drop 
@@ -122,6 +130,10 @@
     drop table if exists `investor_record`;
 
     drop table if exists `job`;
+
+    drop table if exists `message`;
+
+    drop table if exists `message_thread`;
 
     drop table if exists `munoz_bulletin`;
 

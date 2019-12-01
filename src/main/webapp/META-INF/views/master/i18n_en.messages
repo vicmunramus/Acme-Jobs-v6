@@ -86,6 +86,8 @@ master.menu.authenticated.company-records.list = Company's Records
 
 master.menu.authenticated.job.list = Job List
 
+master.menu.authenticated.message-thread.list = Message Threads
+
 
 # master.menu.administrator ###################################################
 
