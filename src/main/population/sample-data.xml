@@ -423,6 +423,7 @@
  	</bean>
  	<bean name="employer1Authenticated" class="acme.framework.entities.Authenticated">
  		<property name="userAccount" ref="employer1UserAccount"/>
+ 		<property name="messageThread" ref="messageThread0"/>
  	</bean>
  	
  	<bean name="employer2UserAccount" class="acme.framework.entities.UserAccount">
@@ -450,6 +451,7 @@
  	</bean>
  	<bean name="employer2Authenticated" class="acme.framework.entities.Authenticated">
  		<property name="userAccount" ref="employer2UserAccount"/>
+ 		 <property name="messageThread" ref="messageThread1"/>
  	</bean>
  	
  	<!-- Workers -->
@@ -790,5 +792,32 @@
 		<property name="worker" ref="worker2Worker"/>
 		<property name="job" ref="job2"/>
 	</bean>
- 	
+ 	<bean name="messageThread0" class="acme.entities.messageThreads.MessageThread">
+ 		<property name="title" value="messageThread0"/>
+ 		<property name="moment" value="2019/10/29 17:10"/>
+ 	</bean>
+ 	<bean name="messageThread1" class="acme.entities.messageThreads.MessageThread">
+ 		<property name="title" value="messageThread1"/>
+ 		<property name="moment" value="2019/10/29 17:10"/>
+ 	</bean>
+ 	<bean name="message0" class="acme.entities.messages.Message">
+ 		<property name="title" value="message0"/>
+ 		<property name="moment" value="2019/10/29 17:10"/>
+ 		<property name="messageThread" ref="messageThread0"/>
+ 	</bean>
+ 	<bean name="message1" class="acme.entities.messages.Message">
+ 		<property name="title" value="message1"/>
+ 		<property name="moment" value="2019/10/29 17:10"/>
+ 		<property name="messageThread" ref="messageThread0"/>
+ 	</bean>
+ 	<bean name="message2" class="acme.entities.messages.Message">
+ 		<property name="title" value="message2"/>
+ 		<property name="moment" value="2019/10/29 17:10"/>
+ 		<property name="messageThread" ref="messageThread1"/>
+ 	</bean>
+ 	<bean name="message3" class="acme.entities.messages.Message">
+ 		<property name="title" value="message3"/>
+ 		<property name="moment" value="2019/10/29 17:10"/>
+ 		<property name="messageThread" ref="messageThread1"/>
+ 	</bean>
 </beans>
