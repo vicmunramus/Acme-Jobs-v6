@@ -30,7 +30,11 @@
 </div>
 
 <div>
-	<canvas id="canvasStatus"></canvas>
+	<canvas id="canvasApplicationStatus"></canvas>
+</div>
+
+<div>
+	<canvas id="canvasJobStatus"></canvas>
 </div>
 
 <script type="text/javascript">
@@ -115,63 +119,46 @@
 		});
 	});
 	
-		$(document).ready(function(){
-			var data = {
-					labels : [
-						<jstl:choose>
-							<jstl:when test="${statusLabels} == null">
-								""
-							</jstl:when>
-							<jstl:otherwise>
-								<jstl:forEach var="item" items="${statusLabels}">
-									<jstl:out value="\"${item}\"" escapeXml="false"/>,
-								</jstl:forEach>						
-							</jstl:otherwise>
-						</jstl:choose>
-					],
-					datasets : [
-						{
-							label : "Application",
-							backgroundColor : "rgba(22, 38, 212, 0.3)",
-							borderColor : "rgba(22, 38, 212, 1)",
-							data : [
+	$(document).ready(function(){
+		var data = {
+				labels : [
+					<jstl:choose>
+						<jstl:when test="${statusApplicationLabels} == null">
+							""
+						</jstl:when>
+						<jstl:otherwise>
+							<jstl:forEach var="item" items="${statusApplicationLabels}">
+								<jstl:out value="\"${item}\"" escapeXml="false"/>,
+							</jstl:forEach>						
+						</jstl:otherwise>
+					</jstl:choose>
+				],
+				datasets : [
+					{
+						label : "Application",
+						backgroundColor : "rgba(22, 38, 212, 0.3)",
+						borderColor : "rgba(22, 38, 212, 1)",
+						data : [
 								
-								<jstl:choose>
-									<jstl:when test="${dataApplication} == null">
-										""
-									</jstl:when>
-									<jstl:otherwise>
-										<jstl:forEach var="item" items="${dataApplication}">
-											<jstl:out value="\"${item}\"" escapeXml="false"/>,
-										</jstl:forEach>				
-									</jstl:otherwise>
-								</jstl:choose>							
+							<jstl:choose>
+								<jstl:when test="${dataApplication} == null">
+									""
+								</jstl:when>
+								<jstl:otherwise>
+									<jstl:forEach var="item" items="${dataApplication}">
+										<jstl:out value="\"${item}\"" escapeXml="false"/>,
+									</jstl:forEach>				
+								</jstl:otherwise>
+							</jstl:choose>							
 								
-							]
-						}/*,{
-							label : "Job",
-							backgroundColor : "rgba(19, 157, 16, 0.3)",
-							borderColor : "rgba(19, 157, 16, 1)",
-							data : [
-								
-									<jstl:choose>
-										<jstl:when test="${dataJobs} == null">
-											""
-										</jstl:when>
-										<jstl:otherwise>
-											<jstl:forEach var="item" items="${dataJobs}">
-												<jstl:out value="\"${item}\"" escapeXml="false"/>,
-											</jstl:forEach>				
-										</jstl:otherwise>
-									</jstl:choose>							
-							]
-						}*/
-					]
-			};
-			var options = {
+						]
+					}
+				]
+		};
+		var options = {
 				scales : {
 					yAxes : [
-						{
+							{
 							ticks : {
 								min : 0,
 								stepSize : 1,
@@ -187,7 +174,7 @@
 			
 			var canvas, context;
 			
-			canvas = document.getElementById("canvasStatus");
+			canvas = document.getElementById("canvasApplicationStatus");
 			context = canvas.getContext("2d");
 			new Chart(context, {
 				type : "bar",
@@ -195,4 +182,68 @@
 				options : options
 			});
 		});
+	
+		$(document).ready(function(){
+			var data = {
+					labels : [
+						<jstl:choose>
+							<jstl:when test="${statusJobLabels} == null">
+								""
+							</jstl:when>
+							<jstl:otherwise>
+								<jstl:forEach var="item" items="${statusJobLabels}">
+									<jstl:out value="\"${item}\"" escapeXml="false"/>,
+								</jstl:forEach>						
+							</jstl:otherwise>
+						</jstl:choose>
+					],
+					datasets : [
+						{
+							label : "Job",
+							backgroundColor : "rgba(22, 38, 212, 0.3)",
+							borderColor : "rgba(22, 38, 212, 1)",
+							data : [
+										
+								<jstl:choose>
+									<jstl:when test="${dataJob} == null">
+										""
+									</jstl:when>
+									<jstl:otherwise>
+										<jstl:forEach var="item" items="${dataJob}">
+											<jstl:out value="\"${item}\"" escapeXml="false"/>,
+										</jstl:forEach>				
+									</jstl:otherwise>
+								</jstl:choose>							
+										
+							]
+						}
+					]
+			};
+			var options = {
+					scales : {
+						yAxes : [
+								{
+								ticks : {
+									min : 0,
+									stepSize : 1,
+									autoSkip : true
+								}
+							}
+						]
+					},
+					legend : {
+						display : true
+					}
+				};
+					
+				var canvas, context;
+					
+				canvas = document.getElementById("canvasJobStatus");
+				context = canvas.getContext("2d");
+				new Chart(context, {
+					type : "bar",
+					data : data,
+					options : options
+				});
+			});
 </script>

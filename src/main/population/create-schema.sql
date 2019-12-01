@@ -34,7 +34,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-
     create table `application` (
        `id` integer not null,
         `version` integer not null,
@@ -56,7 +55,6 @@
         `creation_moment` datetime(6),
         `status` integer,
         `title` varchar(255),
-
         `auditor_id` integer not null,
         `job_id` integer not null,
         primary key (`id`)
@@ -113,7 +111,6 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `target` varchar(255),
-
         `sponsor_id` integer,
         `card_holder` varchar(255),
         `credit_card_number` varchar(255),
@@ -146,6 +143,17 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `credit_card` (
+       `id` integer not null,
+        `version` integer not null,
+        `card_holder` varchar(255),
+        `credit_card_number` varchar(255),
+        `cvv` varchar(255),
+        `expiration_date` varchar(255),
+        `sponsor_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `customisation_parameters` (
        `id` integer not null,
         `version` integer not null,
@@ -167,26 +175,6 @@
         `duties_id` integer not null
     ) engine=InnoDB;
 
-    create table `credit_card` (
-       `id` integer not null,
-        `version` integer not null,
-        `card_holder` varchar(255),
-        `credit_card_number` varchar(255),
-        `cvv` varchar(255),
-        `expiration_date` varchar(255),
-        `sponsor_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `customisation_parameters` (
-       `id` integer not null,
-        `version` integer not null,
-        `identifier` integer,
-        `spam_list` varchar(255),
-        `spam_threshold` float,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `doblado_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -206,7 +194,6 @@
         `title_duty` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
-
 
     create table `employer` (
        `id` integer not null,
@@ -231,9 +218,6 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-
-        `description` varchar(255),
-        `final_mode` bit not null,
         `more_info` varchar(255),
         `reference` varchar(255),
         `salary_amount` double precision,
@@ -241,8 +225,6 @@
         `status` integer,
         `title` varchar(255),
         `descriptor_id` integer not null,
-
-
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -263,7 +245,6 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `target` varchar(255),
-
         `sponsor_id` integer,
         `jingle` varchar(255),
         primary key (`id`)
@@ -364,18 +345,6 @@
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
-create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
-create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
-create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
-
-    alter table `descriptor_duty` 
-       add constraint UK_kvr5rclgwa51d625rmx13ke96 unique (`duties_id`);
-create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
-create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
-
-    alter table `job` 
-       add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
-
 
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
@@ -388,7 +357,14 @@ create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
     alter table `credit_card` 
        add constraint UK_svbyf90rkln6g3ilk8m2yn1d7 unique (`credit_card_number`);
 create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
+
+    alter table `descriptor_duty` 
+       add constraint UK_kvr5rclgwa51d625rmx13ke96 unique (`duties_id`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
+create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
+
+    alter table `job` 
+       add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -452,6 +428,11 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `credit_card` 
+       add constraint `FK31l5hvh7p1nx1aw6v649gw3rc` 
+       foreign key (`sponsor_id`) 
+       references `sponsor` (`id`);
+
     alter table `descriptor_duty` 
        add constraint `FK57eqqlhihwvd53ykpmsiqlx2p` 
        foreign key (`duties_id`) 
@@ -461,11 +442,6 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
        foreign key (`descriptor_id`) 
        references `descriptor` (`id`);
-
-    alter table `credit_card` 
-       add constraint `FK31l5hvh7p1nx1aw6v649gw3rc` 
-       foreign key (`sponsor_id`) 
-       references `sponsor` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
@@ -478,22 +454,19 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        references `descriptor` (`id`);
 
     alter table `job` 
-
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
-
 
     alter table `non_commercial` 
        add constraint FK_1px28k1t0j3coqn549p1ru8op 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
-alter table `provider` 
+    alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
-
 
     alter table `sponsor` 
        add constraint FK_20xk0ev32hlg96kqynl6laie2 

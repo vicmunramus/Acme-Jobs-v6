@@ -11,32 +11,32 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	//Tablero Sector
 
-	@Query("select distinct r.sector from InvestorRecord r")
+	@Query("select distinct r.sector from InvestorRecord r order by r.sector")
 	String[] investorSector();
 
-	@Query("select sector,count(r) from InvestorRecord r group by r.sector")
+	@Query("select count(r) from InvestorRecord r group by r.sector order by r.sector")
 	String[] dataInvestor();
 
-	@Query("select distinct c.workSector from CompanyRecords c")
-	String[] companySector();
+	@Query("select distinct c.workSector from CompanyRecords c where c.workSector not in (?1)")
+	String[] companySector(String[] sector);
 
 	@Query("select workSector,count(c) from CompanyRecords c group by c.workSector")
 	String[] dataCompany();
 
-	//Tablero Status
+	//Tablero Status Jobs
 
-	/*
-	 * @Query("select distinct j.status from Job j")
-	 * String[] jobStatus();
-	 *
-	 * @Query("select status,count(j) from Job j group by j.status")
-	 * String[] dataJob();
-	 */
+	@Query("select distinct j.status from Job j order by j.status")
+	String[] jobStatus();
 
-	@Query("select distinct a.status from Application a")
+	@Query("select count(j) from Job j group by j.status order by j.status")
+	String[] dataJob();
+
+	//Tablero Status Application
+
+	@Query("select distinct a.status from Application a order by a.status")
 	String[] applicationStatus();
 
-	@Query("select status,count(a) from Application a group by a.status")
+	@Query("select count(a) from Application a group by a.status order by a.status")
 	String[] dataApplication();
 
 	//Listing D02:

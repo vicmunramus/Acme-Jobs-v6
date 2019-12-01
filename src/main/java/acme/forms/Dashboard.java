@@ -17,9 +17,6 @@ public class Dashboard implements Serializable {
 	String[]					gridLabels;
 	String[]					dataInvestor;
 	String[]					dataCompany;
-	String[]					statusLabels;
-	/* String[] dataJob; */
-	String[]					dataApplication;
 	Integer						numberAnnouncement;
 	Integer						numberCompanyRecords;
 	Integer						numberInvestorRecord;
@@ -36,5 +33,9 @@ public class Dashboard implements Serializable {
 	Double						avgNumberJobsPerEmployer;
 	Double						avgNumberApplicationsPerEmployer;
 	Double						avgNumberApplicationsPerWorker;
+	String[]					statusApplicationLabels;
+	String[]					statusJobLabels;
+	String[]					dataJob;
+	String[]					dataApplication;
 
 }
