@@ -32,8 +32,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusLabels", /* "dataJobs", */ "dataApplication", "numberAnnouncement", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer",
-			"averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
+		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusApplicationLabels", "statusJobLabels", "dataJob", "dataApplication", "numberAnnouncement", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer",
+			"maximunRewardOffer", "averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
 	}
 
 	@Override
@@ -92,14 +92,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//Tablero Sectores
 
 		String[] iSector = this.repository.investorSector();
-		String[] cSector = this.repository.companySector();
+		String[] cSector = this.repository.companySector(iSector);
 		String[] labels = iSector;
-
-		for (String element : cSector) {
-			if (!ArrayUtils.contains(labels, element)) {
-				labels = ArrayUtils.add(labels, element);
-			}
-		}
+		labels = ArrayUtils.addAll(labels, cSector);
 
 		String[] tempDataCompany = this.repository.dataCompany();
 		String[] dataCompany = new String[labels.length];
@@ -114,97 +109,26 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			}
 		}
 
-		String[] tempInvestorCompany = this.repository.dataInvestor();
-		String[] dataInvestor = new String[labels.length];
+		String[] dataInvestor = this.repository.dataInvestor();
 
-		for (String element : tempInvestorCompany) {
-			String[] s = element.split(",");
-
-			for (int i = 0; i < labels.length; i++) {
-				if (labels[i].matches(s[0])) {
-					dataInvestor[i] = s[1];
-				}
-			}
-		}
+		dataInvestor = ArrayUtils.addAll(dataInvestor, new String[labels.length - dataInvestor.length]);
 
 		result.setGridLabels(labels);
 
-		for (int i = 0; i < dataCompany.length; i++) {
-			if (dataCompany[i] == null) {
-				dataCompany[i] = "0";
-			}
-		}
-
 		result.setDataCompany(dataCompany);
 
-		for (int i = 0; i < dataInvestor.length; i++) {
-			if (dataInvestor[i] == null) {
-				dataInvestor[i] = "0";
-			}
-		}
 		result.setDataInvestor(dataInvestor);
 
 		//Tablero Status
 
-		//String[] jStatus = this.repository.jobStatus();
-		String[] aStatus = this.repository.applicationStatus();
-		//String[] labelsStatus = jStatus;
-		String[] labelsStatus = aStatus;
+		result.setStatusJobLabels(this.repository.jobStatus());
 
-		/*
-		 * for (String element : aStatus) {
-		 * if (!ArrayUtils.contains(labelsStatus, element)) {
-		 * labelsStatus = ArrayUtils.add(labelsStatus, element);
-		 * }
-		 * }
-		 */
+		result.setStatusApplicationLabels(this.repository.applicationStatus());
 
-		String[] tempDataApplication = this.repository.dataApplication();
-		String[] dataApplication = new String[labelsStatus.length];
+		result.setDataJob(this.repository.dataJob());
 
-		for (String element : tempDataApplication) {
-			String[] s = element.split(",");
+		result.setDataApplication(this.repository.dataApplication());
 
-			for (int i = 0; i < labelsStatus.length; i++) {
-				if (labelsStatus[i].matches(s[0])) {
-					dataApplication[i] = s[1];
-				}
-			}
-		}
-
-		/*
-		 * String[] tempDataJob = this.repository.dataJob();
-		 * String[] dataJob = new String[labelsStatus.length];
-		 *
-		 * for (String element : tempDataJob) {
-		 * String[] s = element.split(",");
-		 *
-		 * for (int i = 0; i < labelsStatus.length; i++) {
-		 * if (labelsStatus[i].matches(s[0])) {
-		 * dataJob[i] = s[1];
-		 * }
-		 * }
-		 * }
-		 */
-
-		result.setStatusLabels(labelsStatus);
-
-		for (int i = 0; i < dataApplication.length; i++) {
-			if (dataApplication[i] == null) {
-				dataApplication[i] = "0";
-			}
-		}
-
-		result.setDataApplication(dataApplication);
-
-		/*
-		 * for (int i = 0; i < dataJob.length; i++) {
-		 * if (dataJob[i] == null) {
-		 * dataJob[i] = "0";
-		 * }
-		 * }
-		 * result.setDataJob(dataJob);
-		 */
 		return result;
 	}
 
