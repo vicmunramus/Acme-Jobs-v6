@@ -1,0 +1,10 @@
+employer.auditRecord.list.title = Title
+employer.auditRecord.list.creationMoment = Creation Moment
+
+
+employer.auditRecord.form.title = Title
+employer.auditRecord.form.status = Status
+employer.auditRecord.form.creationMoment = Creation Moment
+employer.auditRecord.form.body = Body
+
+employer.auditRecord.form.return = Return

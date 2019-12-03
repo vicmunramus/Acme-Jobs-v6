@@ -1,6 +1,7 @@
 worker.application.list.label.reference = Reference
 worker.application.list.label.moment = Creation moment
 worker.application.list.label.status = Status
+worker.application.list.label.job.reference = Job Reference
 
 worker.application.form.reference = Reference
 worker.application.form.moment = Creation Moment

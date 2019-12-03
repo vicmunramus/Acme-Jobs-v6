@@ -1,0 +1,9 @@
+authenticated.auditRecord.list.title = Título
+authenticated.auditRecord.list.creationMoment = Momento de Creación
+
+authenticated.auditRecord.form.title = Título
+authenticated.auditRecord.form.status = Estado
+authenticated.auditRecord.form.creationMoment = Momento de Creación
+authenticated.auditRecord.form.body = Cuerpo 
+
+authenticated.auditRecord.form.return = Volver

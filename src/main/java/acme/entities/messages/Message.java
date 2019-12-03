@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import acme.entities.messageThreads.MessageThread;
+import acme.framework.entities.Authenticated;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,13 +32,25 @@ public class Message extends DomainEntity {
 
 	@NotBlank
 	private String				title;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				moment;
-	//Relationships
+
+	private String				tags;
+
+	@NotBlank
+	private String				body;
+
+	//Relationships --------------------------------------------------------------
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private MessageThread		messageThread;
+
+	@Valid
+	@ManyToOne(optional = false)
+	private Authenticated		user;
 
 }

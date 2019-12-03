@@ -23,19 +23,21 @@
 	<acme:form-double code="administrator.dashboard.form.label.avgNumberApplicationsPerEmployer" path="avgNumberApplicationsPerEmployer"/>
 	<acme:form-double code="administrator.dashboard.form.label.avgNumberApplicationsPerWorker" path="avgNumberApplicationsPerWorker"/>
 	
+	<div>
+		<b><acme:message code="administrator.dashboard.form.label.canvasSector"/></b>
+		<canvas id="canvasSector"></canvas>
+	</div>
+
+	<div>
+		<b><acme:message code="administrator.dashboard.form.label.canvasApplicationStatus"/></b>
+		<canvas id="canvasApplicationStatus"></canvas>
+	</div>
+
+	<div>
+		<b><acme:message code="administrator.dashboard.form.label.canvasJobStatus"/></b>
+		<canvas id="canvasJobStatus"></canvas>
+	</div>
 </acme:form>
-
-<div>
-	<canvas id="canvasSector"></canvas>
-</div>
-
-<div>
-	<canvas id="canvasApplicationStatus"></canvas>
-</div>
-
-<div>
-	<canvas id="canvasJobStatus"></canvas>
-</div>
 
 <script type="text/javascript">
 	$(document).ready(function(){

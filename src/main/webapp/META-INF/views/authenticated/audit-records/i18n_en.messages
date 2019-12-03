@@ -1,0 +1,10 @@
+authenticated.auditRecord.list.title = Title
+authenticated.auditRecord.list.creationMoment = Creation Moment
+
+
+authenticated.auditRecord.form.title = Title
+authenticated.auditRecord.form.status = Status
+authenticated.auditRecord.form.creationMoment = Creation Moment
+authenticated.auditRecord.form.body = Body
+
+authenticated.auditRecord.form.return = Return

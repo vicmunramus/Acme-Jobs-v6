@@ -73,7 +73,6 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `message_thread_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -168,12 +167,8 @@
        `id` integer not null,
         `version` integer not null,
         `description` varchar(255),
+        `job_id` integer not null,
         primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `descriptor_duty` (
-       `descriptor_id` integer not null,
-        `duties_id` integer not null
     ) engine=InnoDB;
 
     create table `doblado_bulletin` (
@@ -193,6 +188,7 @@
         `description_duty` varchar(255),
         `percentage` integer,
         `title_duty` varchar(255),
+        `descriptor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -225,7 +221,6 @@
         `salary_currency` varchar(255),
         `status` integer,
         `title` varchar(255),
-        `descriptor_id` integer not null,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -233,9 +228,12 @@
     create table `message` (
        `id` integer not null,
         `version` integer not null,
+        `body` varchar(255),
         `moment` datetime(6),
+        `tags` varchar(255),
         `title` varchar(255),
         `message_thread_id` integer not null,
+        `user_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -244,6 +242,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `title` varchar(255),
+        `creator_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -376,13 +375,10 @@ create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
        add constraint UK_svbyf90rkln6g3ilk8m2yn1d7 unique (`credit_card_number`);
 create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
 
-    alter table `descriptor_duty` 
-       add constraint UK_kvr5rclgwa51d625rmx13ke96 unique (`duties_id`);
+    alter table `descriptor` 
+       add constraint UK_4iw18njo4d0q8gvnhe04vmctw unique (`job_id`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
-
-    alter table `job` 
-       add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -434,11 +430,6 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        references `user_account` (`id`);
 
     alter table `authenticated` 
-       add constraint `FK40xava9g49cdh6x14x0qn181h` 
-       foreign key (`message_thread_id`) 
-       references `message_thread` (`id`);
-
-    alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
@@ -458,13 +449,13 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
-    alter table `descriptor_duty` 
-       add constraint `FK57eqqlhihwvd53ykpmsiqlx2p` 
-       foreign key (`duties_id`) 
-       references `duty` (`id`);
+    alter table `descriptor` 
+       add constraint `FKgfulfilmwi4hhaquiu7fr5g0g` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
 
-    alter table `descriptor_duty` 
-       add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
+    alter table `duty` 
+       add constraint `FK3cc3garl37bl7gswreqwr7pj4` 
        foreign key (`descriptor_id`) 
        references `descriptor` (`id`);
 
@@ -472,11 +463,6 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
-
-    alter table `job` 
-       add constraint `FKfqwyynnbcsq0htxho3vchpd2u` 
-       foreign key (`descriptor_id`) 
-       references `descriptor` (`id`);
 
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
@@ -487,6 +473,16 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
        foreign key (`message_thread_id`) 
        references `message_thread` (`id`);
+
+    alter table `message` 
+       add constraint `FKik4epe9dp5q6uenarfyia7xin` 
+       foreign key (`user_id`) 
+       references `authenticated` (`id`);
+
+    alter table `message_thread` 
+       add constraint `FK3fa4h4tfet2kocvatib2ovhsa` 
+       foreign key (`creator_id`) 
+       references `authenticated` (`id`);
 
     alter table `non_commercial` 
        add constraint FK_1px28k1t0j3coqn549p1ru8op 

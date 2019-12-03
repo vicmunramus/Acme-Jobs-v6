@@ -13,3 +13,6 @@ administrator.dashboard.form.label.stdOffer = Standard Deviation of Offers
 administrator.dashboard.form.label.avgNumberJobsPerEmployer = Average Number of Jobs per Employer
 administrator.dashboard.form.label.avgNumberApplicationsPerEmployer = Average Number of Applications per Employer
 administrator.dashboard.form.label.avgNumberApplicationsPerWorker = Average Number of Applications per Worker
+administrator.dashboard.form.label.canvasSector = Bar chart of investor/company records by sectors
+administrator.dashboard.form.label.canvasApplicationStatus = Bar chart of applications by status
+administrator.dashboard.form.label.canvasJobStatus = Bar chart of jobs by status

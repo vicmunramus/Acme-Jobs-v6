@@ -96,7 +96,7 @@ master.menu.administrator.challenge = Desafíos
 
 master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.banner = Banners
-master.menu.administrator.dashboard = Tablero de control
+master.menu.administrator.dashboard = Panel de control
 master.menu.administrator.customisationParameters.show = Parámetros de Configuración
 
 master.menu.administrator.companyRecords = Historial de Compañías
@@ -117,6 +117,12 @@ master.menu.consumer.offer.create = Crear nueva Oferta
 
 master.menu.employer = Empleador
 master.menu.employer.job.list = Lista de trabajos
+master.menu.employer.application.list-mine = Aplicaciones a mis trabajos
+
+# master.menu.worker ###########################################################
+
+master.menu.worker = Trabajador
+master.menu.worker.application.list-mine = Mis Aplicaciones
 
 # master.menu.auditor ############################################################
 

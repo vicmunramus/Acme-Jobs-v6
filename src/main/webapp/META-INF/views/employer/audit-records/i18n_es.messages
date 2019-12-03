@@ -1,0 +1,9 @@
+employer.auditRecord.list.title = Título
+employer.auditRecord.list.creationMoment = Momento de Creación
+
+employer.auditRecord.form.title = Título
+employer.auditRecord.form.status = Estado
+employer.auditRecord.form.creationMoment = Momento de Creación
+employer.auditRecord.form.body = Cuerpo 
+
+employer.auditRecord.form.return = Volver

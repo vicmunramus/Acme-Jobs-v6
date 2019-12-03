@@ -1,10 +1,8 @@
 
 package acme.entities.jobs;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -28,6 +26,6 @@ public class Descriptor extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@OneToMany
-	private Collection<Duty>	duties;
+	@OneToOne(optional = false)
+	private Job					job;
 }

@@ -13,3 +13,5 @@
 	
 	<acme:form-return code="authenticated.job.form.return"/>	
 </acme:form>
+<acme:redirect-button code="authenticated.job.redirect.descriptor" action="/authenticated/descriptor/show?id=${id}"/>
+<acme:redirect-button code="authenticated.job.redirect.auditRecord" action="/authenticated/audit-records/list?id=${id}"/>

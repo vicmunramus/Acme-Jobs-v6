@@ -1,3 +1,14 @@
-auditor.request.list.label.title = Título del Trabajo
-auditor.request.list.label.status = Referencia del Trabao
-auditor.request.list.label.creationMoment = Cumplimiento del Trabajo
+auditor.job.list.label.reference = Referencia
+auditor.job.list.label.deadline = Deadline
+auditor.job.list.label.title = Título
+
+auditor.job.form.reference = Referencia
+auditor.job.form.deadline = Fecha de vencimiento
+auditor.job.form.title = Título
+auditor.job.form.salary = Salario
+auditor.job.form.moreInfo = Más información
+auditor.job.form.status = Estado
+
+auditor.job.form.return = Volver
+auditor.job.redirect.descriptor = Descriptor
+auditor.job.redirect.auditRecord = Historial de auditoría

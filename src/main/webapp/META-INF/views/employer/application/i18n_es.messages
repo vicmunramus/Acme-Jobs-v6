@@ -1,6 +1,7 @@
 employer.application.list.label.reference = Referencia
 employer.application.list.label.moment = Momento de creación
 employer.application.list.label.status = Estatus
+employer.application.list.label.job.reference = Referencia del empleo
 
 employer.application.form.reference = Referencia
 employer.application.form.moment = Momento de creación

@@ -29,10 +29,6 @@
 
     alter table `authenticated` 
        drop 
-       foreign key `FK40xava9g49cdh6x14x0qn181h`;
-
-    alter table `authenticated` 
-       drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
     alter table `commercial` 
@@ -47,21 +43,17 @@
        drop 
        foreign key `FK31l5hvh7p1nx1aw6v649gw3rc`;
 
-    alter table `descriptor_duty` 
+    alter table `descriptor` 
        drop 
-       foreign key `FK57eqqlhihwvd53ykpmsiqlx2p`;
+       foreign key `FKgfulfilmwi4hhaquiu7fr5g0g`;
 
-    alter table `descriptor_duty` 
+    alter table `duty` 
        drop 
-       foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
+       foreign key `FK3cc3garl37bl7gswreqwr7pj4`;
 
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
-
-    alter table `job` 
-       drop 
-       foreign key `FKfqwyynnbcsq0htxho3vchpd2u`;
 
     alter table `job` 
        drop 
@@ -70,6 +62,14 @@
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
+
+    alter table `message` 
+       drop 
+       foreign key `FKik4epe9dp5q6uenarfyia7xin`;
+
+    alter table `message_thread` 
+       drop 
+       foreign key `FK3fa4h4tfet2kocvatib2ovhsa`;
 
     alter table `non_commercial` 
        drop 
@@ -118,8 +118,6 @@
     drop table if exists `customisation_parameters`;
 
     drop table if exists `descriptor`;
-
-    drop table if exists `descriptor_duty`;
 
     drop table if exists `doblado_bulletin`;
 

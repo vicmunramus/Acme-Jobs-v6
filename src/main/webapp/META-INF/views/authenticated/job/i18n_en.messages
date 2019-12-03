@@ -10,3 +10,5 @@ authenticated.job.form.moreInfo = More Info
 authenticated.job.form.status = Status
 
 authenticated.job.form.return = Return
+authenticated.job.redirect.descriptor = Descriptor
+authenticated.job.redirect.auditRecord = Audit Record

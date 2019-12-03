@@ -10,3 +10,5 @@ employer.job.form.moreInfo = More Info
 employer.job.form.status = Status
 
 employer.job.form.return = Return
+employer.job.redirect.descriptor = Descriptor
+employer.job.redirect.auditRecord = Audit Record
