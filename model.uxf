@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1710</x>
-      <y>270</y>
+      <y>225</y>
       <w>216</w>
       <h>54</h>
     </coordinates>
@@ -19,7 +19,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1710</x>
-      <y>315</y>
+      <y>270</y>
       <w>63</w>
       <h>99</h>
     </coordinates>
@@ -30,7 +30,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1341</x>
-      <y>855</y>
+      <y>810</y>
       <w>198</w>
       <h>108</h>
     </coordinates>
@@ -50,7 +50,7 @@ bg=orange
     <id>UMLNote</id>
     <coordinates>
       <x>1341</x>
-      <y>774</y>
+      <y>729</y>
       <w>216</w>
       <h>54</h>
     </coordinates>
@@ -63,7 +63,7 @@ bg=blue</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1431</x>
-      <y>819</y>
+      <y>774</y>
       <w>27</w>
       <h>54</h>
     </coordinates>
@@ -75,7 +75,7 @@ bg=blue</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1818</x>
-      <y>315</y>
+      <y>270</y>
       <w>27</w>
       <h>99</h>
     </coordinates>
@@ -86,7 +86,7 @@ bg=blue</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2025</x>
-      <y>279</y>
+      <y>234</y>
       <w>90</w>
       <h>54</h>
     </coordinates>
@@ -101,7 +101,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2025</x>
-      <y>207</y>
+      <y>162</y>
       <w>90</w>
       <h>54</h>
     </coordinates>
@@ -116,7 +116,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2025</x>
-      <y>342</y>
+      <y>297</y>
       <w>90</w>
       <h>54</h>
     </coordinates>
@@ -131,7 +131,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1917</x>
-      <y>243</y>
+      <y>198</y>
       <w>126</w>
       <h>72</h>
     </coordinates>
@@ -142,7 +142,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1917</x>
-      <y>288</y>
+      <y>243</y>
       <w>126</w>
       <h>27</h>
     </coordinates>
@@ -153,7 +153,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1917</x>
-      <y>288</y>
+      <y>243</y>
       <w>126</w>
       <h>81</h>
     </coordinates>
@@ -164,7 +164,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1341</x>
-      <y>981</y>
+      <y>936</y>
       <w>198</w>
       <h>81</h>
     </coordinates>
@@ -181,7 +181,7 @@ bg=orange</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1584</x>
-      <y>396</y>
+      <y>351</y>
       <w>180</w>
       <h>81</h>
     </coordinates>
@@ -196,7 +196,7 @@ Provider
     <id>UMLClass</id>
     <coordinates>
       <x>1773</x>
-      <y>396</y>
+      <y>351</y>
       <w>189</w>
       <h>81</h>
     </coordinates>
@@ -211,7 +211,7 @@ Consumer
     <id>UMLClass</id>
     <coordinates>
       <x>1125</x>
-      <y>756</y>
+      <y>711</y>
       <w>198</w>
       <h>72</h>
     </coordinates>
@@ -228,7 +228,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1125</x>
-      <y>846</y>
+      <y>801</y>
       <w>198</w>
       <h>117</h>
     </coordinates>
@@ -248,7 +248,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1125</x>
-      <y>981</y>
+      <y>936</y>
       <w>198</w>
       <h>81</h>
     </coordinates>
@@ -265,7 +265,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1656</x>
-      <y>54</y>
+      <y>9</y>
       <w>306</w>
       <h>117</h>
     </coordinates>
@@ -287,7 +287,7 @@ UserAccount
     <id>Relation</id>
     <coordinates>
       <x>1809</x>
-      <y>162</y>
+      <y>117</y>
       <w>63</w>
       <h>126</h>
     </coordinates>
@@ -301,7 +301,7 @@ has v</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1593</x>
-      <y>1530</y>
+      <y>1485</y>
       <w>396</w>
       <h>162</h>
     </coordinates>
@@ -319,7 +319,7 @@ DobladoBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>1566</x>
-      <y>1350</y>
+      <y>1305</y>
       <w>405</w>
       <h>162</h>
     </coordinates>
@@ -337,7 +337,7 @@ ReinaBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>1134</x>
-      <y>1350</y>
+      <y>1305</y>
       <w>423</w>
       <h>162</h>
     </coordinates>
@@ -355,7 +355,7 @@ CoboBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>1134</x>
-      <y>1530</y>
+      <y>1485</y>
       <w>450</w>
       <h>180</h>
     </coordinates>
@@ -374,7 +374,7 @@ QuintelaBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>1980</x>
-      <y>1350</y>
+      <y>1305</y>
       <w>396</w>
       <h>153</h>
     </coordinates>
@@ -391,7 +391,7 @@ MunozBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>1998</x>
-      <y>1530</y>
+      <y>1485</y>
       <w>378</w>
       <h>162</h>
     </coordinates>
@@ -409,7 +409,7 @@ AguilarBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>1134</x>
-      <y>1152</y>
+      <y>1107</y>
       <w>648</w>
       <h>189</h>
     </coordinates>
@@ -432,7 +432,7 @@ CompanyRecords
     <id>UMLClass</id>
     <coordinates>
       <x>2295</x>
-      <y>1134</y>
+      <y>1089</y>
       <w>360</w>
       <h>216</h>
     </coordinates>
@@ -457,7 +457,7 @@ Challenge
     <id>UMLClass</id>
     <coordinates>
       <x>2385</x>
-      <y>1350</y>
+      <y>1305</y>
       <w>234</w>
       <h>135</h>
     </coordinates>
@@ -474,7 +474,7 @@ InvestorRecord
     <id>UMLClass</id>
     <coordinates>
       <x>2277</x>
-      <y>972</y>
+      <y>927</y>
       <w>477</w>
       <h>153</h>
     </coordinates>
@@ -493,7 +493,7 @@ Request
     <id>UMLClass</id>
     <coordinates>
       <x>1800</x>
-      <y>1161</y>
+      <y>1116</y>
       <w>477</w>
       <h>153</h>
     </coordinates>
@@ -513,7 +513,7 @@ Offer
     <id>UMLClass</id>
     <coordinates>
       <x>2043</x>
-      <y>1026</y>
+      <y>981</y>
       <w>216</w>
       <h>99</h>
     </coordinates>
@@ -529,7 +529,7 @@ CustomisationParameters
     <id>UMLClass</id>
     <coordinates>
       <x>2394</x>
-      <y>1530</y>
+      <y>1485</y>
       <w>279</w>
       <h>117</h>
     </coordinates>
@@ -546,7 +546,7 @@ Announcement
     <id>UMLClass</id>
     <coordinates>
       <x>1584</x>
-      <y>783</y>
+      <y>738</y>
       <w>279</w>
       <h>342</h>
     </coordinates>
@@ -579,7 +579,7 @@ Announcement
     <id>UMLClass</id>
     <coordinates>
       <x>1602</x>
-      <y>702</y>
+      <y>657</y>
       <w>216</w>
       <h>54</h>
     </coordinates>
@@ -591,7 +591,7 @@ Serializable</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1710</x>
-      <y>747</y>
+      <y>702</y>
       <w>27</w>
       <h>54</h>
     </coordinates>
@@ -601,8 +601,8 @@ Serializable</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2448</x>
-      <y>558</y>
+      <x>2385</x>
+      <y>522</y>
       <w>198</w>
       <h>90</h>
     </coordinates>
@@ -619,7 +619,7 @@ Serializable</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1881</x>
-      <y>684</y>
+      <y>639</y>
       <w>810</w>
       <h>108</h>
     </coordinates>
@@ -628,7 +628,7 @@ Commercial
 --
 + creditCardNumber: String {NotBlank,CreditCardNumber}
 + cardHolder: String {NotBlank,Pattern(regexp = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+)*$")}
-+ cvv: String {NotBlank,Pattern(regexp = "^[0-9]{3}[0-9]?$")}
++ cvv: String {NotBlank,Pattern(regexp = "^[0-90]{3}[0-9]?$")}
 + expirationDate: String {NotBlank,Pattern(regexp = "^((0[1-9]{1})|(1[0-2]{1}))\/[0-9]{1}[0-9]{1}$")}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -636,7 +636,7 @@ Commercial
     <id>UMLClass</id>
     <coordinates>
       <x>2709</x>
-      <y>684</y>
+      <y>639</y>
       <w>135</w>
       <h>63</h>
     </coordinates>
@@ -649,30 +649,30 @@ NonCommercial
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2502</x>
-      <y>639</y>
+      <x>2439</x>
+      <y>603</y>
       <w>27</w>
-      <h>63</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2619</x>
-      <y>639</y>
-      <w>171</w>
+      <x>2574</x>
+      <y>594</y>
+      <w>216</w>
       <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;220.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1350</x>
-      <y>432</y>
+      <y>387</y>
       <w>180</w>
       <h>72</h>
     </coordinates>
@@ -687,7 +687,7 @@ Employer
     <id>UMLClass</id>
     <coordinates>
       <x>1368</x>
-      <y>270</y>
+      <y>225</y>
       <w>207</w>
       <h>81</h>
     </coordinates>
@@ -702,7 +702,7 @@ Worker
     <id>Relation</id>
     <coordinates>
       <x>1566</x>
-      <y>279</y>
+      <y>234</y>
       <w>162</w>
       <h>54</h>
     </coordinates>
@@ -713,7 +713,7 @@ Worker
     <id>Relation</id>
     <coordinates>
       <x>1521</x>
-      <y>306</y>
+      <y>261</y>
       <w>207</w>
       <h>180</h>
     </coordinates>
@@ -724,7 +724,7 @@ Worker
     <id>UMLClass</id>
     <coordinates>
       <x>585</x>
-      <y>432</y>
+      <y>387</y>
       <w>207</w>
       <h>72</h>
     </coordinates>
@@ -739,7 +739,7 @@ Descriptor
     <id>UMLClass</id>
     <coordinates>
       <x>900</x>
-      <y>432</y>
+      <y>387</y>
       <w>306</w>
       <h>144</h>
     </coordinates>
@@ -759,7 +759,7 @@ Job
     <id>UMLClass</id>
     <coordinates>
       <x>153</x>
-      <y>432</y>
+      <y>387</y>
       <w>279</w>
       <h>108</h>
     </coordinates>
@@ -775,7 +775,7 @@ Duty
     <id>Relation</id>
     <coordinates>
       <x>1197</x>
-      <y>432</y>
+      <y>387</y>
       <w>171</w>
       <h>45</h>
     </coordinates>
@@ -789,7 +789,7 @@ registered by &gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>783</x>
-      <y>432</y>
+      <y>387</y>
       <w>135</w>
       <h>45</h>
     </coordinates>
@@ -803,7 +803,7 @@ m2=1
     <id>Relation</id>
     <coordinates>
       <x>423</x>
-      <y>441</y>
+      <y>396</y>
       <w>180</w>
       <h>54</h>
     </coordinates>
@@ -820,7 +820,7 @@ r2=+duties
     <id>Relation</id>
     <coordinates>
       <x>1242</x>
-      <y>270</y>
+      <y>225</y>
       <w>144</w>
       <h>45</h>
     </coordinates>
@@ -834,14 +834,14 @@ m2=0..n
     <id>UMLClass</id>
     <coordinates>
       <x>945</x>
-      <y>180</y>
+      <y>135</y>
       <w>306</w>
       <h>135</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Application
 --
-+ reference: String {Unique, NotBlank, Length(5, 10)}
++ reference: String {Unique, NotBlank, Length(5, 15)}
 + moment: Date {Temporal(TIMESTAMP), Past}
 + status: ApplicationStatus {NotNull}
 + statement: String {NotBlank}
@@ -853,7 +853,7 @@ Application
     <id>Relation</id>
     <coordinates>
       <x>1062</x>
-      <y>306</y>
+      <y>261</y>
       <w>63</w>
       <h>144</h>
     </coordinates>
@@ -867,7 +867,7 @@ has ^</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1395</x>
-      <y>153</y>
+      <y>108</y>
       <w>252</w>
       <h>81</h>
     </coordinates>
@@ -882,7 +882,7 @@ Auditors
     <id>Relation</id>
     <coordinates>
       <x>1638</x>
-      <y>207</y>
+      <y>162</y>
       <w>90</w>
       <h>81</h>
     </coordinates>
@@ -893,7 +893,7 @@ Auditors
     <id>UMLClass</id>
     <coordinates>
       <x>1008</x>
-      <y>54</y>
+      <y>9</y>
       <w>324</w>
       <h>99</h>
     </coordinates>
@@ -910,7 +910,7 @@ AuditRecord
     <id>Relation</id>
     <coordinates>
       <x>1323</x>
-      <y>63</y>
+      <y>18</y>
       <w>180</w>
       <h>108</h>
     </coordinates>
@@ -924,7 +924,7 @@ published by v</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>918</x>
-      <y>54</y>
+      <y>9</y>
       <w>108</w>
       <h>396</h>
     </coordinates>
@@ -938,7 +938,7 @@ m2=1
     <id>UMLClass</id>
     <coordinates>
       <x>2232</x>
-      <y>342</y>
+      <y>297</y>
       <w>270</w>
       <h>81</h>
     </coordinates>
@@ -954,12 +954,12 @@ MessageThreads
     <id>Relation</id>
     <coordinates>
       <x>2106</x>
-      <y>342</y>
+      <y>297</y>
       <w>144</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
-m1=1
+m1=0..1
 m2=0..n
 involved in &gt; </panel_attributes>
     <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
@@ -968,7 +968,7 @@ involved in &gt; </panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2619</x>
-      <y>342</y>
+      <y>297</y>
       <w>279</w>
       <h>99</h>
     </coordinates>
@@ -985,7 +985,7 @@ Message
     <id>Relation</id>
     <coordinates>
       <x>2493</x>
-      <y>342</y>
+      <y>297</y>
       <w>144</w>
       <h>45</h>
     </coordinates>
@@ -999,7 +999,7 @@ published in v</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2070</x>
-      <y>450</y>
+      <y>405</y>
       <w>225</w>
       <h>81</h>
     </coordinates>
@@ -1014,7 +1014,7 @@ Sponsor
     <id>Relation</id>
     <coordinates>
       <x>1917</x>
-      <y>306</y>
+      <y>261</y>
       <w>171</w>
       <h>180</h>
     </coordinates>
@@ -1024,52 +1024,53 @@ Sponsor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2448</x>
-      <y>459</y>
-      <w>270</w>
-      <h>81</h>
+      <x>2592</x>
+      <y>414</y>
+      <w>396</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 CredictCard
 --
-+ title: String {NotBlank} 
-+ moment: Date{Temporal(TIMESTAMP),Past}
-</panel_attributes>
++ creditCardNumber: String {Unique, NotBlank, CredictCardNumber}
++ cardHolder: String {NotBlank,Pattern(regexp = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+)*$")}
++ cvv: String {NotBlank,Pattern(regexp = "^[0-90]{3}[0-9]?$")}
++ expirationDate: String {NotBlank,Pattern(regexp = "^((0[1-9]{1})|(1[0-2]{1}))\/[0-9]{1}[0-9]{1}$")}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2286</x>
-      <y>459</y>
-      <w>180</w>
+      <y>414</y>
+      <w>324</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..1
 &lt; involved in </panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2286</x>
-      <y>504</y>
-      <w>180</w>
-      <h>90</h>
+      <y>459</y>
+      <w>117</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=0..1
 m2=0..*
 &lt; created by</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>432</y>
+      <y>387</y>
       <w>126</w>
       <h>36</h>
     </coordinates>
@@ -1081,7 +1082,7 @@ bg=blue</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>738</x>
-      <y>72</y>
+      <y>27</y>
       <w>126</w>
       <h>36</h>
     </coordinates>
@@ -1093,7 +1094,7 @@ bg=blue</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>738</x>
-      <y>261</y>
+      <y>216</y>
       <w>126</w>
       <h>36</h>
     </coordinates>
@@ -1105,7 +1106,7 @@ bg=blue</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>2961</x>
-      <y>351</y>
+      <y>306</y>
       <w>126</w>
       <h>27</h>
     </coordinates>
@@ -1116,8 +1117,8 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2754</x>
-      <y>468</y>
+      <x>2997</x>
+      <y>423</y>
       <w>126</w>
       <h>27</h>
     </coordinates>
