@@ -24,10 +24,14 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 	public Collection<MessageThread> findMany(final Request<MessageThread> request) {
 		assert request != null;
 
-		Collection<MessageThread> result;
+		Collection<MessageThread> result = null;
 		Principal principal;
 		principal = request.getPrincipal();
-		result = this.repository.findManyMessageThreadByAuthenticatedId(principal.getActiveRoleId());
+		Collection<MessageThread> involvedThreads = this.repository.findManyMessageThreadByAuthenticatedId(principal.getActiveRoleId());
+		MessageThread createdThread = this.repository.findOneMessageThreadByAuthenticatedId(principal.getActiveRoleId());
+
+		result.addAll(involvedThreads);
+		result.add(createdThread);
 		//result = this.repository.findManyMessageThreads();
 
 		return result;
