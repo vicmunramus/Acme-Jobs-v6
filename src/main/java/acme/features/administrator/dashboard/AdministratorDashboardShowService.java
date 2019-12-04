@@ -92,7 +92,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//Tablero Sectores
 
 		String[] iSector = this.repository.investorSector();
-		String[] cSector = this.repository.companySector(iSector);
+		String[] cSector = this.repository.companySector(iSector.length != 0 ? iSector : new String[1]);
 		String[] labels = iSector;
 		labels = ArrayUtils.addAll(labels, cSector);
 

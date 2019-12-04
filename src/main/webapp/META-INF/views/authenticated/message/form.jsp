@@ -3,6 +3,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
+	
+	<acme:form-textbox code="authenticated.message.form.user.username" path="user.userAccount.username" />
+
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title" />
 	<acme:form-moment code="authenticated.message.form.label.moment" path="moment" />
 	<acme:form-textbox code="authenticated.message.form.label.body" path="body"/>

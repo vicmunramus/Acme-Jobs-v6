@@ -32,7 +32,7 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "id", "title", "moment");
+		request.unbind(entity, model, "id", "title", "moment", "body", "user.userAccount.username");
 	}
 
 	@Override
@@ -43,6 +43,7 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneMessageById(id);
 		//result = this.repository.findManyMessageThreads();
+
 		return result;
 	}
 

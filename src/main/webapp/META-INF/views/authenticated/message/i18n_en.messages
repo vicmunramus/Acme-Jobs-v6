@@ -11,6 +11,11 @@
 authenticated.message.list.label.title = Title
 authenticated.message.list.label.moment = Creation date
 
+authenticated.message.form.user = User
+authenticated.message.form.user.username = Username
+
 authenticated.message.form.label.title = Title
 authenticated.message.form.label.moment = Creation date
+authenticated.message.form.label.body= Body
+
 authenticated.message.form.button.return = Return
