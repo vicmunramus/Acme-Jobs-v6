@@ -28,7 +28,6 @@ import acme.framework.entities.UserAccount;
 public class AuthenticatedUserAccountController extends AbstractController<Authenticated, UserAccount> {
 
 	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private AuthenticatedUserAccountUpdateService updateService;
 

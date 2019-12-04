@@ -24,7 +24,7 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 		assert request != null;
 
 		Collection<Message> result;
-		int id = request.getModel().getInteger("message_thread_id");
+		int id = request.getModel().getInteger("id");
 		result = this.repository.findManyMessageByMessageThread(id);
 		//result = this.repository.findManyMessageThreads();
 
