@@ -31,7 +31,7 @@ public class Duty extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Descriptor			descriptor;
 
 }

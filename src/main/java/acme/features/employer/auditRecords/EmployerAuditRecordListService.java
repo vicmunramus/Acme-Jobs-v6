@@ -32,7 +32,7 @@ public class EmployerAuditRecordListService implements AbstractListService<Emplo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "status", "creationMoment", "body");
+		request.unbind(entity, model, "title", "creationMoment");
 	}
 
 	@Override

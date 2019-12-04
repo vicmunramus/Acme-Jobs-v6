@@ -188,7 +188,7 @@
         `description_duty` varchar(255),
         `percentage` integer,
         `title_duty` varchar(255),
-        `descriptor_id` integer,
+        `descriptor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -362,23 +362,24 @@
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
+create index IDXmlt8tvsyjfedmoqiivkl6s03c on `company_records` (`work_sector`);
 
     alter table `credit_card` 
        add constraint UK_4cr95y27s8ti6otoyflmma6oy unique (`sponsor_id`);
-
-    alter table `credit_card` 
-       add constraint UK_svbyf90rkln6g3ilk8m2yn1d7 unique (`credit_card_number`);
 create index IDXjaub8uhu1ab9se7oh9atwuktl on `customisation_parameters` (`identifier`);
 
     alter table `descriptor` 
        add constraint UK_4iw18njo4d0q8gvnhe04vmctw unique (`job_id`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
-create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
+create index IDX29vxwf0tu7wf2iwmss2d07hql on `investor_record` (`sector`);
+create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
+create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);

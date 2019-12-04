@@ -1,7 +1,6 @@
 
 package acme.entities.creditCards;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
@@ -23,7 +22,6 @@ public class CreditCard extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@Column(unique = true)
 	@CreditCardNumber
 	@NotBlank
 	private String				creditCardNumber;

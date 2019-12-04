@@ -32,7 +32,7 @@ public class AuthenticatedAuditRecordListService implements AbstractListService<
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "status", "creationMoment", "body");
+		request.unbind(entity, model, "title", "creationMoment");
 	}
 
 	@Override

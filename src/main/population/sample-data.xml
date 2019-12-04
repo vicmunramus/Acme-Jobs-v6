@@ -580,7 +580,7 @@
  	</bean>
  	
  	<bean name = "job2" class = "acme.entities.jobs.Job">
- 		<property name = "reference" value = "EMP1-JOB2"/>
+ 		<property name = "reference" value = "EMP2-JOB2"/>
  		<property name = "title" value = "Title 2"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
  		<property name = "salary" value = "$ 20,000.00"/>
@@ -600,7 +600,7 @@
  	</bean>
  	
  	<bean name = "job4" class = "acme.entities.jobs.Job">
- 		<property name = "reference" value = "EMP1-JOB4"/>
+ 		<property name = "reference" value = "EMP2-JOB4"/>
  		<property name = "title" value = "Title 4"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
  		<property name = "salary" value = "$ 22,000.00"/>
