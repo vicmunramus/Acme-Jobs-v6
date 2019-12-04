@@ -242,7 +242,6 @@
         `version` integer not null,
         `moment` datetime(6),
         `title` varchar(255),
-        `user` tinyblob,
         `creator_id` integer,
         primary key (`id`)
     ) engine=InnoDB;

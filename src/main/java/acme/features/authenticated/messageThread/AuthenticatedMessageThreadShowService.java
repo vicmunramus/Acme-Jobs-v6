@@ -1,7 +1,6 @@
 
 package acme.features.authenticated.messageThread;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +8,6 @@ import acme.entities.messageThreads.MessageThread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -43,7 +41,7 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "id", "title", "moment", "creator.userAccount.username", "user");
+		request.unbind(entity, model, "id", "title", "moment", "creator.userAccount.username");
 	}
 
 	@Override
@@ -53,13 +51,6 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		int id;
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneMessageThread(id);
-		//result = this.repository.findManyMessageThreads();
-
-		String[] vacio = new String[result.getInvolvedUsers().size()];
-		for (UserAccount u : result.getInvolvedUsers()) {
-			ArrayUtils.add(vacio, u.getUsername());
-		}
-		result.setUser(vacio);
 
 		return result;
 	}

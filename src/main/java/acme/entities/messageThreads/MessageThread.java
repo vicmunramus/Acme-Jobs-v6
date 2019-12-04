@@ -38,8 +38,6 @@ public class MessageThread extends DomainEntity {
 	@Past
 	private Date					moment;
 
-	private String[]				user;
-
 	@Valid
 	@OneToMany
 	private Collection<UserAccount>	involvedUsers;
@@ -48,19 +46,5 @@ public class MessageThread extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = true)
 	private Authenticated			creator;
-
-	/*
-	 * @Transient
-	 * private String[] getUsersInvolved() {
-	 * 
-	 * String[] res = new String[this.getInvolvedUsers().size()];
-	 * 
-	 * for (UserAccount u : this.getInvolvedUsers()) {
-	 * ArrayUtils.add(res, u.getUsername());
-	 * }
-	 * 
-	 * return res;
-	 * }
-	 */
 
 }
