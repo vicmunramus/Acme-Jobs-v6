@@ -71,6 +71,14 @@
        drop 
        foreign key `FK3fa4h4tfet2kocvatib2ovhsa`;
 
+    alter table `message_thread_user_account` 
+       drop 
+       foreign key `FKo38s0x5wh4bqafrldhmusaacu`;
+
+    alter table `message_thread_user_account` 
+       drop 
+       foreign key `FKtchis3o5qij98x87mty6hdk4d`;
+
     alter table `non_commercial` 
        drop 
        foreign key FK_1px28k1t0j3coqn549p1ru8op;
@@ -132,6 +140,8 @@
     drop table if exists `message`;
 
     drop table if exists `message_thread`;
+
+    drop table if exists `message_thread_user_account`;
 
     drop table if exists `munoz_bulletin`;
 

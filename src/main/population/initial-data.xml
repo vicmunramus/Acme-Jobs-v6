@@ -609,14 +609,22 @@
  		<property name="title" value="messageThread0"/>
  		<property name="moment" value="2019/10/29 17:10"/>
  		<property name="creator" ref="worker1Authenticated"/>
+ 		<property name="involvedUsers">
+ 			<list>
+ 				<ref bean="employer2UserAccount" />
+ 				<ref bean="worker2UserAccount" />
+ 			</list>
+ 		</property>
  	</bean>
  	
+ 	<!-- 
  	<bean name="messageThread2" class="acme.entities.messageThreads.MessageThread">
  		<property name="title" value="messageThread1"/>
  		<property name="moment" value="2019/10/29 17:10"/>
  		<property name="creator" ref="employer2Authenticated"/>
  	</bean>
- 	
+ 	 -->
+ 	 
  	<!-- Messages -->
  	
  	<bean name="message1" class="acme.entities.messages.Message">
@@ -628,6 +636,7 @@
  		<property name="user" ref="employer2Authenticated"/>
  	</bean>
  	
+ 	<!-- 
  	<bean name="message2" class="acme.entities.messages.Message">
  		<property name="title" value="message1"/>
  		<property name="moment" value="2019/10/29 17:10"/>
@@ -636,6 +645,8 @@
  		<property name="messageThread" ref="messageThread2"/>
  		<property name="user" ref="worker1Authenticated"/>
  	</bean>
+ 	 -->
+ 	 
  	<bean name="message3" class="acme.entities.messages.Message">
  		<property name="title" value="message3"/>
  		<property name="moment" value="2019/10/29 17:10"/>
@@ -644,6 +655,8 @@
  		<property name="messageThread" ref="messageThread1"/>
  		<property name="user" ref="worker2Authenticated"/>
  	</bean>
+ 	
+ 	<!-- 
  	<bean name="message4" class="acme.entities.messages.Message">
  		<property name="title" value="message4"/>
  		<property name="moment" value="2019/10/29 17:10"/>
@@ -652,6 +665,7 @@
  		<property name="messageThread" ref="messageThread2"/>
  		<property name="user" ref="employer1Authenticated"/>
  	</bean>
+ 	 -->
  	
  	<!-- /QUITAR PROXIMO ENTREGABLE -->
 
