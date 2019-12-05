@@ -309,7 +309,6 @@
 		
 		<!-- BANNERS -->
  	
-
  	<bean id="banner01" class="acme.entities.banners.Commercial">
  		<property name="picture" value="https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg"/>
  		<property name="slogan" value="Open Happiness"/>
@@ -816,4 +815,6 @@
  		<property name="messageThread" ref="messageThread2"/>
  		<property name="user" ref="employer1Authenticated"/>
  	</bean>
+ 	
+ 	
 </beans>
