@@ -9,7 +9,9 @@ employer.job.form.salary = Salary
 employer.job.form.moreInfo = More Info
 employer.job.form.status = Status
 
-employer.job.form.button.create = Crear
+employer.job.form.button.create = Create
+employer.job.form.button.update = Update
+employer.job.form.button.delete = Delete
 employer.job.form.return = Return
 employer.job.redirect.descriptor = Descriptor
 employer.job.redirect.auditRecord = Audit Record

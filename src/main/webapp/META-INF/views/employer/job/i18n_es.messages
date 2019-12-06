@@ -10,6 +10,8 @@ employer.job.form.moreInfo = Más información
 employer.job.form.status = Estado
 
 employer.job.form.button.create = Crear
+employer.job.form.button.update = Actualizar
+employer.job.form.button.delete = Eliminar
 employer.job.form.return = Volver
 employer.job.redirect.descriptor = Descriptor
 employer.job.redirect.auditRecord = Historial de auditoría
