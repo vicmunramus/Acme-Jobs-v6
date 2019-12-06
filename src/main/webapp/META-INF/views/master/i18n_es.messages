@@ -101,6 +101,7 @@ master.menu.administrator.customisationParameters.show = Parámetros de Configur
 
 master.menu.administrator.companyRecords = Historial de Compañías
 master.menu.administrator.investor-record = Historial de Inversores
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -118,6 +119,7 @@ master.menu.consumer.offer.create = Crear nueva Oferta
 master.menu.employer = Empleador
 master.menu.employer.job.list = Lista de trabajos
 master.menu.employer.application.list-mine = Aplicaciones a mis trabajos
+master.menu.employer.job.create = Crear nuevo trabajo
 
 # master.menu.worker ###########################################################
 

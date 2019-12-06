@@ -9,6 +9,11 @@ employer.job.form.salary = Salario
 employer.job.form.moreInfo = Más información
 employer.job.form.status = Estado
 
+employer.job.form.button.create = Crear
 employer.job.form.return = Volver
 employer.job.redirect.descriptor = Descriptor
 employer.job.redirect.auditRecord = Historial de auditoría
+
+# Errors #########################################
+
+employer.job.error.deadline-must-be-in-the-future = La fecha de vencimiento debe de estar en el futuro
