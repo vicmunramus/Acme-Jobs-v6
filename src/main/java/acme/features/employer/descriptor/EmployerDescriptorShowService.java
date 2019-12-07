@@ -32,7 +32,7 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 
 		principal = request.getPrincipal();
 		descriptorId = request.getModel().getInteger("id");
-		descriptor = this.repository.findOneDescriptorById(descriptorId);
+		descriptor = this.repository.findOneDescriptorByJobId(descriptorId);
 		employer = descriptor.getJob().getEmployer();
 		result = descriptor.getJob().getStatus() == Status.PUBLISHED || descriptor.getJob().getStatus() == Status.DRAFT && employer.getUserAccount().getId() == principal.getAccountId();
 
@@ -58,7 +58,7 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneDescriptorById(id);
+		result = this.repository.findOneDescriptorByJobId(id);
 		return result;
 	}
 

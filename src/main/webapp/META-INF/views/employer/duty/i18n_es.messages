@@ -5,4 +5,7 @@ employer.duty.form.title = Título
 employer.duty.form.description = Descripción
 employer.duty.form.percentage = Porcentaje
 
+employer.duty.form.button.create = Crear
+employer.duty.form.button.update = Actualizar
+employer.duty.form.button.delete = Eliminar
 employer.duty.form.return = Volver

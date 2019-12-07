@@ -17,13 +17,23 @@ import acme.framework.controllers.AbstractController;
 public class EmployerDescriptorController extends AbstractController<Employer, Descriptor> {
 
 	@Autowired
-	private EmployerDescriptorShowService showService;
+	private EmployerDescriptorShowService	showService;
+	@Autowired
+	private EmployerDescriptorCreateService	createService;
+	@Autowired
+	private EmployerDescriptorUpdateService	updateService;
+
+	@Autowired
+	private EmployerDescriptorDeleteService	deleteService;
 
 
 	@PostConstruct
 	private void initialise() {
 
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 
 	}
 

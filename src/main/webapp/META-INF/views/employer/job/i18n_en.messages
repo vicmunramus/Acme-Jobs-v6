@@ -12,6 +12,7 @@ employer.job.form.status = Status
 employer.job.form.button.create = Create
 employer.job.form.button.update = Update
 employer.job.form.button.delete = Delete
+employer.job.form.button.create-descriptor = Create Descriptor
 employer.job.form.return = Return
 employer.job.redirect.descriptor = Descriptor
 employer.job.redirect.auditRecord = Audit Record
@@ -19,3 +20,4 @@ employer.job.redirect.auditRecord = Audit Record
 # Errors #########################################
 
 employer.job.error.deadline-must-be-in-the-future = The deadline must be in the future
+employer.job.error.workers-has-applied = Cannot be deleted. One worker or more had applied for the Job

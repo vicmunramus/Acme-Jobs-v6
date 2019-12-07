@@ -6,9 +6,12 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.auditRecords.AuditRecords;
 import acme.entities.jobs.Descriptor;
+import acme.entities.jobs.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
+import acme.entities.roles.Worker;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -21,8 +24,17 @@ public interface EmployerJobRepository extends AbstractRepository {
 	Collection<Job> findManyByEmployerId(int employerId);
 
 	@Query("select d from Descriptor d where d.job.id = ?1")
-	Descriptor findOneDescriptorById(int jobId);
+	Descriptor findOneDescriptorByJobId(int jobId);
 
 	@Query("select e from Employer e where e.id = ?1")
 	Employer findOneEmployerById(int employerId);
+
+	@Query("select a.worker from Application a where a.job.id = ?1")
+	Collection<Worker> findWorkersByJob(int jobId);
+
+	@Query("select d from Duty d where d.descriptor.id = ?1")
+	Collection<Duty> findManyDutiesByDescriptorId(int descriptorId);
+
+	@Query("select a from AuditRecords a where a.job.id = ?1")
+	Collection<AuditRecords> findManyAuditRecordsByJobId(int jobId);
 }

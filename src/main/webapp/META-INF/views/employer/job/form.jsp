@@ -23,7 +23,12 @@
 		code="employer.job.form.button.update" action="/employer/job/update"/>	
 	<acme:form-submit test="${command == 'show'}" 
 		code="employer.job.form.button.delete" action="/employer/job/delete"/>
+		
+	<!--<acme:form-hidden path="jobId"/>-->	
+	<acme:form-submit test="${command == 'show'}" 
+		code="employer.job.form.button.create-descriptor" action="/employer/descriptor/create"/>		
 
+	
 	<acme:form-return code="employer.job.form.return"/>	
 	
 </acme:form>
