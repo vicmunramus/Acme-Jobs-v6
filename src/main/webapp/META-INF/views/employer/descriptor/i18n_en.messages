@@ -3,9 +3,11 @@ employer.descriptor.form.description = Description
 employer.descriptor.form.button.create = Create
 employer.descriptor.form.button.update = Update
 employer.descriptor.form.button.delete = Delete
-employer.descriptor.form.button.create-duty = Create Duty
 employer.descriptor.form.return = Return
-employer.descriptor.button.duty = Duty
+
+
+employer.descriptor.button.duty = Duties
+employer.descriptor.button.create-duty = Create Duty
 
 
 employer.descriptor.error.descriptor-exists = There is already a Descriptor for this Job

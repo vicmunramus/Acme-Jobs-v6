@@ -8,8 +8,10 @@ import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -22,8 +24,22 @@ public class EmployerDescriptorCreateService implements AbstractCreateService<Em
 	@Override
 	public boolean authorise(final Request<Descriptor> request) {
 		assert request != null;
-		//Asegurarnos
-		return true;
+		boolean result = true;
+
+		//Assure this is the owner of the job
+		int jobId;
+		Job job;
+		Employer employer;
+		Principal principal;
+
+		jobId = request.getModel().getInteger("jobId");
+		job = this.repository.findOneJobById(jobId);
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+
+		result = employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -41,18 +57,23 @@ public class EmployerDescriptorCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "description", "job");
+		request.unbind(entity, model, "description");
+
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("jobId", request.getModel().getInteger("jobId"));
+		}
+
 	}
 
 	@Override
 	public Descriptor instantiate(final Request<Descriptor> request) {
 
 		Descriptor result;
+
 		result = new Descriptor();
 		Job job;
-		job = new Job();
 
-		int jobId = request.getModel().getInteger("id");
+		int jobId = request.getModel().getInteger("jobId");
 		job = this.repository.findOneJobById(jobId);
 
 		result.setJob(job);
@@ -67,7 +88,7 @@ public class EmployerDescriptorCreateService implements AbstractCreateService<Em
 		assert errors != null;
 
 		// No descriptor already created
-		int jobId = request.getModel().getInteger("id");
+		int jobId = request.getModel().getInteger("jobId");
 
 		if (!errors.hasErrors("description")) {
 			boolean noDescriptor;

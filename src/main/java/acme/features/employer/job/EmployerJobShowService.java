@@ -4,8 +4,10 @@ package acme.features.employer.job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -46,6 +48,13 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "status");
+
+		if (request.isMethod(HttpMethod.GET)) {
+
+			Descriptor descriptor = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id"));
+			boolean descriptorExist = descriptor != null ? true : false;
+			model.setAttribute("descriptorExist", descriptorExist);
+		}
 	}
 
 	@Override

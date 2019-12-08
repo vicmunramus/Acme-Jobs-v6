@@ -26,6 +26,7 @@ public class Duty extends DomainEntity {
 	@NotBlank
 	private String				descriptionDuty;
 
+	@NotNull
 	@Range(min = 0, max = 100)
 	private Integer				percentage;
 

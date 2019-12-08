@@ -37,4 +37,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select a from AuditRecords a where a.job.id = ?1")
 	Collection<AuditRecords> findManyAuditRecordsByJobId(int jobId);
+
+	@Query("select j from Job j where j.reference = ?1")
+	Object findOneJobByReference(String reference);
 }

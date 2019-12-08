@@ -3,9 +3,10 @@ employer.descriptor.form.description = Descripción
 employer.descriptor.form.button.create = Crear
 employer.descriptor.form.button.update = Actualizar
 employer.descriptor.form.button.delete = Eliminar
-employer.descriptor.form.button.create-duty= Crear Deber
 employer.descriptor.form.return = Volver
-employer.descriptor.button.duty = Deber
 
+
+employer.descriptor.button.duty = Deberes
+employer.descriptor.button.create-duty = Crear Deber
 
 employer.descriptor.error.descriptor-exists = Ya existe una descripción para este trabajo

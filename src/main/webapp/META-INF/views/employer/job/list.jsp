@@ -8,3 +8,5 @@
 	<acme:list-column code="employer.job.list.label.deadline" path="deadline" width="10%"/>
 	<acme:list-column code="employer.job.list.label.title" path="title" width="80%"/>
 </acme:list>
+
+<acme:redirect-button code="employer.job.list.redirect.create-job" action="/employer/job/create"/>

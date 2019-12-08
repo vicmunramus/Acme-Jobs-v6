@@ -68,15 +68,27 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		boolean isAfter, uniqueReference, inEuros, positive;
+
 		//DEADLINE
 		if (!errors.hasErrors("deadline")) {
-			boolean isAfter;
 			isAfter = entity.getDeadline().after(new Date(System.currentTimeMillis()));
 			errors.state(request, isAfter, "deadline", "employer.job.error.deadline-must-be-in-the-future");
 		}
 		//Reference
-
+		if (!errors.hasErrors("reference")) {
+			uniqueReference = this.repository.findOneJobByReference(entity.getReference()) == null;
+			errors.state(request, uniqueReference, "reference", "employer.job.form.error.uniqueReference");
+		}
 		//Salary
+		if (!errors.hasErrors("salary")) {
+
+			inEuros = entity.getSalary().getCurrency().equals("€") || entity.getSalary().getCurrency().equals("EUR");
+			errors.state(request, inEuros, "salary", "employer.job.form.error.salary-in-euros");
+
+			positive = entity.getSalary().getAmount() >= 0.;
+			errors.state(request, positive, "salary", "employer.job.form.error.salary-not-positive");
+		}
 	}
 
 	@Override

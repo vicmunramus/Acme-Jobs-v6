@@ -9,6 +9,7 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -21,8 +22,22 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 	@Override
 	public boolean authorise(final Request<Descriptor> request) {
 		assert request != null;
-		//Asegurarse que este puede actualizar este job
-		return true;
+		boolean result = true;
+
+		//Assure this is the owner of the descriptor
+		int descriptorId;
+		Descriptor descriptor;
+		Employer employer;
+		Principal principal;
+
+		descriptorId = request.getModel().getInteger("id");
+		descriptor = this.repository.findOneDescriptorById(descriptorId);
+		employer = descriptor.getJob().getEmployer();
+		principal = request.getPrincipal();
+
+		result = employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
