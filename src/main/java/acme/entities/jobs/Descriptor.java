@@ -17,9 +17,6 @@ import lombok.Setter;
 
 public class Descriptor extends DomainEntity {
 
-	/**
-	 *
-	 */
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
