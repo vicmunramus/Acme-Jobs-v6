@@ -19,11 +19,15 @@
 	    code="worker.application.form.button.create" action="/worker/application/create?jobId=${jobId}"/>
 	    
 	<jstl:if test="${command == 'show'}">
-	<acme:form-panel code="worker.application.form.job">
-		<acme:form-textbox code="worker.application.form.job.reference" path="job.reference"/>
-		<acme:form-textbox code="worker.application.form.job.title" path="job.title"/>
-	</acme:form-panel>
+    <acme:form-panel code="worker.application.form.job">
+      <acme:form-textbox code="worker.application.form.job.reference" path="job.reference"/>
+      <acme:form-textbox code="worker.application.form.job.title" path="job.title"/>
+    </acme:form-panel>
 	</jstl:if>
 	
+	<acme:form-panel code="worker.application.form.resolution">
+		<acme:form-textarea code="worker.application.form.resolutionJustification" path="resolutionJustification"/>
+	</acme:form-panel>
+
 	<acme:form-return code="worker.application.form.return"/>	
 </acme:form>

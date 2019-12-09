@@ -21,4 +21,5 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select j from Descriptor j where j.job.id = ?1")
 	Descriptor findOneDescriptorById(int jobId);
+
 }
