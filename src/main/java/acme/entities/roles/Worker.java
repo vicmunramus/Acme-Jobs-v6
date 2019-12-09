@@ -19,8 +19,8 @@ public class Worker extends UserRole {
 	//Atributes:
 
 	@NotBlank
-	private String				cualificationsRecord;
+	private String				qualifications;
 
 	@NotBlank
-	private String				skillsRecord;
+	private String				skills;
 }

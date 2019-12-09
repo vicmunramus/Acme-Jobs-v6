@@ -95,6 +95,9 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine" />
 			<acme:menu-suboption code="master.menu.employer.application.list-mine" action="/employer/application/list-to-my-jobs" />
+			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByRef" action="/employer/application/list-to-my-jobs?groupByReference=1" />
+			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByStat" action="/employer/application/list-to-my-jobs?groupByStatus=1" />
+			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByCreation" action="/employer/application/list-to-my-jobs?groupByCreationMoment=1" />			
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
@@ -126,6 +129,19 @@
 				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update"
 				access="hasRole('Consumer')" />
+
+			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create"
+				access="!hasRole('Worker')" />
+      
+			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update"
+				access="hasRole('Worker')" />
+
+			<acme:menu-suboption code="master.menu.user-account.become-employer" action="/authenticated/employer/create"
+				access="!hasRole('Employer')" />
+      
+			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update"
+				access="hasRole('Employer')" />
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />
