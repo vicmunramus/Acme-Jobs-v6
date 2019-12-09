@@ -13,4 +13,6 @@
 	<definition name="worker/application/form" extends="master">
 		<put-attribute name="body" type="template" value="../worker/application/form.jsp"/>
 	</definition>	
+	
+	
 </tiles-definitions>

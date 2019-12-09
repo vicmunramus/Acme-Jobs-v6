@@ -14,3 +14,6 @@ worker.application.form.job.reference = Referencia
 worker.application.form.job.title = Título
 
 worker.application.form.return = Volver
+
+worker.published.error.notPublished = Ese trabajo no ha sido publicado
+worker.deadline.error.deadlineElapsed = La fecha límite de ese trabajo ha expirado
