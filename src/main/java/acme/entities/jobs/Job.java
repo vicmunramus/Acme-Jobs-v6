@@ -31,9 +31,6 @@ import lombok.Setter;
 })
 public class Job extends DomainEntity {
 
-	/**
-	 *
-	 */
 	private static final long	serialVersionUID	= 1L;
 
 	@Column(unique = true)

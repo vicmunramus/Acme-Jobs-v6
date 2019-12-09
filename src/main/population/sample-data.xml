@@ -726,7 +726,7 @@
  	
  	<!-- Applications -->
 	<bean name="application1" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB1:WOR1"/>
+		<property name="reference" value="EMP1-JOB1:WORK1"/>
 		<property name="moment" value="2019/11/12 17:00"/>
 		<property name="status" value="PENDING"/>
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
@@ -736,7 +736,7 @@
 		<property name="job" ref="job1"/>
 	</bean>
 	<bean name="application2" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB1:WOR2"/>
+		<property name="reference" value="EMP1-JOB1:WORK2"/>
 		<property name="moment" value="2019/11/25 08:00"/>
 		<property name="status" value="PENDING"/>
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
@@ -746,7 +746,7 @@
 		<property name="job" ref="job1"/>
 	</bean>
 	<bean name="application3" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP2-JOB2:WOR1"/>
+		<property name="reference" value="EMP2-JOB2:WORK1"/>
 		<property name="moment" value="2019/09/11 12:00"/>
 		<property name="status" value="REJECTED"/>
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
@@ -756,7 +756,7 @@
 		<property name="job" ref="job2"/>
 	</bean>
 	<bean name="application4" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP2-JOB2:WOR2"/>
+		<property name="reference" value="EMP2-JOB2:WORK2"/>
 		<property name="moment" value="2019/09/16 12:00"/>
 		<property name="status" value="REJECTED"/>
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
