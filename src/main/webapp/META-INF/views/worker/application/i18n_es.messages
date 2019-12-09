@@ -12,5 +12,7 @@ worker.application.form.qualifications = Titulaciones
 worker.application.form.job = Empleo
 worker.application.form.job.reference = Referencia
 worker.application.form.job.title = Título
+worker.application.form.resolution = Resolución
+worker.application.form.resolutionJustification = Justificación
 
 worker.application.form.return = Volver

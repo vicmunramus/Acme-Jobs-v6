@@ -5,14 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Application;
+import acme.entities.jobs.ApplicationStatus;
 import acme.entities.roles.Employer;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class EmployerApplicationShowService implements AbstractShowService<Employer, Application> {
+public class EmployerApplicationAcceptService implements AbstractUpdateService<Employer, Application> {
 
 	@Autowired
 	EmployerApplicationRepository repository;
@@ -38,12 +40,21 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 	}
 
 	@Override
+	public void bind(final Request<Application> request, final Application entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors, "reference", "moment", "status", "statement", "skills", "qualifications", "job.reference", "job.title");
+	}
+
+	@Override
 	public void unbind(final Request<Application> request, final Application entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "moment", "status", "statement", "skills", "qualifications", "resolutionJustification", "job.reference", "job.title");
+		request.unbind(entity, model, "resolutionJustification");
 	}
 
 	@Override
@@ -57,6 +68,26 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		result = this.repository.findOneApplicationById(id);
 
 		return result;
+	}
+
+	@Override
+	public void validate(final Request<Application> request, final Application entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+	}
+
+	@Override
+	public void update(final Request<Application> request, final Application entity) {
+		assert request != null;
+		assert entity != null;
+
+		if (entity.getResolutionJustification().trim().isEmpty()) {
+			entity.setResolutionJustification(null);
+		}
+		entity.setStatus(ApplicationStatus.ACCEPTED);
+
+		this.repository.save(entity);
 	}
 
 }

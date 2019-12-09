@@ -12,5 +12,11 @@ employer.application.form.qualifications = Titulaciones
 employer.application.form.job = Empleo
 employer.application.form.job.reference = Referencia
 employer.application.form.job.title = Título
+employer.application.form.resolution = Resolución
+employer.application.form.resolutionJustification = Justificación
 
+employer.applicaton.form.button.accept = Aceptar
+employer.applicaton.form.button.reject = Rechazar
 employer.application.form.return = Volver
+
+employer.application.error.justification-is-mandatory-when-rejecting = Es necesario justificar el rechazo
