@@ -471,8 +471,8 @@
 		</property>
 	</bean>
 	<bean name="worker1Worker" class="acme.entities.roles.Worker">
-		<property name="cualificationsRecord" value="Software Engineering degree at University of Seville" />
-		<property name="skillsRecord" value="Java; PHP; C++; SQL" />
+		<property name="qualifications" value="Software Engineering degree at University of Seville" />
+		<property name="skills" value="Java; PHP; C++; SQL" />
 		<property name="userAccount" ref="worker1UserAccount" />
 	</bean>
 	<bean name="worker1Authenticated" class="acme.framework.entities.Authenticated">
@@ -498,8 +498,8 @@
 		</property>
 	</bean>
 	<bean name="worker2Worker" class="acme.entities.roles.Worker">
-		<property name="cualificationsRecord" value="Bachelor of Mathematic at UCLA; PHD in Computational Mathematics at UCLA" />
-		<property name="skillsRecord" value="C++; Matlab; advanced mathematics;" />
+		<property name="qualifications" value="Bachelor of Mathematic at UCLA; PHD in Computational Mathematics at UCLA" />
+		<property name="skills" value="C++; Matlab; advanced mathematics;" />
 		<property name="userAccount" ref="worker2UserAccount" />
 	</bean>
 	<bean name="worker2Authenticated" class="acme.framework.entities.Authenticated">
