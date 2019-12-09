@@ -44,7 +44,16 @@ public class EmployerApplicationListToMyJobsService implements AbstractListServi
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyByEmployerId(principal.getActiveRoleId());
+
+		if (request.getServletRequest().getParameterValues("groupByRef") != null) {
+			result = this.repository.findAppToMyJobsGroupByReference(principal.getActiveRoleId());
+		} else if (request.getServletRequest().getParameterValues("groupByStatus") != null) {
+			result = this.repository.findAppToMyJobsGroupByStatus(principal.getActiveRoleId());
+		} else if (request.getServletRequest().getParameterValues("groupByCreationMoment") != null) {
+			result = this.repository.findAppToMyJobsGroupByCreationMoment(principal.getActiveRoleId());
+		} else {
+			result = this.repository.findManyByEmployerId(principal.getActiveRoleId());
+		}
 
 		return result;
 	}

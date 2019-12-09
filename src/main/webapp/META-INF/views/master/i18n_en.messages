@@ -124,6 +124,9 @@ master.menu.consumer.offer.create = Create new Offer
 master.menu.employer = Employer
 master.menu.employer.job.list = Job List
 master.menu.employer.application.list-mine = Applications to my Jobs
+master.menu.employer.application.list-mine.groupByRef = Applications to my Jobs by reference
+master.menu.employer.application.list-mine.groupByStat = Applications to my Jobs by status
+master.menu.employer.application.list-mine.groupByCreation =Applications to my Jobs by creation moment
 
 # master.menu.worker ###########################################################
 
