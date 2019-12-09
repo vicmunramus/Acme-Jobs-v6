@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Descriptor;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -35,7 +36,11 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 		employer = descriptor.getJob().getEmployer();
 		principal = request.getPrincipal();
 
-		result = employer.getUserAccount().getId() == principal.getAccountId();
+		result = result && employer.getUserAccount().getId() == principal.getAccountId();
+
+		//Assure the job is in draft
+
+		result = result && descriptor.getJob().getStatus() == Status.DRAFT;
 
 		return result;
 	}

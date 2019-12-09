@@ -5,32 +5,36 @@
 
 <acme:form>
 	
+	<jstl:set var = "rdonly" value ="${status == 'PUBLISHED'}"/>
+	
 	<jstl:if test="${command == 'create'}">
-		<acme:form-textbox code="employer.job.form.reference" path="reference" placeholder="EEEE-JJJJ"/>
+		<acme:form-textbox code="employer.job.form.reference" path="reference" placeholder="EEEE-JJJJ" readonly ="${rdonly}"/>
 	</jstl:if>
 	<jstl:if test="${command != 'create'}">
 		<acme:form-textbox code="employer.job.form.reference" path="reference" readonly="true"/>
 	</jstl:if>
 	
-	<acme:form-textbox code="employer.job.form.title" path="title"/>
-	<acme:form-moment code="employer.job.form.deadline" path="deadline"/>
-	<acme:form-money code="employer.job.form.salary" path="salary" placeholder="30000 EUR" /> 
-	<acme:form-url code="employer.job.form.moreInfo" path="moreInfo"/>
+	<acme:form-textbox code="employer.job.form.title" path="title" readonly="${rdonly}"/>
+	<acme:form-moment code="employer.job.form.deadline" path="deadline" readonly="${rdonly}"/>
+	<acme:form-money code="employer.job.form.salary" path="salary" placeholder="30000 EUR" readonly="${rdonly}"/> 
+	<acme:form-url code="employer.job.form.moreInfo" path="moreInfo" readonly="${rdonly}"/>
 	
 	<jstl:if test="${command != 'create'}">
-		<acme:form-select code="authenticated.job.form.status" path="status">
+		<acme:form-textbox code="authenticated.job.form.status" path="status" placeholder="DRAFT or PUBLISHED" readonly="${rdonly}"/>
+		
+		<!--<acme:form-select code="authenticated.job.form.status" path="status">
 			<acme:form-option code="authenticated.job.form.status.draft" value="DRAFT"/>
 			<acme:form-option code="authenticated.job.form.status.published" value="PUBLISHED"/>
-		</acme:form-select>
+		</acme:form-select>-->
 	</jstl:if>
 	
 	<acme:form-submit test="${command == 'create'}" 
 	    code="employer.job.form.button.create" action="/employer/job/create"/>
-	<acme:form-submit test="${command == 'show'}" 
+	<acme:form-submit test="${command == 'show' && status == 'DRAFT'}" 
 		code="employer.job.form.button.update" action="/employer/job/update"/>
-	<acme:form-submit test="${command == 'update'}" 
+	<acme:form-submit test="${command == 'update' && status == 'DRAFT'}" 
 		code="employer.job.form.button.update" action="/employer/job/update"/>	
-	<acme:form-submit test="${command == 'show'}" 
+	<acme:form-submit test="${command == 'show' && haveApplications == 'false'}" 
 		code="employer.job.form.button.delete" action="/employer/job/delete"/>
 		
 	
@@ -40,7 +44,7 @@
 
 <jstl:if test="${command == 'show'}">
 
-	<jstl:if test="${!descriptorExist}">
+	<jstl:if test="${!descriptorExist && status == 'DRAFT'}">
 		<acme:redirect-button code="employer.job.redirect.create-descriptor" action="/employer/descriptor/create?jobId=${id}"/>
 	</jstl:if>
 	

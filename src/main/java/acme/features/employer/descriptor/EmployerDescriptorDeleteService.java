@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -24,10 +26,26 @@ public class EmployerDescriptorDeleteService implements AbstractDeleteService<Em
 	@Override
 	public boolean authorise(final Request<Descriptor> request) {
 		assert request != null;
-		//Asegurarnos que el que lo quiere borrar puede
-		// No este en final mode
+		boolean result = true;
 
-		return true;
+		//Assure this is the owner of the descriptor
+		int descriptorId;
+		Descriptor descriptor;
+		Employer employer;
+		Principal principal;
+
+		descriptorId = request.getModel().getInteger("id");
+		descriptor = this.repository.findOneDescriptorById(descriptorId);
+		employer = descriptor.getJob().getEmployer();
+		principal = request.getPrincipal();
+
+		result = result && employer.getUserAccount().getId() == principal.getAccountId();
+
+		//Assure the job is in draft
+
+		result = result && descriptor.getJob().getStatus() == Status.DRAFT;
+
+		return result;
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.auditRecords.AuditRecords;
+import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
 import acme.entities.jobs.Job;
@@ -40,4 +41,10 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select j from Job j where j.reference = ?1")
 	Object findOneJobByReference(String reference);
+
+	@Query("select d from Duty d where d.descriptor.job.id = ?1")
+	Collection<Duty> findManyDutiesByJobId(int jobId);
+
+	@Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
+	CustomisationParameters findOneCustomisationParameters();
 }

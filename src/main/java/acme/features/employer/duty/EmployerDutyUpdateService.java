@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Duty;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -37,7 +38,11 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		employer = duty.getDescriptor().getJob().getEmployer();
 		principal = request.getPrincipal();
 
-		result = employer.getUserAccount().getId() == principal.getAccountId();
+		result = result && employer.getUserAccount().getId() == principal.getAccountId();
+
+		//Assure the job is in draft
+
+		result = result && duty.getDescriptor().getJob().getStatus() == Status.DRAFT;
 
 		return result;
 	}

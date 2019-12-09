@@ -66,7 +66,6 @@ public class AdministratorCustomisationParametersUpdateService implements Abstra
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 	}
 
 	@Override
@@ -74,6 +73,9 @@ public class AdministratorCustomisationParametersUpdateService implements Abstra
 
 		assert request != null;
 		assert entity != null;
+
+		//Delete spaces
+		entity.setSpamList(entity.getSpamList().replaceAll("; ", ";"));
 
 		this.repository.save(entity);
 	}

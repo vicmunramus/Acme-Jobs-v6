@@ -28,3 +28,6 @@ employer.job.error.workers-has-applied = No puede ser eliminado. Un trabajador o
 employer.job.form.error.uniqueReference = Esta referencia ya está en uso
 employer.job.form.error.salary-in-euros = El salario debe estar en euros.
 employer.job.form.error.salary-not-positive = El salario debe ser 0 o mayor
+employer.job.form.error.dont-have-descriptor = El trabajo debe tener un descriptor para ser guardado como publicado
+employer.job.form.error.duties-100 = Los deberes deben sumar un 100% en total
+employer.job.form.error.isSpam = No puede ser publicado si es considerado Spam

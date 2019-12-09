@@ -3,3 +3,5 @@ administrator.customisationParameters.form.label.spamThreshold = Spam Threshold
 
 administrator.customisationParameters.form.button.update = Update
 administrator.customisationParameters.form.button.return = Return
+
+administrator.customisation-parameters.form.error.not-good-separator = Please use ; as separator for the diferents words

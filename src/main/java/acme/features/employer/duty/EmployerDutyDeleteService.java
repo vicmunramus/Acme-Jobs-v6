@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Duty;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -21,9 +23,26 @@ public class EmployerDutyDeleteService implements AbstractDeleteService<Employer
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
-		//Asegurarnos que el que lo quiere borrar puede
-		// No este en final mode
-		return true;
+		boolean result = true;
+
+		//Assure this is the owner of the duty
+		int dutyId;
+		Duty duty;
+		Employer employer;
+		Principal principal;
+
+		dutyId = request.getModel().getInteger("id");
+		duty = this.repository.findOneDutyById(dutyId);
+		employer = duty.getDescriptor().getJob().getEmployer();
+		principal = request.getPrincipal();
+
+		result = result && employer.getUserAccount().getId() == principal.getAccountId();
+
+		//Assure the job is in draft
+
+		result = result && duty.getDescriptor().getJob().getStatus() == Status.DRAFT;
+
+		return result;
 	}
 
 	@Override

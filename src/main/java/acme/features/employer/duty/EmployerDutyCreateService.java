@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -39,7 +40,11 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		employer = descriptor.getJob().getEmployer();
 		principal = request.getPrincipal();
 
-		result = employer.getUserAccount().getId() == principal.getAccountId();
+		result = result && employer.getUserAccount().getId() == principal.getAccountId();
+
+		//Assure the job is in draft
+
+		result = result && descriptor.getJob().getStatus() == Status.DRAFT;
 
 		return result;
 	}
@@ -59,7 +64,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "titleDuty", "descriptionDuty", "percentage");
+		request.unbind(entity, model, "titleDuty", "descriptionDuty", "percentage", "descriptor");
 
 		if (request.isMethod(HttpMethod.GET)) {
 			model.setAttribute("descriptorId", request.getModel().getInteger("descriptorId"));

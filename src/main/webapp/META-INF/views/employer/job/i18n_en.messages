@@ -28,3 +28,6 @@ employer.job.error.workers-has-applied = Cannot be deleted. One worker or more h
 employer.job.form.error.uniqueReference = This reference is already taken.
 employer.job.form.error.salary-in-euros = The salary must be in Euros
 employer.job.form.error.salary-not-positive = The salary must be 0 or greater
+employer.job.form.error.dont-have-descriptor = The Job must have a Descriptor to be saved as Published
+employer.job.form.error.duties-100 = The duties must add up to 100%
+employer.job.form.error.isSpam = The job can not be published if it is considered Spam

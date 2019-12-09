@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Duty;
 import acme.entities.roles.Employer;
-import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
@@ -35,10 +34,6 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 		assert model != null;
 
 		request.unbind(entity, model, "titleDuty", "descriptionDuty");
-
-		if (request.isMethod(HttpMethod.GET)) {
-			model.setAttribute("descriptorId", request.getModel().getInteger("descriptorId"));
-		}
 	}
 
 	@Override
