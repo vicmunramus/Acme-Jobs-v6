@@ -82,8 +82,14 @@ public class EmployerApplicationAcceptService implements AbstractUpdateService<E
 		assert request != null;
 		assert entity != null;
 
-		if (entity.getResolutionJustification().trim().isEmpty()) {
-			entity.setResolutionJustification(null);
+		String resolution = entity.getResolutionJustification();
+
+		if (resolution != null) {
+			if (resolution.trim().isEmpty()) {
+				entity.setResolutionJustification(null);
+			} else {
+				entity.setResolutionJustification(resolution.trim());
+			}
 		}
 		entity.setStatus(ApplicationStatus.ACCEPTED);
 

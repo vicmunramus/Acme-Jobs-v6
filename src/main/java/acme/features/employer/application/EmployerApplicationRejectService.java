@@ -78,8 +78,8 @@ public class EmployerApplicationRejectService implements AbstractUpdateService<E
 
 		if (!errors.hasErrors("resolutionJustification")) {
 			boolean notBlank;
-			String resolution = entity.getResolutionJustification().trim();
-			notBlank = resolution != null && !resolution.isEmpty();
+			String resolution = entity.getResolutionJustification();
+			notBlank = resolution != null && !resolution.trim().isEmpty();
 			errors.state(request, notBlank, "resolutionJustification", "employer.application.error.justification-is-mandatory-when-rejecting");
 		}
 	}
@@ -89,6 +89,7 @@ public class EmployerApplicationRejectService implements AbstractUpdateService<E
 		assert request != null;
 		assert entity != null;
 
+		entity.setResolutionJustification(entity.getResolutionJustification().trim());
 		entity.setStatus(ApplicationStatus.REJECTED);
 
 		this.repository.save(entity);
