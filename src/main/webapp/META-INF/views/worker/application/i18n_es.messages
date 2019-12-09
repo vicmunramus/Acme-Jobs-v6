@@ -12,8 +12,9 @@ worker.application.form.qualifications = Titulaciones
 worker.application.form.job = Empleo
 worker.application.form.job.reference = Referencia
 worker.application.form.job.title = Título
+worker.application.form.button.create = Crear
 
 worker.application.form.return = Volver
 
-worker.published.error.notPublished = Ese trabajo no ha sido publicado
+worker.published.error.not-published = Ese trabajo no ha sido publicado
 worker.deadline.error.deadlineElapsed = La fecha límite de ese trabajo ha expirado

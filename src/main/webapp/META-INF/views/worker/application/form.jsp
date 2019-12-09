@@ -4,8 +4,12 @@
 <%@taglib prefix = "acme" tagdir = "/WEB-INF/tags"%>
 
 <acme:form>
+	<acme:form-hidden path="jobId"/>
+
 	<acme:form-textbox code="worker.application.form.reference" path="reference"/>	
+	<jstl:if test="${command == 'show'}">
 	<acme:form-moment code="worker.application.form.moment" path="moment"/>	
+	</jstl:if>
 	<acme:form-textbox code="worker.application.form.status" path="status"/>	
 	<acme:form-textarea code="worker.application.form.statement" path="statement"/>
 	<acme:form-textarea code="worker.application.form.skills" path="skills"/>

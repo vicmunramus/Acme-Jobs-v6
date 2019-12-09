@@ -1,11 +1,14 @@
 
 package acme.features.worker.application;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Application;
 import acme.entities.jobs.Job;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -71,12 +74,33 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		//No descriptor already created
+		int jobId = request.getModel().getInteger("jobId");
+		Job job = this.repository.findOneJobById(jobId);
+
+		//we can't show the error because published is not a field shown in the form
+		if (!errors.hasErrors("jobId")) {
+			boolean published;
+			published = job.getStatus() == Status.PUBLISHED;
+			errors.state(request, published, "jobId", "worker.published.error.not-published");
+		}
+		if (!errors.hasErrors("jobId")) {
+			boolean deadline;
+			Date currentTime = new Date(System.currentTimeMillis());
+			deadline = job.getDeadline().after(currentTime);
+			errors.state(request, deadline, "jobId", "worker.published.error.not-published");
+		}
+
 	}
 
 	@Override
 	public void create(final Request<Application> request, final Application entity) {
 		assert request != null;
 		assert entity != null;
+
+		Date moment;
+		moment = new Date(System.currentTimeMillis() - 1);
+		entity.setMoment(moment);
 
 		this.repository.save(entity);
 
