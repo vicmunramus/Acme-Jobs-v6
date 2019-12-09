@@ -12,5 +12,7 @@ worker.application.form.qualifications = Qualifications
 worker.application.form.job = Job
 worker.application.form.job.reference = Reference
 worker.application.form.job.title = Title
+worker.application.form.resolution = Resolution
+worker.application.form.resolutionJustification = Justification
 
 worker.application.form.return = Return

@@ -752,6 +752,7 @@
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
 		<property name="skills" value="Lorem ipsum sit dolor amet"/>
 		<property name="qualifications" value="Lorem ipsum sit dolor amet"/>
+		<property name="resolutionJustification" value="Not qualified"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="job2"/>
 	</bean>
@@ -762,6 +763,7 @@
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
 		<property name="skills" value="Lorem ipsum sit dolor amet"/>
 		<property name="qualifications" value="Lorem ipsum sit dolor amet"/>
+		<property name="resolutionJustification" value="Not qualified"/>
 		<property name="worker" ref="worker2Worker"/>
 		<property name="job" ref="job2"/>
 	</bean>

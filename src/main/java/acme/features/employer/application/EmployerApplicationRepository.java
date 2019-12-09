@@ -26,4 +26,5 @@ public interface EmployerApplicationRepository extends AbstractRepository {
 
 	@Query("select a from Application a where a.job.employer.id = ?1 group by a.moment")
 	Collection<Application> findAppToMyJobsGroupByCreationMoment(int employerId);
+
 }
