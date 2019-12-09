@@ -47,4 +47,5 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
 	CustomisationParameters findOneCustomisationParameters();
+
 }

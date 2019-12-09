@@ -12,3 +12,4 @@ authenticated.job.form.status = Estado
 authenticated.job.form.return = Volver
 authenticated.job.redirect.descriptor = Descriptor
 authenticated.job.redirect.auditRecord = Historial de auditoría
+authenticated.job.redirect.application = Aplicación
