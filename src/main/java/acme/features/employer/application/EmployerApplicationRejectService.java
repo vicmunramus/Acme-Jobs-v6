@@ -34,7 +34,7 @@ public class EmployerApplicationRejectService implements AbstractUpdateService<E
 		application = this.repository.findOneApplicationById(applicationId);
 		employer = application.getJob().getEmployer();
 		principal = request.getPrincipal();
-		result = employer.getUserAccount().getId() == principal.getAccountId();
+		result = employer.getUserAccount().getId() == principal.getAccountId() && application.getStatus().equals(ApplicationStatus.PENDING);
 
 		return result;
 	}
