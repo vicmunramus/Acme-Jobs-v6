@@ -20,12 +20,15 @@
 	<acme:form-url code="employer.job.form.moreInfo" path="moreInfo" readonly="${rdonly}"/>
 	
 	<jstl:if test="${command != 'create'}">
-		<acme:form-textbox code="authenticated.job.form.status" path="status" placeholder="DRAFT or PUBLISHED" readonly="${rdonly}"/>
-		
-		<!--<acme:form-select code="authenticated.job.form.status" path="status">
-			<acme:form-option code="authenticated.job.form.status.draft" value="DRAFT"/>
-			<acme:form-option code="authenticated.job.form.status.published" value="PUBLISHED"/>
-		</acme:form-select>-->
+		<jstl:if test="${rdonly == 'true'}">
+			<acme:form-textbox code="authenticated.job.form.status" path="status" readonly="${rdonly}"/>
+		</jstl:if>
+		<jstl:if test="${rdonly != 'true'}">
+			<acme:form-select code="authenticated.job.form.status" path="status">
+				<acme:form-option code="authenticated.job.form.status.draft" value="DRAFT"/>
+				<acme:form-option code="authenticated.job.form.status.published" value="PUBLISHED"/>
+			</acme:form-select>
+		</jstl:if>
 	</jstl:if>
 	
 	<acme:form-submit test="${command == 'create'}" 

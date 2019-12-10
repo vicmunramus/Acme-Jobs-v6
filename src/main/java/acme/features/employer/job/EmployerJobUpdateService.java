@@ -112,22 +112,26 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 				// Has descriptor
 				hasDescriptor = this.repository.findOneDescriptorByJobId(entity.getId()) != null;
 				errors.state(request, hasDescriptor, "status", "employer.job.form.error.dont-have-descriptor");
-
 				//Duties sum up to 100%
 				duties100 = false;
 				Collection<Duty> duties = this.repository.findManyDutiesByJobId(entity.getId());
+				Double sumDuties = this.repository.findDutiesByJobId(entity.getId());
 
-				if (duties != null) {
-
-					int percentageTotal = 0;
-
-					for (Duty d : duties) {
-						percentageTotal += d.getPercentage();
-					}
-
-					duties100 = percentageTotal == 100;
+				/*
+				 * if (duties != null) {
+				 *
+				 * int percentageTotal = 0;
+				 *
+				 * for (Duty d : duties) {
+				 * percentageTotal += d.getPercentage();
+				 * }
+				 *
+				 * duties100 = percentageTotal == 100;
+				 * }
+				 */
+				if (sumDuties != null) {
+					duties100 = sumDuties == 100;
 				}
-
 				errors.state(request, duties100, "status", "employer.job.form.error.duties-100");
 
 				//Not Spam
@@ -138,7 +142,9 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 				//more info
 				isSpam = isSpam || this.isSpam(entity.getMoreInfo());
 				//description
-				isSpam = isSpam || this.isSpam(this.repository.findOneDescriptorByJobId(entity.getId()).getDescription());
+				if (hasDescriptor) {
+					isSpam = isSpam || this.isSpam(this.repository.findOneDescriptorByJobId(entity.getId()).getDescription());
+				}
 				//duties
 				if (duties != null) {
 					for (Duty d : duties) {
