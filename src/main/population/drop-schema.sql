@@ -69,7 +69,7 @@
 
     alter table `message_thread` 
        drop 
-       foreign key `FK3fa4h4tfet2kocvatib2ovhsa`;
+       foreign key `FKr35u0eaupbx6b2w22e33u8s5u`;
 
     alter table `message_thread_user_account` 
        drop 

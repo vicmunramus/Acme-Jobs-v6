@@ -40,6 +40,7 @@
         `moment` datetime(6),
         `qualifications` varchar(255),
         `reference` varchar(255),
+        `resolution_justification` varchar(255),
         `skills` varchar(255),
         `statement` varchar(255),
         `status` integer,
@@ -489,9 +490,9 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        references `authenticated` (`id`);
 
     alter table `message_thread` 
-       add constraint `FK3fa4h4tfet2kocvatib2ovhsa` 
+       add constraint `FKr35u0eaupbx6b2w22e33u8s5u` 
        foreign key (`creator_id`) 
-       references `authenticated` (`id`);
+       references `user_account` (`id`);
 
     alter table `message_thread_user_account` 
        add constraint `FKo38s0x5wh4bqafrldhmusaacu` 

@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.userAccount;
+package acme.features.authenticated.authenticated;
 
 import javax.annotation.PostConstruct;
 
@@ -21,19 +21,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.UserAccount;
 
 @Controller
-@RequestMapping("/authenticated/user-account/")
-public class AuthenticatedUserAccountController extends AbstractController<Authenticated, UserAccount> {
+@RequestMapping("/authenticated/authenticated/")
+public class AuthenticatedAuthenticatedController extends AbstractController<Authenticated, Authenticated> {
 
 	// Internal state ---------------------------------------------------------
+
 	@Autowired
-	private AuthenticatedUserAccountUpdateService	updateService;
-	@Autowired
-	private AuthenticatedUserAccountListService		listService;
-	@Autowired
-	private AuthenticatedUserAccountShowService		showService;
+	private AuthenticatedAuthenticatedListService listService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -41,9 +37,6 @@ public class AuthenticatedUserAccountController extends AbstractController<Authe
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
-		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-
 	}
 
 }
