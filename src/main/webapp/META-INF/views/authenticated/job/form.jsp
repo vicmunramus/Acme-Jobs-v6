@@ -15,4 +15,4 @@
 </acme:form>
 <acme:redirect-button code="authenticated.job.redirect.descriptor" action="/authenticated/descriptor/show?id=${id}"/>
 <acme:redirect-button code="authenticated.job.redirect.auditRecord" action="/authenticated/audit-records/list?id=${id}"/>
-<acme:redirect-button code="authenticated.job.redirect.application" action="/worker/application/create?jobId=${id}"/>
+<acme:redirect-button code="authenticated.job.redirect.application" action="/worker/application/create?jobId=${id}" access="hasRole('Worker')"/>

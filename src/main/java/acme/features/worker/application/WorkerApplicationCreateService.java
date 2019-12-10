@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Application;
+import acme.entities.jobs.ApplicationStatus;
 import acme.entities.jobs.Job;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Worker;
@@ -65,6 +66,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		int workerId = request.getPrincipal().getActiveRoleId();
 		Worker worker = this.repository.findOneWorkerById(workerId);
 		result.setWorker(worker);
+		result.setStatus(ApplicationStatus.PENDING);
 
 		return result;
 	}
@@ -89,6 +91,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 			Date currentTime = new Date(System.currentTimeMillis());
 			deadline = job.getDeadline().after(currentTime);
 			errors.state(request, deadline, "jobId", "worker.published.error.not-published");
+		}
+		//Reference
+		if (!errors.hasErrors("reference")) {
+			boolean uniqueReference;
+			uniqueReference = this.repository.findOneApplicationByReference(entity.getReference()) == null;
+			errors.state(request, uniqueReference, "reference", "worker.application.form.error.uniqueReference");
 		}
 
 	}

@@ -1,8 +1,6 @@
 
 package acme.features.employer.duty;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -85,19 +83,22 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert errors != null;
 
 		Integer allPercentages = 0;
-		Collection<Duty> allDuties;
+		Integer allDuties;
 		boolean notMore100;
 
 		// percentages not greater than 100%
 		if (!errors.hasErrors("percentage")) {
 
-			allDuties = this.repository.findManyDutiesByDescriptorId(entity.getDescriptor().getId());
+			allDuties = this.repository.findDutiesByDescriptorId(entity.getDescriptor().getId());
 			notMore100 = true;
 
 			if (allDuties != null) {
-				for (Duty d : allDuties) {
-					allPercentages += d.getPercentage();
-				}
+				/*
+				 * for (Duty d : allDuties) {
+				 * allPercentages += d.getPercentage();
+				 * }
+				 */
+				allPercentages = allDuties;
 			}
 			notMore100 = allPercentages + entity.getPercentage() <= 100;
 			errors.state(request, notMore100, "percentage", "employer.job.form.error.percentages-more-100");
