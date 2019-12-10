@@ -41,8 +41,9 @@ public class AuthenticatedWorkerCreateService implements AbstractCreateService<A
 	@Override
 	public boolean authorise(final Request<Worker> request) {
 		assert request != null;
-
-		return true;
+		String name = "acme.entities.roles.Worker";
+		boolean result = !request.getPrincipal().hasRole(name);
+		return result;
 	}
 
 	@Override
