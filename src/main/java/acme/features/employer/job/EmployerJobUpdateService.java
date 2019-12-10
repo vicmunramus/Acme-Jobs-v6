@@ -11,11 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.customisationParameters.CustomisationParameters;
+import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
+import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -59,6 +62,18 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert errors != null;
 
 		request.bind(entity, errors);
+
+		if (request.isMethod(HttpMethod.POST)) {
+
+			Descriptor descriptor = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id"));
+			boolean descriptorExist = descriptor != null ? true : false;
+			request.getModel().setAttribute("descriptorExist", descriptorExist);
+
+			Collection<Worker> workers;
+			workers = this.repository.findWorkersByJob(request.getModel().getInteger("id"));
+			boolean haveApplications = workers.size() > 0 ? true : false;
+			request.getModel().setAttribute("haveApplications", haveApplications);
+		}
 	}
 
 	@Override
@@ -68,6 +83,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline", "status", "salary", "moreInfo", "employer");
+
 	}
 
 	@Override

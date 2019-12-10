@@ -8,6 +8,7 @@ import acme.entities.jobs.Duty;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -51,6 +52,14 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert entity != null;
 		assert errors != null;
 
+		if (request.isMethod(HttpMethod.POST)) {
+			Integer dutyId = request.getModel().getInteger("id");
+			Duty duty = this.repository.findOneDutyById(dutyId);
+			Status status = duty.getDescriptor().getJob().getStatus();
+
+			request.getModel().setAttribute("jobStatus", status);
+		}
+
 		request.bind(entity, errors);
 	}
 
@@ -82,25 +91,19 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		Integer allPercentages = 0;
-		Integer allDuties;
+		Integer sumDuties;
 		boolean notMore100;
 
 		// percentages not greater than 100%
 		if (!errors.hasErrors("percentage")) {
 
-			allDuties = this.repository.findDutiesByDescriptorId(entity.getDescriptor().getId());
-			notMore100 = true;
+			sumDuties = this.repository.sumDutiesByDescriptorId(entity.getDescriptor().getId(), entity.getId());
+			notMore100 = entity.getPercentage() <= 100;
 
-			if (allDuties != null) {
-				/*
-				 * for (Duty d : allDuties) {
-				 * allPercentages += d.getPercentage();
-				 * }
-				 */
-				allPercentages = allDuties;
+			if (sumDuties != null) {
+				notMore100 = sumDuties + entity.getPercentage() <= 100;
 			}
-			notMore100 = allPercentages + entity.getPercentage() <= 100;
+
 			errors.state(request, notMore100, "percentage", "employer.job.form.error.percentages-more-100");
 		}
 	}

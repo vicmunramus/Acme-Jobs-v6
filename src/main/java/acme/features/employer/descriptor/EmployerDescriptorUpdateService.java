@@ -8,6 +8,7 @@ import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -50,6 +51,15 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+
+			Integer descriptorId = request.getModel().getInteger("id");
+			Descriptor descriptor = this.repository.findOneDescriptorById(descriptorId);
+			Status status = descriptor.getJob().getStatus();
+
+			request.getModel().setAttribute("jobStatus", status);
+		}
 
 		request.bind(entity, errors);
 	}
