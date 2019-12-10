@@ -71,6 +71,9 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 		assert model != null;
 
 		request.unbind(entity, model, "description", "job");
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("jobId", request.getModel().getInteger("jobId"));
+		}
 	}
 
 	@Override
