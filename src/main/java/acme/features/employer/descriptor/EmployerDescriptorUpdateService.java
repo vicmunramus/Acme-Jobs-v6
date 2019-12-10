@@ -52,6 +52,15 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 		assert entity != null;
 		assert errors != null;
 
+		if (request.isMethod(HttpMethod.POST)) {
+
+			Integer descriptorId = request.getModel().getInteger("id");
+			Descriptor descriptor = this.repository.findOneDescriptorById(descriptorId);
+			Status status = descriptor.getJob().getStatus();
+
+			request.getModel().setAttribute("jobStatus", status);
+		}
+
 		request.bind(entity, errors);
 	}
 

@@ -52,6 +52,14 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert entity != null;
 		assert errors != null;
 
+		if (request.isMethod(HttpMethod.POST)) {
+			Integer dutyId = request.getModel().getInteger("id");
+			Duty duty = this.repository.findOneDutyById(dutyId);
+			Status status = duty.getDescriptor().getJob().getStatus();
+
+			request.getModel().setAttribute("jobStatus", status);
+		}
+
 		request.bind(entity, errors);
 	}
 

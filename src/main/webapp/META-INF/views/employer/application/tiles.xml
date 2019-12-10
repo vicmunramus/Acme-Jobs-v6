@@ -10,6 +10,18 @@
 		<put-attribute name="body" type="template" value="../employer/application/list.jsp"/>
 	</definition>	
 	
+	<definition name="employer/application/list-mine-by-reference" extends="master">
+		<put-attribute name="body" type="template" value="../employer/application/list.jsp"/>
+	</definition>	
+	
+	<definition name="employer/application/list-mine-by-status" extends="master">
+		<put-attribute name="body" type="template" value="../employer/application/list.jsp"/>
+	</definition>	
+	
+	<definition name="employer/application/list-mine-by-creation" extends="master">
+		<put-attribute name="body" type="template" value="../employer/application/list.jsp"/>
+	</definition>	
+	
 	<definition name="employer/application/form" extends="master">
 		<put-attribute name="body" type="template" value="../employer/application/form.jsp"/>
 	</definition>	
