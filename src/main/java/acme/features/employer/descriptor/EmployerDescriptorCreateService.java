@@ -57,7 +57,7 @@ public class EmployerDescriptorCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "description");
+		request.unbind(entity, model, "description", "job");
 
 		if (request.isMethod(HttpMethod.GET)) {
 			model.setAttribute("jobId", request.getModel().getInteger("jobId"));
