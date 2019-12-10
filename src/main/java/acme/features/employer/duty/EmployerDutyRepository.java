@@ -25,7 +25,10 @@ public interface EmployerDutyRepository extends AbstractRepository {
 	@Query("select d from Duty d where d.descriptor.id = ?1")
 	Collection<Duty> findManyDutiesByDescriptorId(int descriptorId);
 
+	@Query("select sum(d.percentage) from Duty d where d.descriptor.id = ?1 and d.id != ?2")
+	Integer sumDutiesByDescriptorId(int descriptorId, int dutyId);
+
 	@Query("select sum(d.percentage) from Duty d where d.descriptor.id = ?1")
-	Integer findDutiesByDescriptorId(int descriptorId);
+	Integer sumDutiesCreateByDescriptorId(int descriptorId);
 
 }
