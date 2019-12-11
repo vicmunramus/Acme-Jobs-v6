@@ -22,14 +22,12 @@
 			<acme:form-textarea readonly="${status != 'PENDING'}" code="employer.application.form.resolutionJustification" path="resolutionJustification"/>
 	</acme:form-panel>
 	
-	<acme:form-submit test="${command == 'show' && status == 'PENDING'}" 
+	<acme:form-submit test="${(command == 'show' || command == 'reject-application') && (status == 'PENDING' || appStatus == 'PENDING')}" 
 		code="employer.applicaton.form.button.accept" 
 		action="/employer/application/accept-application"/>
-	<acme:form-submit test="${command == 'show' && status == 'PENDING'}" 
+	<acme:form-submit test="${(command == 'show' || command == 'reject-application') && (status == 'PENDING' || appStatus == 'PENDING')}" 
 		code="employer.applicaton.form.button.reject" 
 		action="/employer/application/reject-application"/>
-	<acme:form-submit test="${command == 'reject-application'}" 
-		code="employer.applicaton.form.button.reject" 
-		action="/employer/application/reject-application"/>
+	
 	<acme:form-return code="employer.application.form.return"/>	
 </acme:form>
