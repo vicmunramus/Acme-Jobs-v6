@@ -13,11 +13,18 @@ authenticated.messageThread.list.label.title = Title
 authenticated.messageThread.list.label.moment = Created At
 authenticated.messageThread.form.label.creator = Creator
 authenticated.messageThread.list.button.create = Create new Message Thread
+
 authenticated.messageThread.form.label.title = Title
 authenticated.messageThread.form.label.moment = Created At
+authenticated.messageThread.form.label.username = Username
+
 authenticated.messageThread.form.button.messages = Messages
 authenticated.messageThread.form.button.involvedUsers = Involved Users
-
+authenticated.messageThread.form.button.updateUsers = Update Users
+authenticated.messageThread.form.button.addUser = Add User
+authenticated.messageThread.form.button.deleteUser = Delete User
 authenticated.messageThread.form.button.return = Return
 
+authenticated.existUser.error.not-exist = Submited user doesnt exist
+authenticated.unique.error.already-exist = Submited user is already in a messageThread
 

@@ -10,15 +10,23 @@
 	<acme:form-textbox code="authenticated.messageThread.form.label.creator" path="creator.username" />
 	<acme:form-submit code="authenticated.messageThread.form.button.messages" action="/authenticated/message/list?messageThreadId=${id}" method="get" />	
  	<acme:form-submit code="authenticated.messageThread.form.button.involvedUsers" action="/authenticated/user-account/list?messageThreadId=${id}" method="get" />	
+ 	<acme:form-submit code="authenticated.messageThread.form.button.updateUsers" action="/authenticated/message-thread/update-users?messageThreadId=${id}" method="get" />
 	</jstl:if>
  	
- 	<jstl:forEach var="item" items="${involvedUsers}">
+ 	<%-- <jstl:forEach var="item" items="${involvedUsers}">
 	<jstl:out value="${item}" escapeXml="false"/>,
-	</jstl:forEach>
-
+	</jstl:forEach> --%>
+ 	
  	<acme:form-submit test="${command == 'create'}" 
 	    code="worker.application.form.button.create" action="/authenticated/message-thread/create"/>
-	  
+	
+	<jstl:if test="${command == 'update-users'}">
+	<acme:form-textbox code="authenticated.messageThread.form.label.username" path="username"/>
+	<acme:form-submit code="authenticated.messageThread.form.button.addUser" action="/authenticated/message-thread/update-users?messageThreadId=${id}&action=add" />
+	<acme:form-submit code="authenticated.messageThread.form.button.deleteUser" action="/authenticated/message-thread/update-users?messageThreadId=${id}&action=delete" />		
+	</jstl:if>
+	
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
+	
 	
 </acme:form>

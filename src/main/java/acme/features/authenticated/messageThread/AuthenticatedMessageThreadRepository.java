@@ -24,8 +24,17 @@ public interface AuthenticatedMessageThreadRepository extends AbstractRepository
 	MessageThread findOneMessageThread(int msgThreadId);
 
 	@Query("select COUNT(m) from MessageThread m WHERE ?1 IN (select ua.id FROM m.involvedUsers ua WHERE ua.id = ?1) OR ?1 = m.creator.id AND m.id=?2")
-	Integer existAuthenticatedByMessageThreadId(int userAccountId, int messageThreadId);
+	Integer existUserAccountInMessageThread(int userAccountId, int messageThreadId);
 
 	@Query("select ua from UserAccount ua where ua.id = ?1")
 	UserAccount findOneUserAccountdById(int id);
+
+	@Query("select ua from UserAccount ua where ua.username = ?1")
+	UserAccount findOneUserAccountdByUsername(String username);
+
+	@Query("select m.involvedUsers from MessageThread m where m.id = ?1")
+	Collection<UserAccount> findManyUserAccountdByMessageThreadId(int id);
+	//	@Query("select m from MessageThread m JOIN FETCH m.involvedUsers u WHERE m.id = ?1")
+	//	MessageThread findOneMessageThreadsWithInvolvedUsersbyId(int id);
+
 }

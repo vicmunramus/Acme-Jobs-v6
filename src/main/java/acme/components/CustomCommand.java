@@ -15,6 +15,6 @@ package acme.components;
 import acme.framework.components.Command;
 
 public enum CustomCommand implements Command {
-	LIST_FIVESTARS, LIST_MINE, LIST_TO_MY_JOBS, ACCEPT_APPLICATION, REJECT_APPLICATION
+	LIST_FIVESTARS, LIST_MINE, LIST_TO_MY_JOBS, ACCEPT_APPLICATION, REJECT_APPLICATION, UPDATE_USERS
 
 }
