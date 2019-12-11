@@ -93,11 +93,16 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
-			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine" />
+			
+      <acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine" />
 			<acme:menu-suboption code="master.menu.employer.application.list-mine" action="/employer/application/list-to-my-jobs" />
-			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByRef" action="/employer/application/list-to-my-jobs?groupByReference=1" />
-			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByStat" action="/employer/application/list-to-my-jobs?groupByStatus=1" />
-			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByCreation" action="/employer/application/list-to-my-jobs?groupByCreationMoment=1" />			
+
+			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByRef" action="/employer/application/list-mine-by-reference" />
+			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByStat" action="/employer/application/list-mine-by-status" />
+			<acme:menu-suboption code="master.menu.employer.application.list-mine.groupByCreation" action="/employer/application/list-mine-by-creation" />			
+      
+      <acme:menu-suboption code="master.menu.employer.job.create" action="/employer/job/create" />
+      
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">

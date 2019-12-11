@@ -6,10 +6,9 @@
 
 <acme:form>
 
-	<h2>Customisation Parameters</h2><br>
 	<h3>Spam</h3><br>
 
-	<acme:form-textarea  code="administrator.customisationParameters.form.label.spamList"    path="spamList"/>
+	<acme:form-textarea  code="administrator.customisationParameters.form.label.spamList"    path="spamList" placeholder="word1;word2;word3"/>
 	<acme:form-double    code="administrator.customisationParameters.form.label.spamThreshold"  path="spamThreshold" placeholder="0 - 1"/>
 	
 	<acme:form-submit code="administrator.customisationParameters.form.button.update" action="/administrator/customisation-parameters/update"/>

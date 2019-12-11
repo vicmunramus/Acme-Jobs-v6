@@ -34,7 +34,7 @@ public class EmployerApplicationAcceptService implements AbstractUpdateService<E
 		application = this.repository.findOneApplicationById(applicationId);
 		employer = application.getJob().getEmployer();
 		principal = request.getPrincipal();
-		result = employer.getUserAccount().getId() == principal.getAccountId();
+		result = employer.getUserAccount().getId() == principal.getAccountId() && application.getStatus().equals(ApplicationStatus.PENDING);
 
 		return result;
 	}
@@ -45,7 +45,7 @@ public class EmployerApplicationAcceptService implements AbstractUpdateService<E
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "reference", "moment", "status", "statement", "skills", "qualifications", "job.reference", "job.title");
+		request.bind(entity, errors, "reference", "moment", "status", "statement", "skills", "qualifications", "job.reference", "job.title", "worker.userAccount.identity.name", "worker.userAccount.identity.surname");
 	}
 
 	@Override

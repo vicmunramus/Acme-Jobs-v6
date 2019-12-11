@@ -8,6 +8,7 @@ import acme.entities.jobs.Application;
 import acme.entities.jobs.ApplicationStatus;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -34,7 +35,7 @@ public class EmployerApplicationRejectService implements AbstractUpdateService<E
 		application = this.repository.findOneApplicationById(applicationId);
 		employer = application.getJob().getEmployer();
 		principal = request.getPrincipal();
-		result = employer.getUserAccount().getId() == principal.getAccountId();
+		result = employer.getUserAccount().getId() == principal.getAccountId() && application.getStatus().equals(ApplicationStatus.PENDING);
 
 		return result;
 	}
@@ -45,7 +46,15 @@ public class EmployerApplicationRejectService implements AbstractUpdateService<E
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "reference", "moment", "status", "statement", "skills", "qualifications", "job.reference", "job.title");
+		if (request.isMethod(HttpMethod.POST)) {
+			Integer applicationId = request.getModel().getInteger("id");
+			Application application = this.repository.findOneApplicationById(applicationId);
+			ApplicationStatus status = application.getStatus();
+
+			request.getModel().setAttribute("appStatus", status);
+		}
+
+		request.bind(entity, errors, "reference", "moment", "status", "statement", "skills", "qualifications", "job.reference", "job.title", "worker.userAccount.identity.name", "worker.userAccount.identity.surname");
 	}
 
 	@Override

@@ -6,11 +6,14 @@
 <acme:form>
 	<acme:form-hidden path="jobId"/>
 
-	<acme:form-textbox code="worker.application.form.reference" path="reference"/>	
+	<acme:form-textbox code="worker.application.form.reference" path="reference" placeholder="EMP1-JOB1:WORK1"/>	
 	<jstl:if test="${command == 'show'}">
-	<acme:form-moment code="worker.application.form.moment" path="moment"/>	
+		<acme:form-moment code="worker.application.form.moment" path="moment"/>	
+		<acme:form-textbox code="worker.application.form.status" path="status"/>
 	</jstl:if>
-	<acme:form-textbox code="worker.application.form.status" path="status"/>	
+	<jstl:if test="${command == 'create'}">
+		<acme:form-hidden path="status"/>	
+	</jstl:if>
 	<acme:form-textarea code="worker.application.form.statement" path="statement"/>
 	<acme:form-textarea code="worker.application.form.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.qualifications" path="qualifications"/>
@@ -19,15 +22,14 @@
 	    code="worker.application.form.button.create" action="/worker/application/create?jobId=${jobId}"/>
 	    
 	<jstl:if test="${command == 'show'}">
-    <acme:form-panel code="worker.application.form.job">
-      <acme:form-textbox code="worker.application.form.job.reference" path="job.reference"/>
-      <acme:form-textbox code="worker.application.form.job.title" path="job.title"/>
-    </acme:form-panel>
+    	<acme:form-panel code="worker.application.form.job">
+    		<acme:form-textbox code="worker.application.form.job.reference" path="job.reference"/>
+    		<acme:form-textbox code="worker.application.form.job.title" path="job.title"/>
+    	</acme:form-panel>
+    	<acme:form-panel code="worker.application.form.resolution">
+			<acme:form-textarea code="worker.application.form.resolutionJustification" path="resolutionJustification"/>
+		</acme:form-panel>
 	</jstl:if>
-	
-	<acme:form-panel code="worker.application.form.resolution">
-		<acme:form-textarea code="worker.application.form.resolutionJustification" path="resolutionJustification"/>
-	</acme:form-panel>
 
 	<acme:form-return code="worker.application.form.return"/>	
 </acme:form>
