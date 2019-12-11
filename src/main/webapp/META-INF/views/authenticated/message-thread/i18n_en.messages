@@ -11,9 +11,10 @@
 authenticated.messageThread.list.label.id = Id
 authenticated.messageThread.list.label.title = Title
 authenticated.messageThread.list.label.moment = Created At
-authenticated.messageThread.form.label.creator = Creator
+authenticated.messageThread.list.label.creator.username = Creator
 authenticated.messageThread.list.button.create = Create new Message Thread
 
+authenticated.messageThread.form.label.creator = Creator
 authenticated.messageThread.form.label.title = Title
 authenticated.messageThread.form.label.moment = Created At
 authenticated.messageThread.form.label.username = Username

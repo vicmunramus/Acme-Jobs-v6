@@ -17,9 +17,11 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedMessageController extends AbstractController<Authenticated, Message> {
 
 	@Autowired
-	private AuthenticatedMessageListService	listService;
+	private AuthenticatedMessageListService		listService;
 	@Autowired
-	private AuthenticatedMessageShowService	showService;
+	private AuthenticatedMessageShowService		showService;
+	@Autowired
+	private AuthenticatedMessageCreateService	createService;
 
 
 	@PostConstruct
@@ -27,6 +29,7 @@ public class AuthenticatedMessageController extends AbstractController<Authentic
 
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		//		super.addCustomCommand(CustomCommand.LIST_MINE_MESSAGES, BasicCommand.LIST, this.listMineService);
 
 	}

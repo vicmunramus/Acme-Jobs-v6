@@ -28,4 +28,7 @@ public interface AuthenticatedUserAccountRepository extends AbstractRepository {
 
 	@Query("select ua.involvedUsers,ua.creator from MessageThread ua where ua.id = ?1")
 	Collection<UserAccount> findManyUserAccountByMessageThreadId(int id);
+	//used in authorise
+	@Query("select COUNT(m) from MessageThread m WHERE ?1 IN (select ua.id FROM m.involvedUsers ua WHERE ua.id = ?1) OR ?1 = m.creator.id AND m.id=?2")
+	Integer existUserAccountInMessageThread(int userAccountId, int messageThreadId);
 }

@@ -4,6 +4,6 @@
 
 <acme:list>
 	<acme:list-column code="authenticated.message.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="authenticated.message.list.label.moment" path="moment" width="40%"/>
-	
+	<acme:list-column code="authenticated.message.list.label.moment" path="moment" width="40%"/>	
 </acme:list>
+<acme:redirect-button code="authenticated.message.list.button.create" action="/authenticated/message/create"/>
