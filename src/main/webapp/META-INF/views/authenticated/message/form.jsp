@@ -2,14 +2,23 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
-	
-	<acme:form-textbox code="authenticated.message.form.user.username" path="user.userAccount.username" />
+<acme:form>
 
+	<acme:form-textbox code="authenticated.message.form.user.messageThread.title" path="messageThread.title" />
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title" />
-	<acme:form-moment code="authenticated.message.form.label.moment" path="moment" />
-	<acme:form-textbox code="authenticated.message.form.label.body" path="body"/>
+	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags" />
+	<acme:form-textbox code="authenticated.message.form.label.body" path="body" />
 	
+	<jstl:if test="${command == 'show'}">
+	<acme:form-moment code="authenticated.message.form.label.moment" path="moment" />
+	<acme:form-textbox code="authenticated.message.form.user.creator.username" path="creator.username" />
+	</jstl:if>
+	<jstl:if test="${command == 'create'}">
+	<acme:form-checkbox code="authenticated.message.form.label.accept" path="accept"/>
+ 	<acme:form-submit code="authenticated.message.form.button.create" action="/authenticated/message/create"/>
+	</jstl:if>
+	
+	    
 	<acme:form-return code="authenticated.message.form.button.return"/>
 </acme:form>
 

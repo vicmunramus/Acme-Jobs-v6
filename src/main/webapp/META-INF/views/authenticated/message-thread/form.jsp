@@ -18,7 +18,7 @@
 	</jstl:forEach> --%>
  	
  	<acme:form-submit test="${command == 'create'}" 
-	    code="worker.application.form.button.create" action="/authenticated/message-thread/create"/>
+	    code="authenticated.messageThread.form.button.create" action="/authenticated/message-thread/create"/>
 	
 	<jstl:if test="${command == 'update-users'}">
 	<acme:form-textbox code="authenticated.messageThread.form.label.username" path="username"/>

@@ -26,8 +26,7 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 		Collection<MessageThread> result = null;
 		int principal = request.getPrincipal().getAccountId();
 		result = this.repository.findManyMessageThreadsByUserAccountId(principal);
-		//		UserAccount user = this.repository.findOneUserAccountdById(principal.getAccountId());
-		//		result = this.repository.findManyMessageThreadsByUser(user);
+
 		return result;
 	}
 
@@ -36,7 +35,7 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "id", "title", "moment");
+		request.unbind(entity, model, "id", "title", "moment", "creator.username");
 	}
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {

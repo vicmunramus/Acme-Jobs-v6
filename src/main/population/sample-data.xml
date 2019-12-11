@@ -802,7 +802,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread1"/>
- 		<property name="user" ref="employer2Authenticated"/>
+ 		<property name="creator" ref="employer2UserAccount"/>
  	</bean>
  	
  	<bean name="message2" class="acme.entities.messages.Message">
@@ -811,7 +811,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread2"/>
- 		<property name="user" ref="worker1Authenticated"/>
+ 		<property name="creator" ref="worker1UserAccount"/>
  	</bean>
  	<bean name="message3" class="acme.entities.messages.Message">
  		<property name="title" value="message3"/>
@@ -819,7 +819,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread1"/>
- 		<property name="user" ref="worker2Authenticated"/>
+ 		<property name="creator" ref="worker2UserAccount"/>
  	</bean>
  	<bean name="message4" class="acme.entities.messages.Message">
  		<property name="title" value="message4"/>
@@ -827,7 +827,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread2"/>
- 		<property name="user" ref="employer1Authenticated"/>
+ 		<property name="creator" ref="employer1UserAccount"/>
  	</bean>
  	
  	

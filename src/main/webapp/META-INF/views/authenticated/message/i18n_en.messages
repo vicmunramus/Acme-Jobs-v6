@@ -10,12 +10,19 @@
 
 authenticated.message.list.label.title = Title
 authenticated.message.list.label.moment = Creation date
+authenticated.message.list.button.create = Create new message
 
 authenticated.message.form.user = User
-authenticated.message.form.user.username = Username
+authenticated.message.form.user.messageThread.title = Message Thread
+authenticated.message.form.user.creator.username = Username
 
 authenticated.message.form.label.title = Title
 authenticated.message.form.label.moment = Creation date
+authenticated.message.form.label.tags = Tags
 authenticated.message.form.label.body= Body
+authenticated.message.form.label.accept = Accept
+authenticated.message.form.button.create = Create
 
 authenticated.message.form.button.return = Return
+
+authenticated.message.involved-user.error.not-involved = You are not involved in that thread

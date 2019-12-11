@@ -41,6 +41,13 @@ public class AuthenticatedUserAccountListService implements AbstractListService<
 	@Override
 	public boolean authorise(final Request<UserAccount> request) {
 		assert request != null;
-		return true;
+		boolean result;
+
+		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
+		Integer userId = request.getPrincipal().getAccountId();
+
+		result = this.repository.existUserAccountInMessageThread(userId, messageThreadId) > 0;
+
+		return result;
 	}
 }

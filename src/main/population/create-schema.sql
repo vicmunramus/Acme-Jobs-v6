@@ -233,8 +233,8 @@
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
+        `creator_id` integer not null,
         `message_thread_id` integer not null,
-        `user_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -480,14 +480,14 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        references `employer` (`id`);
 
     alter table `message` 
+       add constraint `FKn4cg0xtxxw96f3n2ba6k1epnq` 
+       foreign key (`creator_id`) 
+       references `user_account` (`id`);
+
+    alter table `message` 
        add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
        foreign key (`message_thread_id`) 
        references `message_thread` (`id`);
-
-    alter table `message` 
-       add constraint `FKik4epe9dp5q6uenarfyia7xin` 
-       foreign key (`user_id`) 
-       references `authenticated` (`id`);
 
     alter table `message_thread` 
        add constraint `FKr35u0eaupbx6b2w22e33u8s5u` 
