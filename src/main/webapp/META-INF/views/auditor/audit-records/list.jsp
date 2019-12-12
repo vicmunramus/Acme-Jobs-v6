@@ -4,6 +4,9 @@
 
 
 <acme:list>
+	<acme:message code="auditor.auditRecord.title"/>
 	<acme:list-column code="auditor.auditRecord.list.title" path="title"/>
 	<acme:list-column code="auditor.auditRecord.list.creationMoment" path="creationMoment"/>
+	<acme:list-column code="auditor.auditRecord.list.auditor" path="auditor.userAccount.username"/>
 </acme:list>
+

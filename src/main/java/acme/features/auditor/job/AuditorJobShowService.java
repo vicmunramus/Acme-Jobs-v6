@@ -30,6 +30,12 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 		assert entity != null;
 		assert model != null;
 
+		Integer jobId = request.getModel().getInteger("id");
+		Integer auditorId = request.getPrincipal().getActiveRoleId();
+
+		Boolean valid = this.repository.checkIfAuditRecordExist(jobId, auditorId) == 0;
+		request.getServletRequest().setAttribute("valid", valid);
+
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status");
 	}
 
