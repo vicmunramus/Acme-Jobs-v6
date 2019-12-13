@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.entities.roles.Worker;
@@ -54,9 +53,8 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		if (request.isMethod(HttpMethod.GET)) {
 
-			Descriptor descriptor = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id"));
-			boolean descriptorExist = descriptor != null ? true : false;
-			model.setAttribute("descriptorExist", descriptorExist);
+			String description = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id")).getDescription();
+			model.setAttribute("description", description);
 
 			Collection<Worker> workers;
 			workers = this.repository.findWorkersByJob(request.getModel().getInteger("id"));

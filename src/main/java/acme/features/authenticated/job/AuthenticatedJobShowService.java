@@ -35,6 +35,8 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "status");
 
+		String description = this.repository.findOneDescriptorById(request.getModel().getInteger("id")).getDescription();
+		model.setAttribute("description", description);
 	}
 
 	@Override

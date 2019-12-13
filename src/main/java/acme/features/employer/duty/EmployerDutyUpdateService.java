@@ -70,9 +70,6 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert model != null;
 
 		request.unbind(entity, model, "titleDuty", "descriptionDuty", "percentage", "descriptor");
-		if (request.isMethod(HttpMethod.GET)) {
-			model.setAttribute("descriptorId", request.getModel().getInteger("descriptorId"));
-		}
 	}
 
 	@Override

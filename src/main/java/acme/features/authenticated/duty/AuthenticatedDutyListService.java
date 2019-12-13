@@ -42,10 +42,10 @@ public class AuthenticatedDutyListService implements AbstractListService<Authent
 		assert request != null;
 
 		Collection<Duty> result;
-		int descriptorId;
+		int jobId;
 
-		descriptorId = request.getModel().getInteger("id");
-		result = this.repository.findDuty(descriptorId);
+		jobId = request.getModel().getInteger("jobId");
+		result = this.repository.findManyDutiesByJobId(jobId);
 
 		return result;
 	}
