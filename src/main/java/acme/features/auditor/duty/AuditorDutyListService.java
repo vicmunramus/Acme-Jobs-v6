@@ -44,7 +44,7 @@ public class AuditorDutyListService implements AbstractListService<Auditor, Duty
 		Collection<Duty> result;
 		int descriptorId;
 
-		descriptorId = request.getModel().getInteger("id");
+		descriptorId = request.getModel().getInteger("descriptorId");
 		result = this.repository.findDuty(descriptorId);
 
 		return result;

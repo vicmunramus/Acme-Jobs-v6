@@ -21,10 +21,6 @@
 	<acme:form-money code="employer.job.form.salary" path="salary" placeholder="30000 EUR" readonly="${rdonly}"/> 
 	<acme:form-url code="employer.job.form.moreInfo" path="moreInfo" readonly="${rdonly}"/>
 	
-	<acme:message code="auditor.descriptor.title"/>
-	
-	<acme:form-textarea code="employer.job.form.description" path="description" readonly="${rdonly}"/>
-	
 	<jstl:if test="${command != 'create'}">
 		<jstl:if test="${rdonly == 'true'}">
 			<acme:form-textbox code="authenticated.job.form.status" path="status" readonly="${rdonly}"/>
@@ -36,6 +32,10 @@
 			</acme:form-select>
 		</jstl:if>
 	</jstl:if>
+	
+	<acme:message code="auditor.descriptor.title"/>
+	
+	<acme:form-textarea code="employer.job.form.description" path="description" readonly="${rdonly}"/>
 	
 	<acme:form-submit test="${command == 'create'}" 
 	    code="employer.job.form.button.create" action="/employer/job/create"/>
