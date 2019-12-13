@@ -30,7 +30,6 @@ public class AuditRecords extends DomainEntity {
 	@NotNull
 	private Status				status;
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				creationMoment;
 

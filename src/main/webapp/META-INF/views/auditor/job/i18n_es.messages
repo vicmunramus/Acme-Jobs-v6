@@ -10,5 +10,6 @@ auditor.job.form.moreInfo = Más información
 auditor.job.form.status = Estado
 
 auditor.job.form.return = Volver
+auditor.job.redirect.create = Escribir un Historial de Auditoría
 auditor.job.redirect.descriptor = Descriptor
 auditor.job.redirect.auditRecord = Historial de auditoría

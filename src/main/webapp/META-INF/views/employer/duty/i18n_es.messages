@@ -12,4 +12,6 @@ employer.duty.form.button.update = Actualizar
 employer.duty.form.button.delete = Eliminar
 employer.duty.form.return = Volver
 
+employer.duty.redirect.create-duty = Crear Deber
+
 employer.job.form.error.percentages-more-100 = Los porcentajes no pueden ser más de 100% en total

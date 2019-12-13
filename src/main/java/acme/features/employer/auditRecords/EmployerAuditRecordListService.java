@@ -32,7 +32,7 @@ public class EmployerAuditRecordListService implements AbstractListService<Emplo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment");
+		request.unbind(entity, model, "title", "creationMoment", "status", "auditor.userAccount.username");
 	}
 
 	@Override
@@ -41,9 +41,9 @@ public class EmployerAuditRecordListService implements AbstractListService<Emplo
 		assert request != null;
 
 		Collection<AuditRecords> result;
-		int jobId = request.getModel().getInteger("id");
+		int jobId = request.getModel().getInteger("jobId");
 
-		result = this.repository.findManyAuditRecords(jobId);
+		result = this.repository.findManyPublishedAuditRecords(jobId);
 
 		return result;
 	}

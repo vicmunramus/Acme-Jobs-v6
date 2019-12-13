@@ -46,7 +46,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	Collection<Duty> findManyDutiesByJobId(int jobId);
 
 	@Query("select sum(d.percentage) from Duty d where d.descriptor.job.id = ?1")
-	Double findDutiesByJobId(int jobId);
+	Double sumPercentagesDutiesByJobId(int jobId);
 
 	@Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
 	CustomisationParameters findOneCustomisationParameters();
