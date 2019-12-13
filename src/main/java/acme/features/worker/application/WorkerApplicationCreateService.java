@@ -65,6 +65,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		int workerId = request.getPrincipal().getActiveRoleId();
 		Worker worker = this.repository.findOneWorkerById(workerId);
+
+		result.setQualifications(worker.getQualifications());
+		result.setSkills(worker.getSkills());
 		result.setWorker(worker);
 		result.setStatus(ApplicationStatus.PENDING);
 
