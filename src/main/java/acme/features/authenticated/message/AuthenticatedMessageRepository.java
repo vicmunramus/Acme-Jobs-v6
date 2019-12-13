@@ -23,10 +23,13 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 	//used in authorise
 	@Query("select case when count(m) > 0 then true else false end FROM MessageThread m WHERE m.id = ?2 AND ( m.id IN (SELECT i.messageThread.id FROM Involved i WHERE i.userAccount.id = ?1) OR m.creator.id = ?1)")
 	Boolean userInvolvedInMessageThread(int userAccountId, int messageThreadId);
+	//used in authorise
+	@Query("select m.messageThread from Message m WHERE m.id = ?1")
+	MessageThread findOneMessageThreadByMessageId(int id);
 	//used in create
 	@Query("select u from UserAccount u WHERE u.id = ?1")
 	UserAccount findOneUserAccount(int id);
 	//used in create
-	@Query("select m from MessageThread m WHERE m.title = ?1")
-	MessageThread findOneMessageThreadByTitle(String title);
+	@Query("select m from MessageThread m WHERE m.id = ?1")
+	MessageThread findOneMessageThreadById(int id);
 }

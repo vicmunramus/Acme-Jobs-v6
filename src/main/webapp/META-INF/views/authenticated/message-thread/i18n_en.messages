@@ -17,6 +17,7 @@ authenticated.messageThread.form.label.moment = Created At
 authenticated.messageThread.form.label.creator = Creator
 
 authenticated.messageThread.form.button.messages = Messages
+authenticated.messageThread.form.button.create.messages = Create message
 authenticated.messageThread.form.button.involvedUsers = Involved Users
 authenticated.messageThread.form.button.create.involvedUsers = Add User
 

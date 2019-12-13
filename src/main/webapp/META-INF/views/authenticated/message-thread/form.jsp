@@ -8,7 +8,8 @@
 	<jstl:if test="${command == 'show'}">
 	<acme:form-moment code="authenticated.messageThread.form.label.moment" path="moment" />
 	<acme:form-textbox code="authenticated.messageThread.form.label.creator" path="creator.username" />
-	<acme:form-submit code="authenticated.messageThread.form.button.messages" action="/authenticated/message/list?messageThreadId=${id}" method="get" />	
+	<acme:form-submit code="authenticated.messageThread.form.button.messages" action="/authenticated/message/list?messageThreadId=${id}" method="get" />
+	<acme:form-submit code="authenticated.messageThread.form.button.create.messages" action="/authenticated/message/create?messageThreadId=${id}" method="get" /> 	
  	<acme:form-submit code="authenticated.messageThread.form.button.involvedUsers" action="/authenticated/involved/list?messageThreadId=${id}" method="get" />
  	<acme:form-submit code="authenticated.messageThread.form.button.create.involvedUsers" action="/authenticated/involved/create?messageThreadId=${id}" method="get" /> 		
  		
