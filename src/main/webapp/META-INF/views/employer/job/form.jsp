@@ -37,7 +37,7 @@
 		code="employer.job.form.button.update" action="/employer/job/update"/>
 	<acme:form-submit test="${command == 'update' && status == 'DRAFT'}" 
 		code="employer.job.form.button.update" action="/employer/job/update"/>	
-	<acme:form-submit test="${command == 'show' && haveApplications == 'false'}" 
+	<acme:form-submit test="${(command == 'show' || command == 'update') && haveApplications == 'false'}" 
 		code="employer.job.form.button.delete" action="/employer/job/delete"/>
 		
 	
@@ -45,7 +45,7 @@
 	
 </acme:form>
 
-<jstl:if test="${command == 'show'}">
+<jstl:if test="${command == 'show' || command == 'update'}">
 
 	<jstl:if test="${!descriptorExist && status == 'DRAFT'}">
 		<acme:redirect-button code="employer.job.redirect.create-descriptor" action="/employer/descriptor/create?jobId=${id}"/>

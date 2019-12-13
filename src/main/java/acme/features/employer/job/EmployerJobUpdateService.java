@@ -9,13 +9,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import acme.entities.customisationParameters.CustomisationParameters;
+import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
+import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -59,6 +63,18 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert errors != null;
 
 		request.bind(entity, errors);
+
+		if (request.isMethod(HttpMethod.POST)) {
+
+			Descriptor descriptor = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id"));
+			boolean descriptorExist = descriptor != null ? true : false;
+			request.getModel().setAttribute("descriptorExist", descriptorExist);
+
+			Collection<Worker> workers;
+			workers = this.repository.findWorkersByJob(request.getModel().getInteger("id"));
+			boolean haveApplications = workers.size() > 0 ? true : false;
+			request.getModel().setAttribute("haveApplications", haveApplications);
+		}
 	}
 
 	@Override
@@ -68,6 +84,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline", "status", "salary", "moreInfo", "employer");
+
 	}
 
 	@Override
@@ -136,22 +153,22 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 				//Not Spam
 				isSpam = false;
+				String descriptionText = " ";
+				String dutiesText = " ";
 
-				//title
-				isSpam = isSpam || this.isSpam(entity.getTitle());
-				//more info
-				isSpam = isSpam || this.isSpam(entity.getMoreInfo());
-				//description
 				if (hasDescriptor) {
-					isSpam = isSpam || this.isSpam(this.repository.findOneDescriptorByJobId(entity.getId()).getDescription());
+					descriptionText += this.repository.findOneDescriptorByJobId(entity.getId()).getDescription();
 				}
-				//duties
 				if (duties != null) {
 					for (Duty d : duties) {
-						isSpam = isSpam || this.isSpam(d.getTitleDuty());
-						isSpam = isSpam || this.isSpam(d.getDescriptionDuty());
+						dutiesText += d.getTitleDuty() + " ";
+						dutiesText += d.getDescriptionDuty() + " ";
 					}
 				}
+
+				String text = entity.getTitle() + descriptionText + dutiesText;
+
+				isSpam = this.isSpam(text);
 
 				errors.state(request, !isSpam, "status", "employer.job.form.error.isSpam");
 
@@ -172,26 +189,26 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		this.repository.save(entity);
 	}
 
-	private boolean isSpam(final String word) {
+	private boolean isSpam(final String text) {
+
+		// Put in repository:
+		// @Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
+		// CustomisationParameters findOneCustomisationParameters();
 
 		boolean result = false;
 		List<String> spamList = new ArrayList<String>();
-		List<String> words = new ArrayList<>();
 		Float spamThreshold;
 		CustomisationParameters cp = this.repository.findOneCustomisationParameters();
 		float count = 0;
 
 		spamList = Arrays.asList(cp.getSpamList().trim().split(";"));
-		words = Arrays.asList(word.split(" "));
 		spamThreshold = cp.getSpamThreshold();
 
 		for (String s : spamList) {
-			for (String w : words) {
-				count += w.equalsIgnoreCase(s) ? 1 : 0;
-			}
+			count += StringUtils.countOccurrencesOf(text, s);
 		}
 
-		float numberWords = words.size();
+		float numberWords = text.trim().split(" ").length;
 		float spamPorcentage = count / numberWords;
 
 		result = spamPorcentage >= spamThreshold;

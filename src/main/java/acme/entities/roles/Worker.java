@@ -1,6 +1,8 @@
 
 package acme.entities.roles;
 
+import java.beans.Transient;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
@@ -23,4 +25,10 @@ public class Worker extends UserRole {
 
 	@NotBlank
 	private String				skills;
+
+
+	@Transient
+	public String getFullName() {
+		return this.getIdentity().getFullName();
+	}
 }

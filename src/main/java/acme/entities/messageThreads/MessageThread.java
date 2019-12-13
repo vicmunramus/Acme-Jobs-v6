@@ -15,7 +15,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 
-import acme.framework.entities.Authenticated;
 import acme.framework.entities.DomainEntity;
 import acme.framework.entities.UserAccount;
 import lombok.Getter;
@@ -45,6 +44,6 @@ public class MessageThread extends DomainEntity {
 	//Relationships -----------------------------------------------
 	@Valid
 	@ManyToOne(optional = true)
-	private Authenticated			creator;
+	private UserAccount				creator;
 
 }

@@ -13,13 +13,10 @@
 	<acme:form-submit test="${command == 'create'}" 
 	    code="employer.duty.form.button.create" action="/employer/duty/create"/>	
 	    
-	<acme:form-submit test="${command == 'show' && descriptor.job.status == 'DRAFT'}" 
+	<acme:form-submit test="${(command == 'show' || command == 'update') && (descriptor.job.status == 'DRAFT' || jobStatus == 'DRAFT')}" 
 		code="employer.duty.form.button.update" action="/employer/duty/update"/>
-		
-	<acme:form-submit test="${command == 'update' && descriptor.job.status == 'DRAFT'}" 
-		code="employer.duty.form.button.update" action="/employer/duty/update"/>	
-		
-	<acme:form-submit test="${command == 'show' && descriptor.job.status == 'DRAFT'}" 
+			
+	<acme:form-submit test="${(command == 'show' || command == 'update') && (descriptor.job.status == 'DRAFT' || jobStatus == 'DRAFT')}" 
 		code="employer.duty.form.button.delete" action="/employer/duty/delete"/>	
 		    
 	<acme:form-return code="employer.duty.form.return"/>

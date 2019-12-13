@@ -1,8 +1,6 @@
 
 package acme.features.employer.duty;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -93,22 +91,19 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		Integer allPercentages = 0;
-		Collection<Duty> allDuties;
+		Integer sumDuties;
 		boolean notMore100;
 
 		// percentages not greater than 100%
 		if (!errors.hasErrors("percentage")) {
 
-			allDuties = this.repository.findManyDutiesByDescriptorId(entity.getDescriptor().getId());
-			notMore100 = true;
+			sumDuties = this.repository.sumDutiesCreateByDescriptorId(entity.getDescriptor().getId());
+			notMore100 = entity.getPercentage() <= 100;
 
-			if (allDuties != null) {
-				for (Duty d : allDuties) {
-					allPercentages += d.getPercentage();
-				}
+			if (sumDuties != null) {
+				notMore100 = sumDuties + entity.getPercentage() <= 100;
 			}
-			notMore100 = allPercentages + entity.getPercentage() <= 100;
+
 			errors.state(request, notMore100, "percentage", "employer.job.form.error.percentages-more-100");
 		}
 	}
