@@ -13,28 +13,19 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedMessageThreadRepository extends AbstractRepository {
 
-	//	@Query("select m from MessageThread m WHERE m.creator.id=?1")
-	//	@Query("select m from MessageThread m WHERE m.creator.id = ?1")
-	//	Collection<MessageThread> findManyMessageThreadsByCreatorId(int id);
-
-	@Query("select m from MessageThread m WHERE ?1 IN (select ua.id FROM m.involvedUsers ua WHERE ua.id = ?1) OR ?1 = m.creator.id")
-	Collection<MessageThread> findManyMessageThreadsByUserAccountId(int id);
-
+	//used in listMine
+	//	@Query("select i.messageThread from Involved i WHERE i.userAccount.id = ?1 or i.messageThread.creator.id = ?1 GROUP BY i.messageThread")
+	//	Collection<MessageThread> findManyMessageThreadsByUserId(int id);
+	@Query("SELECT m FROM MessageThread m WHERE m.id IN (SELECT i.messageThread.id FROM Involved i WHERE i.userAccount.id = ?1) OR m.creator.id = ?1")
+	Collection<MessageThread> findManyMessageThreadsByUserId(int id);
+	//used in authorise
+	//select all messageThreads where userAccountId is involved or creator and check if the given messageThread is in those threads
+	@Query("select case when count(m) > 0 then true else false end FROM MessageThread m WHERE m.id = ?2 AND ( m.id IN (SELECT i.messageThread.id FROM Involved i WHERE i.userAccount.id = ?1) OR m.creator.id = ?1)")
+	Boolean userInvolvedInMessageThread(int userAccountId, int messageThreadId);
+	//used in show
 	@Query("select m from MessageThread m WHERE m.id = ?1")
 	MessageThread findOneMessageThread(int msgThreadId);
-
-	@Query("select COUNT(m) from MessageThread m WHERE ?1 IN (select ua.id FROM m.involvedUsers ua WHERE ua.id = ?1) OR ?1 = m.creator.id AND m.id=?2")
-	Integer existUserAccountInMessageThread(int userAccountId, int messageThreadId);
-
-	@Query("select ua from UserAccount ua where ua.id = ?1")
-	UserAccount findOneUserAccountdById(int id);
-
-	@Query("select ua from UserAccount ua where ua.username = ?1")
-	UserAccount findOneUserAccountdByUsername(String username);
-
-	@Query("select m.involvedUsers from MessageThread m where m.id = ?1")
-	Collection<UserAccount> findManyUserAccountdByMessageThreadId(int id);
-	//	@Query("select m from MessageThread m JOIN FETCH m.involvedUsers u WHERE m.id = ?1")
-	//	MessageThread findOneMessageThreadsWithInvolvedUsersbyId(int id);
-
+	//used in create
+	@Query("select u from UserAccount u WHERE u.id = ?1")
+	UserAccount findOneUserAccount(int id);
 }

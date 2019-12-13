@@ -8,9 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.user-account.list.label.id = Id
-authenticated.user-account.list.label.username = Username
-
 authenticated.user-account.form.title.update = Update your account
 
 authenticated.user-account.form.label.username = Username:

@@ -53,9 +53,9 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 	public MessageThread instantiate(final Request<MessageThread> request) {
 		MessageThread result = new MessageThread();
 
-		int userId = request.getPrincipal().getAccountId();
-		UserAccount userAccount = this.repository.findOneUserAccountdById(userId);
-		result.setCreator(userAccount);
+		Integer userId = request.getPrincipal().getAccountId();
+		UserAccount creator = this.repository.findOneUserAccount(userId);
+		result.setCreator(creator);
 
 		return result;
 	}
