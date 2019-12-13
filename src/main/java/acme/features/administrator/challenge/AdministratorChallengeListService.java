@@ -1,6 +1,7 @@
 
 package acme.features.administrator.challenge;
 
+import java.util.Calendar;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +40,8 @@ public class AdministratorChallengeListService implements AbstractListService<Ad
 		assert request != null;
 
 		Collection<Challenge> result;
-
-		result = this.repository.findManyAll();
+		Calendar c = Calendar.getInstance();
+		result = this.repository.findManyAll(c.getTime());
 
 		return result;
 	}
