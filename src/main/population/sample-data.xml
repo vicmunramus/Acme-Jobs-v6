@@ -582,7 +582,7 @@
  		<property name = "reference" value = "EMP2-JOB2"/>
  		<property name = "title" value = "Title 2"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
- 		<property name = "salary" value = "$ 20,000.00"/>
+ 		<property name = "salary" value = "€ 20,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "DRAFT"/>
  		<property name = "employer" ref = "employer2Employer"/>
@@ -592,7 +592,7 @@
  		<property name = "reference" value = "EMP1-JOB3"/>
  		<property name = "title" value = "Title 3"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
- 		<property name = "salary" value = "$ 24,000.00"/>
+ 		<property name = "salary" value = "€ 24,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "DRAFT"/>
  		<property name = "employer" ref = "employer1Employer"/>
@@ -602,7 +602,7 @@
  		<property name = "reference" value = "EMP2-JOB4"/>
  		<property name = "title" value = "Title 4"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
- 		<property name = "salary" value = "$ 22,000.00"/>
+ 		<property name = "salary" value = "€ 22,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "PUBLISHED"/>
  		<property name = "employer" ref = "employer2Employer"/>
@@ -612,7 +612,7 @@
  		<property name = "reference" value = "EMP1-JOB5"/>
  		<property name = "title" value = "Title 5"/>
  		<property name = "deadline" value = "2012/12/11 23:59"/>
- 		<property name = "salary" value = "$ 22,000.00"/>
+ 		<property name = "salary" value = "€ 22,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "PUBLISHED"/>
  		<property name = "employer" ref = "employer1Employer"/>
