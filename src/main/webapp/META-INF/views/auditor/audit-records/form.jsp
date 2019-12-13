@@ -7,9 +7,12 @@
 	
 	<acme:form-hidden path="jobId"/>	
 	
-	<acme:form-textbox code="auditor.job.reference" path="job.reference" readonly="true"/>	
-	<acme:form-moment code="auditor.auditRecord.form.creationMoment" path="creationMoment" readonly="true"/>
-		
+	<acme:form-textbox code="auditor.job.reference" path="job.reference" readonly="true"/>
+	
+	<jstl:if test="${command == 'show' || command == 'update'}">
+		<acme:form-moment code="auditor.auditRecord.form.creationMoment" path="creationMoment" readonly="true"/>
+	</jstl:if>
+	
 	<jstl:if test="${command == 'show' && status == 'PUBLISHED'}">		
 		<acme:form-textbox code="auditor.auditRecord.form.title" path="title" readonly="true"/>
 		<acme:form-textbox code="auditor.auditRecord.form.body" path="body" readonly="true"/>	
@@ -29,7 +32,6 @@
 	<jstl:if test="${command == 'show' || command == 'update'}">
 			
 		<acme:message code="auditor.auditRecord.form.auditor.title"/>
-
 		<acme:form-textbox code="auditor.auditRecord.form.auditor.username" path="auditor.userAccount.username" readonly="true"/>
 		<acme:form-textbox code="auditor.auditRecord.form.auditor.fullName" path="auditor.userAccount.identity.fullName" readonly="true"/>
 	
