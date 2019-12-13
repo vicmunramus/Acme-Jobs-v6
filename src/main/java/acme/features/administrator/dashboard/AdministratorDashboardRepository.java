@@ -1,6 +1,8 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -50,37 +52,37 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(r) from InvestorRecord r")
 	Integer countAllInvestorRecord();
 
-	@Query("select max(r.maxReward.amount) from Offer r where r.deadline > utc_timestamp()")
-	Double getMaxOffer();
+	@Query("select max(r.maxReward.amount) from Offer r where r.deadline > ?1")
+	Double getMaxOffer(Date d);
 
-	@Query("select min(r.minReward.amount) from Offer r where r.deadline > utc_timestamp()")
-	Double getMinOffer();
+	@Query("select min(r.minReward.amount) from Offer r where r.deadline > ?1")
+	Double getMinOffer(Date d);
 
-	@Query("select max(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
-	Double getMaxRequest();
+	@Query("select max(r.reward.amount) from Request r where r.deadline > ?1")
+	Double getMaxRequest(Date d);
 
-	@Query("select min(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
-	Double getMinRequest();
+	@Query("select min(r.reward.amount) from Request r where r.deadline > ?1")
+	Double getMinRequest(Date d);
 
-	@Query("select avg(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
-	Double getAvgRequest();
+	@Query("select avg(r.reward.amount) from Request r where r.deadline > ?1")
+	Double getAvgRequest(Date d);
 
-	@Query("select stddev(r.reward.amount) from Request r where r.deadline > utc_timestamp()")
-	Double getStdRequest();
+	@Query("select stddev(r.reward.amount) from Request r where r.deadline > ?1")
+	Double getStdRequest(Date d);
 
 	//Querys no directas D02:
 
-	@Query("select avg(r.maxReward.amount) from Offer r where r.deadline > utc_timestamp()")
-	Double getMaxAvgOffer();
+	@Query("select avg(r.maxReward.amount) from Offer r where r.deadline > ?1")
+	Double getMaxAvgOffer(Date d);
 
-	@Query("select avg(r.minReward.amount) from Offer r where r.deadline > utc_timestamp()")
-	Double getMinAvgOffer();
+	@Query("select avg(r.minReward.amount) from Offer r where r.deadline > ?1")
+	Double getMinAvgOffer(Date d);
 
-	@Query("select stddev(r.maxReward.amount) from Offer r where r.deadline > utc_timestamp()")
-	Double getStdMaxOffer();
+	@Query("select stddev(r.maxReward.amount) from Offer r where r.deadline > ?1")
+	Double getStdMaxOffer(Date d);
 
-	@Query("select stddev(r.minReward.amount) from Offer r where r.deadline > utc_timestamp()")
-	Double getStdMinOffer();
+	@Query("select stddev(r.minReward.amount) from Offer r where r.deadline > ?1")
+	Double getStdMinOffer(Date d);
 
 	//Listing D04:
 	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")

@@ -1,7 +1,9 @@
 
 package acme.features.authenticated.offer;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,7 +50,9 @@ public class AuthenticatedOfferListService implements AbstractListService<Authen
 
 		Collection<Offer> result;
 
-		result = this.repository.findManyAll();
+		Date d = Calendar.getInstance().getTime();
+
+		result = this.repository.findManyAll(d);
 
 		return result;
 	}

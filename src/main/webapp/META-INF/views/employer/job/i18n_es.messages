@@ -1,6 +1,10 @@
+auditor.job.title = <h3> Trabajo </h3>
+auditor.descriptor.title = <h3> Descriptor </h3>
+
 employer.job.list.label.reference = Referencia
 employer.job.list.label.deadline = Fecha de vencimiento
 employer.job.list.label.title = Título
+employer.job.list.label.status = Estado
 employer.job.list.redirect.create-job = Crear Trabajo
 
 employer.job.form.reference = Referencia
@@ -9,6 +13,7 @@ employer.job.form.title = Título
 employer.job.form.salary = Salario
 employer.job.form.moreInfo = Más información
 employer.job.form.status = Estado
+employer.job.form.description = Descripción
 authenticated.job.form.status.draft = Borrador
 authenticated.job.form.status.published = Publicado
 
@@ -19,7 +24,9 @@ employer.job.form.return = Volver
 
 employer.job.redirect.create-descriptor = Crear Descripción
 employer.job.redirect.descriptor = Descripción
-employer.job.redirect.auditRecord = Historial de auditoría
+employer.job.redirect.create-duty = Crear Deber
+employer.job.redirect.listDuties = Deberes
+employer.job.redirect.auditRecord = Historiales de auditoría
 
 # Errors #########################################
 

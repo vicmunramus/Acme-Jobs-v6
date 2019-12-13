@@ -6,6 +6,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
@@ -68,9 +69,9 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		boolean isAfter, uniqueReference, inEuros, positive;
+		boolean isAfter, uniqueReference, inEuros, positive, descriptionNotBlank;
 
-		//DEADLINE
+		//Deadline
 		if (!errors.hasErrors("deadline")) {
 			isAfter = entity.getDeadline().after(new Date(System.currentTimeMillis()));
 			errors.state(request, isAfter, "deadline", "employer.job.error.deadline-must-be-in-the-future");
@@ -89,6 +90,14 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			positive = entity.getSalary().getAmount() >= 0.;
 			errors.state(request, positive, "salary", "employer.job.form.error.salary-not-positive");
 		}
+		//Description
+		if (!errors.hasErrors("description")) {
+			descriptionNotBlank = request.getModel().getString("description") != "";
+			if (!descriptionNotBlank) {
+				String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The description can not be empty" : "La descripción no puede estar vacía";
+				errors.add("description", errorMsg);
+			}
+		}
 	}
 
 	@Override
@@ -97,6 +106,11 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 
 		this.repository.save(entity);
+
+		Descriptor d = new Descriptor();
+		d.setJob(entity);
+		d.setDescription(request.getModel().getString("description"));
+		this.repository.save(d);
 	}
 
 }

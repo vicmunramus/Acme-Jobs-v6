@@ -7,6 +7,8 @@
 	
 	<jstl:set var = "rdonly" value ="${status == 'PUBLISHED'}"/>
 	
+	<acme:message code="auditor.job.title"/>
+	
 	<jstl:if test="${command == 'create'}">
 		<acme:form-textbox code="employer.job.form.reference" path="reference" placeholder="EEEE-JJJJ" readonly ="${rdonly}"/>
 	</jstl:if>
@@ -18,6 +20,10 @@
 	<acme:form-moment code="employer.job.form.deadline" path="deadline" readonly="${rdonly}"/>
 	<acme:form-money code="employer.job.form.salary" path="salary" placeholder="30000 EUR" readonly="${rdonly}"/> 
 	<acme:form-url code="employer.job.form.moreInfo" path="moreInfo" readonly="${rdonly}"/>
+	
+	<acme:message code="auditor.descriptor.title"/>
+	
+	<acme:form-textarea code="employer.job.form.description" path="description" readonly="${rdonly}"/>
 	
 	<jstl:if test="${command != 'create'}">
 		<jstl:if test="${rdonly == 'true'}">
@@ -47,14 +53,10 @@
 
 <jstl:if test="${command == 'show' || command == 'update'}">
 
-	<jstl:if test="${!descriptorExist && status == 'DRAFT'}">
-		<acme:redirect-button code="employer.job.redirect.create-descriptor" action="/employer/descriptor/create?jobId=${id}"/>
-	</jstl:if>
-	
-	<jstl:if test="${descriptorExist}">
-		<acme:redirect-button code="employer.job.redirect.descriptor" action="/employer/descriptor/show?id=${id}"/>
-	</jstl:if>
-	
-	<acme:redirect-button code="employer.job.redirect.auditRecord" action="/employer/audit-records/list?id=${id}"/>
+	<jstl:if test="${status == 'DRAFT'}">
+		  <acme:redirect-button code="employer.job.redirect.create-duty" action="/employer/duty/create?jobId=${id}"/>
+    </jstl:if>
+	<acme:redirect-button code="employer.job.redirect.listDuties" action="/employer/duty/list?jobId=${id}"/>
+	<acme:redirect-button code="employer.job.redirect.auditRecord" action="/employer/audit-records/list?jobId=${id}"/>
 	
 </jstl:if>

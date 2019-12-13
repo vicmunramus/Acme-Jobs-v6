@@ -12,5 +12,7 @@ employer.duty.form.button.update = Update
 employer.duty.form.button.delete = Delete
 employer.duty.form.return = Return
 
+employer.duty.redirect.create-duty = Create Duty
+
 
 employer.job.form.error.percentages-more-100 = The percentages can't be more than 100% in total

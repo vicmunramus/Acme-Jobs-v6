@@ -42,10 +42,10 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 		assert request != null;
 
 		Collection<Duty> result;
-		int descriptorId;
+		int jobId;
 
-		descriptorId = request.getModel().getInteger("descriptorId");
-		result = this.repository.findDuty(descriptorId);
+		jobId = request.getModel().getInteger("jobId");
+		result = this.repository.findManyDutiesByJobId(jobId);
 
 		return result;
 	}

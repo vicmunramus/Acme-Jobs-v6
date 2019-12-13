@@ -1,6 +1,9 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +43,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	public Dashboard findOne(final Request<Dashboard> request) {
 		assert request != null;
 
+		Date d = Calendar.getInstance().getTime();
+
 		//DO2:
 		Dashboard result;
 		result = new Dashboard();
@@ -57,29 +62,29 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setNumberAnnouncement(this.repository.countAllAnnouncement());
 		result.setNumberCompanyRecords(this.repository.countAllCompanyRecord());
 		result.setNumberInvestorRecord(this.repository.countAllInvestorRecord());
-		maxOffer.setAmount(this.repository.getMaxOffer() != null ? this.repository.getMaxOffer() : 0.0);
+		maxOffer.setAmount(this.repository.getMaxOffer(d) != null ? this.repository.getMaxOffer(d) : 0.0);
 		maxOffer.setCurrency("EUR");
 		result.setMaximunRewardOffer(maxOffer);
-		minOffer.setAmount(this.repository.getMinOffer() != null ? this.repository.getMinOffer() : 0.0);
+		minOffer.setAmount(this.repository.getMinOffer(d) != null ? this.repository.getMinOffer(d) : 0.0);
 		minOffer.setCurrency("EUR");
 		result.setMinimunRewardOffer(minOffer);
-		Double avg = ((this.repository.getMaxAvgOffer() != null ? this.repository.getMaxAvgOffer() : 0.0) + (this.repository.getMinAvgOffer() != null ? this.repository.getMinAvgOffer() : 0.0)) / 2;
+		Double avg = ((this.repository.getMaxAvgOffer(d) != null ? this.repository.getMaxAvgOffer(d) : 0.0) + (this.repository.getMinAvgOffer(d) != null ? this.repository.getMinAvgOffer(d) : 0.0)) / 2;
 		avgOffer.setAmount(avg);
 		avgOffer.setCurrency("EUR");
 		result.setAverageRewardOffer(avgOffer);
-		maxRequest.setAmount(this.repository.getMaxRequest() != null ? this.repository.getMaxRequest() : 0.0);
+		maxRequest.setAmount(this.repository.getMaxRequest(d) != null ? this.repository.getMaxRequest(d) : 0.0);
 		maxRequest.setCurrency("EUR");
 		result.setMaximunRewardRequest(maxRequest);
-		minRequest.setAmount(this.repository.getMinRequest() != null ? this.repository.getMinRequest() : 0.0);
+		minRequest.setAmount(this.repository.getMinRequest(d) != null ? this.repository.getMinRequest(d) : 0.0);
 		minRequest.setCurrency("EUR");
 		result.setMinimunRewardRequest(minRequest);
-		avgRequest.setAmount(this.repository.getAvgRequest() != null ? this.repository.getAvgRequest() : 0.0);
+		avgRequest.setAmount(this.repository.getAvgRequest(d) != null ? this.repository.getAvgRequest(d) : 0.0);
 		avgRequest.setCurrency("EUR");
 		result.setAverageRewardRequest(avgRequest);
-		stdRequest.setAmount(this.repository.getStdRequest() != null ? this.repository.getStdRequest() : 0.0);
+		stdRequest.setAmount(this.repository.getStdRequest(d) != null ? this.repository.getStdRequest(d) : 0.0);
 		stdRequest.setCurrency("EUR");
 		result.setStdRequest(stdRequest);
-		Double stdOff = ((this.repository.getStdMaxOffer() != null ? this.repository.getStdMaxOffer() : 0.0) + (this.repository.getStdMinOffer() != null ? this.repository.getStdMinOffer() : 0.0)) / 2;
+		Double stdOff = ((this.repository.getStdMaxOffer(d) != null ? this.repository.getStdMaxOffer(d) : 0.0) + (this.repository.getStdMinOffer(d) != null ? this.repository.getStdMinOffer(d) : 0.0)) / 2;
 		stdOffer.setAmount(stdOff);
 		stdOffer.setCurrency("EUR");
 		result.setStdOffer(stdOffer);

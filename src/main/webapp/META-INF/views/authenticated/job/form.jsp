@@ -9,10 +9,11 @@
 	<acme:form-moment code="authenticated.job.form.deadline" path="deadline"/>
 	<acme:form-money code="authenticated.job.form.salary" path="salary"/>
 	<acme:form-url code="authenticated.job.form.moreInfo" path="moreInfo"/>
+	<acme:form-url code="authenticated.job.form.description" path="description"/>
 	<acme:form-textbox code="authenticated.job.form.status" path="status"/>
 	
 	<acme:form-return code="authenticated.job.form.return"/>	
 </acme:form>
-<acme:redirect-button code="authenticated.job.redirect.descriptor" action="/authenticated/descriptor/show?id=${id}"/>
+<acme:redirect-button code="authenticated.job.redirect.duties" action="/authenticated/duty/list?jobId=${id}"/>
 <acme:redirect-button code="authenticated.job.redirect.auditRecord" action="/authenticated/audit-records/list?id=${id}"/>
 <acme:redirect-button code="authenticated.job.redirect.application" action="/worker/application/create?jobId=${id}" access="hasRole('Worker')"/>

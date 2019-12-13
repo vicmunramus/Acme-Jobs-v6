@@ -37,7 +37,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert request != null;
 		boolean result = true;
 
-		//Assure this is the owner of the descriptor
+		//Assure this is the owner of the job
 		int jobId;
 		Job job;
 		Employer employer;
@@ -65,10 +65,6 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		request.bind(entity, errors);
 
 		if (request.isMethod(HttpMethod.POST)) {
-
-			Descriptor descriptor = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id"));
-			boolean descriptorExist = descriptor != null ? true : false;
-			request.getModel().setAttribute("descriptorExist", descriptorExist);
 
 			Collection<Worker> workers;
 			workers = this.repository.findWorkersByJob(request.getModel().getInteger("id"));
@@ -106,7 +102,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		boolean isAfter, inEuros, positive, hasDescriptor, duties100, isSpam;
+		boolean isAfter, inEuros, positive, hasDescriptor, duties100, descriptionNotBlank, isSpam;
 		//DEADLINE
 		if (!errors.hasErrors("deadline")) {
 
@@ -122,6 +118,15 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 			positive = entity.getSalary().getAmount() >= 0.;
 			errors.state(request, positive, "salary", "employer.job.form.error.salary-not-positive");
 		}
+		//Description
+		if (!errors.hasErrors("description")) {
+			descriptionNotBlank = request.getModel().getString("description") != "";
+			if (!descriptionNotBlank) {
+				String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The description can not be empty" : "La descripción no puede estar vacía";
+				errors.add("description", errorMsg);
+			}
+		}
+
 		// Can it be saved in final Mode?
 		if (!errors.hasErrors("status")) {
 
@@ -129,23 +134,11 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 				// Has descriptor
 				hasDescriptor = this.repository.findOneDescriptorByJobId(entity.getId()) != null;
 				errors.state(request, hasDescriptor, "status", "employer.job.form.error.dont-have-descriptor");
+
 				//Duties sum up to 100%
 				duties100 = false;
-				Collection<Duty> duties = this.repository.findManyDutiesByJobId(entity.getId());
-				Double sumDuties = this.repository.findDutiesByJobId(entity.getId());
+				Double sumDuties = this.repository.sumPercentagesDutiesByJobId(entity.getId());
 
-				/*
-				 * if (duties != null) {
-				 *
-				 * int percentageTotal = 0;
-				 *
-				 * for (Duty d : duties) {
-				 * percentageTotal += d.getPercentage();
-				 * }
-				 *
-				 * duties100 = percentageTotal == 100;
-				 * }
-				 */
 				if (sumDuties != null) {
 					duties100 = sumDuties == 100;
 				}
@@ -153,6 +146,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 				//Not Spam
 				isSpam = false;
+				Collection<Duty> duties = this.repository.findManyDutiesByJobId(entity.getId());
 				String descriptionText = " ";
 				String dutiesText = " ";
 
@@ -185,6 +179,10 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 	public void update(final Request<Job> request, final Job entity) {
 		assert request != null;
 		assert entity != null;
+
+		Descriptor d = this.repository.findOneDescriptorByJobId(entity.getId());
+		d.setDescription(request.getModel().getString("description"));
+		this.repository.save(d);
 
 		this.repository.save(entity);
 	}

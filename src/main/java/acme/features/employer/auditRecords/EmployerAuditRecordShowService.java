@@ -6,11 +6,9 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecords;
 import acme.entities.auditRecords.Status;
-import acme.entities.roles.Auditor;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -27,15 +25,12 @@ public class EmployerAuditRecordShowService implements AbstractShowService<Emplo
 		boolean result;
 
 		int auditId;
-		Auditor auditor;
 		AuditRecords auditRecord;
-		Principal principal;
 
-		principal = request.getPrincipal();
 		auditId = request.getModel().getInteger("id");
 		auditRecord = this.repository.findOne(auditId);
-		auditor = auditRecord.getAuditor();
-		result = auditRecord.getStatus() == Status.PUBLISHED || auditRecord.getStatus() == Status.DRAFT && auditor.getUserAccount().getId() == principal.getAccountId();
+
+		result = auditRecord.getStatus() == Status.PUBLISHED;
 
 		return result;
 	}
@@ -46,7 +41,7 @@ public class EmployerAuditRecordShowService implements AbstractShowService<Emplo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "status", "creationMoment", "body");
+		request.unbind(entity, model, "title", "status", "creationMoment", "body", "auditor.userAccount.username", "auditor.userAccount.identity.fullName", "job.reference", "job.id");
 	}
 
 	@Override

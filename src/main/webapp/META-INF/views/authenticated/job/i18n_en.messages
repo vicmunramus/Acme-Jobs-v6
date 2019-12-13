@@ -7,9 +7,10 @@ authenticated.job.form.deadline = Deadline
 authenticated.job.form.title = Title
 authenticated.job.form.salary = Salary
 authenticated.job.form.moreInfo = More Info
+authenticated.job.form.description = Description
 authenticated.job.form.status = Status
 
 authenticated.job.form.return = Return
-authenticated.job.redirect.descriptor = Descriptor
+authenticated.job.redirect.duties = Duties
 authenticated.job.redirect.auditRecord = Audit Record
 authenticated.job.redirect.application = Application
