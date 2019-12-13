@@ -13,8 +13,8 @@ import acme.framework.repositories.AbstractRepository;
 public interface AuthenticatedDutyRepository extends AbstractRepository {
 
 	@Query("select d from Duty d where d.id = ?1")
-	Duty findOneDutyById(int descriptorId);
+	Duty findOneDutyById(int dutyId);
 
-	@Query("select d from Duty d where d.descriptor.id = ?1")
-	Collection<Duty> findDuty(int descriptorId);
+	@Query("select d from Duty d where d.descriptor.job.id = ?1")
+	Collection<Duty> findManyDutiesByJobId(int jobId);
 }
