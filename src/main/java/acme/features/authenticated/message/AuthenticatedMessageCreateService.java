@@ -55,7 +55,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		Message result = new Message();
 
 		int userId = request.getPrincipal().getAccountId();
-		UserAccount userAccount = this.repository.findOneUserAccountdById(userId);
+		UserAccount userAccount = this.repository.findOneUserAccount(userId);
 		result.setCreator(userAccount);
 
 		return result;
@@ -71,7 +71,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 			String msgThreadTitle = request.getModel().getString("messageThread.title");
 			int messageThreadId = this.repository.findOneMessageThreadByTitle(msgThreadTitle).getId();
 			Integer userId = request.getPrincipal().getAccountId();
-			boolean existUser = this.repository.existUserAccountInMessageThread(userId, messageThreadId) > 0;
+			boolean existUser = this.repository.userInvolvedInMessageThread(userId, messageThreadId);
 
 			errors.state(request, existUser, "messageThread.title", "authenticated.message.involved-user.error.not-involved");
 		}

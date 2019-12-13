@@ -212,6 +212,14 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `involved` (
+       `id` integer not null,
+        `version` integer not null,
+        `message_thread_id` integer not null,
+        `user_account_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `job` (
        `id` integer not null,
         `version` integer not null,
@@ -245,11 +253,6 @@
         `title` varchar(255),
         `creator_id` integer,
         primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `message_thread_user_account` (
-       `message_thread_id` integer not null,
-        `involved_users_id` integer not null
     ) engine=InnoDB;
 
     create table `munoz_bulletin` (
@@ -391,9 +394,6 @@ create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 create index IDXjporswtrt7iirg3sca9fipjj4 on `message` (`title`);
 create index IDX3pvpt477dc7b3lairb4qjna7m on `message_thread` (`title`);
-
-    alter table `message_thread_user_account` 
-       add constraint UK_kvt9lm5ighd2gcp8449akmy72 unique (`involved_users_id`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 
@@ -474,6 +474,16 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `involved` 
+       add constraint `FKhkjx1r325hanpggn2t7dlad23` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
+    alter table `involved` 
+       add constraint `FK6ki4eammiocj9p3amqm7v4ej9` 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
@@ -493,16 +503,6 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        add constraint `FKr35u0eaupbx6b2w22e33u8s5u` 
        foreign key (`creator_id`) 
        references `user_account` (`id`);
-
-    alter table `message_thread_user_account` 
-       add constraint `FKo38s0x5wh4bqafrldhmusaacu` 
-       foreign key (`involved_users_id`) 
-       references `user_account` (`id`);
-
-    alter table `message_thread_user_account` 
-       add constraint `FKtchis3o5qij98x87mty6hdk4d` 
-       foreign key (`message_thread_id`) 
-       references `message_thread` (`id`);
 
     alter table `non_commercial` 
        add constraint FK_1px28k1t0j3coqn549p1ru8op 

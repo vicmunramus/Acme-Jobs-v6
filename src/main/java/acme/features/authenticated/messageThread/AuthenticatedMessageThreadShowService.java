@@ -26,8 +26,7 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 		Integer messageThreadId = request.getModel().getInteger("id");
 		Integer userId = request.getPrincipal().getAccountId();
-
-		result = this.repository.existUserAccountInMessageThread(userId, messageThreadId) > 0;
+		result = this.repository.userInvolvedInMessageThread(userId, messageThreadId);
 
 		return result;
 	}
