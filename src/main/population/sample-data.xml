@@ -774,26 +774,30 @@
  		<property name="title" value="messageThread0"/>
  		<property name="moment" value="2019/10/29 17:10"/>
  		<property name="creator" ref="worker1UserAccount"/>
- 		<property name="involvedUsers">
- 			<list>
- 				<ref bean="employer1UserAccount"/>
- 				<ref bean="employer2UserAccount"/>
- 			</list>
- 		</property>
  	</bean>
  	
  	<bean name="messageThread2" class="acme.entities.messageThreads.MessageThread">
  		<property name="title" value="messageThread1"/>
  		<property name="moment" value="2019/10/29 17:10"/>
  		<property name="creator" ref="employer2UserAccount"/>
- 		<property name="involvedUsers">
- 			<list>
- 				<ref bean="worker1UserAccount"/>
- 				<ref bean="worker2UserAccount"/>
- 			</list>
- 		</property>
  	</bean>
  	
+ 	<bean name="involved00" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread1"/>
+ 		<property name="userAccount" ref="employer1UserAccount"/>
+ 	</bean>
+ 	<bean name="involved01" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread1"/>
+ 		<property name="userAccount" ref="employer2UserAccount"/>
+ 	</bean> 	
+ 	<bean name="involved02" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread2"/>
+ 		<property name="userAccount" ref="worker1UserAccount"/>
+ 	</bean>
+ 	<bean name="involved03" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread2"/>
+ 		<property name="userAccount" ref="worker2UserAccount"/>
+ 	</bean>
  	<!-- Messages -->
  	
  	<bean name="message1" class="acme.entities.messages.Message">
