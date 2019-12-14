@@ -8,7 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-
 authenticated.message.list.label.title = Título
 authenticated.message.list.label.moment = Fecha de creación
 authenticated.message.list.button.create = Crear un nuevo mensaje
@@ -27,4 +26,4 @@ authenticated.message.form.button.create = Crear
 
 authenticated.message.form.button.return = Volver
 
-authenticated.message.involved-user.error.not-involved = No perteneces a ese hilo
+authenticated.message.error.must-accept = Debe confirmar antes de crear

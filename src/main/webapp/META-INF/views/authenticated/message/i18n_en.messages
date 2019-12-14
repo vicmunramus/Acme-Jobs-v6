@@ -25,4 +25,4 @@ authenticated.message.form.button.create = Create
 
 authenticated.message.form.button.return = Return
 
-authenticated.message.involved-user.error.not-involved = You are not involved in that thread
+authenticated.message.error.must-accept = Must confirm before creating

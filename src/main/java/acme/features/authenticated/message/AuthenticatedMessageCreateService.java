@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.messageThreads.MessageThread;
 import acme.entities.messages.Message;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -25,7 +26,11 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 	@Override
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
-		boolean result = true;
+		boolean result;
+
+		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
+		Integer userId = request.getPrincipal().getAccountId();
+		result = this.repository.userInvolvedInMessageThread(userId, messageThreadId);
 
 		return result;
 	}
@@ -46,17 +51,28 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "tags", "body", "messageThread.title", "creator.username");
+		request.unbind(entity, model, "title", "moment", "tags", "body", "creator.username");
 
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("accept", "false");
+		} else {
+			request.transfer(model, "accept");
+		}
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("messageThreadId", request.getModel().getInteger("messageThreadId"));
+		}
 	}
 
 	@Override
 	public Message instantiate(final Request<Message> request) {
 		Message result = new Message();
 
-		int userId = request.getPrincipal().getAccountId();
-		UserAccount userAccount = this.repository.findOneUserAccount(userId);
-		result.setCreator(userAccount);
+		//		MessageThread messageThread = new MessageThread();
+		//		result.setMessageThread(messageThread);
+		//
+		//		int userId = request.getPrincipal().getAccountId();
+		//		UserAccount userAccount = this.repository.findOneUserAccount(userId);
+		//		result.setCreator(userAccount);
 
 		return result;
 	}
@@ -67,14 +83,8 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert errors != null;
 
-		if (!errors.hasErrors("messageThread.title")) {
-			String msgThreadTitle = request.getModel().getString("messageThread.title");
-			int messageThreadId = this.repository.findOneMessageThreadByTitle(msgThreadTitle).getId();
-			Integer userId = request.getPrincipal().getAccountId();
-			boolean existUser = this.repository.userInvolvedInMessageThread(userId, messageThreadId);
-
-			errors.state(request, existUser, "messageThread.title", "authenticated.message.involved-user.error.not-involved");
-		}
+		boolean isAccepted = request.getModel().getBoolean("accept");
+		errors.state(request, isAccepted, "accept", "authenticated.message.error.must-accept");
 	}
 
 	@Override
@@ -82,13 +92,17 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert request != null;
 		assert entity != null;
 
+		int messsageThreadId = request.getModel().getInteger("messageThreadId");
+		MessageThread messageThread = this.repository.findOneMessageThreadById(messsageThreadId);
+		entity.setMessageThread(messageThread);
+
+		int userId = request.getPrincipal().getAccountId();
+		UserAccount userAccount = this.repository.findOneUserAccount(userId);
+		entity.setCreator(userAccount);
+
 		Date moment;
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
-
-		String msgThreadTitle = request.getModel().getString("messageThread.title");
-		MessageThread messageThread = this.repository.findOneMessageThreadByTitle(msgThreadTitle);
-		entity.setMessageThread(messageThread);
 
 		this.repository.save(entity);
 

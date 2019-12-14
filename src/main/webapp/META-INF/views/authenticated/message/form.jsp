@@ -3,8 +3,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-
-	<acme:form-textbox code="authenticated.message.form.user.messageThread.title" path="messageThread.title" />
+	<acme:form-hidden path="messageThreadId"/>
+	
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title" />
 	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags" />
 	<acme:form-textbox code="authenticated.message.form.label.body" path="body" />
