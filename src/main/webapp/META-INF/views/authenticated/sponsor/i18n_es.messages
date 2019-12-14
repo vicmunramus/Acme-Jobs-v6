@@ -1,0 +1,10 @@
+
+authenticated.sponsor.form.title.create = Registrarse
+authenticated.sponsor.form.title.update = Actualizar
+
+authenticated.sponsor.form.label.organisationName = Nombre de la organización
+
+
+authenticated.sponsor.form.button.create = Registrarse
+authenticated.sponsor.form.button.update = Actualizar
+authenticated.sponsor.form.button.return = Volver
