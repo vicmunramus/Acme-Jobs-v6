@@ -55,29 +55,29 @@
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
 
+    alter table `involved` 
+       drop 
+       foreign key `FKhkjx1r325hanpggn2t7dlad23`;
+
+    alter table `involved` 
+       drop 
+       foreign key `FK6ki4eammiocj9p3amqm7v4ej9`;
+
     alter table `job` 
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
     alter table `message` 
        drop 
-       foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
+       foreign key `FKn4cg0xtxxw96f3n2ba6k1epnq`;
 
     alter table `message` 
        drop 
-       foreign key `FKik4epe9dp5q6uenarfyia7xin`;
+       foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
 
     alter table `message_thread` 
        drop 
-       foreign key `FK3fa4h4tfet2kocvatib2ovhsa`;
-
-    alter table `message_thread_user_account` 
-       drop 
-       foreign key `FKo38s0x5wh4bqafrldhmusaacu`;
-
-    alter table `message_thread_user_account` 
-       drop 
-       foreign key `FKtchis3o5qij98x87mty6hdk4d`;
+       foreign key `FKr35u0eaupbx6b2w22e33u8s5u`;
 
     alter table `non_commercial` 
        drop 
@@ -135,13 +135,13 @@
 
     drop table if exists `investor_record`;
 
+    drop table if exists `involved`;
+
     drop table if exists `job`;
 
     drop table if exists `message`;
 
     drop table if exists `message_thread`;
-
-    drop table if exists `message_thread_user_account`;
 
     drop table if exists `munoz_bulletin`;
 

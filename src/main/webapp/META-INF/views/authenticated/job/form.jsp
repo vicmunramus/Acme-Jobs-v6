@@ -4,6 +4,8 @@
 <%@taglib prefix = "acme" tagdir = "/WEB-INF/tags"%>
 
 <acme:form>
+	<acme:message code="auditor.job.title"/>
+	
 	<acme:form-textbox code="authenticated.job.form.reference" path="reference" placeholder="EEEE-JJJJ"/>
 	<acme:form-textbox code="authenticated.job.form.title" path="title"/>
 	<acme:form-moment code="authenticated.job.form.deadline" path="deadline"/>
@@ -11,8 +13,12 @@
 	<acme:form-url code="authenticated.job.form.moreInfo" path="moreInfo"/>
 	<acme:form-textbox code="authenticated.job.form.status" path="status"/>
 	
+	<acme:message code="auditor.descriptor.title"/>
+	
+	<acme:form-url code="authenticated.job.form.description" path="description"/>
+	
 	<acme:form-return code="authenticated.job.form.return"/>	
 </acme:form>
-<acme:redirect-button code="authenticated.job.redirect.descriptor" action="/authenticated/descriptor/show?id=${id}"/>
+<acme:redirect-button code="authenticated.job.redirect.duties" action="/authenticated/duty/list?jobId=${id}"/>
 <acme:redirect-button code="authenticated.job.redirect.auditRecord" action="/authenticated/audit-records/list?id=${id}"/>
 <acme:redirect-button code="authenticated.job.redirect.application" action="/worker/application/create?jobId=${id}" access="hasRole('Worker')"/>

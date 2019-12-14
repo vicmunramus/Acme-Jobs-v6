@@ -7,27 +7,25 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.messageThreads.MessageThread;
+import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AuthenticatedMessageThreadRepository extends AbstractRepository {
 
-	@Query("select m from MessageThread m WHERE m.creator.id=?1")
-	Collection<MessageThread> findMyMessageThreads(int authId);
-
+	//used in listMine
+	//	@Query("select i.messageThread from Involved i WHERE i.userAccount.id = ?1 or i.messageThread.creator.id = ?1 GROUP BY i.messageThread")
+	//	Collection<MessageThread> findManyMessageThreadsByUserId(int id);
+	@Query("SELECT m FROM MessageThread m WHERE m.id IN (SELECT i.messageThread.id FROM Involved i WHERE i.userAccount.id = ?1) OR m.creator.id = ?1")
+	Collection<MessageThread> findManyMessageThreadsByUserId(int id);
+	//used in authorise
+	//select all messageThreads where userAccountId is involved or creator and check if the given messageThread is in those threads
+	@Query("select case when count(m) > 0 then true else false end FROM MessageThread m WHERE m.id = ?2 AND ( m.id IN (SELECT i.messageThread.id FROM Involved i WHERE i.userAccount.id = ?1) OR m.creator.id = ?1)")
+	Boolean userInvolvedInMessageThread(int userAccountId, int messageThreadId);
+	//used in show
 	@Query("select m from MessageThread m WHERE m.id = ?1")
 	MessageThread findOneMessageThread(int msgThreadId);
-
-	@Query("select m.messageThread from Message m WHERE m.user.id = ?1")
-	Collection<MessageThread> findManyMessageThreadByAuthenticatedId(int id);
-
-	@Query("select m from MessageThread m WHERE m.creator.id = ?1")
-	MessageThread findOneMessageThreadByAuthenticatedId(int id);
-
-	@Query("select COUNT(m) from Message m WHERE m.messageThread.id = ?1 AND m.user.id = ?2")
-	Integer existAuthenticatedByMessageThreadId(int messageThreadId, int userId);
-
-	@Query("select m from MessageThread m where m.id = ?1")
-	MessageThread findOneMessageThreadById(int id);
-
+	//used in create
+	@Query("select u from UserAccount u WHERE u.id = ?1")
+	UserAccount findOneUserAccount(int id);
 }

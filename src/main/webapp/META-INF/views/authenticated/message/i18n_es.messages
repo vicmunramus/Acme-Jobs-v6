@@ -8,15 +8,22 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-
 authenticated.message.list.label.title = Título
 authenticated.message.list.label.moment = Fecha de creación
+authenticated.message.list.button.create = Crear un nuevo mensaje
 
 authenticated.message.form.user = Usuario
-authenticated.message.form.user.username = Nombre de Usuario
+
+authenticated.message.form.user.messageThread.title = Hilo de mensajes
+authenticated.message.form.user.creator.username = Nombre de Usuario
 
 authenticated.message.form.label.title = Título
 authenticated.message.form.label.moment = Fecha de creación
 authenticated.message.form.label.body= Cuerpo
+authenticated.message.form.label.tags= Etiquetas
+authenticated.message.form.label.accept = Aceptar
+authenticated.message.form.button.create = Crear
 
 authenticated.message.form.button.return = Volver
+
+authenticated.message.error.must-accept = Debe confirmar antes de crear

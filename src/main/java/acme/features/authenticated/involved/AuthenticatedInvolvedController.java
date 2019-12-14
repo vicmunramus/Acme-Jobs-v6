@@ -1,5 +1,5 @@
 
-package acme.features.employer.descriptor;
+package acme.features.authenticated.involved;
 
 import javax.annotation.PostConstruct;
 
@@ -7,34 +7,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.jobs.Descriptor;
-import acme.entities.roles.Employer;
+import acme.entities.involved.Involved;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/employer/descriptor/")
-public class EmployerDescriptorController extends AbstractController<Employer, Descriptor> {
+@RequestMapping("/authenticated/involved/")
+public class AuthenticatedInvolvedController extends AbstractController<Authenticated, Involved> {
 
 	@Autowired
-	private EmployerDescriptorShowService	showService;
+	private AuthenticatedInvolvedListService	listService;
 	@Autowired
-	private EmployerDescriptorCreateService	createService;
+	private AuthenticatedInvolvedShowService	showService;
 	@Autowired
-	private EmployerDescriptorUpdateService	updateService;
-
+	private AuthenticatedInvolvedCreateService	createService;
 	@Autowired
-	private EmployerDescriptorDeleteService	deleteService;
+	private AuthenticatedInvolvedDeleteService	deleteService;
 
 
 	@PostConstruct
 	private void initialise() {
-
+		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 
 	}
-
 }

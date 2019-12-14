@@ -9,6 +9,9 @@ auditor.job.form.salary = Salary
 auditor.job.form.moreInfo = More Info
 auditor.job.form.status = Status
 
+auditor.job.form.description = Description
+
 auditor.job.form.return = Return
+auditor.job.redirect.create = Write Audit Record
 auditor.job.redirect.descriptor = Descriptor
 auditor.job.redirect.auditRecord = Audit Record

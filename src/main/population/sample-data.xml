@@ -582,7 +582,7 @@
  		<property name = "reference" value = "EMP2-JOB2"/>
  		<property name = "title" value = "Title 2"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
- 		<property name = "salary" value = "$ 20,000.00"/>
+ 		<property name = "salary" value = "€ 20,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "DRAFT"/>
  		<property name = "employer" ref = "employer2Employer"/>
@@ -592,7 +592,7 @@
  		<property name = "reference" value = "EMP1-JOB3"/>
  		<property name = "title" value = "Title 3"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
- 		<property name = "salary" value = "$ 24,000.00"/>
+ 		<property name = "salary" value = "€ 24,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "DRAFT"/>
  		<property name = "employer" ref = "employer1Employer"/>
@@ -602,7 +602,7 @@
  		<property name = "reference" value = "EMP2-JOB4"/>
  		<property name = "title" value = "Title 4"/>
  		<property name = "deadline" value = "2030/12/11 23:59"/>
- 		<property name = "salary" value = "$ 22,000.00"/>
+ 		<property name = "salary" value = "€ 22,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "PUBLISHED"/>
  		<property name = "employer" ref = "employer2Employer"/>
@@ -612,7 +612,7 @@
  		<property name = "reference" value = "EMP1-JOB5"/>
  		<property name = "title" value = "Title 5"/>
  		<property name = "deadline" value = "2012/12/11 23:59"/>
- 		<property name = "salary" value = "$ 22,000.00"/>
+ 		<property name = "salary" value = "€ 22,000.00"/>
  		<property name = "moreInfo" value = "http://www.example.com"/>
  		<property name = "status" value = "PUBLISHED"/>
  		<property name = "employer" ref = "employer1Employer"/>
@@ -773,15 +773,31 @@
  	<bean name="messageThread1" class="acme.entities.messageThreads.MessageThread">
  		<property name="title" value="messageThread0"/>
  		<property name="moment" value="2019/10/29 17:10"/>
- 		<property name="creator" ref="worker1Authenticated"/>
+ 		<property name="creator" ref="worker1UserAccount"/>
  	</bean>
  	
  	<bean name="messageThread2" class="acme.entities.messageThreads.MessageThread">
  		<property name="title" value="messageThread1"/>
  		<property name="moment" value="2019/10/29 17:10"/>
- 		<property name="creator" ref="employer2Authenticated"/>
+ 		<property name="creator" ref="employer2UserAccount"/>
  	</bean>
  	
+ 	<bean name="involved00" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread1"/>
+ 		<property name="userAccount" ref="employer1UserAccount"/>
+ 	</bean>
+ 	<bean name="involved01" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread1"/>
+ 		<property name="userAccount" ref="employer2UserAccount"/>
+ 	</bean> 	
+ 	<bean name="involved02" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread2"/>
+ 		<property name="userAccount" ref="worker1UserAccount"/>
+ 	</bean>
+ 	<bean name="involved03" class="acme.entities.involved.Involved">
+ 		<property name="messageThread" ref="messageThread2"/>
+ 		<property name="userAccount" ref="worker2UserAccount"/>
+ 	</bean>
  	<!-- Messages -->
  	
  	<bean name="message1" class="acme.entities.messages.Message">
@@ -790,7 +806,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread1"/>
- 		<property name="user" ref="employer2Authenticated"/>
+ 		<property name="creator" ref="employer2UserAccount"/>
  	</bean>
  	
  	<bean name="message2" class="acme.entities.messages.Message">
@@ -799,7 +815,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread2"/>
- 		<property name="user" ref="worker1Authenticated"/>
+ 		<property name="creator" ref="worker1UserAccount"/>
  	</bean>
  	<bean name="message3" class="acme.entities.messages.Message">
  		<property name="title" value="message3"/>
@@ -807,7 +823,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread1"/>
- 		<property name="user" ref="worker2Authenticated"/>
+ 		<property name="creator" ref="worker2UserAccount"/>
  	</bean>
  	<bean name="message4" class="acme.entities.messages.Message">
  		<property name="title" value="message4"/>
@@ -815,7 +831,7 @@
  		<property name="tags" value="tag1"/>
  		<property name="body" value="test"/>
  		<property name="messageThread" ref="messageThread2"/>
- 		<property name="user" ref="employer1Authenticated"/>
+ 		<property name="creator" ref="employer1UserAccount"/>
  	</bean>
  	
  	

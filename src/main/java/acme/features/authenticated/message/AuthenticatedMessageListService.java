@@ -24,13 +24,10 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 		assert request != null;
 
 		Collection<Message> result;
-		int id = request.getModel().getInteger("id");
+		int id = request.getModel().getInteger("messageThreadId");
 		result = this.repository.findManyMessageByMessageThread(id);
-		//result = this.repository.findManyMessageThreads();
-
 		return result;
 	}
-
 	@Override
 	public void unbind(final Request<Message> request, final Message entity, final Model model) {
 		assert request != null;
@@ -41,6 +38,11 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 	@Override
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
-		return true;
+
+		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
+		Integer userId = request.getPrincipal().getAccountId();
+		Boolean result = this.repository.userInvolvedInMessageThread(userId, messageThreadId);
+
+		return result;
 	}
 }

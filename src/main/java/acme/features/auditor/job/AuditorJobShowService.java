@@ -4,7 +4,9 @@ package acme.features.auditor.job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Job;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -21,7 +23,10 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		Integer jobId = request.getModel().getInteger("id");
+		Job job = this.repository.findOneJob(jobId);
+
+		return job.getStatus() == Status.PUBLISHED;
 	}
 
 	@Override
@@ -30,7 +35,17 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 		assert entity != null;
 		assert model != null;
 
+		Integer jobId = request.getModel().getInteger("id");
+		Integer auditorId = request.getPrincipal().getActiveRoleId();
+
+		Boolean valid = this.repository.checkIfAuditRecordExist(jobId, auditorId) == 0;
+		request.getServletRequest().setAttribute("valid", valid);
+
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status");
+
+		Descriptor desc = this.repository.findOneDescriptor(jobId);
+		model.setAttribute("description", desc.getDescription());
+		model.setAttribute("descriptorId", desc.getId());
 	}
 
 	@Override
@@ -39,8 +54,8 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 
 		Job j;
 		int id;
-
 		id = request.getModel().getInteger("id");
+
 		j = this.repository.findOne(id);
 
 		return j;

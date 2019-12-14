@@ -7,6 +7,8 @@
 	
 	<jstl:set var = "rdonly" value ="${status == 'PUBLISHED'}"/>
 	
+	<acme:message code="auditor.job.title"/>
+	
 	<jstl:if test="${command == 'create'}">
 		<acme:form-textbox code="employer.job.form.reference" path="reference" placeholder="EEEE-JJJJ" readonly ="${rdonly}"/>
 	</jstl:if>
@@ -31,13 +33,17 @@
 		</jstl:if>
 	</jstl:if>
 	
+	<acme:message code="auditor.descriptor.title"/>
+	
+	<acme:form-textarea code="employer.job.form.description" path="description" readonly="${rdonly}"/>
+	
 	<acme:form-submit test="${command == 'create'}" 
 	    code="employer.job.form.button.create" action="/employer/job/create"/>
 	<acme:form-submit test="${command == 'show' && status == 'DRAFT'}" 
 		code="employer.job.form.button.update" action="/employer/job/update"/>
 	<acme:form-submit test="${command == 'update' && status == 'DRAFT'}" 
 		code="employer.job.form.button.update" action="/employer/job/update"/>	
-	<acme:form-submit test="${command == 'show' && haveApplications == 'false'}" 
+	<acme:form-submit test="${(command == 'show' || command == 'update') && haveApplications == 'false'}" 
 		code="employer.job.form.button.delete" action="/employer/job/delete"/>
 		
 	
@@ -45,16 +51,12 @@
 	
 </acme:form>
 
-<jstl:if test="${command == 'show'}">
+<jstl:if test="${command == 'show' || command == 'update'}">
 
-	<jstl:if test="${!descriptorExist && status == 'DRAFT'}">
-		<acme:redirect-button code="employer.job.redirect.create-descriptor" action="/employer/descriptor/create?jobId=${id}"/>
-	</jstl:if>
-	
-	<jstl:if test="${descriptorExist}">
-		<acme:redirect-button code="employer.job.redirect.descriptor" action="/employer/descriptor/show?id=${id}"/>
-	</jstl:if>
-	
-	<acme:redirect-button code="employer.job.redirect.auditRecord" action="/employer/audit-records/list?id=${id}"/>
+	<jstl:if test="${status == 'DRAFT'}">
+		  <acme:redirect-button code="employer.job.redirect.create-duty" action="/employer/duty/create?jobId=${id}"/>
+    </jstl:if>
+	<acme:redirect-button code="employer.job.redirect.listDuties" action="/employer/duty/list?jobId=${id}"/>
+	<acme:redirect-button code="employer.job.redirect.auditRecord" action="/employer/audit-records/list?jobId=${id}"/>
 	
 </jstl:if>

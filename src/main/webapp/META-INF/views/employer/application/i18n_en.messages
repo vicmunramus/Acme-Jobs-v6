@@ -2,10 +2,14 @@ employer.application.list.label.reference = Reference
 employer.application.list.label.moment = Creation moment
 employer.application.list.label.status = Status
 employer.application.list.label.job.reference = Job Reference
+employer.application.list.label.worker = Worker
 
 employer.application.form.reference = Reference
 employer.application.form.moment = Creation Moment
 employer.application.form.status = Status
+employer.application.form.worker = Worker
+employer.application.form.worker.name = Name
+employer.application.form.worker.surname = Surname
 employer.application.form.statement = Statement
 employer.application.form.skills = Skills
 employer.application.form.qualifications = Qualifications

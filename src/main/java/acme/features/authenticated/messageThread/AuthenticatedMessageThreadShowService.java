@@ -25,12 +25,9 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		boolean result;
 
 		Integer messageThreadId = request.getModel().getInteger("id");
-		MessageThread messageThread = this.repository.findOneMessageThread(messageThreadId);
-		Integer creatorId = messageThread.getCreator().getId();
-		Integer userId = request.getPrincipal().getActiveRoleId();
+		Integer userId = request.getPrincipal().getAccountId();
+		result = this.repository.userInvolvedInMessageThread(userId, messageThreadId);
 
-		result = this.repository.existAuthenticatedByMessageThreadId(messageThreadId, userId) > 0;
-		result = result || creatorId == userId;
 		return result;
 	}
 
@@ -41,7 +38,7 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "id", "title", "moment", "creator.userAccount.username");
+		request.unbind(entity, model, "id", "title", "moment", "creator.username");
 	}
 
 	@Override
@@ -54,7 +51,5 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 		return result;
 	}
-
-	//Interface
 
 }

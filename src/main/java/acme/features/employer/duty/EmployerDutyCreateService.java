@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
+import acme.entities.jobs.Job;
 import acme.entities.jobs.Status;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -27,22 +28,22 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert request != null;
 		boolean result = true;
 
-		//Assure this is the owner of the descriptor
-		int descriptorId;
-		Descriptor descriptor;
+		//Assure this is the owner of the job
+		int jobId;
+		Job job;
 		Employer employer;
 		Principal principal;
 
-		descriptorId = request.getModel().getInteger("descriptorId");
-		descriptor = this.repository.findOneDescriptorById(descriptorId);
-		employer = descriptor.getJob().getEmployer();
+		jobId = request.getModel().getInteger("jobId");
+		job = this.repository.findOneJobById(jobId);
+		employer = job.getEmployer();
 		principal = request.getPrincipal();
 
 		result = result && employer.getUserAccount().getId() == principal.getAccountId();
 
 		//Assure the job is in draft
 
-		result = result && descriptor.getJob().getStatus() == Status.DRAFT;
+		result = result && job.getStatus() == Status.DRAFT;
 
 		return result;
 	}
@@ -65,7 +66,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		request.unbind(entity, model, "titleDuty", "descriptionDuty", "percentage", "descriptor");
 
 		if (request.isMethod(HttpMethod.GET)) {
-			model.setAttribute("descriptorId", request.getModel().getInteger("descriptorId"));
+			model.setAttribute("jobId", request.getModel().getInteger("jobId"));
 		}
 	}
 
@@ -75,10 +76,9 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		Duty result;
 		result = new Duty();
 		Descriptor descriptor;
-		descriptor = new Descriptor();
 
-		int descriptorId = request.getModel().getInteger("descriptorId");
-		descriptor = this.repository.findOneDescriptorById(descriptorId);
+		int jobId = request.getModel().getInteger("jobId");
+		descriptor = this.repository.findOneDescriptorByJobId(jobId);
 
 		result.setDescriptor(descriptor);
 

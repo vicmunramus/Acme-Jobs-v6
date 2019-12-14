@@ -18,16 +18,25 @@ import acme.framework.controllers.AbstractController;
 public class EmployerApplicationController extends AbstractController<Employer, Application> {
 
 	@Autowired
-	private EmployerApplicationShowService			showService;
+	private EmployerApplicationShowService						showService;
 
 	@Autowired
-	private EmployerApplicationListToMyJobsService	listToMyJobsService;
+	private EmployerApplicationListToMyJobsService				listToMyJobsService;
 
 	@Autowired
-	private EmployerApplicationAcceptService		acceptService;
+	private EmployerApplicationListToMyJobByReferenceService	listAppByReferenceService;
 
 	@Autowired
-	private EmployerApplicationRejectService		rejectService;
+	private EmployerApplicationListToMyJobByStatusService		listAppByStatusService;
+
+	@Autowired
+	private EmployerApplicationListToMyJobByCreationService		listAppByCreationService;
+
+	@Autowired
+	private EmployerApplicationAcceptService					acceptService;
+
+	@Autowired
+	private EmployerApplicationRejectService					rejectService;
 
 
 	@PostConstruct
@@ -36,6 +45,12 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 
 		super.addCustomCommand(CustomCommand.LIST_TO_MY_JOBS, BasicCommand.LIST, this.listToMyJobsService);
+
+		super.addCustomCommand(CustomCommand.LIST_MINE_BY_REFERENCE, BasicCommand.LIST, this.listAppByReferenceService);
+
+		super.addCustomCommand(CustomCommand.LIST_MINE_BY_STATUS, BasicCommand.LIST, this.listAppByStatusService);
+
+		super.addCustomCommand(CustomCommand.LIST_MINE_BY_CREATION, BasicCommand.LIST, this.listAppByCreationService);
 
 		super.addCustomCommand(CustomCommand.ACCEPT_APPLICATION, BasicCommand.UPDATE, this.acceptService);
 
