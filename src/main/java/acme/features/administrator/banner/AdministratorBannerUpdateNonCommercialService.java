@@ -5,15 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
-import acme.entities.banners.Commercial;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.services.AbstractDeleteService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorBannerDeleteService implements AbstractDeleteService<Administrator, Banner> {
+public class AdministratorBannerUpdateNonCommercialService implements AbstractUpdateService<Administrator, Banner> {
 
 	@Autowired
 	AdministratorBannerRepository repository;
@@ -32,8 +31,7 @@ public class AdministratorBannerDeleteService implements AbstractDeleteService<A
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
-
+		request.bind(entity, errors, "sponsor.userAccount.identity.name", "sponsor.userAccount.identity.surname");
 	}
 
 	@Override
@@ -42,12 +40,7 @@ public class AdministratorBannerDeleteService implements AbstractDeleteService<A
 		assert entity != null;
 		assert model != null;
 
-		if (entity instanceof Commercial) {
-			request.unbind(entity, model, "picture", "slogan", "target", "creditCardNumber", "cardHolder", "cvv", "expirationDate");
-		} else {
-			request.unbind(entity, model, "picture", "slogan", "target", "jingle");
-		}
-
+		request.unbind(entity, model, "picture", "slogan", "target", "jingle");
 	}
 
 	@Override
@@ -70,11 +63,10 @@ public class AdministratorBannerDeleteService implements AbstractDeleteService<A
 	}
 
 	@Override
-	public void delete(final Request<Banner> request, final Banner entity) {
+	public void update(final Request<Banner> request, final Banner entity) {
 		assert request != null;
 		assert entity != null;
 
-		this.repository.delete(entity);
+		this.repository.save(entity);
 	}
-
 }

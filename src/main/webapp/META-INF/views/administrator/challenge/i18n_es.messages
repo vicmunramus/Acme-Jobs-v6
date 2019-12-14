@@ -13,7 +13,7 @@ administrator.challenge.form.label.reward = Recompensa
 	
 administrator.challenge.form.button.create = Crear
 administrator.challenge.form.button.update = Actualizar
-administrator.challenge.form.button.delete = Borrar	
+administrator.challenge.form.button.delete = Eliminar	
 
 administrator.challenge.button.redirect.create = Crear	
 administrator.challenge.form.button.return = Volver

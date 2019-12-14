@@ -1,29 +1,42 @@
 
-package acme.features.administrator.banner;
+package acme.features.sponsor.banner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
 import acme.entities.banners.Commercial;
+import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Administrator;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class AdministratorBannerDeleteService implements AbstractDeleteService<Administrator, Banner> {
+public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor, Banner> {
 
 	@Autowired
-	AdministratorBannerRepository repository;
+	SponsorBannerRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Banner> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int bannerId;
+		Banner banner;
+		Sponsor sponsor;
+		Principal principal;
+
+		bannerId = request.getModel().getInteger("id");
+		banner = this.repository.findOneBannerById(bannerId);
+		sponsor = banner.getSponsor();
+		principal = request.getPrincipal();
+		result = sponsor.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -33,7 +46,6 @@ public class AdministratorBannerDeleteService implements AbstractDeleteService<A
 		assert errors != null;
 
 		request.bind(entity, errors);
-
 	}
 
 	@Override
@@ -47,7 +59,6 @@ public class AdministratorBannerDeleteService implements AbstractDeleteService<A
 		} else {
 			request.unbind(entity, model, "picture", "slogan", "target", "jingle");
 		}
-
 	}
 
 	@Override

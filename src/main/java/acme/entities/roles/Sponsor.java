@@ -1,6 +1,8 @@
 
 package acme.entities.roles;
 
+import java.beans.Transient;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
@@ -18,4 +20,9 @@ public class Sponsor extends UserRole {
 	@NotBlank
 	private String				organisationName;
 
+
+	@Transient
+	public String getFullName() {
+		return this.getIdentity().getFullName();
+	}
 }

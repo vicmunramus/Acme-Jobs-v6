@@ -21,25 +21,25 @@ public class AdministratorBannerListService implements AbstractListService<Admin
 
 	@Override
 	public boolean authorise(final Request<Banner> request) {
-		// TODO Auto-generated method stub
-
 		assert request != null;
+
 		return true;
 	}
 
 	@Override
 	public void unbind(final Request<Banner> request, final Banner entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
 		request.unbind(entity, model, "picture", "slogan");
+		if (entity.getSponsor() != null) {
+			request.unbind(entity, model, "sponsor.fullName");
+		}
 	}
 
 	@Override
 	public Collection<Banner> findMany(final Request<Banner> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
 
 		Collection<Banner> result;

@@ -1,6 +1,9 @@
 administrator.banner.list.label.picture = Imagen
 administrator.banner.list.label.slogan = Eslogan
+administrator.banner.list.label.sponsor = Patrocinador
 
+administrator.banner.title.commercial = <h3> Banner comercial </h3>
+administrator.banner.title.nonCommercial = <h3> Banner no comercial </h3>
 administrator.banner.form.label.picture = Imagen
 administrator.banner.form.label.slogan = Eslogan
 administrator.banner.form.label.target = Objetivo
@@ -10,14 +13,17 @@ administrator.banner.form.label.cardHolder = Titular de la tarjeta
 administrator.banner.form.label.cvv = CVV
 administrator.banner.form.label.expirationDate = Fecha de caducidad
 administrator.banner.form.label.jingle = Jingle
+administrator.banner.form.label.sponsor = Patrocinador
+administrator.banner.form.label.sponsor.name = Nombre
+administrator.banner.form.label.sponsor.surname = Apellidos
 
 administrator.banner.button.redirect.create.commercial = Crear banner comercial
 administrator.banner.button.redirect.create.non-commercial = Crear banner no comercial
 
 administrator.banner.form.button.create = Crear
 administrator.banner.form.button.update = Actualizar
-administrator.banner.form.button.delete = Borrar
+administrator.banner.form.button.delete = Eliminar
 
 administrator.banner.form.button.return = Volver
 
-administrator.banner.error.expiration-date-must-be-in-the-future = La fecha de caducidad debe estar en el futuro
+administrator.banner.error.the-card-has-expired = La tarjeta ha caducado
