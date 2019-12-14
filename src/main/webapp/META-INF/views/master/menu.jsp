@@ -127,14 +127,16 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update" />
-			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create"
-				access="!hasRole('Provider')" />
-			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update"
-				access="hasRole('Provider')" />
-			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create"
-				access="!hasRole('Consumer')" />
+			
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update"
 				access="hasRole('Consumer')" />
+
+			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update"
+				access="hasRole('Employer')" />
+			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update"
+				access="hasRole('Provider')" />
+			<acme:menu-suboption code="master.menu.user-account.sponsor" action="/authenticated/sponsor/update"
+				access="hasRole('Sponsor')" />
 
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create"
 				access="!hasRole('Worker')" />
@@ -148,15 +150,30 @@
 				</acme:check-access>
 			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/show"
 				access="hasRole('Auditor')" />
-      
+
 			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update"
 				access="hasRole('Worker')" />
 
+			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create"
+				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.become-employer" action="/authenticated/employer/create"
 				access="!hasRole('Employer')" />
+			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create"
+				access="!hasRole('Provider')" />
+			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create"
+				access="!hasRole('Sponsor')" />
+				
+			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create"
+				access="!hasRole('Worker')" />      
+	
+		
+			
+		
+      			
+			
       
-			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update"
-				access="hasRole('Employer')" />
+			
+				
 
 		</acme:menu-option>
 
