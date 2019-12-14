@@ -13,7 +13,7 @@ import acme.framework.repositories.AbstractRepository;
 public interface AdministratorBannerRepository extends AbstractRepository {
 
 	@Query("select b from Banner b where b.id = ?1")
-	Banner findOneById(int id);
+	Banner findOneBannerById(int id);
 
 	@Query("select b from Banner b")
 	Collection<Banner> findManyAll();

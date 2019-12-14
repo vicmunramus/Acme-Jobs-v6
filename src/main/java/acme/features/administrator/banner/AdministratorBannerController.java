@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.banners.Banner;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
@@ -17,27 +18,41 @@ import acme.framework.entities.Administrator;
 public class AdministratorBannerController extends AbstractController<Administrator, Banner> {
 
 	@Autowired
-	private AdministratorBannerListService		listService;
+	private AdministratorBannerListService					listService;
 
 	@Autowired
-	private AdministratorBannerShowService		showService;
+	private AdministratorBannerShowService					showService;
 
 	@Autowired
-	private AdministratorBannerCreateService	createService;
+	private AdministratorBannerCreateCommercialService		createCommercialService;
 
 	@Autowired
-	private AdministratorBannerUpdateService	updateService;
+	private AdministratorBannerCreateNonCommercialService	createNonCommercialService;
 
 	@Autowired
-	private AdministratorBannerDeleteService	deleteService;
+	private AdministratorBannerUpdateCommercialService		updateCommercialService;
+
+	@Autowired
+	private AdministratorBannerUpdateNonCommercialService	updateNonCommercialService;
+
+	@Autowired
+	private AdministratorBannerDeleteService				deleteService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+
+		super.addCustomCommand(CustomCommand.CREATE_COMMERCIAL, BasicCommand.CREATE, this.createCommercialService);
+
+		super.addCustomCommand(CustomCommand.CREATE_NON_COMMERCIAL, BasicCommand.CREATE, this.createNonCommercialService);
+
+		super.addCustomCommand(CustomCommand.UPDATE_COMMERCIAL, BasicCommand.UPDATE, this.updateCommercialService);
+
+		super.addCustomCommand(CustomCommand.UPDATE_NON_COMMERCIAL, BasicCommand.UPDATE, this.updateNonCommercialService);
+
 		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 }

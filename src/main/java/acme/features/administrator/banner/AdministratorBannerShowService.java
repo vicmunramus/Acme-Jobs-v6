@@ -20,14 +20,13 @@ public class AdministratorBannerShowService implements AbstractShowService<Admin
 
 	@Override
 	public boolean authorise(final Request<Banner> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
+		
 		return true;
 	}
 
 	@Override
 	public void unbind(final Request<Banner> request, final Banner entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -37,18 +36,20 @@ public class AdministratorBannerShowService implements AbstractShowService<Admin
 		} else {
 			request.unbind(entity, model, "picture", "slogan", "target", "jingle");
 		}
+		if (entity.getSponsor() != null) {
+			request.unbind(entity, model, "sponsor.userAccount.identity.name", "sponsor.userAccount.identity.surname");
+		}
 
 	}
 
 	@Override
 	public Banner findOne(final Request<Banner> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		Banner result;
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOneBannerById(id);
 
 		return result;
 	}

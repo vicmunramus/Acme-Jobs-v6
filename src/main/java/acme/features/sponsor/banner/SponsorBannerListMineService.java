@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
+import acme.entities.banners.NonCommercial;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -33,7 +34,13 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 		assert entity != null;
 		assert model != null;
 
+		Principal principal;
+		principal = request.getPrincipal();
+		Boolean hasCreditCard = this.repository.hasCreditCardBySponsorId(principal.getActiveRoleId());
+
+		model.setAttribute("hasCreditCard", hasCreditCard);
 		request.unbind(entity, model, "picture", "slogan");
+
 	}
 
 	@Override
@@ -44,7 +51,12 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 		Principal principal;
 
 		principal = request.getPrincipal();
+
 		result = this.repository.findManyBySponsorId(principal.getActiveRoleId());
+
+		if (result.isEmpty()) {
+			result.add(new NonCommercial());
+		}
 
 		return result;
 	}

@@ -30,7 +30,7 @@ public class CreditCard extends DomainEntity {
 	@NotBlank
 	private String				cardHolder;
 
-	@Pattern(regexp = "^[0-9]{3}[0-9]?$")
+	@Pattern(regexp = "^[0-9]{3}$")
 	@NotBlank
 	private String				cvv;
 

@@ -1,6 +1,9 @@
 administrator.banner.list.label.picture = Picture
 administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.sponsor = Sponsor
 
+administrator.banner.title.commercial = <h3> Commercial Banner </h3>
+administrator.banner.title.nonCommercial = <h3> Non Commercial Banner </h3>
 administrator.banner.form.label.picture = Picture
 administrator.banner.form.label.slogan = Slogan
 administrator.banner.form.label.target = Target
@@ -10,6 +13,9 @@ administrator.banner.form.label.cardHolder = Card holder
 administrator.banner.form.label.cvv = CVV
 administrator.banner.form.label.expirationDate = Expiration date
 administrator.banner.form.label.jingle = Jingle
+administrator.banner.form.label.sponsor = Sponsor
+administrator.banner.form.label.sponsor.name = Name
+administrator.banner.form.label.sponsor.surname = Surname
 
 administrator.banner.button.redirect.create.commercial = Create commercial banner
 administrator.banner.button.redirect.create.non-commercial = Create non commercial banner
@@ -20,4 +26,4 @@ administrator.banner.form.button.delete = Delete
 
 administrator.banner.form.button.return = Return
 
-administrator.banner.error.expiration-date-must-be-in-the-future = Expiration date must be in the future
+administrator.banner.error.the-card-has-expired = The card has expired
