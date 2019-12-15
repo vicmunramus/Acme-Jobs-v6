@@ -41,6 +41,26 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(a) from Application a group by a.status order by a.status")
 	String[] dataApplication();
 
+	//Tablero D04
+
+	@Query("select count(a) FROM Application a WHERE a.status = 0 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	Integer[] pendingApplicationsValue();
+
+	@Query("select DATE(a.moment) FROM Application a WHERE a.status = 0 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	String[] pendingApplicationsLabels();
+
+	@Query("select count(a) FROM Application a WHERE a.status = 1 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	Integer[] acceptedApplicationsValue();
+
+	@Query("select DATE(a.moment) FROM Application a WHERE a.status = 1 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	String[] acceptedApplicationsLabels();
+
+	@Query("select count(a) FROM Application a WHERE a.status = 2 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	Integer[] rejectedApplicationsValue();
+
+	@Query("select DATE(a.moment) FROM Application a WHERE a.status = 2 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	String[] rejectedApplicationsLabels();
+
 	//Listing D02:
 
 	@Query("select count(r) from Announcement r")
@@ -93,4 +113,5 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select avg(select count(a) from Application a where a.worker.id = w.id) from Worker w")
 	Double avgNumberApplicationsPerWorker();
+
 }

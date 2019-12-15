@@ -38,4 +38,18 @@ public class Dashboard implements Serializable {
 	String[]					dataJob;
 	String[]					dataApplication;
 
+	//D05 Attributes:
+	Integer[]					pendingApplicationData;
+	String[]					pendingApplicationLabels;
+	Integer						sizePending;
+
+	Integer[]					acceptedApplicationData;
+	String[]					acceptedApplicationLabels;
+	Integer						sizeAccepted;
+
+	Integer[]					rejectedApplicationData;
+	String[]					rejectedApplicationLabels;
+	Integer						sizeRejected;
+
+	Integer						maxGraph;
 }
