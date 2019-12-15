@@ -37,6 +37,12 @@
 		<b><acme:message code="administrator.dashboard.form.label.canvasJobStatus"/></b>
 		<canvas id="canvasJobStatus"></canvas>
 	</div>
+	
+	<div>
+		<b><acme:message code="administrator.dashboard.form.label.canvasJobStatus"/></b>
+		<canvas id="canvasTest"></canvas>
+	</div>
+	
 </acme:form>
 
 <script type="text/javascript">
@@ -247,5 +253,90 @@
 					data : data,
 					options : options
 				});
+			});
+		
+			$(document).ready(function(){
+				
+				var canvas = document.getElementById("canvasTest");
+				var context = canvas.getContext("2d");
+				
+				var config = {
+				        type:    'line',
+				        data:    {
+				        	datasets: [
+				                {
+				                    label: "Pending Applications",
+				                    data: [
+				                    	
+										<jstl:forEach var="i" begin="0" end="${sizePending}">
+											{
+												x: <jstl:out value="\"${pendingApplicationLabels[i]}\"" escapeXml="false" />,
+												y: <jstl:out value="${pendingApplicationData[i]}"/>,
+											},
+										</jstl:forEach>
+										
+				                        ],
+				                    fill: false,
+				                    borderColor: 'blue'
+				                },
+				                {
+				                	 label: "Accepted Applications",
+					                    data: [
+					                    	
+											<jstl:forEach var="i" begin="0" end="${sizeAccepted}">
+												{
+													x: <jstl:out value="\"${acceptedApplicationLabels[i]}\"" escapeXml="false" />,
+													y: <jstl:out value="${acceptedApplicationData[i]}"/>,
+												},
+											</jstl:forEach>
+											
+					                        ],
+					                    fill: false,
+					                    borderColor: 'green'
+				                },
+				                {
+				                	 label: "Rejected Applications",
+					                    data: [
+					                    	
+											<jstl:forEach var="i" begin="0" end="${sizeRejected}">
+												{
+													x: <jstl:out value="\"${rejectedApplicationLabels[i]}\"" escapeXml="false" />,
+													y: <jstl:out value="${rejectedApplicationData[i]}"/>,
+												},
+											</jstl:forEach>
+											
+					                        ],
+					                    fill: false,
+					                    borderColor: 'red'
+				                }
+				            ]
+				        },
+				        options: {
+				            title:      {
+				                display: true,
+				                text:    "Pending Applications"
+				            },
+				            scales:     {
+				                xAxes: [{
+				                    type:       "time",
+				                    time:       {
+				                        unit: "day"   
+				                    }
+				                }],
+				                yAxes : [{
+				                	ticks : {
+										min : 0,
+										max: <jstl:out value="${maxGraph}" />,
+										stepSize : 1,
+										autoSkip : true
+									}
+				                }]
+				            }
+				        }
+				    };
+				
+				var chart = new Chart(context,config);
+						
+						
 			});
 </script>
