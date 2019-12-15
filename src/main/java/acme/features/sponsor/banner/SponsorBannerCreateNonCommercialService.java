@@ -54,11 +54,6 @@ public class SponsorBannerCreateNonCommercialService implements AbstractCreateSe
 	public Banner instantiate(final Request<Banner> request) {
 		NonCommercial result = new NonCommercial();
 
-		Principal principal = request.getPrincipal();
-		Sponsor s = this.repository.findOneSponsorById(principal.getActiveRoleId());
-
-		result.setSponsor(s);
-
 		return result;
 	}
 
@@ -76,6 +71,12 @@ public class SponsorBannerCreateNonCommercialService implements AbstractCreateSe
 	@Override
 	public void create(final Request<Banner> request, final Banner entity) {
 		assert request != null;
+		
+		Principal principal;
+		principal = request.getPrincipal();
+		Sponsor s = this.repository.findOneSponsorById(principal.getActiveRoleId());
+
+		entity.setSponsor(s);
 
 		this.repository.save(entity);
 	}
