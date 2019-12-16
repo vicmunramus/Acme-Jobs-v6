@@ -17,6 +17,11 @@
 
 <acme:form>
 	<acme:form-textbox code="authenticated.sponsor.form.label.organisationName" path="organisationName" />
+	<acme:form-panel code="authenticated.sponsor.form.label.creditCardMessage"/>
+	<acme:form-textbox code="authenticated.sponsor.form.label.creditCardNumber" path="creditCardNumber" />
+	<acme:form-textbox code="authenticated.sponsor.form.label.cardHolder" path="cardHolder" />
+	<acme:form-textbox code="authenticated.sponsor.form.label.cvv" path="cvv" />
+	<acme:form-textbox code="authenticated.sponsor.form.label.expirationDate" path="expirationDate" placeholder="MM/YY" />
 	
 	 
 	<acme:form-submit test="${command == 'create'}" code="authenticated.sponsor.form.button.create" action="/authenticated/sponsor/create"/>

@@ -25,4 +25,5 @@ public class Sponsor extends UserRole {
 	public String getFullName() {
 		return this.getIdentity().getFullName();
 	}
+
 }
