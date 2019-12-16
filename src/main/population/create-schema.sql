@@ -336,6 +336,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `request_auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `sponsor` (
        `id` integer not null,
         `version` integer not null,
@@ -511,6 +520,11 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `request_auditor` 
+       add constraint FK_ie2ocrruj5nai12m6h4a0fmtw 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 

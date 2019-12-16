@@ -4,6 +4,7 @@ package acme.features.authenticated.sponsor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.creditCards.CreditCard;
 import acme.entities.roles.Sponsor;
 import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
@@ -16,5 +17,8 @@ public interface AuthenticatedSponsorRepository extends AbstractRepository {
 
 	@Query("select s from Sponsor s where s.userAccount.id = ?1")
 	Sponsor findOneSponsorByUserAccountId(int id);
+
+	@Query("select c from CreditCard c where c.sponsor.id = ?1")
+	CreditCard findOneCreditCardBySponsorId(int sponsorId);
 
 }

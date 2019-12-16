@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.banners.Banner;
+import acme.entities.creditCards.CreditCard;
 import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.roles.Sponsor;
 import acme.framework.repositories.AbstractRepository;
@@ -28,4 +29,10 @@ public interface SponsorBannerRepository extends AbstractRepository {
 
 	@Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
 	CustomisationParameters findOneCustomisationParameters();
+
+	@Query("select c from CreditCard c where c.sponsor.id = ?1")
+	CreditCard findOneCreditCardBySponsorId(int sponsorId);
+
+	@Query("select s from Sponsor s where s.userAccount.id = ?1")
+	Sponsor findOneSponsorByUserAccountId(int id);
 }

@@ -41,8 +41,9 @@ public class AuthenticatedConsumerCreateService implements AbstractCreateService
 	@Override
 	public boolean authorise(final Request<Consumer> request) {
 		assert request != null;
-
-		return true;
+		String name = "acme.entities.roles.Consumer";
+		boolean result = !request.getPrincipal().hasRole(name);
+		return result;
 	}
 
 	@Override

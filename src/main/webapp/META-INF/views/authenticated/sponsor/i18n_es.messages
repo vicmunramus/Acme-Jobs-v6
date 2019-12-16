@@ -2,8 +2,13 @@
 authenticated.sponsor.form.title.create = Registrarse
 authenticated.sponsor.form.title.update = Actualizar
 
-authenticated.sponsor.form.label.organisationName = Nombre de la organización
+authenticated.sponsor.form.label.creditCardMessage = Tarjeta de crédito (sólo para banners comerciales)
 
+authenticated.sponsor.form.label.organisationName = Nombre de la organización
+authenticated.sponsor.form.label.creditCardNumber = Número de la tarjeta
+authenticated.sponsor.form.label.cardHolder = Propietario de la tarjeta
+authenticated.sponsor.form.label.cvv = CVV
+authenticated.sponsor.form.label.expirationDate = Fecha de expiración
 
 authenticated.sponsor.form.button.create = Registrarse
 authenticated.sponsor.form.button.update = Actualizar

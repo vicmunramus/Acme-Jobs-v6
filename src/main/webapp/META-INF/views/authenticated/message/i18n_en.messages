@@ -26,3 +26,4 @@ authenticated.message.form.button.create = Create
 authenticated.message.form.button.return = Return
 
 authenticated.message.error.must-accept = Must confirm before creating
+authenticated.message.error.isSpam = Spam messages are not allowed

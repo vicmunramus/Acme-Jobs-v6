@@ -41,6 +41,21 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusApplicationLabels", "statusJobLabels", "dataJob", "dataApplication", "pendingApplicationData", "pendingApplicationLabels", "sizePending", "acceptedApplicationData",
 			"acceptedApplicationLabels", "sizeAccepted", "maxGraph", "numberAnnouncement", "rejectedApplicationData", "rejectedApplicationLabels", "sizeRejected", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer",
 			"averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
+
+		String investorRecord = request.getLocale().getDisplayLanguage().equals("English") ? "Investor Records" : "Registros de Inversión";
+		model.setAttribute("investorRecord", investorRecord);
+		String companyRecord = request.getLocale().getDisplayLanguage().equals("English") ? "Company Records" : "Registros de Compañía";
+		model.setAttribute("companyRecord", companyRecord);
+		String application = request.getLocale().getDisplayLanguage().equals("English") ? "Applications" : "Aplicaciones";
+		model.setAttribute("application", application);
+		String job = request.getLocale().getDisplayLanguage().equals("English") ? "Jobs" : "Trabajos";
+		model.setAttribute("job", job);
+		String pendingApplication = request.getLocale().getDisplayLanguage().equals("English") ? "Pending Applications" : "Aplicaciones Pendientes";
+		model.setAttribute("pendingApplication", pendingApplication);
+		String acceptedApplication = request.getLocale().getDisplayLanguage().equals("English") ? "Accepted Applications" : "Aplicaciones Aceptadas";
+		model.setAttribute("acceptedApplication", acceptedApplication);
+		String rejectedApplication = request.getLocale().getDisplayLanguage().equals("English") ? "Rejected Applications" : "Aplicaciones Rechazadas";
+		model.setAttribute("rejectedApplication", rejectedApplication);
 	}
 
 	@SuppressWarnings("deprecation")

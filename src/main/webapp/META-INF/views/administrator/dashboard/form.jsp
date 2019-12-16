@@ -39,7 +39,7 @@
 	</div>
 	
 	<div>
-		<b><acme:message code="administrator.dashboard.form.label.canvasJobStatus"/></b>
+		<b><acme:message code="administrator.dashboard.form.label.canvasApplication"/></b>
 		<canvas id="canvasTest"></canvas>
 	</div>
 	
@@ -62,7 +62,7 @@
 				],
 				datasets : [
 					{
-						label : "Investor Records",
+						label : "${investorRecord}",
 						backgroundColor : "rgba(22, 38, 212, 0.3)",
 						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
@@ -80,7 +80,7 @@
 							
 						]
 					},{
-						label : "Company Records",
+						label : "${companyRecord}",
 						backgroundColor : "rgba(19, 157, 16, 0.3)",
 						borderColor : "rgba(19, 157, 16, 1)",
 						data : [
@@ -143,7 +143,7 @@
 				],
 				datasets : [
 					{
-						label : "Application",
+						label : "${application}",
 						backgroundColor : "rgba(22, 38, 212, 0.3)",
 						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
@@ -207,7 +207,7 @@
 					],
 					datasets : [
 						{
-							label : "Job",
+							label : "${job}",
 							backgroundColor : "rgba(22, 38, 212, 0.3)",
 							borderColor : "rgba(22, 38, 212, 1)",
 							data : [
@@ -265,7 +265,7 @@
 				        data:    {
 				        	datasets: [
 				                {
-				                    label: "Pending Applications",
+				                    label: "${pendingApplication}",
 				                    data: [
 				                    	
 										<jstl:forEach var="i" begin="0" end="${sizePending}">
@@ -280,7 +280,7 @@
 				                    borderColor: 'blue'
 				                },
 				                {
-				                	 label: "Accepted Applications",
+				                	 label: "${acceptedApplication}",
 					                    data: [
 					                    	
 											<jstl:forEach var="i" begin="0" end="${sizeAccepted}">
@@ -295,7 +295,7 @@
 					                    borderColor: 'green'
 				                },
 				                {
-				                	 label: "Rejected Applications",
+				                	 label: "${rejectedApplication}",
 					                    data: [
 					                    	
 											<jstl:forEach var="i" begin="0" end="${sizeRejected}">

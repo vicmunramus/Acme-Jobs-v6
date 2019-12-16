@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
 import acme.entities.banners.Commercial;
+import acme.entities.creditCards.CreditCard;
 import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
@@ -60,6 +61,13 @@ public class SponsorBannerCreateCommercialService implements AbstractCreateServi
 	public Banner instantiate(final Request<Banner> request) {
 		Commercial result = new Commercial();
 
+		CreditCard cc = this.repository.findOneCreditCardBySponsorId(this.repository.findOneSponsorByUserAccountId(request.getPrincipal().getAccountId()).getId());
+
+		result.setCreditCardNumber(cc.getCreditCardNumber());
+		result.setCardHolder(cc.getCardHolder());
+		result.setCvv(cc.getCvv());
+		result.setExpirationDate(cc.getExpirationDate());
+
 		return result;
 	}
 
@@ -99,11 +107,11 @@ public class SponsorBannerCreateCommercialService implements AbstractCreateServi
 	@Override
 	public void create(final Request<Banner> request, final Banner entity) {
 		assert request != null;
-		
+
 		Principal principal;
 		principal = request.getPrincipal();
 		Sponsor s = this.repository.findOneSponsorById(principal.getActiveRoleId());
-		
+
 		entity.setSponsor(s);
 
 		this.repository.save(entity);

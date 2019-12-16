@@ -1,11 +1,16 @@
 
 package acme.features.authenticated.message;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.messageThreads.MessageThread;
 import acme.entities.messages.Message;
 import acme.framework.components.Errors;
@@ -85,6 +90,10 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 		boolean isAccepted = request.getModel().getBoolean("accept");
 		errors.state(request, isAccepted, "accept", "authenticated.message.error.must-accept");
+
+		errors.state(request, !this.isSpam(entity.getTitle()), "title", "authenticated.message.error.isSpam");
+		errors.state(request, !this.isSpam(entity.getTags()), "tags", "authenticated.message.error.isSpam");
+		errors.state(request, !this.isSpam(entity.getBody()), "body", "authenticated.message.error.isSpam");
 	}
 
 	@Override
@@ -106,6 +115,33 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 		this.repository.save(entity);
 
+	}
+
+	private boolean isSpam(final String text) {
+
+		// Put in repository:
+		// @Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
+		// CustomisationParameters findOneCustomisationParameters();
+
+		boolean result = false;
+		List<String> spamList = new ArrayList<String>();
+		Float spamThreshold;
+		CustomisationParameters cp = this.repository.findOneCustomisationParameters();
+		float count = 0;
+
+		spamList = Arrays.asList(cp.getSpamList().trim().split(";"));
+		spamThreshold = cp.getSpamThreshold();
+
+		for (String s : spamList) {
+			count += StringUtils.countOccurrencesOf(text.toLowerCase(), s);
+		}
+
+		float numberWords = text.trim().split(" ").length;
+		float spamPorcentage = count / numberWords;
+
+		result = spamPorcentage >= spamThreshold;
+
+		return result;
 	}
 
 }

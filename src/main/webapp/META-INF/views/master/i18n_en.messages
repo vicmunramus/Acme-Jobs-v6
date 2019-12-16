@@ -122,7 +122,7 @@ master.menu.consumer.offer.create = Create new Offer
 # master.menu.employer ###########################################################
 
 master.menu.employer = Employer
-master.menu.employer.job.list = Job List
+master.menu.employer.job.list = My Job List
 master.menu.employer.application.list-mine = Applications to my Jobs
 
 master.menu.employer.application.list-mine.groupByRef = Applications to my Jobs by reference

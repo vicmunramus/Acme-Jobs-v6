@@ -141,13 +141,14 @@
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create"
 				access="!hasRole('Worker')" />
 				
-				<acme:check-access test="!hasRole('Auditor')">
-			<acme:menu-suboption code="master.menu.user-account.become-request-auditor" action="/authenticated/request-auditor/create"
-				access="!hasRole('RequestAuditor')" />
+			<acme:check-access test="!hasRole('Auditor')">
+				<acme:menu-suboption code="master.menu.user-account.become-request-auditor" action="/authenticated/request-auditor/create"
+					access="!hasRole('RequestAuditor')" />
 				
-			<acme:menu-suboption code="master.menu.user-account.request-auditor" action="/authenticated/request-auditor/show"
-				access="hasRole('RequestAuditor')" />
-				</acme:check-access>
+				<acme:menu-suboption code="master.menu.user-account.request-auditor" action="/authenticated/request-auditor/show"
+					access="hasRole('RequestAuditor')" />
+			</acme:check-access>
+			
 			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/show"
 				access="hasRole('Auditor')" />
 
@@ -161,19 +162,7 @@
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create"
 				access="!hasRole('Provider')" />
 			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create"
-				access="!hasRole('Sponsor')" />
-				
-			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create"
-				access="!hasRole('Worker')" />      
-	
-		
-			
-		
-      			
-			
-      
-			
-				
+				access="!hasRole('Sponsor')" />    	
 
 		</acme:menu-option>
 
