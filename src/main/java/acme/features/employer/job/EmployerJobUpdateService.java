@@ -203,7 +203,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		spamThreshold = cp.getSpamThreshold();
 
 		for (String s : spamList) {
-			count += StringUtils.countOccurrencesOf(text, s);
+			count += StringUtils.countOccurrencesOf(text.toLowerCase(), s);
 		}
 
 		float numberWords = text.trim().split(" ").length;

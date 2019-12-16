@@ -41,8 +41,9 @@ public class AuthenticatedProviderCreateService implements AbstractCreateService
 	@Override
 	public boolean authorise(final Request<Provider> request) {
 		assert request != null;
-
-		return true;
+		String name = "acme.entities.roles.Provider";
+		boolean result = !request.getPrincipal().hasRole(name);
+		return result;
 	}
 
 	@Override

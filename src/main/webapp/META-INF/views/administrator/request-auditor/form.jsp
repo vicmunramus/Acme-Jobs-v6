@@ -14,7 +14,7 @@
 
 		
 		<acme:form-submit test="${command == 'show'}" 
-			code="authenticated.request-auditor.form.button.create" 
+			code="administrator.request-auditor.form.button.accept" 
 			action="/administrator/request-auditor/create"/>
 		
 		<acme:form-submit test="${command == 'show'}" 

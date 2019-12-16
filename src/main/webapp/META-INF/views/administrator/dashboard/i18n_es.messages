@@ -16,3 +16,4 @@ administrator.dashboard.form.label.avgNumberApplicationsPerWorker = Número Medi
 administrator.dashboard.form.label.canvasSector = Gráfico de barras de inversores/compañías por sectores
 administrator.dashboard.form.label.canvasApplicationStatus = Gráfico de barras de aplicaciones por estado
 administrator.dashboard.form.label.canvasJobStatus = Gráfico de barras de trabajos por estado
+administrator.dashboard.form.label.canvasApplication = Gráfico de estados de aplicaciones en los últimos 28 días

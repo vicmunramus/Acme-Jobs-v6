@@ -16,6 +16,8 @@ authenticated.messageThread.form.label.title = Título
 authenticated.messageThread.form.label.moment = Fecha de creación
 authenticated.messageThread.form.label.creator = Creador
 
+authenticated.messageThread.form.button.create = Crear
+
 authenticated.messageThread.form.button.messages = Mensajes
 authenticated.messageThread.form.button.create.messages = Crear mensaje
 authenticated.messageThread.form.button.involvedUsers = Usuarios involucrados

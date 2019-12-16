@@ -87,6 +87,10 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
+    alter table `request_auditor` 
+       drop 
+       foreign key FK_ie2ocrruj5nai12m6h4a0fmtw;
+
     alter table `sponsor` 
        drop 
        foreign key FK_20xk0ev32hlg96kqynl6laie2;
@@ -156,6 +160,8 @@
     drop table if exists `reina_bulletin`;
 
     drop table if exists `request`;
+
+    drop table if exists `request_auditor`;
 
     drop table if exists `sponsor`;
 

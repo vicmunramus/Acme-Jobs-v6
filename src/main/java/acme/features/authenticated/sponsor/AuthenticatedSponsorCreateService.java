@@ -27,10 +27,10 @@ public class AuthenticatedSponsorCreateService implements AbstractCreateService<
 
 	@Override
 	public boolean authorise(final Request<Sponsor> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
-
-		return true;
+		String name = "acme.entities.roles.Sponsor";
+		boolean result = !request.getPrincipal().hasRole(name);
+		return result;
 	}
 
 	@Override

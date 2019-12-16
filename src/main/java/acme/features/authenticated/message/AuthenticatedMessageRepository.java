@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.messageThreads.MessageThread;
 import acme.entities.messages.Message;
 import acme.framework.entities.UserAccount;
@@ -32,4 +33,6 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 	//used in create
 	@Query("select m from MessageThread m WHERE m.id = ?1")
 	MessageThread findOneMessageThreadById(int id);
+	@Query("select cp from CustomisationParameters cp where cp.identifier = '1'")
+	CustomisationParameters findOneCustomisationParameters();
 }

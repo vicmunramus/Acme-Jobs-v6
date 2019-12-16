@@ -16,3 +16,4 @@ administrator.dashboard.form.label.avgNumberApplicationsPerWorker = Average Numb
 administrator.dashboard.form.label.canvasSector = Bar chart of investor/company records by sectors
 administrator.dashboard.form.label.canvasApplicationStatus = Bar chart of applications by status
 administrator.dashboard.form.label.canvasJobStatus = Bar chart of jobs by status
+administrator.dashboard.form.label.canvasApplication = Line chart of Application's status in the last 28 days

@@ -25,9 +25,11 @@ public class AuthenticatedRequestAuditorCreateService implements AbstractCreateS
 
 	@Override
 	public boolean authorise(final Request<RequestAuditor> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
-		return true;
+		String name = "acme.entities.roles.RequestAuditor";
+		String name2 = "acme.entities.roles.Auditor";
+		boolean result = !(request.getPrincipal().hasRole(name) || request.getPrincipal().hasRole(name2));
+		return result;
 	}
 
 	@Override

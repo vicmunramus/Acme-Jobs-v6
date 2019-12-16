@@ -39,7 +39,7 @@
 	</div>
 	
 	<div>
-		<b><acme:message code="administrator.dashboard.form.label.canvasJobStatus"/></b>
+		<b><acme:message code="administrator.dashboard.form.label.canvasApplication"/></b>
 		<canvas id="canvasTest"></canvas>
 	</div>
 	
