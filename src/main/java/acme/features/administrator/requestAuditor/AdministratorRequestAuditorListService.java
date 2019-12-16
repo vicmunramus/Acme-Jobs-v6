@@ -1,7 +1,6 @@
 
 package acme.features.administrator.requestAuditor;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,13 +42,9 @@ public class AdministratorRequestAuditorListService implements AbstractListServi
 		assert request != null;
 		Collection<RequestAuditor> result;
 		result = this.repository.findAllRequestAuditor();
-		if (result.isEmpty()) {
-			result = new ArrayList<>();
-			return result;
-		} else {
-			return result;
 
-		}
+		return result;
+
 	}
 
 }

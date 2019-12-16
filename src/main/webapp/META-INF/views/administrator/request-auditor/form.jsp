@@ -4,8 +4,8 @@
 <%@taglib prefix = "acme" tagdir = "/WEB-INF/tags"%>
 
 <acme:form readonly="true">
-	<acme:form-textarea code="administrator.request-auditor.form.label.firm" path="firm"/>
-	<acme:form-textarea code="administrator.request-auditor.form.label.responsibilityStatement" path="responsibilityStatement"/>
+	<acme:form-textbox code="administrator.request-auditor.form.label.firm" path="firm"/>
+	<acme:form-textbox code="administrator.request-auditor.form.label.responsibilityStatement" path="responsibilityStatement"/>
 
 </acme:form>
 	<acme:form>
