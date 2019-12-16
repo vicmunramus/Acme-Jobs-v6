@@ -40,8 +40,4 @@ public class MessageThread extends DomainEntity {
 	@ManyToOne(optional = true)
 	private UserAccount			creator;
 
-	//	@Valid
-	//	@OneToMany
-	//	private Collection<UserAccount>	involvedUsers;
-
 }

@@ -382,9 +382,13 @@
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
+create index IDXdwumdwpjcwdk1mef9ua69yc2p on `application` (`reference`);
+create index IDXg54pxa1gngqheaipukeg8jypk on `application` (`moment`);
+create index IDXt38vobsvxk1wmkq6ssk97rul1 on `application` (`resolution_moment`);
 
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
+create index IDXlj2d4j7euwcsk20ok2xgjxwl0 on `audit_records` (`status`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDX6nd7baccjosrbgxx13s15d859 on `company_records` (`rating`);
 create index IDXmlt8tvsyjfedmoqiivkl6s03c on `company_records` (`work_sector`);
@@ -399,6 +403,7 @@ create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDX29vxwf0tu7wf2iwmss2d07hql on `investor_record` (`sector`);
 create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
 create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
+create index IDX8ix743uifflnrs9bupbn6y0h4 on `job` (`reference`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -410,6 +415,7 @@ create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
+create index IDXh9syauj4iixf18uts83saik5d on `request` (`ticker`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
