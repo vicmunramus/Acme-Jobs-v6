@@ -17,6 +17,7 @@ employer.application.form.job = Empleo
 employer.application.form.job.reference = Referencia
 employer.application.form.job.title = Título
 employer.application.form.resolution = Resolución
+employer.application.form.resolutionMoment = Fecha de resolución
 employer.application.form.resolutionJustification = Justificación
 
 employer.applicaton.form.button.accept = Aceptar

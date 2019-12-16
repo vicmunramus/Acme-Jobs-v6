@@ -62,7 +62,7 @@
 				],
 				datasets : [
 					{
-						label : "${investorRecord}",
+						label : <acme:message code="administrator.dashboard.form.label.investor"/>,
 						backgroundColor : "rgba(22, 38, 212, 0.3)",
 						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
@@ -80,7 +80,7 @@
 							
 						]
 					},{
-						label : "${companyRecord}",
+						label : <acme:message code="administrator.dashboard.form.label.company"/>,
 						backgroundColor : "rgba(19, 157, 16, 0.3)",
 						borderColor : "rgba(19, 157, 16, 1)",
 						data : [
@@ -143,7 +143,7 @@
 				],
 				datasets : [
 					{
-						label : "${application}",
+						label : <acme:message code="administrator.dashboard.form.label.applications"/>,
 						backgroundColor : "rgba(22, 38, 212, 0.3)",
 						borderColor : "rgba(22, 38, 212, 1)",
 						data : [
@@ -207,7 +207,7 @@
 					],
 					datasets : [
 						{
-							label : "${job}",
+							label : <acme:message code="administrator.dashboard.form.label.job"/>,
 							backgroundColor : "rgba(22, 38, 212, 0.3)",
 							borderColor : "rgba(22, 38, 212, 1)",
 							data : [
@@ -265,7 +265,7 @@
 				        data:    {
 				        	datasets: [
 				                {
-				                    label: "${pendingApplication}",
+				                    label: <acme:message code="administrator.dashboard.form.label.pending"/>,
 				                    data: [
 				                    	
 										<jstl:forEach var="i" begin="0" end="${sizePending}">
@@ -280,7 +280,7 @@
 				                    borderColor: 'blue'
 				                },
 				                {
-				                	 label: "${acceptedApplication}",
+				                	 label: <acme:message code="administrator.dashboard.form.label.accepted"/>,
 					                    data: [
 					                    	
 											<jstl:forEach var="i" begin="0" end="${sizeAccepted}">
@@ -295,7 +295,7 @@
 					                    borderColor: 'green'
 				                },
 				                {
-				                	 label: "${rejectedApplication}",
+				                	 label: <acme:message code="administrator.dashboard.form.label.rejected"/>,
 					                    data: [
 					                    	
 											<jstl:forEach var="i" begin="0" end="${sizeRejected}">
@@ -313,8 +313,7 @@
 				        },
 				        options: {
 				            title:      {
-				                display: true,
-				                text:    "Pending Applications"
+				                display: true
 				            },
 				            scales:     {
 				                xAxes: [{

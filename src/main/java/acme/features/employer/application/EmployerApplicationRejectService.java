@@ -1,6 +1,8 @@
 
 package acme.features.employer.application;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -100,6 +102,7 @@ public class EmployerApplicationRejectService implements AbstractUpdateService<E
 
 		entity.setResolutionJustification(entity.getResolutionJustification().trim());
 		entity.setStatus(ApplicationStatus.REJECTED);
+		entity.setResolutionMoment(Calendar.getInstance().getTime());
 
 		this.repository.save(entity);
 	}

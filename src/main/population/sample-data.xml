@@ -705,21 +705,12 @@
  		<property name="auditor" ref="auditor2Auditor"/>
  		<property name="job" ref="job4"/> 		
  	</bean>
- 	
+ 	 	
  	<bean name="auditRecord3" class="acme.entities.auditRecords.AuditRecords"> 		
  		<property name="title" value="AuditRecord03"/>
  		<property name="status" value="PUBLISHED"/>
  		<property name="creationMoment" value="2019/10/29 17:10"/>
  		<property name="body" value="AuditRecord03"/>
- 		<property name="auditor" ref="auditor1Auditor"/>
- 		<property name="job" ref="job2"/> 		
- 	</bean>
- 	
- 	<bean name="auditRecord4" class="acme.entities.auditRecords.AuditRecords"> 		
- 		<property name="title" value="AuditRecord04"/>
- 		<property name="status" value="PUBLISHED"/>
- 		<property name="creationMoment" value="2019/10/29 17:10"/>
- 		<property name="body" value="AuditRecord04"/>
  		<property name="auditor" ref="auditor2Auditor"/>
  		<property name="job" ref="job3"/> 		
  	</bean>
@@ -753,6 +744,7 @@
 		<property name="skills" value="Lorem ipsum sit dolor amet"/>
 		<property name="qualifications" value="Lorem ipsum sit dolor amet"/>
 		<property name="resolutionJustification" value="Not qualified"/>
+		<property name="resolutionMoment" value="2019/12/12 12:00"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="job2"/>
 	</bean>
@@ -764,6 +756,7 @@
 		<property name="skills" value="Lorem ipsum sit dolor amet"/>
 		<property name="qualifications" value="Lorem ipsum sit dolor amet"/>
 		<property name="resolutionJustification" value="Not qualified"/>
+		<property name="resolutionMoment" value="2019/10/12 12:00"/>
 		<property name="worker" ref="worker2Worker"/>
 		<property name="job" ref="job2"/>
 	</bean>

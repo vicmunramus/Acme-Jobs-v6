@@ -84,7 +84,7 @@ master.menu.authenticated.announcement = Announcements
 
 master.menu.authenticated.company-records.list = Company's Records
 
-master.menu.authenticated.job.list = Job List
+master.menu.authenticated.job.list = List of available jobs
 
 master.menu.authenticated.message-thread.list = Message Threads
 

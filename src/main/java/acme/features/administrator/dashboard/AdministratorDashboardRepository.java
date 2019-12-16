@@ -41,7 +41,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(a) from Application a group by a.status order by a.status")
 	String[] dataApplication();
 
-	//Tablero D04
+	//Tablero D05
 
 	@Query("select count(a) FROM Application a WHERE a.status = 0 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
 	Integer[] pendingApplicationsValue();
@@ -49,16 +49,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select DATE(a.moment) FROM Application a WHERE a.status = 0 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
 	String[] pendingApplicationsLabels();
 
-	@Query("select count(a) FROM Application a WHERE a.status = 1 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	@Query("select count(a) FROM Application a WHERE a.status = 1 and datediff(current_date(),a.resolutionMoment)<28 group by DATE(a.resolutionMoment) ORDER BY DATE(a.resolutionMoment)")
 	Integer[] acceptedApplicationsValue();
 
-	@Query("select DATE(a.moment) FROM Application a WHERE a.status = 1 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	@Query("select DATE(a.resolutionMoment) FROM Application a WHERE a.status = 1 and datediff(current_date(),a.resolutionMoment)<28 group by DATE(a.resolutionMoment) ORDER BY DATE(a.resolutionMoment)")
 	String[] acceptedApplicationsLabels();
 
-	@Query("select count(a) FROM Application a WHERE a.status = 2 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	@Query("select count(a) FROM Application a WHERE a.status = 2 and datediff(current_date(),a.resolutionMoment)<28 group by DATE(a.resolutionMoment) ORDER BY DATE(a.resolutionMoment)")
 	Integer[] rejectedApplicationsValue();
 
-	@Query("select DATE(a.moment) FROM Application a WHERE a.status = 2 and datediff(current_date(),a.moment)<28 group by DATE(a.moment) ORDER BY DATE(a.moment)")
+	@Query("select DATE(a.resolutionMoment) FROM Application a WHERE a.status = 2 and datediff(current_date(),a.resolutionMoment)<28 group by DATE(a.resolutionMoment) ORDER BY DATE(a.resolutionMoment)")
 	String[] rejectedApplicationsLabels();
 
 	//Listing D02:

@@ -41,6 +41,7 @@
         `qualifications` varchar(255),
         `reference` varchar(255),
         `resolution_justification` varchar(255),
+        `resolution_moment` datetime(6),
         `skills` varchar(255),
         `statement` varchar(255),
         `status` integer,

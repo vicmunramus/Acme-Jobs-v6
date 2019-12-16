@@ -55,6 +55,9 @@ public class Application extends DomainEntity {
 
 	private String				resolutionJustification;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				resolutionMoment;
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)

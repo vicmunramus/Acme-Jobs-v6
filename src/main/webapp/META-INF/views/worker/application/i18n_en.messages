@@ -15,6 +15,7 @@ worker.application.form.job.title = Title
 worker.application.form.button.create = Create
 
 worker.application.form.resolution = Resolution
+worker.application.form.resolutionMoment = Resolution Moment
 worker.application.form.resolutionJustification = Justification
 
 worker.application.form.return = Return

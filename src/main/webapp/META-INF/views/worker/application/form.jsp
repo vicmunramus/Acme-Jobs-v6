@@ -27,6 +27,9 @@
     		<acme:form-textbox code="worker.application.form.job.title" path="job.title"/>
     	</acme:form-panel>
     	<acme:form-panel code="worker.application.form.resolution">
+    		<jstl:if test="${status != 'PENDING'}">
+				<acme:form-moment readonly="true" code="worker.application.form.resolutionMoment" path="resolutionMoment"/>
+			</jstl:if>
 			<acme:form-textarea code="worker.application.form.resolutionJustification" path="resolutionJustification"/>
 		</acme:form-panel>
 	</jstl:if>

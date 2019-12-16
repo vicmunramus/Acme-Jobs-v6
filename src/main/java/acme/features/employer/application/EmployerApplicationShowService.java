@@ -43,7 +43,8 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "moment", "status", "statement", "skills", "qualifications", "resolutionJustification", "job.reference", "job.title", "worker.userAccount.identity.name", "worker.userAccount.identity.surname");
+		request.unbind(entity, model, "reference", "moment", "status", "statement", "skills", "qualifications", "resolutionJustification", "resolutionMoment", "job.reference", "job.title", "worker.userAccount.identity.name",
+			"worker.userAccount.identity.surname");
 	}
 
 	@Override

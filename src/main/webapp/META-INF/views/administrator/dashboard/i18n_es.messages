@@ -17,3 +17,12 @@ administrator.dashboard.form.label.canvasSector = Gráfico de barras de inversor
 administrator.dashboard.form.label.canvasApplicationStatus = Gráfico de barras de aplicaciones por estado
 administrator.dashboard.form.label.canvasJobStatus = Gráfico de barras de trabajos por estado
 administrator.dashboard.form.label.canvasApplication = Gráfico de estados de aplicaciones en los últimos 28 días
+
+administrator.dashboard.form.label.investor = "Historial de Inversores"
+administrator.dashboard.form.label.company =  "Historial de Compañía"
+administrator.dashboard.form.label.applications = "Aplicaciones"
+administrator.dashboard.form.label.job = "Trabajos"
+
+administrator.dashboard.form.label.accepted = "Aplicaciones Aceptadas"
+administrator.dashboard.form.label.pending = "Aplicaciones Pendientes"
+administrator.dashboard.form.label.rejected = "Aplicaciones Rechazadas"

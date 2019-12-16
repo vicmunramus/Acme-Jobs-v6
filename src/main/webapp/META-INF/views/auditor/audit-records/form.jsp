@@ -40,7 +40,8 @@
 	
 	<acme:form-submit test="${command == 'create'}" code="auditor.auditRecord.create" action="/auditor/audit-records/create?jobId=${jobId}"/>
 	<acme:form-submit test="${command == 'show' && status == 'DRAFT' || command == 'update'}" code="auditor.auditRecord.update" action="/auditor/audit-records/update?id=${id}"/>
-	<acme:form-submit test="${command == 'show'}" code="auditor.auditRecord.delete" action="/auditor/audit-records/delete?id=${id}"/>
+	<jstl:out value="${auditor.id }"></jstl:out>
+	<acme:form-submit test="${command == 'show' && auditorId == accountId}" code="auditor.auditRecord.delete" action="/auditor/audit-records/delete?id=${id}"/>
 	<acme:form-return code="auditor.auditRecord.form.return"/>
 	
 </acme:form>
