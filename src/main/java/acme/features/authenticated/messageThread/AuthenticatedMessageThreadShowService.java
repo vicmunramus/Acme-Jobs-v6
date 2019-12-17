@@ -33,7 +33,6 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 	@Override
 	public void unbind(final Request<MessageThread> request, final MessageThread entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -43,7 +42,6 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 	@Override
 	public MessageThread findOne(final Request<MessageThread> request) {
-		// TODO Auto-generated method stub
 		MessageThread result;
 		int id;
 		id = request.getModel().getInteger("id");

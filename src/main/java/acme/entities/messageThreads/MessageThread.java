@@ -37,7 +37,7 @@ public class MessageThread extends DomainEntity {
 
 	//Relationships -----------------------------------------------
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	private UserAccount			creator;
 
 }
