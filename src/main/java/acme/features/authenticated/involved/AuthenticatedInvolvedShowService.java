@@ -22,7 +22,6 @@ public class AuthenticatedInvolvedShowService implements AbstractShowService<Aut
 	@Override
 	public boolean authorise(final Request<Involved> request) {
 		assert request != null;
-		boolean result;
 
 		return true;
 	}

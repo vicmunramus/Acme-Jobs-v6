@@ -1,6 +1,9 @@
 
 package acme.features.authenticated.sponsor;
 
+import java.sql.Date;
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -79,7 +82,6 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 
 	@Override
 	public void validate(final Request<Sponsor> request, final Sponsor entity, final Errors errors) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -102,6 +104,8 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 				if (!cardHolderNotBlank) {
 					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The card holder can not be empty" : "El propietario de la tarjeta no puede estar vacío";
 					errors.add("cardHolder", errorMsg);
+				} else if (!request.getModel().getString("cardHolder").matches("^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+)*$")) {
+					errors.state(request, false, "cardHolder", "authenticated.sponsor.error.cardHolder");
 				}
 			}
 			if (!errors.hasErrors("cvv")) {
@@ -109,6 +113,8 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 				if (!cvvNotBlank) {
 					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The cvv can not be empty" : "El cvv no puede estar vacío";
 					errors.add("cvv", errorMsg);
+				} else if (!request.getModel().getString("cvv").matches("^[0-9]{3}$")) {
+					errors.state(request, false, "cvv", "authenticated.sponsor.error.cvv");
 				}
 			}
 			if (!errors.hasErrors("expirationDate")) {
@@ -116,6 +122,27 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 				if (!expirationDateNotBlank) {
 					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The expiration date can not be empty" : "La fecha de expiración no puede estar vacía";
 					errors.add("expirationDate", errorMsg);
+				} else if (!request.getModel().getString("expirationDate").matches("^((0[1-9]{1})|(1[0-2]{1}))\\/[0-9]{1}[0-9]{1}$")) {
+					errors.state(request, false, "expirationDate", "authenticated.sponsor.error.the-card-format");
+				} else {
+					String[] expirationDate = request.getModel().getString("expirationDate").split("/");
+					Integer actualYear = Calendar.getInstance().get(Calendar.YEAR);
+					String expirationYear;
+					if (actualYear % 100 >= 96 && actualYear % 100 <= 99) {
+						expirationYear = Integer.toString((actualYear + 100) / 100) + expirationDate[1];
+					} else {
+						expirationYear = Integer.toString(actualYear / 100) + expirationDate[1];
+					}
+
+					Date expDate = Date.valueOf(expirationYear + "-" + expirationDate[0] + "-01");
+					Calendar expCal = Calendar.getInstance();
+					expCal.setTime(expDate);
+					expCal.add(Calendar.MONTH, 1);
+
+					Calendar currentCal = Calendar.getInstance();
+
+					boolean isAfter = currentCal.before(expCal);
+					errors.state(request, isAfter, "expirationDate", "authenticated.sponsor.error.the-card-has-expired");
 				}
 			}
 		}

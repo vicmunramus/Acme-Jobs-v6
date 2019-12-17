@@ -135,12 +135,12 @@ master.menu.worker.application.list-mine = Mis Aplicaciones
 
 master.menu.auditor = Auditor
 master.menu.auditor.auditRecords.list = Mis Trabajos Auditados 
-master.menu.auditor.auditRecords.listJobs = Trabajos
+master.menu.auditor.auditRecords.listJobs = Trabajos no Auditados
 
 # master.menu.sponsor ###########################################################
 
 master.menu.sponsor = Patrocinador
-master.menu.sponsor.banner.list = Lista de banners
+master.menu.sponsor.banner.list = Lista de mis banners
 
 # master.menu.user-account ####################################################
 

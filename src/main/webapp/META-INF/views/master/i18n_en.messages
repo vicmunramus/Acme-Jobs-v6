@@ -140,12 +140,12 @@ master.menu.worker.application.list-mine = My Applications
 
 master.menu.auditor = Auditor
 master.menu.auditor.auditRecords.list = My Job Auditories
-master.menu.auditor.auditRecords.listJobs = Jobs
+master.menu.auditor.auditRecords.listJobs = Jobs not Audited
 
 # master.menu.sponsor ###########################################################
 
 master.menu.sponsor = Sponsor
-master.menu.sponsor.banner.list = Banner List
+master.menu.sponsor.banner.list = My Banner List
 
 # master.menu.user-account ####################################################
 
