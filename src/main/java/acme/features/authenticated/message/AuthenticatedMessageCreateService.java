@@ -72,13 +72,6 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 	public Message instantiate(final Request<Message> request) {
 		Message result = new Message();
 
-		//		MessageThread messageThread = new MessageThread();
-		//		result.setMessageThread(messageThread);
-		//
-		//		int userId = request.getPrincipal().getAccountId();
-		//		UserAccount userAccount = this.repository.findOneUserAccount(userId);
-		//		result.setCreator(userAccount);
-
 		return result;
 	}
 

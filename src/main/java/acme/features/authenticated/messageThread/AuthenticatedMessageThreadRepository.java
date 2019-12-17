@@ -14,8 +14,6 @@ import acme.framework.repositories.AbstractRepository;
 public interface AuthenticatedMessageThreadRepository extends AbstractRepository {
 
 	//used in listMine
-	//	@Query("select i.messageThread from Involved i WHERE i.userAccount.id = ?1 or i.messageThread.creator.id = ?1 GROUP BY i.messageThread")
-	//	Collection<MessageThread> findManyMessageThreadsByUserId(int id);
 	@Query("SELECT m FROM MessageThread m WHERE m.id IN (SELECT i.messageThread.id FROM Involved i WHERE i.userAccount.id = ?1) OR m.creator.id = ?1")
 	Collection<MessageThread> findManyMessageThreadsByUserId(int id);
 	//used in authorise

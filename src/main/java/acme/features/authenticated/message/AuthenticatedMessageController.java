@@ -30,7 +30,6 @@ public class AuthenticatedMessageController extends AbstractController<Authentic
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
-		//		super.addCustomCommand(CustomCommand.LIST_MINE_MESSAGES, BasicCommand.LIST, this.listMineService);
 
 	}
 }
