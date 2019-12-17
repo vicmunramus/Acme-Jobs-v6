@@ -6,6 +6,10 @@
 <acme:form>	
 	
 	<jstl:if test="${status == 'PUBLISHED' }">
+		
+		<acme:message code="auditor.job.employer"/>
+		<acme:form-textbox code="auditor.job.form.employer" path="employer.userAccount.username" readonly ="true"/>
+		
 		<acme:message code="auditor.job.title"/>
 		
 		<acme:form-textbox code="auditor.job.form.reference" path="reference" placeholder="EEEE-JJJJ" readonly ="true"/>

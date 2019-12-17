@@ -4,6 +4,10 @@
 <%@taglib prefix = "acme" tagdir = "/WEB-INF/tags"%>
 
 <acme:form>
+	
+	<acme:message code="auditor.job.employer"/>
+	<acme:form-textbox code="authenticated.job.form.username" path="employer.userAccount.username" readonly="true"/>
+
 	<acme:message code="auditor.job.title"/>
 	
 	<acme:form-textbox code="authenticated.job.form.reference" path="reference" placeholder="EEEE-JJJJ"/>

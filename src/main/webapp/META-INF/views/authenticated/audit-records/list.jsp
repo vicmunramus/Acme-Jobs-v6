@@ -4,6 +4,8 @@
 
 
 <acme:list>
+	<acme:message code="authenticated.auditRecord.title"/>
 	<acme:list-column code="authenticated.auditRecord.list.title" path="title"/>
 	<acme:list-column code="authenticated.auditRecord.list.creationMoment" path="creationMoment"/>
+	<acme:list-column code="authenticated.auditRecord.list.auditor" path="auditor.userAccount.username"/>
 </acme:list>

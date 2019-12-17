@@ -1,7 +1,10 @@
 auditor.job.list.label.reference = Referencia
 auditor.job.list.label.deadline = Deadline
 auditor.job.list.label.title = Título
+auditor.job.list.label.employer = Empleador
 
+auditor.job.employer = <h3> Empleador </h3>
+auditor.job.form.employer = Usuario
 auditor.job.form.reference = Referencia
 auditor.job.form.deadline = Fecha de vencimiento
 auditor.job.form.title = Título

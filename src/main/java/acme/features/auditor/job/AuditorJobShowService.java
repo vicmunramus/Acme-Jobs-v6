@@ -41,7 +41,7 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 		Boolean valid = this.repository.checkIfAuditRecordExist(jobId, auditorId) == 0;
 		request.getServletRequest().setAttribute("valid", valid);
 
-		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status", "employer.userAccount.username");
 
 		Descriptor desc = this.repository.findOneDescriptor(jobId);
 		model.setAttribute("description", desc.getDescription());

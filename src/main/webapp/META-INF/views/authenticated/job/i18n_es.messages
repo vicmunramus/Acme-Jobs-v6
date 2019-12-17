@@ -4,7 +4,10 @@ auditor.descriptor.title = <h3> Descriptor </h3>
 authenticated.job.list.label.reference = Referencia
 authenticated.job.list.label.deadline = Deadline
 authenticated.job.list.label.title = Título
+authenticated.job.list.label.employer = Empleador
 
+auditor.job.employer = <h3> Empleador </h3>
+authenticated.job.form.username = Usuario
 authenticated.job.form.reference = Referencia
 authenticated.job.form.deadline = Fecha de vencimiento
 authenticated.job.form.title = Título

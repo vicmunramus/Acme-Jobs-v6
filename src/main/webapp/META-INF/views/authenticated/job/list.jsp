@@ -7,4 +7,5 @@
 	<acme:list-column code="authenticated.job.list.label.reference" path="reference"/>
 	<acme:list-column code="authenticated.job.list.label.deadline" path="deadline"/>
 	<acme:list-column code="authenticated.job.list.label.title" path="title"/>
+	<acme:list-column code="authenticated.job.list.label.employer" path="employer.userAccount.username"/>
 </acme:list>
