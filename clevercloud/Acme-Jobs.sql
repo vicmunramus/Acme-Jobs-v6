@@ -38,7 +38,7 @@ CREATE TABLE `administrator` (
 
 LOCK TABLES `administrator` WRITE;
 /*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
-INSERT INTO `administrator` VALUES (20,0,19);
+INSERT INTO `administrator` VALUES (4,0,3);
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ CREATE TABLE `anonymous` (
 
 LOCK TABLES `anonymous` WRITE;
 /*!40000 ALTER TABLE `anonymous` DISABLE KEYS */;
-INSERT INTO `anonymous` VALUES (18,0,17);
+INSERT INTO `anonymous` VALUES (2,0,1);
 /*!40000 ALTER TABLE `anonymous` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,6 +138,8 @@ CREATE TABLE `application` (
   `moment` datetime(6) DEFAULT NULL,
   `qualifications` varchar(255) DEFAULT NULL,
   `reference` varchar(255) DEFAULT NULL,
+  `resolution_justification` varchar(255) DEFAULT NULL,
+  `resolution_moment` datetime(6) DEFAULT NULL,
   `skills` varchar(255) DEFAULT NULL,
   `statement` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
@@ -145,6 +147,10 @@ CREATE TABLE `application` (
   `worker_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_ct7r18vvxl5g4c4k7aefpa4do` (`reference`),
+  KEY `IDX2q2747fhp099wkn3j2yt05fhs` (`status`),
+  KEY `IDXdwumdwpjcwdk1mef9ua69yc2p` (`reference`),
+  KEY `IDXg54pxa1gngqheaipukeg8jypk` (`moment`),
+  KEY `IDXt38vobsvxk1wmkq6ssk97rul1` (`resolution_moment`),
   KEY `FKoa6p4s2oyy7tf80xwc4r04vh6` (`job_id`),
   KEY `FKmbjdoxi3o93agxosoate4sxbt` (`worker_id`),
   CONSTRAINT `FKmbjdoxi3o93agxosoate4sxbt` FOREIGN KEY (`worker_id`) REFERENCES `worker` (`id`),
@@ -158,7 +164,6 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (76,0,'2019-11-12 16:00:00.000000','Lorem ipsum sit dolor amet','EMP1-JOB1:WOR1','Lorem ipsum sit dolor amet','Lorem ipsum sit dolor amet',0,56,45),(77,0,'2019-11-25 07:00:00.000000','Lorem ipsum sit dolor amet','EMP1-JOB1:WOR2','Lorem ipsum sit dolor amet','Lorem ipsum sit dolor amet',0,56,48),(78,0,'2019-09-11 10:00:00.000000','Lorem ipsum sit dolor amet','EMP2-JOB2:WOR1','Lorem ipsum sit dolor amet','Lorem ipsum sit dolor amet',2,57,45),(79,0,'2019-09-16 10:00:00.000000','Lorem ipsum sit dolor amet','EMP2-JOB2:WOR2','Lorem ipsum sit dolor amet','Lorem ipsum sit dolor amet',2,57,48);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,6 +184,7 @@ CREATE TABLE `audit_records` (
   `auditor_id` int(11) NOT NULL,
   `job_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
+  KEY `IDXlj2d4j7euwcsk20ok2xgjxwl0` (`status`),
   KEY `FKl6b73crbwej8f95bvp1npqm8p` (`auditor_id`),
   KEY `FK25q3rsnsluma5vbn99874y30o` (`job_id`),
   CONSTRAINT `FK25q3rsnsluma5vbn99874y30o` FOREIGN KEY (`job_id`) REFERENCES `job` (`id`),
@@ -192,7 +198,6 @@ CREATE TABLE `audit_records` (
 
 LOCK TABLES `audit_records` WRITE;
 /*!40000 ALTER TABLE `audit_records` DISABLE KEYS */;
-INSERT INTO `audit_records` VALUES (72,0,'AuditRecord01','2019-10-29 16:10:00.000000',0,'AuditRecord01',51,56),(73,0,'AuditRecord02','2019-10-29 16:10:00.000000',0,'AuditRecord02',54,59),(74,0,'AuditRecord03','2019-10-29 16:10:00.000000',1,'AuditRecord03',51,57),(75,0,'AuditRecord04','2019-10-29 16:10:00.000000',1,'AuditRecord04',54,58);
 /*!40000 ALTER TABLE `audit_records` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,7 +226,6 @@ CREATE TABLE `auditor` (
 
 LOCK TABLES `auditor` WRITE;
 /*!40000 ALTER TABLE `auditor` DISABLE KEYS */;
-INSERT INTO `auditor` VALUES (51,0,50,'Auditor 1','Responsibility Statement Auditor 2'),(54,0,53,'Auditor 2','Responsibility Statement Auditor 2');
 /*!40000 ALTER TABLE `auditor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,7 +252,7 @@ CREATE TABLE `authenticated` (
 
 LOCK TABLES `authenticated` WRITE;
 /*!40000 ALTER TABLE `authenticated` DISABLE KEYS */;
-INSERT INTO `authenticated` VALUES (21,0,19),(24,0,22),(27,0,25),(34,0,32),(37,0,35),(40,0,38),(43,0,41),(46,0,44),(49,0,47),(52,0,50),(55,0,53);
+INSERT INTO `authenticated` VALUES (5,0,3),(8,0,6),(11,0,9);
 /*!40000 ALTER TABLE `authenticated` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -346,7 +350,6 @@ CREATE TABLE `commercial` (
 
 LOCK TABLES `commercial` WRITE;
 /*!40000 ALTER TABLE `commercial` DISABLE KEYS */;
-INSERT INTO `commercial` VALUES (29,1,'https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg','Open Happiness','https://www.youtube.com/watch?v=eG6XfzJNRBA',33,'Emilio Pascual Robledos','4384743000534274','325','11/22');
 /*!40000 ALTER TABLE `commercial` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -370,7 +373,8 @@ CREATE TABLE `company_records` (
   `web_site` varchar(255) DEFAULT NULL,
   `work_sector` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX6nd7baccjosrbgxx13s15d859` (`rating`)
+  KEY `IDX6nd7baccjosrbgxx13s15d859` (`rating`),
+  KEY `IDXmlt8tvsyjfedmoqiivkl6s03c` (`work_sector`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -408,7 +412,7 @@ CREATE TABLE `consumer` (
 
 LOCK TABLES `consumer` WRITE;
 /*!40000 ALTER TABLE `consumer` DISABLE KEYS */;
-INSERT INTO `consumer` VALUES (26,0,25,'Acme-Jobs','education');
+INSERT INTO `consumer` VALUES (10,0,9,'Acme-Jobs','education');
 /*!40000 ALTER TABLE `consumer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -429,7 +433,6 @@ CREATE TABLE `credit_card` (
   `sponsor_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_4cr95y27s8ti6otoyflmma6oy` (`sponsor_id`),
-  UNIQUE KEY `UK_svbyf90rkln6g3ilk8m2yn1d7` (`credit_card_number`),
   CONSTRAINT `FK31l5hvh7p1nx1aw6v649gw3rc` FOREIGN KEY (`sponsor_id`) REFERENCES `sponsor` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -440,7 +443,6 @@ CREATE TABLE `credit_card` (
 
 LOCK TABLES `credit_card` WRITE;
 /*!40000 ALTER TABLE `credit_card` DISABLE KEYS */;
-INSERT INTO `credit_card` VALUES (86,0,'Emilio Pascual Robledos','4384743000534274','325','11/22',33);
 /*!40000 ALTER TABLE `credit_card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -468,7 +470,7 @@ CREATE TABLE `customisation_parameters` (
 
 LOCK TABLES `customisation_parameters` WRITE;
 /*!40000 ALTER TABLE `customisation_parameters` DISABLE KEYS */;
-INSERT INTO `customisation_parameters` VALUES (28,0,1,'sex; sexo; hard core; viagra; cialis; nigeria; you’ve won; has ganado; million dollar; millon de dolares',0.01);
+INSERT INTO `customisation_parameters` VALUES (12,0,1,'sex;sexo;hard core;viagra;cialis;nigeria;you\'ve won;has ganado;million dollar;millon de dolares',0.01);
 /*!40000 ALTER TABLE `customisation_parameters` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -496,7 +498,6 @@ CREATE TABLE `descriptor` (
 
 LOCK TABLES `descriptor` WRITE;
 /*!40000 ALTER TABLE `descriptor` DISABLE KEYS */;
-INSERT INTO `descriptor` VALUES (61,0,'Primera Descripcion',56),(62,0,'Segunda Descripcion',57),(63,0,'Tercera Descripcion',58),(64,0,'Cuarta Descripcion',59),(65,0,'Quinta Descripcion',60);
 /*!40000 ALTER TABLE `descriptor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -541,7 +542,7 @@ CREATE TABLE `duty` (
   `description_duty` varchar(255) DEFAULT NULL,
   `percentage` int(11) DEFAULT NULL,
   `title_duty` varchar(255) DEFAULT NULL,
-  `descriptor_id` int(11) DEFAULT NULL,
+  `descriptor_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK3cc3garl37bl7gswreqwr7pj4` (`descriptor_id`),
   CONSTRAINT `FK3cc3garl37bl7gswreqwr7pj4` FOREIGN KEY (`descriptor_id`) REFERENCES `descriptor` (`id`)
@@ -554,7 +555,6 @@ CREATE TABLE `duty` (
 
 LOCK TABLES `duty` WRITE;
 /*!40000 ALTER TABLE `duty` DISABLE KEYS */;
-INSERT INTO `duty` VALUES (66,0,'DUTY1',20,'JOB1-DUTY1',61),(67,0,'DUTY2',12,'JOB1-DUTY2',61),(68,0,'DUTY3',33,'JOB2-DUTY1',62),(69,0,'DUTY4',55,'JOB3-DUTY1',63),(70,0,'DUTY5',22,'JOB4-DUTY1',64),(71,0,'DUTY6',17,'JOB5-DUTY1',65);
 /*!40000 ALTER TABLE `duty` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -583,7 +583,6 @@ CREATE TABLE `employer` (
 
 LOCK TABLES `employer` WRITE;
 /*!40000 ALTER TABLE `employer` DISABLE KEYS */;
-INSERT INTO `employer` VALUES (39,0,38,'Employer1, Inc.','Sector 1'),(42,0,41,'Employer2, Inc.','Sector 2');
 /*!40000 ALTER TABLE `employer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -605,7 +604,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (87);
+INSERT INTO `hibernate_sequence` VALUES (13);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -624,7 +623,8 @@ CREATE TABLE `investor_record` (
   `stars` int(11) DEFAULT NULL,
   `statement` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDXk2t3uthe649ao1jllcuks0gv4` (`stars`)
+  KEY `IDXk2t3uthe649ao1jllcuks0gv4` (`stars`),
+  KEY `IDX29vxwf0tu7wf2iwmss2d07hql` (`sector`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -635,6 +635,35 @@ CREATE TABLE `investor_record` (
 LOCK TABLES `investor_record` WRITE;
 /*!40000 ALTER TABLE `investor_record` DISABLE KEYS */;
 /*!40000 ALTER TABLE `investor_record` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `involved`
+--
+
+DROP TABLE IF EXISTS `involved`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `involved` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `message_thread_id` int(11) NOT NULL,
+  `user_account_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKhkjx1r325hanpggn2t7dlad23` (`message_thread_id`),
+  KEY `FK6ki4eammiocj9p3amqm7v4ej9` (`user_account_id`),
+  CONSTRAINT `FK6ki4eammiocj9p3amqm7v4ej9` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`),
+  CONSTRAINT `FKhkjx1r325hanpggn2t7dlad23` FOREIGN KEY (`message_thread_id`) REFERENCES `message_thread` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `involved`
+--
+
+LOCK TABLES `involved` WRITE;
+/*!40000 ALTER TABLE `involved` DISABLE KEYS */;
+/*!40000 ALTER TABLE `involved` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -657,7 +686,9 @@ CREATE TABLE `job` (
   `employer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_7jmfdvs0b0jx7i33qxgv22h7b` (`reference`),
-  KEY `IDXfdmpnr8o4phmk81sqsano16r` (`deadline`),
+  KEY `IDXal59yunywnkwi09ps7jxpr18c` (`deadline`,`status`),
+  KEY `IDX28ur9xm72oo1df9g14xhnh8h3` (`status`),
+  KEY `IDX8ix743uifflnrs9bupbn6y0h4` (`reference`),
   KEY `FK3rxjf8uh6fh2u990pe8i2at0e` (`employer_id`),
   CONSTRAINT `FK3rxjf8uh6fh2u990pe8i2at0e` FOREIGN KEY (`employer_id`) REFERENCES `employer` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -669,7 +700,6 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
-INSERT INTO `job` VALUES (56,0,'2030-12-11 22:59:00.000000','http://www.example.com','EMP1-JOB1',15000.98,'€',1,'Title 1',39),(57,0,'2030-12-11 22:59:00.000000','http://www.example.com','EMP1-JOB2',20000,'$',0,'Title 2',42),(58,0,'2030-12-11 22:59:00.000000','http://www.example.com','EMP1-JOB3',24000,'$',0,'Title 3',39),(59,0,'2030-12-11 22:59:00.000000','http://www.example.com','EMP1-JOB4',22000,'$',1,'Title 4',42),(60,0,'2012-12-11 22:59:00.000000','http://www.example.com','EMP1-JOB5',22000,'$',1,'Title 5',39);
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -687,13 +717,13 @@ CREATE TABLE `message` (
   `moment` datetime(6) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
+  `creator_id` int(11) NOT NULL,
   `message_thread_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDXjporswtrt7iirg3sca9fipjj4` (`title`),
+  KEY `FKn4cg0xtxxw96f3n2ba6k1epnq` (`creator_id`),
   KEY `FKn5adlx3oqjna7aupm8gwg3fuj` (`message_thread_id`),
-  KEY `FKik4epe9dp5q6uenarfyia7xin` (`user_id`),
-  CONSTRAINT `FKik4epe9dp5q6uenarfyia7xin` FOREIGN KEY (`user_id`) REFERENCES `authenticated` (`id`),
+  CONSTRAINT `FKn4cg0xtxxw96f3n2ba6k1epnq` FOREIGN KEY (`creator_id`) REFERENCES `user_account` (`id`),
   CONSTRAINT `FKn5adlx3oqjna7aupm8gwg3fuj` FOREIGN KEY (`message_thread_id`) REFERENCES `message_thread` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -704,7 +734,6 @@ CREATE TABLE `message` (
 
 LOCK TABLES `message` WRITE;
 /*!40000 ALTER TABLE `message` DISABLE KEYS */;
-INSERT INTO `message` VALUES (82,0,'test','2019-10-29 16:10:00.000000','tag1','message1',80,43),(83,0,'test','2019-10-29 16:10:00.000000','tag1','message1',81,46),(84,0,'test','2019-10-29 16:10:00.000000','tag1','message3',80,49),(85,0,'test','2019-10-29 16:10:00.000000','tag1','message4',81,40);
 /*!40000 ALTER TABLE `message` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -720,11 +749,11 @@ CREATE TABLE `message_thread` (
   `version` int(11) NOT NULL,
   `moment` datetime(6) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `creator_id` int(11) DEFAULT NULL,
+  `creator_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX3pvpt477dc7b3lairb4qjna7m` (`title`),
-  KEY `FK3fa4h4tfet2kocvatib2ovhsa` (`creator_id`),
-  CONSTRAINT `FK3fa4h4tfet2kocvatib2ovhsa` FOREIGN KEY (`creator_id`) REFERENCES `authenticated` (`id`)
+  KEY `FKr35u0eaupbx6b2w22e33u8s5u` (`creator_id`),
+  CONSTRAINT `FKr35u0eaupbx6b2w22e33u8s5u` FOREIGN KEY (`creator_id`) REFERENCES `user_account` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -734,7 +763,6 @@ CREATE TABLE `message_thread` (
 
 LOCK TABLES `message_thread` WRITE;
 /*!40000 ALTER TABLE `message_thread` DISABLE KEYS */;
-INSERT INTO `message_thread` VALUES (80,0,'2019-10-29 16:10:00.000000','messageThread0',46),(81,0,'2019-10-29 16:10:00.000000','messageThread1',43);
 /*!40000 ALTER TABLE `message_thread` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -792,7 +820,6 @@ CREATE TABLE `non_commercial` (
 
 LOCK TABLES `non_commercial` WRITE;
 /*!40000 ALTER TABLE `non_commercial` DISABLE KEYS */;
-INSERT INTO `non_commercial` VALUES (30,1,'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png','Work Together','https://www.youtube.com/watch?v=eG6XfzJNRBA',33,'https://www.youtube.com/watch?v=NZOPzR8bPh4'),(31,1,'https://www.acme.com','Improving','https://www.youtube.com/watch?v=eG6XfzJNRBA',36,'https://www.youtube.com/watch?v=NZOPzR8bPh4');
 /*!40000 ALTER TABLE `non_commercial` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -856,7 +883,7 @@ CREATE TABLE `provider` (
 
 LOCK TABLES `provider` WRITE;
 /*!40000 ALTER TABLE `provider` DISABLE KEYS */;
-INSERT INTO `provider` VALUES (23,0,22,'Acme-Jobs','education');
+INSERT INTO `provider` VALUES (7,0,6,'Acme-Jobs','education');
 /*!40000 ALTER TABLE `provider` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -935,7 +962,8 @@ CREATE TABLE `request` (
   `ticker` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDXlrvsw21ylkdqa1shrkwg1yssx` (`deadline`)
+  KEY `IDXlrvsw21ylkdqa1shrkwg1yssx` (`deadline`),
+  KEY `IDXh9syauj4iixf18uts83saik5d` (`ticker`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -946,6 +974,34 @@ CREATE TABLE `request` (
 LOCK TABLES `request` WRITE;
 /*!40000 ALTER TABLE `request` DISABLE KEYS */;
 /*!40000 ALTER TABLE `request` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `request_auditor`
+--
+
+DROP TABLE IF EXISTS `request_auditor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `request_auditor` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `user_account_id` int(11) DEFAULT NULL,
+  `firm` varchar(255) DEFAULT NULL,
+  `responsibility_statement` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ie2ocrruj5nai12m6h4a0fmtw` (`user_account_id`),
+  CONSTRAINT `FK_ie2ocrruj5nai12m6h4a0fmtw` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `request_auditor`
+--
+
+LOCK TABLES `request_auditor` WRITE;
+/*!40000 ALTER TABLE `request_auditor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `request_auditor` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -972,7 +1028,6 @@ CREATE TABLE `sponsor` (
 
 LOCK TABLES `sponsor` WRITE;
 /*!40000 ALTER TABLE `sponsor` DISABLE KEYS */;
-INSERT INTO `sponsor` VALUES (33,0,32,'Sponsor 1 Organisation'),(36,0,35,'Sponsor 2 Organisation');
 /*!40000 ALTER TABLE `sponsor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1003,7 +1058,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (17,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$KL5BwfT6aXpqwry2HgJpMOqZE2zjrY19AmWoKlAW4/zmuyGplvqTy','anonymous'),(19,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$dOuTQq5sLylQkofoVKFV7.ONSCDOVnHtAa2vKZyKDObr3X4rZLl.i','administrator'),(22,0,_binary '','provider@acme.com','Provider','Acme.com','$2a$05$bz6E2BfgMSHEKSOxgaI3WOxp7bMlxcOUp2J/ZfI7NmHgkdwQ40u.6','provider'),(25,0,_binary '','consumer@acme.com','Consumer','Acme.com','$2a$05$BLh85h.nlyDTftIwdwPAGuVVA3/SWKQh4qwdGHaq57M4u/JnLr.Xu','consumer'),(32,0,_binary '','sponsor1@acme.com','Sponsor','One','$2a$05$KfiBP25zxTjJkviN77ETKegtD9i7MnQiw1J57Po7wYI3WqZW/47Si','sponsor1'),(35,0,_binary '','sponsor2@acme.com','Sponsor','Two','$2a$05$64..laz94PLZTb1f6g1At.reh.Dh3Jgs5MJU9ERyn4R8FUP0vjwtC','sponsor2'),(38,0,_binary '','employer1@acme.com','Employer','One','$2a$05$Dg/lTGOBe5ppRaIxKAQIfuAbXwLcROyYS4nH8uo1zpqM276Q/TSQq','employer1'),(41,0,_binary '','employer2@acme.com','Employer','Two','$2a$05$lezRp6qFdJ4tmD7.8yKj6OPjRLyhotSpKug14Dq5ZVRjebka6RD4e','employer2'),(44,0,_binary '','worker1@acme.com','Worker','One','$2a$05$RFdZhU8/GpcnKUJMyZ14CuLuS7mPFd/4h3Uc1AAZKOg6ocNqP825e','worker1'),(47,0,_binary '','worker2@acme.com','Worker','Two','$2a$05$9FpjVttZsSUcXUMKx28woOYgeO10WoilWfiIIwz86jYj4hnKNc48S','worker2'),(50,0,_binary '','auditor1@acme.com','Auditor','One','$2a$05$zc3jTmapWsCLay3GmoeXaeJmHWSsPAamPdaPaClj4QaCEjLdLwZLC','auditor1'),(53,0,_binary '','auditor2@acme.com','Auditor','Two','$2a$05$ygymnno5.nNEa3C./X2O/.XGSoUsKxRmUNaBsCVVwrAKgyqVcJEOW','auditor2');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$qrPxAvLqr8dlCxAk8ASll.x2yRA4mPcDytmYb2K37hr6M/Evg6.eS','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$UgCyGoPFDQbmchLMniw7We.Y6tjSPz2jVRn//Is0KuaxnX0VhebCS','administrator'),(6,0,_binary '','provider@acme.com','Provider','Acme.com','$2a$05$373AJ9Zy5yw2zQYpfM1O..x1g/yyDFTIvR3MXXIla23Qsxqr.6Fea','provider'),(9,0,_binary '','consumer@acme.com','Consumer','Acme.com','$2a$05$unf9QqBXxPuvaa6sscqAWuiojs70U0CPrO/.H3dV2UEDfzG63U.XG','consumer');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1018,8 +1073,8 @@ CREATE TABLE `worker` (
   `id` int(11) NOT NULL,
   `version` int(11) NOT NULL,
   `user_account_id` int(11) DEFAULT NULL,
-  `cualifications_record` varchar(255) DEFAULT NULL,
-  `skills_record` varchar(255) DEFAULT NULL,
+  `qualifications` varchar(255) DEFAULT NULL,
+  `skills` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_l5q1f33vs2drypmbdhpdgwfv3` (`user_account_id`),
   CONSTRAINT `FK_l5q1f33vs2drypmbdhpdgwfv3` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`)
@@ -1032,7 +1087,6 @@ CREATE TABLE `worker` (
 
 LOCK TABLES `worker` WRITE;
 /*!40000 ALTER TABLE `worker` DISABLE KEYS */;
-INSERT INTO `worker` VALUES (45,0,44,'Software Engineering degree at University of Seville','Java; PHP; C++; SQL'),(48,0,47,'Bachelor of Mathematic at UCLA; PHD in Computational Mathematics at UCLA','C++; Matlab; advanced mathematics;');
 /*!40000 ALTER TABLE `worker` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1045,4 +1099,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-04 12:28:58
+-- Dump completed on 2019-12-18  1:14:54

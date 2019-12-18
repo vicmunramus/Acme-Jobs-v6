@@ -252,7 +252,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `title` varchar(255),
-        `creator_id` integer,
+        `creator_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
