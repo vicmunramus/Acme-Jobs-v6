@@ -59,7 +59,7 @@ public class AnonymousReinaBulletinCreateService implements AbstractCreateServic
 		String author = "Quentin Tarantino";
 		Integer age = 45;
 		String title = "Quentin Tarantino 04";
-		String text = "Esto es un ejemplo. Pon aqui lo que quieres decir.";
+		String text = "Esto es un ejemplo. Pon aquí lo que quieres decir.";
 
 		result = new ReinaBulletin();
 		result.setCreateDate(createDate);
