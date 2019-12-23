@@ -737,7 +737,7 @@
 		<property name="job" ref="job1"/>
 	</bean>
 	<bean name="application3" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP2-JOB2:WORK1"/>
+		<property name="reference" value="EMP2-JOB4:WORK1"/>
 		<property name="moment" value="2019/09/11 12:00"/>
 		<property name="status" value="REJECTED"/>
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
@@ -746,10 +746,10 @@
 		<property name="resolutionJustification" value="Not qualified"/>
 		<property name="resolutionMoment" value="2019/12/12 12:00"/>
 		<property name="worker" ref="worker1Worker"/>
-		<property name="job" ref="job2"/>
+		<property name="job" ref="job4"/>
 	</bean>
 	<bean name="application4" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP2-JOB2:WORK2"/>
+		<property name="reference" value="EMP2-JOB4:WORK2"/>
 		<property name="moment" value="2019/09/16 12:00"/>
 		<property name="status" value="REJECTED"/>
 		<property name="statement" value="Lorem ipsum sit dolor amet"/>
@@ -758,7 +758,31 @@
 		<property name="resolutionJustification" value="Not qualified"/>
 		<property name="resolutionMoment" value="2019/10/12 12:00"/>
 		<property name="worker" ref="worker2Worker"/>
-		<property name="job" ref="job2"/>
+		<property name="job" ref="job4"/>
+	</bean>
+	<bean name="application5" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB5:WORK2"/>
+		<property name="moment" value="2012/12/10 12:00"/>
+		<property name="status" value="ACCEPTED"/>
+		<property name="statement" value="Lorem ipsum sit dolor amet"/>
+		<property name="skills" value="Lorem ipsum sit dolor amet"/>
+		<property name="qualifications" value="Lorem ipsum sit dolor amet"/>
+		<property name="resolutionJustification" value="Not qualified"/>
+		<property name="resolutionMoment" value="2015/10/12 12:00"/>
+		<property name="worker" ref="worker2Worker"/>
+		<property name="job" ref="job5"/>
+	</bean>
+	<bean name="application6" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB5:WORK1"/>
+		<property name="moment" value="2012/12/10 12:00"/>
+		<property name="status" value="ACCEPTED"/>
+		<property name="statement" value="Lorem ipsum sit dolor amet"/>
+		<property name="skills" value="Lorem ipsum sit dolor amet"/>
+		<property name="qualifications" value="Lorem ipsum sit dolor amet"/>
+		<property name="resolutionJustification" value="Not qualified"/>
+		<property name="resolutionMoment" value="2019/10/12 12:00"/>
+		<property name="worker" ref="worker1Worker"/>
+		<property name="job" ref="job5"/>
 	</bean>
 	
 	<!-- Message Threads -->
