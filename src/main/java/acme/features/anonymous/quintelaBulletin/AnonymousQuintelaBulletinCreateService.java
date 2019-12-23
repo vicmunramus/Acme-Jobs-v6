@@ -80,6 +80,14 @@ public class AnonymousQuintelaBulletinCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 
+		boolean isAfter;
+
+		//Deadline
+		if (!errors.hasErrors("deadlineDate")) {
+			isAfter = entity.getDeadlineDate().after(new Date(System.currentTimeMillis()));
+			errors.state(request, isAfter, "deadlineDate", "anonymous.quintelaBulletin.error.create.deadline");
+		}
+
 	}
 
 	@Override

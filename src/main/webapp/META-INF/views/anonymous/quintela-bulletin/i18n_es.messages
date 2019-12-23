@@ -24,3 +24,5 @@ anonymous.quintela-bulletin.form.label.deadlineDate = Fecha límite
 anonymous.quintela-bulletin.form.label.text = Texto
 anonymous.quintela-bulletin.form.button.create = Crear
 anonymous.quintela-bulletin.form.button.return = Volver
+
+anonymous.quintelaBulletin.error.create.deadline = La fecha límite debe ser posterior a la actual
