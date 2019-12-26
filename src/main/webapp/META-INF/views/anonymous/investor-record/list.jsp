@@ -5,10 +5,20 @@
 
 <acme:list>
 
-	<acme:list-column code="anonymous.investorRecord.list.label.name" path="name" width="50%"/>
+	<acme:list-column code="anonymous.investorRecord.list.label.name" path="name"/>
 	
-	<acme:list-column code="anonymous.investorRecord.list.label.sector" path="sector" width="50%"/>
+	<acme:list-column code="anonymous.investorRecord.list.label.sector" path="sector"/>
+	
+	<jstl:if test="${command != 'list-fivestars'}">
+		<acme:list-column code="anonymous.investorRecord.list.label.stars" path="stars"/>
+	</jstl:if>
 	
 </acme:list>
 
-<acme:redirect-button code="anonymous.investorRecord.listFiveStars.button.redirect" action="/anonymous/investor-record/list-fivestars"/>
+<jstl:if test="${command != 'list-fivestars'}">
+	<acme:redirect-button code="anonymous.investorRecord.listFiveStars.button.redirect" action="/anonymous/investor-record/list-fivestars"/>
+</jstl:if>
+
+<jstl:if test="${command != 'list'}">
+	<acme:redirect-button code="anonymous.investorRecord.listFiveStars.button.redirect2" action="/anonymous/investor-record/list"/>
+</jstl:if>

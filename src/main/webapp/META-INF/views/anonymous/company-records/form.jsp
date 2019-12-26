@@ -19,7 +19,7 @@
 	<acme:form-textbox code="anonymous.company-records.form.label.contactEmail" path="contactEmail"/>
 	
 	<acme:form-checkbox code="anonymous.company-records.form.label.incorporated" path="incorporated"/>
-
+	
 	<acme:form-textbox code="anonymous.company-records.form.label.rating" path="rating"/>
 		
   	<acme:form-return code="anonymous.company-records.form.button.return"/>
