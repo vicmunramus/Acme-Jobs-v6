@@ -12,8 +12,16 @@
 	
 	<acme:list-column code="anonymous.company-records.list.label.activityDesc" path="activityDesc"/>
 	
-	<acme:list-column code="anonymous.company-records.list.label.rating" path="rating"/>
+	<jstl:if test="${command != 'list-fivestars'}">
+		<acme:list-column code="anonymous.company-records.list.label.rating" path="rating"/>
+	</jstl:if>
 	
 </acme:list>
 
-<acme:redirect-button code="anonymous.company-records.button.redirect" action="/anonymous/company-records/list-fivestars"/>
+<jstl:if test="${command != 'list-fivestars'}">
+	<acme:redirect-button code="anonymous.company-records.button.redirect" action="/anonymous/company-records/list-fivestars"/>
+</jstl:if>
+
+<jstl:if test="${command != 'list'}">
+	<acme:redirect-button code="anonymous.company-records.button.redirect2" action="/anonymous/company-records/list"/>
+</jstl:if>
