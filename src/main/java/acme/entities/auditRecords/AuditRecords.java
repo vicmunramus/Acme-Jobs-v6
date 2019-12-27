@@ -12,6 +12,7 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import acme.entities.jobs.Job;
 import acme.entities.roles.Auditor;
@@ -36,6 +37,7 @@ public class AuditRecords extends DomainEntity {
 	private Status				status;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Past
 	private Date				creationMoment;
 
 	@NotBlank
