@@ -1,7 +1,6 @@
 
 package acme.entities.challenges;
 
-import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -59,43 +58,4 @@ public class Challenge extends DomainEntity {
 	@NotNull
 	private Money				bronzeReward;
 
-
-	@Transient
-	public String getGoldPair() {
-		StringBuilder result;
-
-		result = new StringBuilder();
-		result.append(this.goldGoal);
-		result.append(" \u2192 ");
-		result.append(this.goldReward.getAmount());
-		result.append(" €");
-
-		return result.toString();
-	}
-
-	@Transient
-	public String getSilverPair() {
-		StringBuilder result;
-
-		result = new StringBuilder();
-		result.append(this.silverGoal);
-		result.append(" \u2192 ");
-		result.append(this.silverReward.getAmount());
-		result.append(" €");
-
-		return result.toString();
-	}
-
-	@Transient
-	public String getBronzePair() {
-		StringBuilder result;
-
-		result = new StringBuilder();
-		result.append(this.bronzeGoal);
-		result.append(" \u2192 ");
-		result.append(this.bronzeReward.getAmount());
-		result.append(" €");
-
-		return result.toString();
-	}
 }
