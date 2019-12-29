@@ -529,7 +529,7 @@
  	
  	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
  		<property name="firm" value="Auditor 1"/>
- 		<property name="responsibilityStatement" value="Responsibility Statement Auditor 2"/>
+ 		<property name="responsibilityStatement" value="Responsibility Statement Auditor 1"/>
  		<property name="userAccount" ref="auditor1UserAccount"/>
  	</bean>
  	
@@ -798,6 +798,8 @@
  		<property name="moment" value="2019/10/29 17:10"/>
  		<property name="creator" ref="employer2UserAccount"/>
  	</bean>
+ 	
+ 	<!-- Involveds -->
  	
  	<bean name="involved00" class="acme.entities.involved.Involved">
  		<property name="messageThread" ref="messageThread1"/>

@@ -1,7 +1,6 @@
 
 package acme.features.auditor.auditRecords;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,7 +91,7 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert request != null;
 		assert entity != null;
 
-		Date d = Calendar.getInstance().getTime();
+		Date d = new Date(System.currentTimeMillis() - 1);
 
 		Integer jobId = request.getModel().getInteger("jobId");
 		Job job = this.repository.findJob(jobId);

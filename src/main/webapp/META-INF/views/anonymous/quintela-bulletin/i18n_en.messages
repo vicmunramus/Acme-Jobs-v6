@@ -23,3 +23,5 @@ anonymous.quintela-bulletin.form.label.deadlineDate = Deadline Date
 anonymous.quintela-bulletin.form.label.text = Text
 anonymous.quintela-bulletin.form.button.create = Create
 anonymous.quintela-bulletin.form.button.return = Return
+
+anonymous.quintelaBulletin.error.create.deadline = The deadline date must be after now

@@ -5,6 +5,7 @@ anonymous.company-records.list.label.webSite = Web Site
 anonymous.company-records.list.label.rating = Rating
 
 anonymous.company-records.button.redirect = Top Companies
+anonymous.company-records.button.redirect2 = Companies
 
 anonymous.company-records.form.label.companyName = Company's Name
 anonymous.company-records.form.label.workSector = Work Sector
