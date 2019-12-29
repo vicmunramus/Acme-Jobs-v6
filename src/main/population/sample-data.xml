@@ -715,6 +715,24 @@
  		<property name="job" ref="job3"/> 		
  	</bean>
  	
+ 	<bean name="auditRecord4" class="acme.entities.auditRecords.AuditRecords"> 		
+ 		<property name="title" value="AuditRecord04"/>
+ 		<property name="status" value="PUBLISHED"/>
+ 		<property name="creationMoment" value="2019/10/29 17:10"/>
+ 		<property name="body" value="AuditRecord04"/>
+ 		<property name="auditor" ref="auditor2Auditor"/>
+ 		<property name="job" ref="job1"/> 		
+ 	</bean>
+ 	
+ 	<bean name="auditRecord5" class="acme.entities.auditRecords.AuditRecords"> 		
+ 		<property name="title" value="AuditRecord05"/>
+ 		<property name="status" value="DRAFT"/>
+ 		<property name="creationMoment" value="2018/10/29 17:10"/>
+ 		<property name="body" value="AuditRecord05"/>
+ 		<property name="auditor" ref="auditor1Auditor"/>
+ 		<property name="job" ref="job1"/> 		
+ 	</bean>
+ 	
  	<!-- Applications -->
 	<bean name="application1" class="acme.entities.jobs.Application">
 		<property name="reference" value="EMP1-JOB1:WORK1"/>
