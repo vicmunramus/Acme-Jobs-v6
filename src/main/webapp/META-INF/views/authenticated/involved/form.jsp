@@ -4,7 +4,7 @@
 
 <acme:form>
 	<acme:form-hidden path="messageThreadId"/>	
-	<acme:form-textbox code="authenticated.involved.form.label.userAccount.username" path="userAccount.username" />
+	<acme:form-textbox code="authenticated.involved.form.label.userAccount.username" path="userAccount.username" readonly="${command == 'show'}"/>
 	
 	<jstl:if test="${command == 'create'}">
 	<acme:form-submit code="authenticated.involved.form.button.create" action="/authenticated/involved/create?messageThreadId=${messageThreadId}"/>

@@ -103,8 +103,8 @@ master.menu.administrator.customisationParameters.show = Customisation Parameter
 
 master.menu.administrator.spam = Spam
 master.menu.administrator.companyRecords = Companies Records
-master.menu.administrator.investor-record = Investors records
-master.menu.administrator.request-auditor = Requests auditors
+master.menu.administrator.investor-record = Investors Records
+master.menu.administrator.request-auditor = Auditors Requests
 
 # master.menu.provider ########################################################
 
