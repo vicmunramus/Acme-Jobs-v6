@@ -101,7 +101,7 @@ master.menu.administrator.customisationParameters.show = Parámetros de Configur
 
 master.menu.administrator.companyRecords = Historial de Compañías
 master.menu.administrator.investor-record = Historial de Inversores
-master.menu.administrator.request-auditor = Peticiones de auditores
+master.menu.administrator.request-auditor = Peticiones para Auditores
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
