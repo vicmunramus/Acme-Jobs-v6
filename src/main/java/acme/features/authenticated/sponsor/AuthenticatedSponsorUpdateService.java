@@ -90,37 +90,37 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 
 		if (!request.getModel().getString("creditCardNumber").isEmpty() || !request.getModel().getString("cardHolder").isEmpty() || !request.getModel().getString("cvv").isEmpty() || !request.getModel().getString("expirationDate").isEmpty()) {
 			if (!errors.hasErrors("creditCardNumber")) {
-				creditCardNumberNotBlank = request.getModel().getString("creditCardNumber") != "";
-				if (!creditCardNumberNotBlank) {
-					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The credit card number can not be empty" : "El número de la tarjeta no puede estar vacío";
+				creditCardNumberNotBlank = request.getModel().getString("creditCardNumber").trim().isEmpty();
+				if (creditCardNumberNotBlank) {
+					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "Must not be blank" : "No puede estar vacío";
 					errors.add("creditCardNumber", errorMsg);
 				} else if (!this.isFake(request.getModel().getString("creditCardNumber"))) {
-					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The credit card number can not be fake" : "El número de la tarjeta no puede ser falso";
+					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The credit card number cannot be fake" : "El número de la tarjeta no puede ser falso";
 					errors.add("creditCardNumber", errorMsg);
 				}
 			}
 			if (!errors.hasErrors("cardHolder")) {
-				cardHolderNotBlank = request.getModel().getString("cardHolder") != "";
-				if (!cardHolderNotBlank) {
-					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The card holder can not be empty" : "El propietario de la tarjeta no puede estar vacío";
+				cardHolderNotBlank = request.getModel().getString("cardHolder").trim().isEmpty();
+				if (cardHolderNotBlank) {
+					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "Must not be blank" : "No puede estar vacío";
 					errors.add("cardHolder", errorMsg);
 				} else if (!request.getModel().getString("cardHolder").matches("^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+(\\s{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]+)*$")) {
 					errors.state(request, false, "cardHolder", "authenticated.sponsor.error.cardHolder");
 				}
 			}
 			if (!errors.hasErrors("cvv")) {
-				cvvNotBlank = request.getModel().getString("cvv") != "";
-				if (!cvvNotBlank) {
-					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The cvv can not be empty" : "El cvv no puede estar vacío";
+				cvvNotBlank = request.getModel().getString("cvv").trim().isEmpty();
+				if (cvvNotBlank) {
+					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "Must not be blank" : "No puede estar vacío";
 					errors.add("cvv", errorMsg);
 				} else if (!request.getModel().getString("cvv").matches("^[0-9]{3}$")) {
 					errors.state(request, false, "cvv", "authenticated.sponsor.error.cvv");
 				}
 			}
 			if (!errors.hasErrors("expirationDate")) {
-				expirationDateNotBlank = request.getModel().getString("expirationDate") != "";
-				if (!expirationDateNotBlank) {
-					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "The expiration date can not be empty" : "La fecha de expiración no puede estar vacía";
+				expirationDateNotBlank = request.getModel().getString("expirationDate").trim().isEmpty();
+				if (expirationDateNotBlank) {
+					String errorMsg = request.getLocale().getDisplayLanguage().equals("English") ? "Must not be blank" : "No puede estar vacío";
 					errors.add("expirationDate", errorMsg);
 				} else if (!request.getModel().getString("expirationDate").matches("^((0[1-9]{1})|(1[0-2]{1}))\\/[0-9]{1}[0-9]{1}$")) {
 					errors.state(request, false, "expirationDate", "authenticated.sponsor.error.the-card-format");
