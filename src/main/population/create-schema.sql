@@ -417,6 +417,9 @@ create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
 create index IDXh9syauj4iixf18uts83saik5d on `request` (`ticker`);
 
+    alter table `request` 
+       add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
+
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
