@@ -308,39 +308,39 @@
 		
 	<!-- BANNERS -->
  	
- 	<bean id="banner01" class="acme.entities.banners.Commercial">
- 		<property name="picture" value="https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg"/>
+ 	<bean id="banner06" class="acme.entities.banners.Commercial">
+ 		<property name="picture" value="https://www.disruptivestatic.com/wp-content/uploads/2017/09/pepsi-banner-ad.jpg"/>
  		<property name="slogan" value="Open Happiness"/>
- 		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
+ 		<property name="target" value="https://www.coca-cola.com/"/>
  		<property name="creditCardNumber" value="4384743000534274"/>
  		<property name="cardHolder" value="Emilio Pascual Robledos"/>
  		<property name="cvv" value="325"/>
  		<property name="expirationDate" value="11/22"/>
  		<property name="sponsor" ref="sponsor1Sponsor"/>
  	</bean>
- 	<bean id="banner02" class="acme.entities.banners.NonCommercial">
- 		<property name="picture" value="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png"/>
+ 	<bean id="banner07" class="acme.entities.banners.NonCommercial">
+ 		<property name="picture" value="https://kaosenlared.net/wp-content/uploads/2017/06/GitHub.png"/>
  		<property name="slogan" value="Work Together"/>
- 		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
+ 		<property name="target" value="https://github.com/"/>
  		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  		<property name="sponsor" ref="sponsor1Sponsor"/>
  	</bean>
- 	<bean id="banner03" class="acme.entities.banners.NonCommercial">
- 		<property name="picture" value="https://www.acme.com"/>
+ 	<bean id="banner08" class="acme.entities.banners.NonCommercial">
+ 		<property name="picture" value="https://www.marketingdirecto.com/wp-content/uploads/2019/01/pepsi-1.jpg"/>
  		<property name="slogan" value="Improving"/>
- 		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
+ 		<property name="target" value="https://www.pepsi.com"/>
  		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  		<property name="sponsor" ref="sponsor2Sponsor"/>
  	</bean>
- 	<bean id="banner04" class="acme.entities.banners.NonCommercial">
- 		<property name="picture" value="https://www.hola.com"/>
- 		<property name="slogan" value="I dont know"/>
- 		<property name="target" value="http://www.hola.com"/>
+ 	<bean id="banner09" class="acme.entities.banners.NonCommercial">
+ 		<property name="picture" value="https://www.himgs.com/imagenes/hola/comunes/logo-amp-plus.png"/>
+ 		<property name="slogan" value="HOLA"/>
+ 		<property name="target" value="https://www.hola.com"/>
  	</bean>
- 	<bean id="banner05" class="acme.entities.banners.Commercial">
- 		<property name="picture" value="http://www.ecija.es/foto.jpg"/>
- 		<property name="slogan" value="Eleven towers"/>
- 		<property name="target" value="http://www.ecija.es"/>
+ 	<bean id="banner10" class="acme.entities.banners.Commercial">
+ 		<property name="picture" value="https://www.spain.info/export/sites/spaininfo/comun/carrusel-recursos/andalucia/Panoramica-ecija3-c-turismo-ayto.jpg_369272544.jpg"/>
+ 		<property name="slogan" value="Viva Écija"/>
+ 		<property name="target" value="http://www.tuhistoria.org/ciudad/ecija"/>
  		<property name="creditCardNumber" value="4384743000534274"/>
  		<property name="cardHolder" value="Roberto Jiménez"/>
  		<property name="cvv" value="325"/>
