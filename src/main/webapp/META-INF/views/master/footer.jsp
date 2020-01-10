@@ -37,3 +37,9 @@
 	</acme:footer-logo>		
 	
 </acme:footer-panel>
+
+<div class="text-center h1 mt-3">
+	<a href='<acme:print value="${requestScope['banner']['target']}"/>'>
+		<img class="img-fluid" style="max-height:20vh" src='<acme:print value="${requestScope['banner']['picture']}"/>' alt='<acme:print value="${requestScope['banner']['slogan']}"/>'/>
+	</a>
+</div>
