@@ -17,13 +17,4 @@ administrator.banner.form.label.sponsor = Sponsor
 administrator.banner.form.label.sponsor.name = Name
 administrator.banner.form.label.sponsor.surname = Surname
 
-administrator.banner.button.redirect.create.commercial = Create commercial banner
-administrator.banner.button.redirect.create.non-commercial = Create non commercial banner
-
-administrator.banner.form.button.create = Create
-administrator.banner.form.button.update = Update
-administrator.banner.form.button.delete = Delete
-
 administrator.banner.form.button.return = Return
-
-administrator.banner.error.the-card-has-expired = The card has expired
