@@ -20,14 +20,10 @@ public class Dashboard implements Serializable {
 	Integer						numberAnnouncement;
 	Integer						numberCompanyRecords;
 	Integer						numberInvestorRecord;
-	Money						minimunRewardOffer;
-	Money						maximunRewardOffer;
-	Money						averageRewardOffer;
 	Money						minimunRewardRequest;
 	Money						maximunRewardRequest;
 	Money						averageRewardRequest;
 	Money						stdRequest;
-	Money						stdOffer;
 
 	// D04 Attributes:
 	Double						avgNumberJobsPerEmployer;

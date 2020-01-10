@@ -35,10 +35,6 @@
        drop 
        foreign key FK_tk5yvuytfoa0dgtibahrxwwkd;
 
-    alter table `consumer` 
-       drop 
-       foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
-
     alter table `credit_card` 
        drop 
        foreign key `FK31l5hvh7p1nx1aw6v649gw3rc`;
@@ -123,8 +119,6 @@
 
     drop table if exists `company_records`;
 
-    drop table if exists `consumer`;
-
     drop table if exists `credit_card`;
 
     drop table if exists `customisation_parameters`;
@@ -150,8 +144,6 @@
     drop table if exists `munoz_bulletin`;
 
     drop table if exists `non_commercial`;
-
-    drop table if exists `offer`;
 
     drop table if exists `provider`;
 

@@ -136,15 +136,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `consumer` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `credit_card` (
        `id` integer not null,
         `version` integer not null,
@@ -277,21 +268,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `offer` (
-       `id` integer not null,
-        `version` integer not null,
-        `creation_moment` datetime(6),
-        `deadline` datetime(6),
-        `description` varchar(255),
-        `max_reward_amount` double precision,
-        `max_reward_currency` varchar(255),
-        `min_reward_amount` double precision,
-        `min_reward_currency` varchar(255),
-        `ticker` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `provider` (
        `id` integer not null,
         `version` integer not null,
@@ -409,11 +385,6 @@ create index IDX8ix743uifflnrs9bupbn6y0h4 on `job` (`reference`);
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 create index IDXjporswtrt7iirg3sca9fipjj4 on `message` (`title`);
 create index IDX3pvpt477dc7b3lairb4qjna7m on `message_thread` (`title`);
-create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
-create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
-
-    alter table `offer` 
-       add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
 create index IDXh9syauj4iixf18uts83saik5d on `request` (`ticker`);
 
@@ -467,11 +438,6 @@ create index IDXh9syauj4iixf18uts83saik5d on `request` (`ticker`);
        add constraint FK_tk5yvuytfoa0dgtibahrxwwkd 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
-
-    alter table `consumer` 
-       add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
 
     alter table `credit_card` 
        add constraint `FK31l5hvh7p1nx1aw6v649gw3rc` 
