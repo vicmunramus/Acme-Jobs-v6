@@ -72,18 +72,6 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(r) from InvestorRecord r")
 	Integer countAllInvestorRecord();
 
-	@Query("select max(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getMaxRequest(Date d);
-
-	@Query("select min(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getMinRequest(Date d);
-
-	@Query("select avg(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getAvgRequest(Date d);
-
-	@Query("select stddev(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getStdRequest(Date d);
-
 	//Listing D04:
 	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
 	Double avgNumberJobsPerEmployer();

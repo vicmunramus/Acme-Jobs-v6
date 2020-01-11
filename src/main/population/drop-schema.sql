@@ -79,10 +79,6 @@
        drop 
        foreign key FK_1px28k1t0j3coqn549p1ru8op;
 
-    alter table `provider` 
-       drop 
-       foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
-
     alter table `request_auditor` 
        drop 
        foreign key FK_ie2ocrruj5nai12m6h4a0fmtw;
@@ -145,13 +141,9 @@
 
     drop table if exists `non_commercial`;
 
-    drop table if exists `provider`;
-
     drop table if exists `quintela_bulletin`;
 
     drop table if exists `reina_bulletin`;
-
-    drop table if exists `request`;
 
     drop table if exists `request_auditor`;
 

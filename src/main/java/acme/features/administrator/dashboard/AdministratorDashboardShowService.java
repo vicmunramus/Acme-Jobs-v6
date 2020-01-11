@@ -39,8 +39,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusApplicationLabels", "statusJobLabels", "dataJob", "dataApplication", "pendingApplicationData", "pendingApplicationLabels", "sizePending", "acceptedApplicationData",
-			"acceptedApplicationLabels", "sizeAccepted", "maxGraph", "numberAnnouncement", "rejectedApplicationData", "rejectedApplicationLabels", "sizeRejected", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardRequest",
-			"maximunRewardRequest", "averageRewardRequest", "stdRequest", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
+			"acceptedApplicationLabels", "sizeAccepted", "maxGraph", "numberAnnouncement", "rejectedApplicationData", "rejectedApplicationLabels", "sizeRejected", "numberCompanyRecords", "numberInvestorRecord",
+			"avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
 	}
 
 	@SuppressWarnings("deprecation")
@@ -53,10 +53,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//DO2:
 		Dashboard result;
 		result = new Dashboard();
-		Money maxRequest = new Money();
-		Money minRequest = new Money();
-		Money avgRequest = new Money();
-		Money stdRequest = new Money();
 
 		//D04:
 
@@ -142,18 +138,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setNumberAnnouncement(this.repository.countAllAnnouncement());
 		result.setNumberCompanyRecords(this.repository.countAllCompanyRecord());
 		result.setNumberInvestorRecord(this.repository.countAllInvestorRecord());
-		maxRequest.setAmount(this.repository.getMaxRequest(d) != null ? this.repository.getMaxRequest(d) : 0.0);
-		maxRequest.setCurrency("EUR");
-		result.setMaximunRewardRequest(maxRequest);
-		minRequest.setAmount(this.repository.getMinRequest(d) != null ? this.repository.getMinRequest(d) : 0.0);
-		minRequest.setCurrency("EUR");
-		result.setMinimunRewardRequest(minRequest);
-		avgRequest.setAmount(this.repository.getAvgRequest(d) != null ? this.repository.getAvgRequest(d) : 0.0);
-		avgRequest.setCurrency("EUR");
-		result.setAverageRewardRequest(avgRequest);
-		stdRequest.setAmount(this.repository.getStdRequest(d) != null ? this.repository.getStdRequest(d) : 0.0);
-		stdRequest.setCurrency("EUR");
-		result.setStdRequest(stdRequest);
 
 		//Listing D04:
 		result.setAvgNumberJobsPerEmployer(this.repository.avgNumberJobsPerEmployer() != null ? this.repository.avgNumberJobsPerEmployer() : 0.);

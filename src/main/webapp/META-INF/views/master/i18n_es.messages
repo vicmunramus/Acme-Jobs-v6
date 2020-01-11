@@ -99,11 +99,6 @@ master.menu.administrator.customisationParameters.show = Parámetros de Configur
 master.menu.administrator.companyRecords = Historial de Compañías
 master.menu.administrator.investor-record = Historial de Inversores
 master.menu.administrator.request-auditor = Peticiones para Auditores
-# master.menu.provider ########################################################
-
-master.menu.provider = Proveedor
-master.menu.provider.request.list = Petición
-master.menu.provider.request.create = Crear nueva Petición
 
 
 
@@ -139,8 +134,6 @@ master.menu.sponsor.banner.list = Lista de mis banners
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
 
 master.menu.user-account.auditor = Datos de auditor
 
