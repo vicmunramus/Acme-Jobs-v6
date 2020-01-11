@@ -63,10 +63,6 @@ master.menu.anonymous.announcement = Announcements
 
 master.menu.authenticated = Authenticated
 
-	#Offers
-	
-master.menu.authenticated.offer.list = Offers
-
 	#Request
 	
 master.menu.authenticated.request.list = Requests
@@ -113,12 +109,6 @@ master.menu.provider.request.list = Requests
 master.menu.provider.request.create = Create new request
 
 
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumer
-master.menu.consumer.offer.list = Offers
-master.menu.consumer.offer.create = Create new Offer
-
 # master.menu.employer ###########################################################
 
 master.menu.employer = Employer
@@ -153,8 +143,6 @@ master.menu.user-account = Account
 master.menu.user-account.general-data = General data
 master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.consumer = Consumer data
-master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.user-account.auditor = Auditor data
 

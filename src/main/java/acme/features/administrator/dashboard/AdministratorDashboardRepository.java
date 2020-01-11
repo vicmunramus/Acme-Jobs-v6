@@ -72,12 +72,6 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(r) from InvestorRecord r")
 	Integer countAllInvestorRecord();
 
-	@Query("select max(r.maxReward.amount) from Offer r where r.deadline > ?1")
-	Double getMaxOffer(Date d);
-
-	@Query("select min(r.minReward.amount) from Offer r where r.deadline > ?1")
-	Double getMinOffer(Date d);
-
 	@Query("select max(r.reward.amount) from Request r where r.deadline > ?1")
 	Double getMaxRequest(Date d);
 
@@ -89,20 +83,6 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select stddev(r.reward.amount) from Request r where r.deadline > ?1")
 	Double getStdRequest(Date d);
-
-	//Querys no directas D02:
-
-	@Query("select avg(r.maxReward.amount) from Offer r where r.deadline > ?1")
-	Double getMaxAvgOffer(Date d);
-
-	@Query("select avg(r.minReward.amount) from Offer r where r.deadline > ?1")
-	Double getMinAvgOffer(Date d);
-
-	@Query("select stddev(r.maxReward.amount) from Offer r where r.deadline > ?1")
-	Double getStdMaxOffer(Date d);
-
-	@Query("select stddev(r.minReward.amount) from Offer r where r.deadline > ?1")
-	Double getStdMinOffer(Date d);
 
 	//Listing D04:
 	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
