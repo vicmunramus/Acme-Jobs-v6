@@ -3,7 +3,6 @@ package acme.forms;
 
 import java.io.Serializable;
 
-import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +19,6 @@ public class Dashboard implements Serializable {
 	Integer						numberAnnouncement;
 	Integer						numberCompanyRecords;
 	Integer						numberInvestorRecord;
-	Money						minimunRewardRequest;
-	Money						maximunRewardRequest;
-	Money						averageRewardRequest;
-	Money						stdRequest;
 
 	// D04 Attributes:
 	Double						avgNumberJobsPerEmployer;

@@ -16,17 +16,6 @@ bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>984</x>
-      <y>360</y>
-      <w>56</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
       <x>944</x>
@@ -71,17 +60,6 @@ bg=blue</panel_attributes>
     <panel_attributes>lt=..
 </panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1120</x>
-      <y>360</y>
-      <w>24</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -185,36 +163,6 @@ CustomCommand
 +LIST_MINE_BY_STATUS
 +LIST_MINE_BY_CREATION
 </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>896</x>
-      <y>408</y>
-      <w>160</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Provider
---
-+ company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1080</x>
-      <y>408</y>
-      <w>168</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Consumer
---
-+ company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -441,7 +389,7 @@ CompanyRecords
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1528</x>
+      <x>1152</x>
       <y>1096</y>
       <w>320</w>
       <h>160</h>
@@ -475,45 +423,6 @@ InvestorRecord
 + sector: String {NotBlank}
 + statement: String {NotBlank}
 + stars: Integer {Range(min=0,max=5)}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1512</x>
-      <y>936</y>
-      <w>424</w>
-      <h>136</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Request
---
-+ title: String {NotBlank}
-+ creationMoment: Date{Temporal(TIMESTAMP),Past}
-+ deadline: Date{Temporal(TIMESTAMP)}
-+ description: String {NotBlank}
-+ reward: Money {NotNull, Valid}
-+ ticker: String {Unique, NotBlank, Pattern(regexp = "^R[A-Z]{4}-\d{5}$")}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1088</x>
-      <y>1112</y>
-      <w>424</w>
-      <h>136</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Offer
---
-+ title: String {NotBlank}
-+ creationMoment: Date{Temporal(TIMESTAMP),Past}
-+ deadline: Date{Temporal(TIMESTAMP)}
-+ description: String {NotBlank}
-+ minReward: Money {NotNull,Valid}
-+ maxReward: Money {NotNull,Valid}
-+ ticker: String {Unique, NotBlank, Pattern(regexp = "^O[A-Z]{4}-\d{5}$")}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -555,7 +464,7 @@ Announcement
       <x>232</x>
       <y>824</y>
       <w>248</w>
-      <h>424</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>Dashboard
 --
@@ -565,14 +474,6 @@ Announcement
 + numberAnnouncement: Integer
 + numberCompanyRecords Integer
 + numberInvestorRecord: Integer
-+ minimunRewardOffer: Money
-+ maximunRewardOffer: Money
-+ averageRewardOffer: Money
-+ minimunRewardRequest: Money
-+ maximunRewardRequest: Money
-+ averageRewardRequest: Money
-+ stdRequest: Money
-+ stdOffer: Money
 + avgNumberJobsPerEmployer: Double						
 + avgNumberApplicationsPerEmployer: Double						
 + avgNumberApplicationsPerWorker: Double						
