@@ -39,8 +39,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusApplicationLabels", "statusJobLabels", "dataJob", "dataApplication", "pendingApplicationData", "pendingApplicationLabels", "sizePending", "acceptedApplicationData",
-			"acceptedApplicationLabels", "sizeAccepted", "maxGraph", "numberAnnouncement", "rejectedApplicationData", "rejectedApplicationLabels", "sizeRejected", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer",
-			"averageRewardOffer", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
+			"acceptedApplicationLabels", "sizeAccepted", "maxGraph", "numberAnnouncement", "rejectedApplicationData", "rejectedApplicationLabels", "sizeRejected", "numberCompanyRecords", "numberInvestorRecord",
+			"avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
 	}
 
 	@SuppressWarnings("deprecation")
@@ -53,10 +53,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//DO2:
 		Dashboard result;
 		result = new Dashboard();
-		Money maxOffer = new Money();
-		Money minOffer = new Money();
-		Money avgOffer = new Money();
-		Money stdOffer = new Money();
 
 		//D04:
 
@@ -142,21 +138,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setNumberAnnouncement(this.repository.countAllAnnouncement());
 		result.setNumberCompanyRecords(this.repository.countAllCompanyRecord());
 		result.setNumberInvestorRecord(this.repository.countAllInvestorRecord());
-		maxOffer.setAmount(this.repository.getMaxOffer(d) != null ? this.repository.getMaxOffer(d) : 0.0);
-		maxOffer.setCurrency("EUR");
-		result.setMaximunRewardOffer(maxOffer);
-		minOffer.setAmount(this.repository.getMinOffer(d) != null ? this.repository.getMinOffer(d) : 0.0);
-		minOffer.setCurrency("EUR");
-		result.setMinimunRewardOffer(minOffer);
-		Double avg = ((this.repository.getMaxAvgOffer(d) != null ? this.repository.getMaxAvgOffer(d) : 0.0) + (this.repository.getMinAvgOffer(d) != null ? this.repository.getMinAvgOffer(d) : 0.0)) / 2;
-		avgOffer.setAmount(avg);
-		avgOffer.setCurrency("EUR");
-		result.setAverageRewardOffer(avgOffer);
-
-		Double stdOff = ((this.repository.getStdMaxOffer(d) != null ? this.repository.getStdMaxOffer(d) : 0.0) + (this.repository.getStdMinOffer(d) != null ? this.repository.getStdMinOffer(d) : 0.0)) / 2;
-		stdOffer.setAmount(stdOff);
-		stdOffer.setCurrency("EUR");
-		result.setStdOffer(stdOffer);
 
 		//Listing D04:
 		result.setAvgNumberJobsPerEmployer(this.repository.avgNumberJobsPerEmployer() != null ? this.repository.avgNumberJobsPerEmployer() : 0.);

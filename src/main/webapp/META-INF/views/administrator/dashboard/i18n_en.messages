@@ -1,11 +1,6 @@
 administrator.dashboard.form.label.numberAnnouncement = Number of Announcements
 administrator.dashboard.form.label.numberCompanyRecords = Number of Companies
 administrator.dashboard.form.label.numberInvestorRecords = Number of Investors
-administrator.dashboard.form.label.minimunRewardOffer = Minimun Reward of the Active Offers
-administrator.dashboard.form.label.maximunRewardOffer = Maximun Reward of the Active Offers
-administrator.dashboard.form.label.averageRewardOffer = Average Reward of the Active Offers
-
-administrator.dashboard.form.label.stdOffer = Standard Deviation of Offers
 
 administrator.dashboard.form.label.avgNumberJobsPerEmployer = Average Number of Jobs per Employer
 administrator.dashboard.form.label.avgNumberApplicationsPerEmployer = Average Number of Applications per Employer

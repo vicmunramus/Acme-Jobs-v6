@@ -1,11 +1,6 @@
 administrator.dashboard.form.label.numberAnnouncement = Número de Anuncios
 administrator.dashboard.form.label.numberCompanyRecords = Número de Compañías
 administrator.dashboard.form.label.numberInvestorRecords = Número de Inversores
-administrator.dashboard.form.label.minimunRewardOffer = Recompensa Mínima de las Ofertas activas
-administrator.dashboard.form.label.maximunRewardOffer = Recompensa Máxima de las Ofertas activas
-administrator.dashboard.form.label.averageRewardOffer = Recompensa Media de las Ofertas activas
-
-administrator.dashboard.form.label.stdOffer = Desviación típica de las Ofertas
 
 administrator.dashboard.form.label.avgNumberJobsPerEmployer = Número Medio de Trabajos por Empleador
 administrator.dashboard.form.label.avgNumberApplicationsPerEmployer = Número Medio de Aplicaciones por Empleador

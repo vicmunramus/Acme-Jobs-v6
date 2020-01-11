@@ -121,35 +121,6 @@
 		<property name="text" value="Necesitamos mejores ordenadores"/>
 		<property name="moment" value="2019/10/20 10:46"/>
 	</bean>
-	
-	<!-- Offers Beans: -->
-	<bean id = "offer01" class = "acme.entities.offers.Offer">
-		<property name="title" value="Java Developer"/>
-		<property name="creationMoment" value="2019/10/20 10:45"/>
-		<property name="deadline" value="2021/10/20 23:59"/>
-		<property name="description" value="Great oportunity at SoftDev for juniors developers."/>
-		<property name="minReward" value="25000 €"/>
-		<property name="maxReward" value="30000 €"/>
-		<property name="ticker" value="OAAAA-00000"/>
-	</bean>
-	<bean id = "offer02" class = "acme.entities.offers.Offer">
-		<property name="title" value="PHP Senior Developer"/>
-		<property name="creationMoment" value="2019/09/12 15:06"/>
-		<property name="deadline" value="2020/10/10 23:59"/>
-		<property name="description" value="At least 5 years of experience. Great conditions and benefits at our company."/>
-		<property name="minReward" value="30000 €"/>
-		<property name="maxReward" value="40000 €"/>
-		<property name="ticker" value="OAAAB-00001"/>
-	</bean>
-	<bean id = "offer03" class = "acme.entities.offers.Offer">
-		<property name="title" value="C++ Programmer"/>
-		<property name="creationMoment" value="2019/07/15 19:00"/>
-		<property name="deadline" value="2019/10/03 11:25"/>
-		<property name="description" value="We are looking for an experienced developer who wants to change the industry"/>
-		<property name="minReward" value="35000 €"/>
-		<property name="maxReward" value="45000 €"/>
-		<property name="ticker" value="OAAAC-00003"/>
-	</bean>
 		
 	<!-- INVESTOR RECORDS -->	
 		
@@ -280,39 +251,39 @@
 		
 	<!-- BANNERS -->
  	
- 	<bean id="banner01" class="acme.entities.banners.Commercial">
- 		<property name="picture" value="https://www.cocacola.es/content/dam/GO/CokeZone/Spain/Coca-Cola-Full-Red-vidrio-Sabor-Original.jpg"/>
+ 	<bean id="banner06" class="acme.entities.banners.Commercial">
+ 		<property name="picture" value="https://www.disruptivestatic.com/wp-content/uploads/2017/09/pepsi-banner-ad.jpg"/>
  		<property name="slogan" value="Open Happiness"/>
- 		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
+ 		<property name="target" value="https://www.coca-cola.com/"/>
  		<property name="creditCardNumber" value="4384743000534274"/>
  		<property name="cardHolder" value="Emilio Pascual Robledos"/>
  		<property name="cvv" value="325"/>
  		<property name="expirationDate" value="11/22"/>
  		<property name="sponsor" ref="sponsor1Sponsor"/>
  	</bean>
- 	<bean id="banner02" class="acme.entities.banners.NonCommercial">
- 		<property name="picture" value="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/github-image-796x418.png"/>
+ 	<bean id="banner07" class="acme.entities.banners.NonCommercial">
+ 		<property name="picture" value="https://kaosenlared.net/wp-content/uploads/2017/06/GitHub.png"/>
  		<property name="slogan" value="Work Together"/>
- 		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
+ 		<property name="target" value="https://github.com/"/>
  		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  		<property name="sponsor" ref="sponsor1Sponsor"/>
  	</bean>
- 	<bean id="banner03" class="acme.entities.banners.NonCommercial">
- 		<property name="picture" value="https://www.acme.com"/>
+ 	<bean id="banner08" class="acme.entities.banners.NonCommercial">
+ 		<property name="picture" value="https://www.marketingdirecto.com/wp-content/uploads/2019/01/pepsi-1.jpg"/>
  		<property name="slogan" value="Improving"/>
- 		<property name="target" value="https://www.youtube.com/watch?v=eG6XfzJNRBA"/>
+ 		<property name="target" value="https://www.pepsi.com"/>
  		<property name="jingle" value="https://www.youtube.com/watch?v=NZOPzR8bPh4"/>
  		<property name="sponsor" ref="sponsor2Sponsor"/>
  	</bean>
- 	<bean id="banner04" class="acme.entities.banners.NonCommercial">
- 		<property name="picture" value="https://www.hola.com"/>
- 		<property name="slogan" value="I dont know"/>
- 		<property name="target" value="http://www.hola.com"/>
+ 	<bean id="banner09" class="acme.entities.banners.NonCommercial">
+ 		<property name="picture" value="https://www.himgs.com/imagenes/hola/comunes/logo-amp-plus.png"/>
+ 		<property name="slogan" value="HOLA"/>
+ 		<property name="target" value="https://www.hola.com"/>
  	</bean>
- 	<bean id="banner05" class="acme.entities.banners.Commercial">
- 		<property name="picture" value="http://www.ecija.es/foto.jpg"/>
- 		<property name="slogan" value="Eleven towers"/>
- 		<property name="target" value="http://www.ecija.es"/>
+ 	<bean id="banner10" class="acme.entities.banners.Commercial">
+ 		<property name="picture" value="https://www.spain.info/export/sites/spaininfo/comun/carrusel-recursos/andalucia/Panoramica-ecija3-c-turismo-ayto.jpg_369272544.jpg"/>
+ 		<property name="slogan" value="Viva Écija"/>
+ 		<property name="target" value="http://www.tuhistoria.org/ciudad/ecija"/>
  		<property name="creditCardNumber" value="4384743000534274"/>
  		<property name="cardHolder" value="Roberto Jiménez"/>
  		<property name="cvv" value="325"/>

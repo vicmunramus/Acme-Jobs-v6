@@ -9,10 +9,6 @@
 	<acme:form-integer code="administrator.dashboard.form.label.numberAnnouncement" path="numberAnnouncement"/>
 	<acme:form-integer code="administrator.dashboard.form.label.numberCompanyRecords" path="numberCompanyRecords"/>
 	<acme:form-integer code="administrator.dashboard.form.label.numberInvestorRecords" path="numberInvestorRecord"/>
-	<acme:form-money code="administrator.dashboard.form.label.minimunRewardOffer" path="minimunRewardOffer"/>
-	<acme:form-money code="administrator.dashboard.form.label.maximunRewardOffer" path="maximunRewardOffer"/>
-	<acme:form-money code="administrator.dashboard.form.label.averageRewardOffer" path="averageRewardOffer"/>
-	<acme:form-money code="administrator.dashboard.form.label.stdOffer" path="stdOffer"/>
 	
 	<!-- D04: -->
 	<acme:form-double code="administrator.dashboard.form.label.avgNumberJobsPerEmployer" path="avgNumberJobsPerEmployer"/>
