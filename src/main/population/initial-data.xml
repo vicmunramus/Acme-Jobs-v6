@@ -73,35 +73,7 @@
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
 	
-	<!-- Provider -->
-	<bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="provider" />
-		<property name="password" value="provider" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Provider" />
-				<property name="surname" value="Acme.com" />
-				<property name="email" value="provider@acme.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="providerProvider" />
-				<ref bean="providerAuthenticated" />
-			</list>
-		</property>
-	</bean>
 	
-	<bean name="providerProvider" class="acme.entities.roles.Provider">
-		<property name="userAccount" ref="providerUserAccount" />
-		<property name="company" value="Acme-Jobs" />
-		<property name="sector" value="education" />
-	</bean>
-	
-	<bean name="providerAuthenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="providerUserAccount" />
-	</bean>
   
 	<!-- Consumer -->
 	<bean name="consumerUserAccount" class="acme.framework.entities.UserAccount">

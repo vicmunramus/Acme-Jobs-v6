@@ -277,34 +277,6 @@
 		<property name="text" value= "Very recent announcement"/>
 	</bean>
 		
-	<!-- REQUEST -->
-		
-	<bean class="acme.entities.requests.Request" id="request00">
-		<property value="Sample request" name="title"/>
-		<property value="2019/10/29 17:10" name="createdAt"/>
-		<property value="2020/10/29 17:10" name="deadline"/>
-		<property value="Example description" name="description"/>
-		<property value="1 €" name="reward"/>
-		<property value="REXMP-00000" name="ticker"/>
-	</bean>
-
-	<bean class="acme.entities.requests.Request" id="request01">
-		<property value="C deliverable" name="title"/>
-		<property value="2019/10/29 17:10" name="createdAt"/>
-		<property value="2020/10/29 17:10" name="deadline"/>
-		<property value="We need to do the c deliverable" name="description"/>
-		<property value="100 €" name="reward"/>
-		<property value="RDLVC-00001" name="ticker"/>
-	</bean>
-
-	<bean class="acme.entities.requests.Request" id="request02">
-		<property value="B deliverable" name="title"/>
-		<property value="2019/10/29 17:10" name="createdAt"/>
-		<property value="2020/10/29 17:10" name="deadline"/>
-		<property value="We need to do the B deliverable" name="description"/>
-		<property value="700 €" name="reward"/>
-		<property value="RDLVC-00002" name="ticker"/>
-	</bean>
 		
 	<!-- BANNERS -->
  	

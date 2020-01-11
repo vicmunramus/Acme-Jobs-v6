@@ -292,15 +292,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `provider` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `quintela_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -320,19 +311,6 @@
         `author` varchar(255),
         `create_date` datetime(6),
         `text` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `request` (
-       `id` integer not null,
-        `version` integer not null,
-        `created_at` datetime(6),
-        `deadline` datetime(6),
-        `description` varchar(255),
-        `reward_amount` double precision,
-        `reward_currency` varchar(255),
-        `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -414,11 +392,6 @@ create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
-create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
-create index IDXh9syauj4iixf18uts83saik5d on `request` (`ticker`);
-
-    alter table `request` 
-       add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
@@ -527,11 +500,6 @@ create index IDXh9syauj4iixf18uts83saik5d on `request` (`ticker`);
        add constraint FK_1px28k1t0j3coqn549p1ru8op 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
-
-    alter table `provider` 
-       add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
 
     alter table `request_auditor` 
        add constraint FK_ie2ocrruj5nai12m6h4a0fmtw 

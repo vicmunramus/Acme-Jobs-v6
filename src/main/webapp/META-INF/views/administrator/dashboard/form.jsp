@@ -13,10 +13,6 @@
 	<acme:form-money code="administrator.dashboard.form.label.maximunRewardOffer" path="maximunRewardOffer"/>
 	<acme:form-money code="administrator.dashboard.form.label.averageRewardOffer" path="averageRewardOffer"/>
 	<acme:form-money code="administrator.dashboard.form.label.stdOffer" path="stdOffer"/>
-	<acme:form-money code="administrator.dashboard.form.label.minimunRewardRequest" path="minimunRewardRequest"/>
-	<acme:form-money code="administrator.dashboard.form.label.maximunRewardRequest" path="maximunRewardRequest"/>
-	<acme:form-money code="administrator.dashboard.form.label.averageRewardRequest" path="averageRewardRequest"/>
-	<acme:form-money code="administrator.dashboard.form.label.stdRequest" path="stdRequest"/>
 	
 	<!-- D04: -->
 	<acme:form-double code="administrator.dashboard.form.label.avgNumberJobsPerEmployer" path="avgNumberJobsPerEmployer"/>

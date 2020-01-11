@@ -40,7 +40,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		request.unbind(entity, model, "gridLabels", "dataInvestor", "dataCompany", "statusApplicationLabels", "statusJobLabels", "dataJob", "dataApplication", "pendingApplicationData", "pendingApplicationLabels", "sizePending", "acceptedApplicationData",
 			"acceptedApplicationLabels", "sizeAccepted", "maxGraph", "numberAnnouncement", "rejectedApplicationData", "rejectedApplicationLabels", "sizeRejected", "numberCompanyRecords", "numberInvestorRecord", "minimunRewardOffer", "maximunRewardOffer",
-			"averageRewardOffer", "minimunRewardRequest", "maximunRewardRequest", "averageRewardRequest", "stdRequest", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
+			"averageRewardOffer", "stdOffer", "avgNumberJobsPerEmployer", "avgNumberApplicationsPerEmployer", "avgNumberApplicationsPerWorker");
 	}
 
 	@SuppressWarnings("deprecation")
@@ -57,10 +57,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Money minOffer = new Money();
 		Money avgOffer = new Money();
 		Money stdOffer = new Money();
-		Money maxRequest = new Money();
-		Money minRequest = new Money();
-		Money avgRequest = new Money();
-		Money stdRequest = new Money();
 
 		//D04:
 
@@ -156,18 +152,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		avgOffer.setAmount(avg);
 		avgOffer.setCurrency("EUR");
 		result.setAverageRewardOffer(avgOffer);
-		maxRequest.setAmount(this.repository.getMaxRequest(d) != null ? this.repository.getMaxRequest(d) : 0.0);
-		maxRequest.setCurrency("EUR");
-		result.setMaximunRewardRequest(maxRequest);
-		minRequest.setAmount(this.repository.getMinRequest(d) != null ? this.repository.getMinRequest(d) : 0.0);
-		minRequest.setCurrency("EUR");
-		result.setMinimunRewardRequest(minRequest);
-		avgRequest.setAmount(this.repository.getAvgRequest(d) != null ? this.repository.getAvgRequest(d) : 0.0);
-		avgRequest.setCurrency("EUR");
-		result.setAverageRewardRequest(avgRequest);
-		stdRequest.setAmount(this.repository.getStdRequest(d) != null ? this.repository.getStdRequest(d) : 0.0);
-		stdRequest.setCurrency("EUR");
-		result.setStdRequest(stdRequest);
+
 		Double stdOff = ((this.repository.getStdMaxOffer(d) != null ? this.repository.getStdMaxOffer(d) : 0.0) + (this.repository.getStdMinOffer(d) != null ? this.repository.getStdMinOffer(d) : 0.0)) / 2;
 		stdOffer.setAmount(stdOff);
 		stdOffer.setCurrency("EUR");

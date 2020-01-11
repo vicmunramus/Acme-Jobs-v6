@@ -78,17 +78,17 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select min(r.minReward.amount) from Offer r where r.deadline > ?1")
 	Double getMinOffer(Date d);
 
-	@Query("select max(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getMaxRequest(Date d);
-
-	@Query("select min(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getMinRequest(Date d);
-
-	@Query("select avg(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getAvgRequest(Date d);
-
-	@Query("select stddev(r.reward.amount) from Request r where r.deadline > ?1")
-	Double getStdRequest(Date d);
+	//	@Query("select max(r.reward.amount) from Request r where r.deadline > ?1")
+	//	Double getMaxRequest(Date d);
+	//
+	//	@Query("select min(r.reward.amount) from Request r where r.deadline > ?1")
+	//	Double getMinRequest(Date d);
+	//
+	//	@Query("select avg(r.reward.amount) from Request r where r.deadline > ?1")
+	//	Double getAvgRequest(Date d);
+	//
+	//	@Query("select stddev(r.reward.amount) from Request r where r.deadline > ?1")
+	//	Double getStdRequest(Date d);
 
 	//Querys no directas D02:
 

@@ -4,10 +4,7 @@ administrator.dashboard.form.label.numberInvestorRecords = Número de Inversores
 administrator.dashboard.form.label.minimunRewardOffer = Recompensa Mínima de las Ofertas activas
 administrator.dashboard.form.label.maximunRewardOffer = Recompensa Máxima de las Ofertas activas
 administrator.dashboard.form.label.averageRewardOffer = Recompensa Media de las Ofertas activas
-administrator.dashboard.form.label.minimunRewardRequest = Recompensa Mínima de los Pedidos activos
-administrator.dashboard.form.label.maximunRewardRequest = Recompensa Máxima de los Pedidos activos 
-administrator.dashboard.form.label.averageRewardRequest = Recompensa Media de los Pedidos activos
-administrator.dashboard.form.label.stdRequest = Desviación típica de los Pedidos
+
 administrator.dashboard.form.label.stdOffer = Desviación típica de las Ofertas
 
 administrator.dashboard.form.label.avgNumberJobsPerEmployer = Número Medio de Trabajos por Empleador
