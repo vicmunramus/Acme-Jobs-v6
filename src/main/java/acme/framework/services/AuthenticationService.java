@@ -42,8 +42,6 @@ public class AuthenticationService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-		assert !StringHelper.isBlank(username);
-
 		Principal result;
 		UserAccount userAccount;
 
