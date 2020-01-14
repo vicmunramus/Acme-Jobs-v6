@@ -6,17 +6,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `aguilar_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `company` varchar(255),
-        `moment` datetime(6),
-        `requirement` varchar(255),
-        `salary` integer not null,
-        `vacancy` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `announcement` (
        `id` integer not null,
         `version` integer not null,
@@ -96,17 +85,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `cobo_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `author` varchar(255),
-        `creation_date` datetime(6),
-        `description` varchar(255),
-        `location` varchar(255),
-        `salary` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `commercial` (
        `id` integer not null,
         `version` integer not null,
@@ -161,17 +139,6 @@
         `version` integer not null,
         `description` varchar(255),
         `job_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `doblado_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `degree` varchar(255),
-        `location` varchar(255),
-        `moment` datetime(6),
-        `name` varchar(255),
-        `text` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -247,16 +214,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `munoz_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `group_name` varchar(255),
-        `manager_name` varchar(255),
-        `moment` datetime(6),
-        `size` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `non_commercial` (
        `id` integer not null,
         `version` integer not null,
@@ -265,29 +222,6 @@
         `target` varchar(255),
         `sponsor_id` integer,
         `jingle` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `quintela_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `author` varchar(255),
-        `created_at` datetime(6),
-        `deadline_date` datetime(6),
-        `priority` integer,
-        `text` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `reina_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `age` integer,
-        `author` varchar(255),
-        `create_date` datetime(6),
-        `text` varchar(255),
-        `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 

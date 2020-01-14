@@ -258,114 +258,6 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>904</x>
-      <y>1440</y>
-      <w>352</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-DobladoBulletin
---
-+ moment : Date {Temporal(TIMESTAMP),Past}
-+ name: String {NotBlank}
-+ location : String {NotBlank}
-+ degree : String {NotBlank}
-+ text : String {NotBlank}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>880</x>
-      <y>1280</y>
-      <w>360</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-ReinaBulletin
---
-+ createDate: Date{Temporal(TIMESTAMP),Past}
-+ author: String {NotBlank}
-+ age: Integer {Positive, NotNull}
-+ title: String {NotBlank}
-+ text: String {NotBlank}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>496</x>
-      <y>1280</y>
-      <w>376</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-CoboBulletin
---
-+ creationDate: Date(Temporal(TIMESTAMP),Past}
-+ author: String {NotBlank}
-+ salary: Integer {Positive, NotNull}
-+ location: String {NotBlank}
-+ description: String {NotBlank}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>496</x>
-      <y>1440</y>
-      <w>400</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-QuintelaBulletin
---
-+ title: String {NotBlank}
-+ text: String {NotBlank}
-+ author: String {NotBlank}
-+ priority: Integer {NotNull}
-+ createdAt: Date {Temporal(TIMESTAMP),Past}
-+ deadlineDate: Date {Temporal(TIMESTAMP)}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1248</x>
-      <y>1280</y>
-      <w>352</w>
-      <h>136</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-MunozBulletin
---
-+ moment: Date {Temporal(TIMESTAMP), Past}
-+ groupName: String {NotBlank}
-+ managerName: String {NotBlank}
-+ size: int {Range(min=1)}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1264</x>
-      <y>1440</y>
-      <w>336</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-AguilarBulletin
---
-+moment: Date {Temporal(TIMESTAMP),Past}
-+company: String {NotBlank}
-+vacancy: int {Range(min=1)}
-+requirement: String {Not Blank}
-+salary: int {Positive}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>496</x>
       <y>1104</y>
       <w>576</w>
@@ -411,8 +303,8 @@ Challenge
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1616</x>
-      <y>1288</y>
+      <x>952</x>
+      <y>1304</y>
       <w>208</w>
       <h>120</h>
     </coordinates>
@@ -444,8 +336,8 @@ CustomisationParameters
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1616</x>
-      <y>1440</y>
+      <x>1192</x>
+      <y>1304</y>
       <w>248</w>
       <h>104</h>
     </coordinates>

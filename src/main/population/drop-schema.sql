@@ -93,8 +93,6 @@
 
     drop table if exists `administrator`;
 
-    drop table if exists `aguilar_bulletin`;
-
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
@@ -109,8 +107,6 @@
 
     drop table if exists `challenge`;
 
-    drop table if exists `cobo_bulletin`;
-
     drop table if exists `commercial`;
 
     drop table if exists `company_records`;
@@ -120,8 +116,6 @@
     drop table if exists `customisation_parameters`;
 
     drop table if exists `descriptor`;
-
-    drop table if exists `doblado_bulletin`;
 
     drop table if exists `duty`;
 
@@ -137,13 +131,7 @@
 
     drop table if exists `message_thread`;
 
-    drop table if exists `munoz_bulletin`;
-
     drop table if exists `non_commercial`;
-
-    drop table if exists `quintela_bulletin`;
-
-    drop table if exists `reina_bulletin`;
 
     drop table if exists `request_auditor`;
 
