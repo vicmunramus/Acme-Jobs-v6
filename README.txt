@@ -12,3 +12,11 @@ This is the Starter-Project project, which is intended to be a core learning ass
 who have enroled the Design and Testing subject of the Software Engineering curriculum of the 
 University of Sevilla.  This project provides a template our students can use to get their projects 
 up and running very quickly.
+
+Proyecto universitario realizado por:
+* Álvaro Aguilar Alhama
+* José Manuel Cobo Guerrero
+* Carlos Doblado Herrero
+* Víctor Muñoz Ramírez
+* Francisco José Quintela Vela
+* Enrique Reina Gutiérrez.
